@@ -1,0 +1,36 @@
+# GIT-NPM common
+# --------------
+# All projects
+logs
+*.log
+npm-debug.log*
+pids
+*.pid
+*.seed
+node_modules
+/coverage
+/.nyc_output
+/.nyc_tmp
+*.sublime-project
+*.sublime-workspace
+
+# Project-specific
+
+
+# NPM-specific
+# ------------
+# All projects
+/.babelrc
+/.eslintrc.yaml
+/.eslintrc.json
+/.flowconfig
+/.travis.yml
+/.gitignore
+/.npmignore
+/docs/templates
+/tools
+/test
+/package.js
+/ROADMAP.md
+
+# Project-specific
