@@ -1,3 +1,5 @@
+// @flow
+
 import printString from 'pretty-format/printString';
 import escapeHtml from 'escape-html';
 import { merge } from 'timm';
@@ -138,11 +140,11 @@ function printInstance(instance, print, indent, opts) {
   return result;
 }
 
-function test(object) {
+function test(object: any) {
   return object && !object.__visited && object.$$typeof === reactTestInstance;
 }
 
-function printMain(val, print, indent, opts) {
+function printMain(val: Object, print: Function, indent: Function, opts: Object) {
   const val2 = merge(val, {
     __visited: true,
     $$typeof: reactTestInstance,

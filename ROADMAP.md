@@ -1,1 +1,14 @@
-Nothing identified right now!
+- [ ] Initial server app
+- [x] Initial client app
+- [ ] Server: refresh (watch? manually from the client?)
+- [ ] Server:
+    - [ ] Custom CSSs:
+        - [ ] Common to all snapshots
+        - [ ] Common to all in a folder
+        - [ ] Specific to a given suite
+- [ ] Client:
+    - [ ] Add fetch polyfill
+    - [ ] Navigation: add titles+back bar and improve componentization
+    - [ ] Group snapshots that belong together
+    - [ ] ?? Keyboard shortcuts
+- [ ] Remove moment (if unneeded)

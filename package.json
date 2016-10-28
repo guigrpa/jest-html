@@ -2,6 +2,9 @@
   "name": "jest-html",
   "version": "0.1.0",
   "description": "Preview Jest snapshots right in your browser",
+  "bin": {
+    "jest-html": "lib/run.js"
+  },
   "main": "lib/serializer/",
   "engines": {
     "node": ">=6"
@@ -25,14 +28,13 @@
     "url": "git+https://github.com/guigrpa/jest-html.git"
   },
   "scripts": {
-    "start": "babel-node src/server/startup --dir src/locales",
-    "startProd": "node lib/previewer --dir src/locales",
+    "start": "babel-node src/server/startup",
+    "startProd": "node lib/previewer",
     "compile": "rm -rf ./lib && mkdir lib && babel --out-dir lib --ignore \"**/__mocks__/**\",\"**/__tests__/**\" src",
     "docs": "extract-docs --template docs/templates/README.md --output README.md",
-    "buildSsrWatch": "rm -rf ./public/ssr && rm -rf ./lib/server/ssr && cross-env SERVER_SIDE_RENDERING=true webpack --config ./src/server/webpackConfig.cjs --progress --display-chunks --watch",
-    "buildSsr": "rm -rf ./public/ssr && rm -rf ./lib/server/ssr && cross-env SERVER_SIDE_RENDERING=true NODE_ENV=production webpack --config ./src/server/webpackConfig.cjs --progress --display-chunks",
+    "buildWatch": "rm -rf ./public/assets && webpack --config ./src/server/webpackConfig.cjs --progress --display-chunks --watch",
     "buildClient": "rm -rf ./public/assets && cross-env NODE_ENV=production webpack --config ./src/server/webpackConfig.cjs --progress --display-chunks",
-    "build": "node package && npm run lint && npm run flow && npm run compile && npm run test && npm run docs && npm run xxl",
+    "build": "node package && npm run lint && npm run flow && npm run compile && npm run buildClient && npm run docs && npm run xxl",
     "travis": "npm run compile && npm run testCovFullExceptMin",
     "lint": "eslint src",
     "flow": "flow check || exit 0",
@@ -51,22 +53,16 @@
   },
   "dependencies": {
     "babel-polyfill": "6.16.0",
-    "bluebird": "^3.4.6",
+    "body-parser": "^1.15.2",
     "commander": "^2.9.0",
-    "compression": "1.6.2",
-    "diveSync": "0.3.0",
     "escape-html": "1.0.3",
-    "express": "4.14.0",
-    "font-awesome": "4.6.3",
-    "lodash": "^4.16.0",
-    "moment": "2.14.0",
+    "express": "^4.14.0",
+    "globby": "^6.0.0",
     "opn": "4.0.2",
     "pretty-format": "^4.2.1",
-    "react": "15.3.2",
-    "react-dom": "15.3.2",
-    "slash": "1.0.0",
     "storyboard": "^2.0.0",
-    "timm": "^1.0.0"
+    "timm": "^1.0.0",
+    "whatwg-fetch": "1.0.0"
   },
   "devDependencies": {
     "babel-cli": "6.16.0",
@@ -91,10 +87,15 @@
     "extract-text-webpack-plugin": "1.0.1",
     "file-loader": "0.9.0",
     "flow-bin": "0.33.0",
+    "giu": "0.8.0",
     "jest": "16.0.1",
     "json-loader": "0.5.4",
+    "moment": "^2.0.0",
     "node-sass": "3.10.1",
     "nyc": "8.3.0",
+    "react": "15.3.2",
+    "react-addons-pure-render-mixin": "15.3.2",
+    "react-dom": "15.3.2",
     "react-test-renderer": "15.3.2",
     "sass-loader": "4.0.2",
     "style-loader": "0.13.1",

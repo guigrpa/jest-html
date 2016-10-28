@@ -16,6 +16,7 @@ rules:
     - error
     - allowForLoopAfterthoughts: true
   no-continue: off
+  no-duplicate-imports: off
   key-spacing:
     - warn
     - beforeColon: false
@@ -46,3 +47,4 @@ globals:
   SyntheticKeyboardEvent: false
   HTMLElement: false
   HTMLInputElement: false
+  $Shape: false

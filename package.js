@@ -26,11 +26,9 @@ const WEBPACK_OPTIONS = '--config ./src/server/webpackConfig.cjs ' +
   '--progress ' +
   // '--display-modules ' +
   '--display-chunks';
-const runWebpack = ({ fProduction, fSsr, fWatch } = {}) => {
-  const out = [`rm -rf ./public/${fSsr ? 'ssr' : 'assets'}`];
-  if (fSsr) out.push('rm -rf ./lib/server/ssr');
+const runWebpack = ({ fProduction, fWatch } = {}) => {
+  const out = ['rm -rf ./public/assets'];
   const env = [];
-  if (fSsr) env.push('SERVER_SIDE_RENDERING=true');
   if (fProduction) env.push('NODE_ENV=production');
   const envStr = env.length ? `cross-env ${env.join(' ')} ` : '';
   const webpackOpts = `${WEBPACK_OPTIONS}${fWatch ? ' --watch' : ''}`;
@@ -49,9 +47,9 @@ const specs = {
   name: NAME,
   version: VERSION,
   description: DESCRIPTION,
-  // bin: {
-  //   'jest-html': 'lib/previewer.js',
-  // },
+  bin: {
+    'jest-html': 'lib/run.js',
+  },
   main: 'lib/serializer/',
   engines: {
     node: '>=6',
@@ -74,8 +72,8 @@ const specs = {
   scripts: {
 
     // Top-level
-    start:                      'babel-node src/server/startup --dir src/locales',
-    startProd:                  'node lib/previewer --dir src/locales',
+    start:                      'babel-node src/server/startup',
+    startProd:                  'node lib/previewer',  // sets NODE_ENV to PRODUCTION and runs
     compile:                    runMultiple([
                                   'rm -rf ./lib',
                                   'mkdir lib',
@@ -83,17 +81,15 @@ const specs = {
                                   // 'cp src/api.js.flow lib/translate.js.flow',
                                 ]),
     docs:                       'extract-docs --template docs/templates/README.md --output README.md',
-    buildSsrWatch:              runWebpack({ fSsr: true, fWatch: true }),
-    buildSsr:                   runWebpack({ fSsr: true, fProduction: true }),
+    buildWatch:                 runWebpack({ fWatch: true }),
     buildClient:                runWebpack({ fProduction: true }),
     build:                      runMultiple([
                                   'node package',
                                   'npm run lint',
                                   'npm run flow',
                                   'npm run compile',
-                                  // 'npm run buildClient',
-                                  // 'npm run buildSsr',
-                                  'npm run test',
+                                  'npm run buildClient',
+                                  // 'npm run test',
                                   'npm run docs',
                                   'npm run xxl',
                                 ]),
@@ -151,28 +147,29 @@ const specs = {
   dependencies: {
     timm: '^1.0.0',
     storyboard: '^2.0.0',
-    lodash: '^4.16.0',
     commander: '^2.9.0',
-    bluebird: '^3.4.6',
-    moment: '2.14.0',
 
     'pretty-format': '^4.2.1',
     'escape-html': '1.0.3',
-    'diveSync': '0.3.0',
+    'globby': '^6.0.0',
     opn: '4.0.2',
-    'slash': '1.0.0',
-    'font-awesome': '4.6.3',
 
-    react: '15.3.2',
-    'react-dom': '15.3.2',
-
-    express: '4.14.0',
-    compression: '1.6.2',
+    express: '^4.14.0',
+    'body-parser': '^1.15.2',
 
     'babel-polyfill': '6.16.0',
+    'whatwg-fetch': '1.0.0',
   },
 
   devDependencies: {
+
+    // Bundled
+    react: '15.3.2',
+    'react-dom': '15.3.2',
+    'react-addons-pure-render-mixin': '15.3.2',
+    giu: '0.8.0',
+    moment: '^2.0.0',
+
     // Bug yarn #629
     // chokidar: '1.6.1',
 
