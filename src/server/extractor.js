@@ -44,7 +44,10 @@ const refresh = ({ story = mainStory }: { story: StoryT } = {}) => {
     childStory.info('extractor', 'Reading snapshot files...');
     const extractedSnapshots: SnapshotSuiteDictT = {};
     filePaths.forEach((filePath) => {
-      extractedSnapshots[`./${filePath}`] = extractSnapshots(filePath, _commonCss, childStory);
+      const suite = extractSnapshots(filePath, _commonCss, childStory);
+      const finalFilePath = `-/${filePath}`;
+      suite.__folderPath = path.dirname(finalFilePath);
+      extractedSnapshots[finalFilePath] = suite;
     });
     _snapshotSuiteDict = extractedSnapshots;
     childStory.info('extractor', 'Building tree...');
@@ -107,14 +110,14 @@ const buildFolderDict = (snapshotSuite: SnapshotSuiteDictT, story: StoryT): Fold
   const filePaths: Array<FilePathT> = Object.keys(snapshotSuite).sort();
 
   // Create root node
-  let curFolderPath: FolderPathT = '.';
+  let curFolderPath: FolderPathT = '-';
   let curFolder: FolderT = {
-    folderPath: '.',
+    folderPath: '-',
     filePaths: [],
     parentFolderPath: null,
     childrenFolderPaths: [],
   };
-  out['.'] = curFolder;
+  out['-'] = curFolder;
 
   story.debug('extractor', 'Snapshot tree:', { attach: out });
 
@@ -128,7 +131,7 @@ const buildFolderDict = (snapshotSuite: SnapshotSuiteDictT, story: StoryT): Fold
       let parentFolderPath = folderPath;
       let fFound = false;
       while (!fFound) {
-        if (parentFolderPath === '.') break;
+        if (parentFolderPath === '-') break;
         parentFolderPath = path.dirname(parentFolderPath);
         if (out[parentFolderPath]) {
           fFound = true;

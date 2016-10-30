@@ -168,6 +168,7 @@ const specs = {
     'react-dom': '15.3.2',
     'react-frame-component': '0.6.6',
     'react-addons-pure-render-mixin': '15.3.2',
+    'react-router': '4.0.0-alpha.5',
     giu: '0.8.0',
     moment: '^2.0.0',
 

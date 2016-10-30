@@ -73,6 +73,11 @@ function init(options: {|
   // Static assets
   expressApp.use(express.static(ABS_ASSET_PATH));
 
+  // All other routes
+  expressApp.use('*', (req, res) => {
+    res.sendFile(path.join(ABS_ASSET_PATH, 'index.html'));
+  });
+
   // Create HTTP server
   const httpServer = http.createServer(expressApp);
 

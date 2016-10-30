@@ -9,6 +9,8 @@
     - [x] Group snapshots that belong together
     - [x] Isolate CSS and HTML in an iframe
     - [ ] ROUTER!!
+      - [ ] Extract further from App
+    - [ ] Encode URLs
     - [ ] ?? Keyboard shortcuts
 - [ ] Remove moment (if unneeded)
 - [ ] Documentation

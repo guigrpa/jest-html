@@ -1,6 +1,7 @@
 // @flow
 
 import React from 'react';
+import { Link } from 'react-router';
 import { Icon, flexContainer, flexItem } from 'giu';
 
 // ==========================================
@@ -9,7 +10,7 @@ import { Icon, flexContainer, flexItem } from 'giu';
 type PropsT = {
   title: any,
   subtitle: ?string,
-  onBack: ?(ev: SyntheticEvent) => void,
+  linkBack: ?string,
   children?: any,
 };
 
@@ -19,28 +20,29 @@ type PropsT = {
 const Sidebar = ({
   title,
   subtitle,
-  onBack,
+  linkBack,
   children,
-}: PropsT) => (
-  <div style={style.outer}>
-    <div style={style.titleBar}>
-      <div style={flexItem('0 0 30px')}>
-        <Icon
-          icon="chevron-left"
-          size="lg"
-          onClick={onBack}
-          disabled={onBack == null}
-          style={style.back}
-        />
+}: PropsT) => {
+  return (
+    <div style={style.outer}>
+      <div style={style.titleBar}>
+        <div style={flexItem('0 0 30px')}>
+          <Link
+            to={linkBack || '#'}
+            style={style.back}
+          >
+            <Icon icon="chevron-left" size="lg" disabled={linkBack == null} />
+          </Link>
+        </div>
+        <div style={style.title} title={subtitle}>
+          {title}
+        </div>
+        <div style={flexItem('0 1 30px')} />
       </div>
-      <div style={style.title} title={subtitle}>
-        {title}
-      </div>
-      <div style={flexItem('0 1 30px')} />
+      {children}
     </div>
-    {children}
-  </div>
-);
+  );
+};
 
 // ------------------------------------------
 const style = {
@@ -55,9 +57,11 @@ const style = {
   back: {
     margin: '0.3em',
     padding: '0.3em',
+    color: 'currentColor',
   },
   titleBar: flexContainer('row', {
     alignItems: 'baseline',
+    marginTop: '0.3em',
     marginBottom: '0.6em',
   }),
   title: flexItem(1, {

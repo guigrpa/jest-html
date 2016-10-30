@@ -15,4 +15,7 @@ export type FolderT = {
   childrenFolderPaths: Array<FolderPathT>,
 };
 
-export type SnapshotSuiteT = { [id: string]: SnapshotT };
+export type SnapshotSuiteT = {
+  __folderPath: FolderPathT,
+  [id: string]: SnapshotT,
+};

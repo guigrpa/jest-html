@@ -1,6 +1,7 @@
 // @flow
 
 import React from 'react';
+import { Link } from 'react-router';
 import { Icon, hoverable, flexContainer, flexItem } from 'giu';
 
 // ==========================================
@@ -10,7 +11,7 @@ type PropsT = {
   id: string,
   label: string,
   icon: string,
-  onClick: (ev: SyntheticEvent) => void,
+  link: string,
   fSelected: boolean,
   // hoverable HOC
   onHoverStart: Function,
@@ -25,7 +26,7 @@ const SidebarItem = ({
   id,
   label,
   icon,
-  onClick,
+  link,
   fSelected,
   hovering,
   onHoverStart,
@@ -33,9 +34,9 @@ const SidebarItem = ({
 }: PropsT) => {
   const fHovered = hovering === id;
   return (
-    <div
+    <Link
       id={id}
-      onClick={onClick}
+      to={link}
       style={style.outer({ fSelected, fHovered })}
       onMouseEnter={onHoverStart}
       onMouseLeave={onHoverStop}
@@ -46,7 +47,7 @@ const SidebarItem = ({
       <div style={flexItem(1)}>
         {label}
       </div>
-    </div>
+    </Link>
   );
 };
 
@@ -78,10 +79,11 @@ const style = {
     return flexContainer('row', {
       padding: '0.3em 1em',
       cursor: 'pointer',
-      color: fSelected ? 'white' : undefined,
+      color: fSelected ? 'white' : 'currentColor',
       backgroundColor,
       wordBreak: 'break-word',
       alignItems: 'center',
+      textDecoration: 'none',
     });
   },
   group: {

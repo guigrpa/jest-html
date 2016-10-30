@@ -3,10 +3,9 @@
 /* eslint-env browser */
 import React from 'react';
 import {
-  Floats, Hints, Notifications,
+  Floats,
   Spinner, Icon,
   flexContainer,
-  hoverable,
 } from 'giu';
 import type {
   FolderT,
@@ -36,9 +35,10 @@ const snapshotName = (id) => {
 // ==========================================
 type SidebarTypeT = 'folder' | 'suite';
 type PropsT = {
-  onHoverStart: Function,
-  onHoverStop: Function,
-  hovering: any,
+  pathname: string,
+  pattern: string,
+  params: any,
+  location: Object,
 };
 
 // ==========================================
@@ -50,7 +50,6 @@ class App extends React.Component {
     sidebarItemType: ?SidebarTypeT,
     sidebarItem: ?(FolderT | SnapshotSuiteT),
     sidebarItemPath: ?string,
-    lastFolder: ?FolderT,
     snapshot: ?SnapshotT,
     error: ?string,
   };
@@ -61,14 +60,41 @@ class App extends React.Component {
       sidebarItemType: null,
       sidebarItem: null,
       sidebarItemPath: null,
-      lastFolder: null,
       snapshot: null,
       error: null,
     };
   }
 
   componentDidMount() {
-    this.goToFolder('.');
+    this.fetchSidebarData(undefined, this.props);
+    this.fetchSnapshotData(undefined, this.props);
+  }
+
+  componentWillUpdate(nextProps: PropsT) {
+    this.fetchSidebarData(this.props, nextProps);
+    this.fetchSnapshotData(this.props, nextProps);
+  }
+
+  fetchSidebarData(prevProps?: PropsT, nextProps: PropsT) {
+    const { pathname, pattern, params } = nextProps;
+    if (prevProps != null && pathname === prevProps.pathname) return;
+    if (pathname === '/') {
+      this.goToFolder('-');
+    } else if (pattern.indexOf('/folder') === 0) {
+      this.goToFolder(params[0]);
+    } else if (pattern.indexOf('/suite') === 0) {
+      this.goToSuite(params[0]);
+    }
+  }
+
+  fetchSnapshotData(prevProps?: PropsT, nextProps: PropsT) {
+    const { location } = nextProps;
+    if (prevProps != null && location.query === prevProps.location.query) return;
+    if (!location.query || !this.state.sidebarItem) {
+      this.setState({ snapshot: null });
+      return;
+    }
+    this.setState({ snapshot: this.state.sidebarItem[location.query.id] });
   }
 
   // ------------------------------------------
@@ -85,30 +111,16 @@ class App extends React.Component {
     return (
       <div style={style.outer}>
         <Floats />
-        <Notifications />
-        <Hints />
         {this.renderSidebar()}
         {this.renderPreview()}
       </div>
     );
   }
 
-  renderPreview() {
-    const key = this.state.snapshot
-      ? `${this.state.sidebarItemPath}_${this.state.snapshot.id}`
-      : 'preview';
-    return (
-      <Preview
-        key={key}
-        snapshot={this.state.snapshot}
-      />
-    );
-  }
-
   renderSidebar() {
     const fFolder = this.state.sidebarItemType === 'folder';
     const { sidebarItemPath } = this.state;
-    const { contents, onBack } = fFolder ? this.renderFolder() : this.renderSuite();
+    const { contents, linkBack } = fFolder ? this.renderFolder() : this.renderSuite();
     let title;
     if (fFolder) {
       const folder: FolderT = (this.state.sidebarItem: any);
@@ -129,7 +141,7 @@ class App extends React.Component {
       );
     }
     return (
-      <Sidebar title={title} subtitle={sidebarItemPath} onBack={onBack}>
+      <Sidebar title={title} subtitle={sidebarItemPath} linkBack={linkBack}>
         {contents}
       </Sidebar>
     );
@@ -137,16 +149,15 @@ class App extends React.Component {
 
   renderFolder() {
     const folder: FolderT = (this.state.sidebarItem: any);
-    const out = [];
-    const fRoot = !folder.parentFolderPath;
-    const onBack = fRoot ? undefined : () => this.goToFolder(folder.parentFolderPath);
+    const contents = [];
     folder.childrenFolderPaths.forEach((folderPath) => {
       const id = `folder_${folderPath}`;
-      out.push(
+      contents.push(
         <SidebarItem
           key={id}
           id={id}
           label={breakAtSlashes(folderPath)}
+          link={`/folder/${folderPath}`}
           icon="folder-o"
           onClick={() => this.goToFolder(folderPath)}
           fSelected={false}
@@ -155,28 +166,30 @@ class App extends React.Component {
     });
     folder.filePaths.forEach((filePath) => {
       const id = `suite_${filePath}`;
-      out.push(
+      contents.push(
         <SidebarItem
           key={id}
           id={id}
           label={breakAtSlashes(filePath)}
+          link={`/suite/${filePath}`}
           icon="file-o"
           onClick={() => this.goToSuite(filePath)}
           fSelected={false}
         />
       );
     });
-    return { contents: out, onBack };
+    const linkBack = folder.parentFolderPath != null
+      ? `/folder/${folder.parentFolderPath}`
+      : null;
+    return { contents, linkBack };
   }
 
   renderSuite() {
     const suite: SnapshotSuiteT = (this.state.sidebarItem: any);
-    if (this.state.lastFolder == null) return { contents: null, onBack: null };
-    const { folderPath } = this.state.lastFolder;
-    const onBack = () => this.goToFolder(folderPath);
     const contents = [];
     const groups = {};
     Object.keys(suite).forEach((id) => {
+      if (id === '__folderPath') return;
       const name = snapshotName(id);
       const snapshot = suite[id];
       if (groups[name]) {
@@ -194,6 +207,7 @@ class App extends React.Component {
             key={id}
             id={id}
             label={snapshotName(id)}
+            link={`/suite/${this.state.sidebarItemPath}?id=${id}`}
             icon="camera"
             onClick={() => this.setState({ snapshot: suite[id] })}
             fSelected={!!this.state.snapshot && this.state.snapshot.id === id}
@@ -205,6 +219,7 @@ class App extends React.Component {
             key={id}
             id={id}
             label={id.slice(name.length).trim()}
+            link={`/suite/${this.state.sidebarItemPath}?id=${id}`}
             icon="camera"
             onClick={() => this.setState({ snapshot: suite[id] })}
             fSelected={!!this.state.snapshot && this.state.snapshot.id === id}
@@ -217,7 +232,20 @@ class App extends React.Component {
         );
       }
     });
-    return { contents, onBack };
+    const linkBack = `/folder/${suite.__folderPath}`;
+    return { contents, linkBack };
+  }
+
+  renderPreview() {
+    const key = this.state.snapshot
+      ? `${this.state.sidebarItemPath}_${this.state.snapshot.id}`
+      : 'preview';
+    return (
+      <Preview
+        key={key}
+        snapshot={this.state.snapshot}
+      />
+    );
   }
 
   // ------------------------------------------
@@ -233,13 +261,13 @@ class App extends React.Component {
         sidebarItemType: 'folder',
         sidebarItem: folder,
         sidebarItemPath: folderPath,
-        lastFolder: folder,
         snapshot: null,
       });
     });
   }
 
   goToSuite(filePath: string) {
+    const { query } = this.props.location;
     fetch('/api/suite', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
@@ -251,7 +279,7 @@ class App extends React.Component {
         sidebarItemType: 'suite',
         sidebarItem: suite,
         sidebarItemPath: filePath,
-        snapshot: null,
+        snapshot: query ? suite[query.id] : null,
       });
     });
   }
@@ -270,4 +298,4 @@ const style = {
 // ==========================================
 // Public API
 // ==========================================
-export default hoverable(App);
+export default App;
