@@ -166,6 +166,7 @@ const specs = {
     // Bundled
     react: '15.3.2',
     'react-dom': '15.3.2',
+    'react-frame-component': '0.6.6',
     'react-addons-pure-render-mixin': '15.3.2',
     giu: '0.8.0',
     moment: '^2.0.0',

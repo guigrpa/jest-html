@@ -4725,6 +4725,12 @@ react-dom@15.3.2:
   version "15.3.2"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-15.3.2.tgz#c46b0aa5380d7b838e7a59c4a7beff2ed315531f"
 
+react-frame-component:
+  version "0.6.6"
+  resolved "https://registry.yarnpkg.com/react-frame-component/-/react-frame-component-0.6.6.tgz#f86ccab8d8c2feb4606cfda17ec65ca8ace84e36"
+  dependencies:
+    object-assign "^4.1.0"
+
 react-sortable-hoc@0.0.8:
   version "0.0.8"
   resolved "https://registry.yarnpkg.com/react-sortable-hoc/-/react-sortable-hoc-0.0.8.tgz#12f388179ec50c812e2fe5edfbc5ce57e6bfd83c"

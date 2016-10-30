@@ -1,0 +1,8 @@
+/* CSS in this file, as well as in any other file
+  under the --css-patterns pattern, will be included
+  with every snapshot */
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}

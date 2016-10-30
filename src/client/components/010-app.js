@@ -4,8 +4,8 @@
 import React from 'react';
 import {
   Floats, Hints, Notifications,
-  Spinner, LargeMessage, Icon,
-  flexContainer, flexItem,
+  Spinner, Icon,
+  flexContainer,
   hoverable,
 } from 'giu';
 import type {
@@ -13,10 +13,23 @@ import type {
   SnapshotSuiteT,
   SnapshotT,
 } from '../../common/types';
+import Sidebar from './110-sidebar';
+import SidebarItem, { SidebarGroup } from './115-sidebarItem';
+import Preview from './120-preview';
+import LargeMessage from './200-largeMessage';
 
 require('./010-app.sass');
 
 const breakAtSlashes = (str) => str.replace(/\//g, '/\u200B');
+const lastSegment = (path) => {
+  if (!path) return '';
+  const segments = path.split('/');
+  return segments[segments.length - 1];
+};
+const snapshotName = (id) => {
+  const segments = id.split(' ');
+  return segments.slice(0, segments.length - 1).join(' ');
+};
 
 // ==========================================
 // Component declarations
@@ -36,6 +49,7 @@ class App extends React.Component {
   state: {
     sidebarItemType: ?SidebarTypeT,
     sidebarItem: ?(FolderT | SnapshotSuiteT),
+    sidebarItemPath: ?string,
     lastFolder: ?FolderT,
     snapshot: ?SnapshotT,
     error: ?string,
@@ -46,6 +60,7 @@ class App extends React.Component {
     this.state = {
       sidebarItemType: null,
       sidebarItem: null,
+      sidebarItemPath: null,
       lastFolder: null,
       snapshot: null,
       error: null,
@@ -78,120 +93,131 @@ class App extends React.Component {
     );
   }
 
+  renderPreview() {
+    const key = this.state.snapshot
+      ? `${this.state.sidebarItemPath}_${this.state.snapshot.id}`
+      : 'preview';
+    return (
+      <Preview
+        key={key}
+        snapshot={this.state.snapshot}
+      />
+    );
+  }
+
   renderSidebar() {
-    let contents;
-    if (this.state.sidebarItemType === 'folder') {
-      contents = this.renderFolder();
+    const fFolder = this.state.sidebarItemType === 'folder';
+    const { sidebarItemPath } = this.state;
+    const { contents, onBack } = fFolder ? this.renderFolder() : this.renderSuite();
+    let title;
+    if (fFolder) {
+      const folder: FolderT = (this.state.sidebarItem: any);
+      title = folder.parentFolderPath != null
+      ? <span>
+          <Icon icon="folder-open-o" style={style.titleBarIcon} />&nbsp;
+          {lastSegment(sidebarItemPath)}
+        </span>
+      : <span>
+          <Icon icon="home" style={style.titleBarIcon} />&nbsp;Root
+        </span>;
     } else {
-      contents = this.renderSuite();
+      title = (
+        <span>
+          <Icon icon="file-o" style={style.titleBarIcon} />&nbsp;
+          {lastSegment(sidebarItemPath).split('.')[0]}
+        </span>
+      );
     }
-    return <div style={style.sidebar}>{contents}</div>;
+    return (
+      <Sidebar title={title} subtitle={sidebarItemPath} onBack={onBack}>
+        {contents}
+      </Sidebar>
+    );
   }
 
   renderFolder() {
     const folder: FolderT = (this.state.sidebarItem: any);
     const out = [];
-    if (folder.parentFolderPath) {
-      out.push(
-        <Icon
-          key={`folder_${folder.parentFolderPath}`}
-          icon="chevron-left"
-          onClick={() => this.goToFolder(folder.parentFolderPath)}
-          style={style.back}
-        />
-      );
-    }
+    const fRoot = !folder.parentFolderPath;
+    const onBack = fRoot ? undefined : () => this.goToFolder(folder.parentFolderPath);
     folder.childrenFolderPaths.forEach((folderPath) => {
       const id = `folder_${folderPath}`;
-      const fHovered = this.props.hovering === id;
       out.push(
-        <div
+        <SidebarItem
           key={id}
           id={id}
+          label={breakAtSlashes(folderPath)}
+          icon="folder-o"
           onClick={() => this.goToFolder(folderPath)}
-          style={style.key({ fHovered })}
-          onMouseEnter={this.props.onHoverStart}
-          onMouseLeave={this.props.onHoverStop}
-        >
-          <Icon icon="folder-o" />&nbsp;
-          {breakAtSlashes(folderPath)}
-        </div>
+          fSelected={false}
+        />
       );
     });
     folder.filePaths.forEach((filePath) => {
       const id = `suite_${filePath}`;
-      const fHovered = this.props.hovering === id;
       out.push(
-        <div
+        <SidebarItem
           key={id}
           id={id}
+          label={breakAtSlashes(filePath)}
+          icon="file-o"
           onClick={() => this.goToSuite(filePath)}
-          style={style.key({ fHovered })}
-          onMouseEnter={this.props.onHoverStart}
-          onMouseLeave={this.props.onHoverStop}
-        >
-          <Icon icon="file-o" />&nbsp;
-          {breakAtSlashes(filePath)}
-        </div>
+          fSelected={false}
+        />
       );
     });
-    return out;
+    return { contents: out, onBack };
   }
 
   renderSuite() {
     const suite: SnapshotSuiteT = (this.state.sidebarItem: any);
-    const out = [];
-    if (this.state.lastFolder != null) {
-      const { folderPath } = this.state.lastFolder;
-      out.push(
-        <Icon
-          key="__BACK__"
-          icon="chevron-left"
-          onClick={() => this.goToFolder(folderPath)}
-          style={style.back}
-        />
-      );
-    }
+    if (this.state.lastFolder == null) return { contents: null, onBack: null };
+    const { folderPath } = this.state.lastFolder;
+    const onBack = () => this.goToFolder(folderPath);
+    const contents = [];
+    const groups = {};
     Object.keys(suite).forEach((id) => {
-      const fSelected = !!this.state.snapshot && this.state.snapshot.id === id;
-      const fHovered = this.props.hovering === id;
-      out.push(
-        <div
-          key={id}
-          id={id}
-          onClick={() => this.setState({ snapshot: suite[id] })}
-          style={style.key({ fSelected, fHovered })}
-          onMouseEnter={this.props.onHoverStart}
-          onMouseLeave={this.props.onHoverStop}
-        >
-          <Icon icon="camera" />&nbsp;
-          {id}
-        </div>
-      );
+      const name = snapshotName(id);
+      const snapshot = suite[id];
+      if (groups[name]) {
+        groups[name].snapshots.push(snapshot);
+      } else {
+        groups[name] = { snapshots: [snapshot] };
+      }
     });
-    return out;
-  }
-
-  renderPreview() {
-    const { snapshot } = this.state;
-    if (!snapshot) {
-      return (
-        <div style={style.preview}>
-          <LargeMessage>No snapshot selected</LargeMessage>
-        </div>
-      );
-    }
-    if (!snapshot.html) {
-      return (
-        <div style={style.preview}>
-          <pre style={style.previewNonHtml}>{snapshot.snap}</pre>
-        </div>
-      );
-    }
-    const contents = { __html: snapshot.html };
-    /* eslint-disable react/no-danger */
-    return <div style={style.preview} dangerouslySetInnerHTML={contents} />;
-    /* eslint-enable react/no-danger */
+    Object.keys(groups).forEach((name) => {
+      const { snapshots } = groups[name];
+      if (snapshots.length === 1) {
+        const { id } = snapshots[0];
+        contents.push(
+          <SidebarItem
+            key={id}
+            id={id}
+            label={snapshotName(id)}
+            icon="camera"
+            onClick={() => this.setState({ snapshot: suite[id] })}
+            fSelected={!!this.state.snapshot && this.state.snapshot.id === id}
+          />
+        );
+      } else {
+        const items = snapshots.map(({ id }) =>
+          <SidebarItem
+            key={id}
+            id={id}
+            label={id.slice(name.length).trim()}
+            icon="camera"
+            onClick={() => this.setState({ snapshot: suite[id] })}
+            fSelected={!!this.state.snapshot && this.state.snapshot.id === id}
+          />
+        );
+        contents.push(
+          <SidebarGroup key={name} name={name}>
+            {items}
+          </SidebarGroup>
+        );
+      }
+    });
+    return { contents, onBack };
   }
 
   // ------------------------------------------
@@ -206,6 +232,7 @@ class App extends React.Component {
       this.setState({
         sidebarItemType: 'folder',
         sidebarItem: folder,
+        sidebarItemPath: folderPath,
         lastFolder: folder,
         snapshot: null,
       });
@@ -223,6 +250,7 @@ class App extends React.Component {
       this.setState({
         sidebarItemType: 'suite',
         sidebarItem: suite,
+        sidebarItemPath: filePath,
         snapshot: null,
       });
     });
@@ -234,41 +262,8 @@ const style = {
   outer: flexContainer('row', {
     height: '100vh',
   }),
-  sidebar: flexItem('0 0 18em', {
-    padding: '0.3em 0',
-    backgroundColor: '#eee',
-    fontFamily: 'sans-serif',
-    fontSize: '0.8em',
-    overflow: 'auto',
-  }),
-  preview: flexItem(1, {
-    transform: 'translateZ(0)',  // isolate it!
-  }),
-  previewNonHtml: {
-    padding: 10,
-  },
-  key: ({ fSelected, fHovered }: {
-    fSelected?: boolean,
-    fHovered?: boolean,
-  }) => {
-    let backgroundColor;
-    if (fSelected && fHovered) {
-      backgroundColor = '#ba360a';
-    } else if (fHovered) {
-      backgroundColor = '#ddd';
-    } else if (fSelected) {
-      backgroundColor = '#ca461a';
-    }
-    return {
-      padding: '0.3em 1em',
-      cursor: 'pointer',
-      color: fSelected ? 'white' : undefined,
-      backgroundColor,
-      wordBreak: 'break-word',
-    };
-  },
-  back: {
-    padding: '0.3em',
+  titleBarIcon: {
+    cursor: 'default',
   },
 };
 

@@ -1,14 +1,14 @@
-- [ ] Initial server app
-- [x] Initial client app
 - [ ] Server: refresh (watch? manually from the client?)
-- [ ] Server:
-    - [ ] Custom CSSs:
-        - [ ] Common to all snapshots
-        - [ ] Common to all in a folder
-        - [ ] Specific to a given suite
+- [x] Server:
+    - [x] Custom CSSs:
+        - [x] Common to all snapshots
+        - [ ] ?? Common to all in a folder
+        - [x] Specific to a given suite
 - [ ] Client:
-    - [ ] Add fetch polyfill
-    - [ ] Navigation: add titles+back bar and improve componentization
-    - [ ] Group snapshots that belong together
+    - [x] Navigation: add titles+back bar and improve componentization
+    - [x] Group snapshots that belong together
+    - [x] Isolate CSS and HTML in an iframe
+    - [ ] ROUTER!!
     - [ ] ?? Keyboard shortcuts
 - [ ] Remove moment (if unneeded)
+- [ ] Documentation

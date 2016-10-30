@@ -11,9 +11,12 @@ config({ filter: 'extractor:INFO,*:DEBUG' });
 const pkg = require('../../package.json');
 
 const DEFAULT_PORT = 8080;
-const DEFAULT_FILE_PATTERNS = [
+const DEFAULT_SNAPSHOT_PATTERNS = [
   '**/*.snap',
   '!node_modules/**/*',
+];
+const DEFAULT_CSS_PATTERNS = [
+  'snapshot.css',
 ];
 
 process.on('SIGINT', () => {
@@ -26,7 +29,10 @@ process.on('SIGINT', () => {
 // ==============================================
 program
   .version(pkg.version)
-  .option('-f --file-patterns [patterns]', 'Glob patterns for snapshot files', DEFAULT_FILE_PATTERNS)
+  .option('-f --snapshot-patterns [patterns]', 'Glob patterns for snapshot files',
+    DEFAULT_SNAPSHOT_PATTERNS)
+  .option('-c --css-patterns [patterns]', 'Glob patterns for CSS stylesheets ' +
+    'that will be used for ALL snapshots', DEFAULT_CSS_PATTERNS)
   .option('-p, --port [port]', 'Initial port number to use ' +
     '(if unavailable, the next available one will be used)', Number, DEFAULT_PORT)
   .parse(process.argv);
@@ -42,7 +48,8 @@ const httpInit = () =>
 
 const extractorInit = () => {
   extractor.configure({
-    filePatterns: cliOptions.filePatterns,
+    snapshotPatterns: cliOptions.snapshotPatterns,
+    cssPatterns: cliOptions.cssPatterns,
   });
   return extractor.refresh();
 };

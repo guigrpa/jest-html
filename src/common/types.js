@@ -2,6 +2,7 @@ export type SnapshotT = {
   id: string,
   snap: string,
   html: string,
+  css: Array<string>,
 };
 
 export type FilePathT = string;
