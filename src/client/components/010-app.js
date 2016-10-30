@@ -35,9 +35,11 @@ const snapshotName = (id) => {
 // ==========================================
 type SidebarTypeT = 'folder' | 'suite';
 type PropsT = {
+  /* eslint-disable react/no-unused-prop-types */
   pathname: string,
   pattern: string,
   params: any,
+  /* eslint-enable react/no-unused-prop-types */
   location: Object,
 };
 
