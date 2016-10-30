@@ -186,6 +186,7 @@ class App extends React.Component {
 
   renderSuite() {
     const suite: SnapshotSuiteT = (this.state.sidebarItem: any);
+    const sidebarItemPath: string = (this.state.sidebarItemPath: any);
     const contents = [];
     const groups = {};
     Object.keys(suite).forEach((id) => {
@@ -207,7 +208,7 @@ class App extends React.Component {
             key={id}
             id={id}
             label={snapshotName(id)}
-            link={`/suite/${this.state.sidebarItemPath}?id=${id}`}
+            link={`/suite/${sidebarItemPath}?id=${id}`}
             icon="camera"
             onClick={() => this.setState({ snapshot: suite[id] })}
             fSelected={!!this.state.snapshot && this.state.snapshot.id === id}
@@ -219,7 +220,7 @@ class App extends React.Component {
             key={id}
             id={id}
             label={id.slice(name.length).trim()}
-            link={`/suite/${this.state.sidebarItemPath}?id=${id}`}
+            link={`/suite/${sidebarItemPath}?id=${id}`}
             icon="camera"
             onClick={() => this.setState({ snapshot: suite[id] })}
             fSelected={!!this.state.snapshot && this.state.snapshot.id === id}

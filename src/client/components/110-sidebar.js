@@ -22,27 +22,24 @@ const Sidebar = ({
   subtitle,
   linkBack,
   children,
-}: PropsT) => {
-  return (
-    <div style={style.outer}>
-      <div style={style.titleBar}>
-        <div style={flexItem('0 0 30px')}>
-          <Link
-            to={linkBack || '#'}
-            style={style.back}
-          >
-            <Icon icon="chevron-left" size="lg" disabled={linkBack == null} />
-          </Link>
-        </div>
-        <div style={style.title} title={subtitle}>
-          {title}
-        </div>
-        <div style={flexItem('0 1 30px')} />
+}: PropsT) =>
+  <div style={style.outer}>
+    <div style={style.titleBar}>
+      <div style={flexItem('0 0 30px')}>
+        <Link
+          to={linkBack || '#'}
+          style={style.back}
+        >
+          <Icon icon="chevron-left" size="lg" disabled={linkBack == null} />
+        </Link>
       </div>
-      {children}
+      <div style={style.title} title={subtitle}>
+        {title}
+      </div>
+      <div style={flexItem('0 1 30px')} />
     </div>
-  );
-};
+    {children}
+  </div>;
 
 // ------------------------------------------
 const style = {
@@ -61,8 +58,8 @@ const style = {
   },
   titleBar: flexContainer('row', {
     alignItems: 'baseline',
-    marginTop: '0.3em',
-    marginBottom: '0.6em',
+    marginTop: '0.4em',
+    marginBottom: '1.1em',
   }),
   title: flexItem(1, {
     textAlign: 'center',
