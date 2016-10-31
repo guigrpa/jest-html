@@ -109,7 +109,6 @@ const specs = {
                                   'npm run testCovPrepare',
                                   'npm run testDev',
                                   'npm run testProd',
-                                  // 'npm run testMin',
                                   'npm run testCovReport',
                                 ]),
     testCovFullExceptMin:       runMultiple([
