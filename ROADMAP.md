@@ -15,4 +15,5 @@
 - [x] Throttle server refresh!! 
 - [ ] ?? Don't do a full refresh
 - [ ] Remove moment (if unneeded)
+- [ ] Add font-awesome to example snapshots
 - [ ] Documentation

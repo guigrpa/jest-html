@@ -1082,3 +1082,12 @@ exports[`Settings renders correctly 1`] = `
     </div>
   </div>
 `;
+
+exports[`Settings renders correctly 2`] = ``;
+
+exports[`Settings allows changing the UI language 1`] = ``;
+exports[`Settings allows changing languages 1`] = ``;
+exports[`Settings allows configuring source paths 1`] = ``;
+exports[`Settings allows configuring source extensions 1`] = ``;
+exports[`Settings allows configuring message translation functions 1`] = ``;
+exports[`Settings allows configuring output type 1`] = ``;

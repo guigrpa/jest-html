@@ -21,7 +21,10 @@ import LargeMessage from './200-largeMessage';
 
 require('./010-app.sass');
 
+/* eslint-disable no-unused-vars */
 const breakAtSlashes = (str) => str.replace(/\//g, '/\u200B');
+const breakAtDots = (str) => str.replace(/\./g, '.\u200B');
+/* eslint-enable no-unused-vars */
 const lastSegment = (path) => {
   if (!path) return '';
   const segments = path.split('/');
@@ -169,7 +172,7 @@ class App extends React.Component {
         <SidebarItem
           key={id}
           id={id}
-          label={breakAtSlashes(folderPath)}
+          label={breakAtDots(lastSegment(folderPath))}
           link={`/folder/${folderPath}`}
           icon="folder-o"
           fSelected={false}
@@ -182,7 +185,7 @@ class App extends React.Component {
         <SidebarItem
           key={id}
           id={id}
-          label={breakAtSlashes(filePath)}
+          label={breakAtDots(lastSegment(filePath))}
           link={`/suite/${filePath}`}
           icon="file-o"
           fSelected={false}
