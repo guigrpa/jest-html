@@ -2,15 +2,17 @@
 
 /* eslint-env browser */
 import React from 'react';
+import { Redirect } from 'react-router';
+import socketio from 'socket.io-client';
 import {
   Floats,
-  Spinner, Icon,
+  Spinner, Icon, Button,
   flexContainer,
+  bindAll,
 } from 'giu';
 import type {
   FolderT,
   SnapshotSuiteT,
-  SnapshotT,
 } from '../../common/types';
 import Sidebar from './110-sidebar';
 import SidebarItem, { SidebarGroup } from './115-sidebarItem';
@@ -30,10 +32,13 @@ const snapshotName = (id) => {
   return segments.slice(0, segments.length - 1).join(' ');
 };
 
+const socket = socketio.connect();
+
+
 // ==========================================
 // Component declarations
 // ==========================================
-type SidebarTypeT = 'folder' | 'suite';
+type SidebarTypeT = 'FOLDER' | 'SUITE';
 type PropsT = {
   /* eslint-disable react/no-unused-prop-types */
   pathname: string,
@@ -49,67 +54,73 @@ type PropsT = {
 class App extends React.Component {
   props: PropsT;
   state: {
-    sidebarItemType: ?SidebarTypeT,
-    sidebarItem: ?(FolderT | SnapshotSuiteT),
-    sidebarItemPath: ?string,
-    snapshot: ?SnapshotT,
+    // sidebar item: currently fetched item
+    fetchedItemType: ?SidebarTypeT,
+    fetchedItem: ?(FolderT | SnapshotSuiteT),
+    fetchedItemPath: ?string,
     error: ?string,
+    fRedirectToRoot: boolean,
   };
+  socket: Object;
 
   constructor(props: PropsT) {
     super(props);
     this.state = {
-      sidebarItemType: null,
-      sidebarItem: null,
-      sidebarItemPath: null,
-      snapshot: null,
+      fetchedItemType: null,
+      fetchedItem: null,
+      fetchedItemPath: null,
       error: null,
+      fRedirectToRoot: false,
     };
+    bindAll(this, ['refetch']);
   }
 
   componentDidMount() {
     this.fetchSidebarData(undefined, this.props);
-    this.fetchSnapshotData(undefined, this.props);
+    socket.on('REFRESH', this.refetch);
+  }
+
+  componentWillUnmount() {
+    socket.off('REFRESH', this.refetch);
   }
 
   componentWillUpdate(nextProps: PropsT) {
     this.fetchSidebarData(this.props, nextProps);
-    this.fetchSnapshotData(this.props, nextProps);
   }
 
   fetchSidebarData(prevProps?: PropsT, nextProps: PropsT) {
     const { pathname, pattern, params } = nextProps;
     if (prevProps != null && pathname === prevProps.pathname) return;
     if (pathname === '/') {
-      this.goToFolder('-');
+      this.fetchFolder('-');
     } else if (pattern.indexOf('/folder') === 0) {
-      this.goToFolder(params[0]);
+      this.fetchFolder(params[0]);
     } else if (pattern.indexOf('/suite') === 0) {
-      this.goToSuite(params[0]);
+      this.fetchSuite(params[0]);
     }
-  }
-
-  fetchSnapshotData(prevProps?: PropsT, nextProps: PropsT) {
-    const { location } = nextProps;
-    if (prevProps != null && location.query === prevProps.location.query) return;
-    if (!location.query || !this.state.sidebarItem) {
-      this.setState({ snapshot: null });
-      return;
-    }
-    this.setState({ snapshot: this.state.sidebarItem[location.query.id] });
   }
 
   // ------------------------------------------
   render() {
+    if (this.state.fRedirectToRoot) {
+      return <Redirect to="/" />;
+    }
     if (this.state.error) {
       return (
         <LargeMessage>
-          <b>An error occurred:</b><br />
-          {this.state.error}
+          <Icon icon="warning" disabled />{' '}<b>An error occurred:</b><br />
+          {this.state.error}<br />
+          <Button
+            onClick={() => this.setState({ fRedirectToRoot: true })}
+          >
+            <Icon icon="home" disabled />{' '}Home
+          </Button>
         </LargeMessage>
       );
     }
-    if (!this.state.sidebarItem) return <Spinner />;
+    if (!this.state.fetchedItem) {
+      return <LargeMessage><Spinner />&nbsp;Loading…</LargeMessage>;
+    }
     return (
       <div style={style.outer}>
         <Floats />
@@ -120,16 +131,16 @@ class App extends React.Component {
   }
 
   renderSidebar() {
-    const fFolder = this.state.sidebarItemType === 'folder';
-    const { sidebarItemPath } = this.state;
+    const fFolder = this.state.fetchedItemType === 'FOLDER';
+    const { fetchedItemPath } = this.state;
     const { contents, linkBack } = fFolder ? this.renderFolder() : this.renderSuite();
     let title;
     if (fFolder) {
-      const folder: FolderT = (this.state.sidebarItem: any);
+      const folder: FolderT = (this.state.fetchedItem: any);
       title = folder.parentFolderPath != null
       ? <span>
           <Icon icon="folder-open-o" style={style.titleBarIcon} />&nbsp;
-          {lastSegment(sidebarItemPath)}
+          {lastSegment(fetchedItemPath)}
         </span>
       : <span>
           <Icon icon="home" style={style.titleBarIcon} />&nbsp;Root
@@ -138,19 +149,19 @@ class App extends React.Component {
       title = (
         <span>
           <Icon icon="file-o" style={style.titleBarIcon} />&nbsp;
-          {lastSegment(sidebarItemPath).split('.')[0]}
+          {lastSegment(fetchedItemPath).split('.')[0]}
         </span>
       );
     }
     return (
-      <Sidebar title={title} subtitle={sidebarItemPath} linkBack={linkBack}>
+      <Sidebar title={title} subtitle={fetchedItemPath} linkBack={linkBack}>
         {contents}
       </Sidebar>
     );
   }
 
   renderFolder() {
-    const folder: FolderT = (this.state.sidebarItem: any);
+    const folder: FolderT = (this.state.fetchedItem: any);
     const contents = [];
     folder.childrenFolderPaths.forEach((folderPath) => {
       const id = `folder_${folderPath}`;
@@ -161,7 +172,6 @@ class App extends React.Component {
           label={breakAtSlashes(folderPath)}
           link={`/folder/${folderPath}`}
           icon="folder-o"
-          onClick={() => this.goToFolder(folderPath)}
           fSelected={false}
         />
       );
@@ -175,7 +185,6 @@ class App extends React.Component {
           label={breakAtSlashes(filePath)}
           link={`/suite/${filePath}`}
           icon="file-o"
-          onClick={() => this.goToSuite(filePath)}
           fSelected={false}
         />
       );
@@ -187,8 +196,9 @@ class App extends React.Component {
   }
 
   renderSuite() {
-    const suite: SnapshotSuiteT = (this.state.sidebarItem: any);
-    const sidebarItemPath: string = (this.state.sidebarItemPath: any);
+    const suite: SnapshotSuiteT = (this.state.fetchedItem: any);
+    const fetchedItemPath: string = (this.state.fetchedItemPath: any);
+    const { query } = this.props.location;
     const contents = [];
     const groups = {};
     Object.keys(suite).forEach((id) => {
@@ -210,10 +220,9 @@ class App extends React.Component {
             key={id}
             id={id}
             label={snapshotName(id)}
-            link={`/suite/${sidebarItemPath}?id=${id}`}
+            link={`/suite/${fetchedItemPath}?id=${id}`}
             icon="camera"
-            onClick={() => this.setState({ snapshot: suite[id] })}
-            fSelected={!!this.state.snapshot && this.state.snapshot.id === id}
+            fSelected={query && query.id === id}
           />
         );
       } else {
@@ -222,10 +231,9 @@ class App extends React.Component {
             key={id}
             id={id}
             label={id.slice(name.length).trim()}
-            link={`/suite/${sidebarItemPath}?id=${id}`}
+            link={`/suite/${fetchedItemPath}?id=${id}`}
             icon="camera"
-            onClick={() => this.setState({ snapshot: suite[id] })}
-            fSelected={!!this.state.snapshot && this.state.snapshot.id === id}
+            fSelected={query && query.id === id}
           />
         );
         contents.push(
@@ -240,19 +248,34 @@ class App extends React.Component {
   }
 
   renderPreview() {
-    const key = this.state.snapshot
-      ? `${this.state.sidebarItemPath}_${this.state.snapshot.id}`
-      : 'preview';
+    const { query } = this.props.location;
+    const { fetchedItemType, fetchedItemPath } = this.state;
+    let snapshot;
+    let key = 'preview';
+    if (fetchedItemType === 'SUITE' && query && query.id != null && fetchedItemPath) {
+      const suite: SnapshotSuiteT = (this.state.fetchedItem: any);
+      snapshot = suite[query.id];
+      key = `${fetchedItemPath}_${query.id}`;
+    }
     return (
       <Preview
         key={key}
-        snapshot={this.state.snapshot}
+        snapshot={snapshot}
       />
     );
   }
 
   // ------------------------------------------
-  goToFolder(folderPath: string) {
+  refetch() {
+    if (!this.state.fetchedItem) return;
+    if (this.state.fetchedItemType === 'FOLDER') {
+      this.fetchFolder(this.state.fetchedItemPath);
+    } else {
+      this.fetchSuite(this.state.fetchedItemPath);
+    }
+  }
+
+  fetchFolder(folderPath: string) {
     fetch('/api/folder', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
@@ -261,16 +284,19 @@ class App extends React.Component {
     .then((res) => res.json())
     .then((folder: FolderT) => {
       this.setState({
-        sidebarItemType: 'folder',
-        sidebarItem: folder,
-        sidebarItemPath: folderPath,
-        snapshot: null,
+        fetchedItemType: 'FOLDER',
+        fetchedItem: folder,
+        fetchedItemPath: folderPath,
+      });
+    })
+    .catch(() => {
+      this.setState({
+        error: `Could not find ${folderPath}`,
       });
     });
   }
 
-  goToSuite(filePath: string) {
-    const { query } = this.props.location;
+  fetchSuite(filePath: string) {
     fetch('/api/suite', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
@@ -279,10 +305,14 @@ class App extends React.Component {
     .then((res) => res.json())
     .then((suite: SnapshotSuiteT) => {
       this.setState({
-        sidebarItemType: 'suite',
-        sidebarItem: suite,
-        sidebarItemPath: filePath,
-        snapshot: query ? suite[query.id] : null,
+        fetchedItemType: 'SUITE',
+        fetchedItem: suite,
+        fetchedItemPath: filePath,
+      });
+    })
+    .catch(() => {
+      this.setState({
+        error: `Could not find ${filePath}`,
       });
     });
   }

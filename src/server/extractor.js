@@ -3,6 +3,7 @@
 import fs from 'fs';
 import path from 'path';
 import globby from 'globby';
+import sane from 'sane';
 import { clone, merge, addLast } from 'timm';
 import { mainStory, chalk } from 'storyboard';
 import type { StoryT } from 'storyboard';
@@ -17,6 +18,8 @@ import type {
 type ConfigT = {|
   snapshotPatterns: Array<string>,
   cssPatterns: Array<string>,
+  watch: boolean,
+  socketioServer: Object,
 |};
 
 type SnapshotSuiteDictT = { [filePath: FilePathT]: SnapshotSuiteT };
@@ -26,6 +29,7 @@ let _config: ConfigT;
 let _snapshotSuiteDict: SnapshotSuiteDictT = {};
 let _commonCss: Array<string> = [];
 let _folderDict: FolderDictT = {};
+let _watcher = null;
 
 const configure = (newConfig: $Shape<ConfigT>) => {
   if (!_config) {
@@ -35,7 +39,12 @@ const configure = (newConfig: $Shape<ConfigT>) => {
   _config = (merge(_config, newConfig): any);
 };
 
-const refresh = ({ story = mainStory }: { story: StoryT } = {}) => {
+const start = ({ story = mainStory }: { story: StoryT } = {}) => {
+  refresh(story);
+  if (_config.watch) watchStart(story);
+};
+
+const refresh = (story: StoryT = mainStory) => {
   const childStory = story.child({ src: 'extractor', title: 'Refresh snapshots' });
   return Promise.resolve()
   .then(() => extractCommonCss(_config, story).then((css) => { _commonCss = css; }))
@@ -54,6 +63,7 @@ const refresh = ({ story = mainStory }: { story: StoryT } = {}) => {
     _folderDict = buildFolderDict(_snapshotSuiteDict, childStory);
     childStory.debug('extractor', 'Snapshot tree:', { attach: _folderDict });
     childStory.close();
+    broadcastSignal();
   })
   .catch((err) => {
     childStory.close();
@@ -87,10 +97,7 @@ const extractSnapshots = (
     suiteCss = fs.readFileSync(cssPath, 'utf8');
     story.info('extractor', `Found custom CSS in ${chalk.cyan.bold(cssPath)}`);
   } catch (err) { /* no file exists */ }
-  /* eslint-disable global-require, import/no-dynamic-require */
-  // $FlowFixMe
-  const rawSnapshots = require(absPath);
-  /* eslint-enable global-require */
+  const rawSnapshots = loadSnapshot(absPath);
   const out: SnapshotSuiteT = {};
   Object.keys(rawSnapshots).forEach((id) => {
     const snapshot = rawSnapshots[id];
@@ -100,6 +107,13 @@ const extractSnapshots = (
   });
   story.debug('extractor', `Found ${Object.keys(rawSnapshots).length} snapshots`);
   return out;
+};
+
+const loadSnapshot = (absPath: string): Object => {
+  /* eslint-disable global-require, import/no-dynamic-require */
+  delete require.cache[require.resolve(absPath)];
+  return require(absPath);
+  /* eslint-enable global-require */
 };
 
 const buildFolderDict = (snapshotSuite: SnapshotSuiteDictT, story: StoryT): FolderDictT => {
@@ -160,12 +174,35 @@ const getCssPathForSuite = (filePath: FilePathT): string => {
   return path.join(dir, `${name}.css`);
 };
 
+const watchStart = (story: StoryT) => {
+  if (_watcher) return;
+  const glob = _config.snapshotPatterns.concat(_config.cssPatterns);
+  _watcher = sane('.', { glob });
+  const refreshWrapper = () => refresh();
+  _watcher.on('change', refreshWrapper);
+  _watcher.on('add', refreshWrapper);
+  _watcher.on('delete', refreshWrapper);
+  story.info('extractor', 'Started watching over snapshot and CSS files');
+};
+
+// const watchStop = (story: StoryT) => {
+//   if (_watcher == null) return;
+//   _watcher.close();
+//   _watcher = null;
+//   story.info('extractor', 'Stopped file watcher');
+// };
+
+const broadcastSignal = () => {
+  if (!_config.socketioServer) return;
+  _config.socketioServer.emit('REFRESH');
+};
+
 // =============================================
 // Public API
 // =============================================
 export {
   configure,
-  refresh,
+  start,
   getFolder,
   getSnapshotSuite,
 };

@@ -1,9 +1,9 @@
 {
   "name": "jest-html",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Preview Jest snapshots right in your browser",
   "bin": {
-    "jest-html": "lib/run.js"
+    "jest-html": "lib/previewer.js"
   },
   "main": "lib/serializer/",
   "engines": {
@@ -60,6 +60,8 @@
     "globby": "^6.0.0",
     "opn": "4.0.2",
     "pretty-format": "^4.2.1",
+    "sane": "1.4.1",
+    "socket.io": "1.5.1",
     "storyboard": "^2.0.0",
     "timm": "^1.0.0",
     "whatwg-fetch": "1.0.0"
@@ -100,6 +102,7 @@
     "react-router": "4.0.0-alpha.5",
     "react-test-renderer": "15.3.2",
     "sass-loader": "4.0.2",
+    "socket.io-client": "1.5.1",
     "style-loader": "0.13.1",
     "webpack": "1.13.2",
     "webpack-dev-middleware": "1.8.4",

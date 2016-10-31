@@ -1,4 +1,3 @@
-- [ ] Server: refresh (watch? manually from the client?)
 - [x] Server:
     - [x] Custom CSSs:
         - [x] Common to all snapshots
@@ -8,9 +7,11 @@
     - [x] Navigation: add titles+back bar and improve componentization
     - [x] Group snapshots that belong together
     - [x] Isolate CSS and HTML in an iframe
-    - [ ] ROUTER!!
-      - [ ] Extract further from App
-    - [ ] Encode URLs
+    - [x] ROUTER!!
+    - [x] Show error when folder/suite doesn't exist!
     - [ ] ?? Keyboard shortcuts
+- [x] Server refresh
+- [x] Client RT update
+- [ ] Throttle server refresh!! Improve watch!
 - [ ] Remove moment (if unneeded)
 - [ ] Documentation

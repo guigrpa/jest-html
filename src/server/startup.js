@@ -35,6 +35,7 @@ program
     'that will be used for ALL snapshots', DEFAULT_CSS_PATTERNS)
   .option('-p, --port [port]', 'Initial port number to use ' +
     '(if unavailable, the next available one will be used)', Number, DEFAULT_PORT)
+  .option('--no-watch', 'Do not watch initially detected snapshot and css files')
   .parse(process.argv);
 
 const cliOptions = program.opts();
@@ -42,22 +43,25 @@ const cliOptions = program.opts();
 mainStory.info('startup', 'CLI options:', { attach: cliOptions });
 
 let finalPort;
+let socketioServer;
 const httpInit = () =>
   httpServer.init({ port: cliOptions.port })
-  .then((o) => { finalPort = o; });
+  .then((port) => {
+    finalPort = port;
+    socketioServer = httpServer.getSocketioServer();
+  });
 
 const extractorInit = () => {
   extractor.configure({
     snapshotPatterns: cliOptions.snapshotPatterns,
     cssPatterns: cliOptions.cssPatterns,
+    watch: cliOptions.watch,
+    socketioServer,
   });
-  return extractor.refresh();
+  return extractor.start();
 };
 
-Promise.all([
-  httpInit(),
-  extractorInit(),
-])
-.then(() => {
-  opn(`http://localhost:${finalPort}/`);
-});
+Promise.resolve()
+.then(httpInit)
+.then(extractorInit)
+.then(() => { opn(`http://localhost:${finalPort}/`); });

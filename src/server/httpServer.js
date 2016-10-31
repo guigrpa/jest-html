@@ -7,6 +7,7 @@ import http                 from 'http';
 import storyboard           from 'storyboard';
 import express              from 'express';
 import bodyParser           from 'body-parser';
+import socketio             from 'socket.io';
 import * as extractor       from './extractor';
 
 const { mainStory, chalk } = storyboard;
@@ -25,6 +26,8 @@ if (process.env.NODE_ENV !== 'production') {
 
 const ASSET_PATH = '../../public';
 const ABS_ASSET_PATH = path.resolve(__dirname, ASSET_PATH);
+
+let _socketioServer;
 
 // Returns the final port that was found free
 function init(options: {|
@@ -81,6 +84,12 @@ function init(options: {|
   // Create HTTP server
   const httpServer = http.createServer(expressApp);
 
+  // Create socket.io server
+  _socketioServer = socketio(httpServer);
+  _socketioServer.on('connection', () => {
+    mainStory.debug('http', 'Socket connected');
+  });
+
   // Look for a suitable port and start listening
   return new Promise((resolve, reject) => {
     let port = options.port;
@@ -102,7 +111,12 @@ function init(options: {|
   });
 }
 
+const getSocketioServer = () => _socketioServer;
+
 // =============================================
 // Public API
 // =============================================
-export { init };
+export {
+  init,
+  getSocketioServer,
+};

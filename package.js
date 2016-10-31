@@ -6,7 +6,7 @@
 // Basic config
 // ===============================================
 const NAME = 'jest-html';
-const VERSION = '0.2.0';
+const VERSION = '0.2.1';
 const DESCRIPTION = 'Preview Jest snapshots right in your browser';
 const KEYWORDS = ['Jest', 'test', 'snapshot', 'serializer', 'html', 'preview'];
 
@@ -48,7 +48,7 @@ const specs = {
   version: VERSION,
   description: DESCRIPTION,
   bin: {
-    'jest-html': 'lib/run.js',
+    'jest-html': 'lib/previewer.js',
   },
   main: 'lib/serializer/',
   engines: {
@@ -153,10 +153,14 @@ const specs = {
     'escape-html': '1.0.3',
     'globby': '^6.0.0',
     opn: '4.0.2',
+    sane: '1.4.1',  // watch files
+    'socket.io': '1.5.1',
 
+    // Express
     express: '^4.14.0',
     'body-parser': '^1.15.2',
 
+    // Polyfills
     'babel-polyfill': '6.16.0',
     'whatwg-fetch': '1.0.0',
   },
@@ -170,6 +174,7 @@ const specs = {
     'react-addons-pure-render-mixin': '15.3.2',
     'react-router': '4.0.0-alpha.5',
     giu: '0.8.0',
+    'socket.io-client': '1.5.1',
     moment: '^2.0.0',
 
     // Bug yarn #629
