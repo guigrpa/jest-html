@@ -168,11 +168,15 @@ class App extends React.Component {
     const contents = [];
     folder.childrenFolderPaths.forEach((folderPath) => {
       const id = `folder_${folderPath}`;
+      let label = folderPath;
+      const tmpIndex = label.indexOf(`${folder.folderPath}/`);
+      if (tmpIndex >= 0) label = label.slice(folder.folderPath.length + 1);
+      label = breakAtDots(label);
       contents.push(
         <SidebarItem
           key={id}
           id={id}
-          label={breakAtDots(lastSegment(folderPath))}
+          label={label}
           link={`/folder/${folderPath}`}
           icon="folder-o"
           fSelected={false}
@@ -181,11 +185,15 @@ class App extends React.Component {
     });
     folder.filePaths.forEach((filePath) => {
       const id = `suite_${filePath}`;
+      let label = filePath;
+      const tmpIndex = label.indexOf(`${folder.folderPath}/`);
+      if (tmpIndex >= 0) label = label.slice(folder.folderPath.length + 1);
+      label = breakAtDots(label);
       contents.push(
         <SidebarItem
           key={id}
           id={id}
-          label={breakAtDots(lastSegment(filePath))}
+          label={label}
           link={`/suite/${filePath}`}
           icon="file-o"
           fSelected={false}
