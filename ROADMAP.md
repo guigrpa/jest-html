@@ -14,6 +14,6 @@
 - [x] Client RT update
 - [x] Throttle server refresh!! 
 - [ ] ?? Don't do a full refresh
+- [ ] Disable dot-folders and files in watch
 - [ ] Remove moment (if unneeded)
-- [ ] Add font-awesome to example snapshots
 - [ ] Documentation

@@ -40,7 +40,7 @@ By adding `jest-html` to your `snapshotSerializers`, HTML previews will be autom
 
 To review your snapshots, run `npm run jest-html` (`yarn run jest-html`). This opens your default browser and launches the `jest-html` application on an open port.
 
-![Jest-HTML and Chrome's devtools](https://raw.githubusercontent.com/guigrpa/jest-html/master/docs/01.png)
+![Jest-HTML and Chrome's devtools](https://raw.githubusercontent.com/guigrpa/jest-html/master/docs/02.png)
 
 For `jest-html`'s CLI options, check out `node_modules/.bin/jest-html --help`:
 
