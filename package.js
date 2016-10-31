@@ -230,6 +230,7 @@ const specs = {
     // Default test path:
     // testRegex: '(/__tests__/.*|\\.(test|spec))\\.(js|jsx)$',
     testRegex: 'src/.*__tests__/.*\\.(test|spec)\\.(js|jsx)$',
+    testPathDirs: ['<rootDir>/src'],
     moduleNameMapper: {
       '^.+\\.(css|less|sass)$': '<rootDir>/test/emptyObject.js',
       '^.+\\.(gif|ttf|eot|svg)$': '<rootDir>/test/emptyString.js',

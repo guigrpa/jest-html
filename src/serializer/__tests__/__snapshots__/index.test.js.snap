@@ -9,13 +9,59 @@ exports[`Serializer should correctly serialize React components 1`] = `
     \"a\": 3,
     \"b\": \"foo\",
     \"c\": true,
+    \"className\": \"my-class\",
     \"d\": false,
+    \"htmlFor\": \"bar\",
+    \"style\": Object {
+      \"border\": \"1px solid blue\",
+      \"flexDirection\": \"row\",
+      \"margin\": 3,
+      \"padding\": 2,
+    },
   },
   \"type\": \"div\",
 }
 ------------HTML PREVIEW---------------
   <div
-    b=\"foo\">
+    b=\"foo\"
+    class=\"my-class\"
+    for=\"bar\"
+    style=\"border:1px solid blue;flex-direction:row;margin:3px;padding:2px;\">
     Text
+  </div>"
+`;
+
+exports[`Serializer should correctly serialize Textareas 1`] = `
+"Object {
+  \"$$typeof\": Symbol(react.test.json),
+  \"__visited\": true,
+  \"props\": Object {
+    \"style\": null,
+    \"value\": \"One block
+of text
+with accents: áéíóú\",
+  },
+  \"type\": \"textarea\",
+}
+------------HTML PREVIEW---------------
+  <textarea
+    style=
+    value=\"One block
+  of text
+  with accents: áéíóú\">One block
+  of text
+  with accents: áéíóú</textarea>"
+`;
+
+exports[`Serializer should correctly serialize childless components 1`] = `
+"Object {
+  \"$$typeof\": Symbol(react.test.json),
+  \"__visited\": true,
+  \"props\": Object {},
+  \"type\": \"div\",
+}
+------------HTML PREVIEW---------------
+  <div>
+    
   </div>"
 `;
