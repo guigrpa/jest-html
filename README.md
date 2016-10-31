@@ -2,13 +2,15 @@
 
 Preview Jest snapshots right in your browser.
 
+![Jest-HTML and Chrome's devtools](https://raw.githubusercontent.com/guigrpa/jest-html/master/docs/02.png)
+
 ## Why?
 
 * **Preview of React component snapshots in your browser** (snapshots and browser devtools, yay!).
-* **Compatible with non-React** snapshots.
+* **Compatible with non-React** snapshots as well.
 * **Custom CSS** stylesheets applicable to all snapshots or individual ones.
-* **Intuitive navigation** through folders, snapshot suites, and even **snapshot groups**.
-* **Real-time updates** whenever a snapshot changes.
+* **Intuitive navigation** through folders, snapshot suites, and even **snapshot groups** within a suite.
+* **Real-time updates** whenever a snapshot or CSS file changes.
 
 ## Installation
 
@@ -21,7 +23,7 @@ $ npm install --save-dev jest-html
 $ yarn add jest-html --dev
 ```
 
-Add the following configuration to your `package.json` (no need to replace `<rootDir>` by anything else):
+Add the following configuration to your `package.json` (no need to replace `<rootDir>` with anything else):
 
 ```json
 {
@@ -38,33 +40,24 @@ Add the following configuration to your `package.json` (no need to replace `<roo
 
 By adding `jest-html` to your `snapshotSerializers`, HTML previews will be automatically appended to React component snapshots the next time you update them (`jest -u`).
 
-To review your snapshots, run `npm run jest-html` (`yarn run jest-html`). This opens your default browser and launches the `jest-html` application on an open port.
+To review your snapshots, run `npm run jest-html` (`yarn run jest-html`). This launches your default browser and opens the `jest-html` application.
 
-![Jest-HTML and Chrome's devtools](https://raw.githubusercontent.com/guigrpa/jest-html/master/docs/02.png)
-
-For `jest-html`'s CLI options, check out `node_modules/.bin/jest-html --help`:
+To see all CLI options, run `node_modules/.bin/jest-html --help`:
 
 ```
   Usage: jest-html [options]
 
   Options:
 
-    -h, --help                         output usage information
-    -V, --version                      output the version number
-    -f --snapshot-patterns [patterns]  Glob patterns for snapshot files
-    -c --css-patterns [patterns]       Glob patterns for CSS stylesheets used for ALL snapshots
-    -p, --port [port]                  Initial port number to use (if unavailable, the next available one will be used)
-    --no-watch                         Do not watch initially detected snapshot and css files
+    -h, --help                      output usage information
+    -V, --version                   output the version number
+    -f --snapshot-patterns [globs]  Glob patterns for snapshot files
+    -c --css-patterns [globs]       Glob patterns for CSS stylesheets used for ALL snapshots
+    -p, --port [port]               Initial port number to use (if unavailable, the next available one will be used)
+    --no-watch                      Do not watch initially detected snapshot and css files
 ```
 
-By default, `jest-html` uses the following glob patterns to look for snapshot suites, but you can use the `--snapshot-patterns` to change that:
-
-```
-[
-  '**/*.snap',
-  '!node_modules/**/*',
-]
-```
+By default, `jest-html` looks for snapshots under `['**/*.snap', '!node_modules/**/*']`, but you can change this using the `--snapshot-patterns` argument.
 
 ## Adding custom CSS
 

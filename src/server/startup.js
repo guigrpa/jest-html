@@ -29,9 +29,9 @@ process.on('SIGINT', () => {
 // ==============================================
 program
   .version(pkg.version)
-  .option('-f --snapshot-patterns [patterns]', 'Glob patterns for snapshot files',
+  .option('-f --snapshot-patterns [globs]', 'Glob patterns for snapshot files',
     DEFAULT_SNAPSHOT_PATTERNS)
-  .option('-c --css-patterns [patterns]', 'Glob patterns for CSS stylesheets ' +
+  .option('-c --css-patterns [globs]', 'Glob patterns for CSS stylesheets ' +
     'that will be used for ALL snapshots', DEFAULT_CSS_PATTERNS)
   .option('-p, --port [port]', 'Initial port number to use ' +
     '(if unavailable, the next available one will be used)', Number, DEFAULT_PORT)

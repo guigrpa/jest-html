@@ -2,7 +2,7 @@
 
 [M] major, [m] minor
 
-## 0.3.0 (Oct. 31, 2016)
+## 0.3.1 (Oct. 31, 2016)
 
 * Much better watch support.
 * Docs.
