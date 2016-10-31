@@ -12,6 +12,7 @@
     - [ ] ?? Keyboard shortcuts
 - [x] Server refresh
 - [x] Client RT update
-- [ ] Throttle server refresh!! Improve watch!
+- [x] Throttle server refresh!! 
+- [ ] ?? Don't do a full refresh
 - [ ] Remove moment (if unneeded)
 - [ ] Documentation

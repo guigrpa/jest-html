@@ -4,6 +4,7 @@ import fs from 'fs';
 import path from 'path';
 import globby from 'globby';
 import sane from 'sane';
+import debounce from 'lodash.debounce';
 import { clone, merge, addLast } from 'timm';
 import { mainStory, chalk } from 'storyboard';
 import type { StoryT } from 'storyboard';
@@ -174,14 +175,15 @@ const getCssPathForSuite = (filePath: FilePathT): string => {
   return path.join(dir, `${name}.css`);
 };
 
+const debouncedRefresh = debounce(() => refresh(), 300);
+
 const watchStart = (story: StoryT) => {
   if (_watcher) return;
   const glob = _config.snapshotPatterns.concat(_config.cssPatterns);
   _watcher = sane('.', { glob });
-  const refreshWrapper = () => refresh();
-  _watcher.on('change', refreshWrapper);
-  _watcher.on('add', refreshWrapper);
-  _watcher.on('delete', refreshWrapper);
+  _watcher.on('change', debouncedRefresh);
+  _watcher.on('add', debouncedRefresh);
+  _watcher.on('delete', debouncedRefresh);
   story.info('extractor', 'Started watching over snapshot and CSS files');
 };
 

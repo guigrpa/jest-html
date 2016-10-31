@@ -155,6 +155,7 @@ const specs = {
     opn: '4.0.2',
     sane: '1.4.1',  // watch files
     'socket.io': '1.5.1',
+    'lodash.debounce': '4.0.8',
 
     // Express
     express: '^4.14.0',

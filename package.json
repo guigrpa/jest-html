@@ -58,6 +58,7 @@
     "escape-html": "1.0.3",
     "express": "^4.14.0",
     "globby": "^6.0.0",
+    "lodash.debounce": "4.0.8",
     "opn": "4.0.2",
     "pretty-format": "^4.2.1",
     "sane": "1.4.1",
