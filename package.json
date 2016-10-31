@@ -34,7 +34,7 @@
     "docs": "extract-docs --template docs/templates/README.md --output README.md",
     "buildWatch": "rm -rf ./public/assets && webpack --config ./src/server/webpackConfig.cjs --progress --display-chunks --watch",
     "buildClient": "rm -rf ./public/assets && cross-env NODE_ENV=production webpack --config ./src/server/webpackConfig.cjs --progress --display-chunks",
-    "build": "node package && npm run lint && npm run flow && npm run compile && npm run buildClient && npm run docs && npm run xxl",
+    "build": "node package && npm run lint && npm run flow && npm run compile && npm run buildClient && npm run test && npm run docs && npm run xxl",
     "travis": "npm run compile && npm run testCovFullExceptMin",
     "lint": "eslint src",
     "flow": "flow check || exit 0",

@@ -89,7 +89,7 @@ const specs = {
                                   'npm run flow',
                                   'npm run compile',
                                   'npm run buildClient',
-                                  // 'npm run test',
+                                  'npm run test',
                                   'npm run docs',
                                   'npm run xxl',
                                 ]),
