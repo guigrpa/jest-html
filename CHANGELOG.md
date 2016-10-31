@@ -2,6 +2,11 @@
 
 [M] major, [m] minor
 
+## 0.3.0 (Oct. 31, 2016)
+
+* Much better watch support.
+* Docs.
+
 ## 0.2.0 (Oct. 30, 2016)
 
 * First public release of the preview application.
