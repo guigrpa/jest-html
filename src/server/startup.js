@@ -6,7 +6,7 @@ import opn from 'opn';
 import * as httpServer from './httpServer';
 import * as extractor from './extractor';
 
-config({ filter: 'extractor:INFO,*:DEBUG' });
+config({ filter: '*:INFO' });
 
 const pkg = require('../../package.json');
 

@@ -6,7 +6,7 @@
 // Basic config
 // ===============================================
 const NAME = 'jest-html';
-const VERSION = '0.2.2';
+const VERSION = '0.3.0';
 const DESCRIPTION = 'Preview Jest snapshots right in your browser';
 const KEYWORDS = ['Jest', 'test', 'snapshot', 'serializer', 'html', 'preview'];
 
@@ -153,7 +153,7 @@ const specs = {
     'escape-html': '1.0.3',
     'globby': '^6.0.0',
     opn: '4.0.2',
-    sane: '1.4.1',  // watch files
+    chokidar: '1.6.1',
     'socket.io': '1.5.1',
     'lodash.debounce': '4.0.8',
 
@@ -177,9 +177,6 @@ const specs = {
     giu: '0.8.0',
     'socket.io-client': '1.5.1',
     moment: '^2.0.0',
-
-    // Bug yarn #629
-    // chokidar: '1.6.1',
 
     // Pure dev dependencies
     // ---------------------

@@ -1,19 +1,2 @@
-- [x] Server:
-    - [x] Custom CSSs:
-        - [x] Common to all snapshots
-        - [ ] ?? Common to all in a folder
-        - [x] Specific to a given suite
-- [ ] Client:
-    - [x] Navigation: add titles+back bar and improve componentization
-    - [x] Group snapshots that belong together
-    - [x] Isolate CSS and HTML in an iframe
-    - [x] ROUTER!!
-    - [x] Show error when folder/suite doesn't exist!
-    - [ ] ?? Keyboard shortcuts
-- [x] Server refresh
-- [x] Client RT update
-- [x] Throttle server refresh!! 
-- [ ] ?? Don't do a full refresh
-- [ ] Disable dot-folders and files in watch
-- [ ] Remove moment (if unneeded)
-- [ ] Documentation
+- [ ] ?? Add CSS granularity level: CSS for all files in a folder
+- [ ] ?? Keyboard shortcuts
