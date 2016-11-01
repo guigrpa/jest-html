@@ -19,10 +19,8 @@ import LargeMessage from './200-largeMessage';
 
 require('./010-app.sass');
 
-/* eslint-disable no-unused-vars */
-const breakAtSlashes = (str) => str.replace(/\//g, '/\u200B');
+// const breakAtSlashes = (str) => str.replace(/\//g, '/\u200B');
 const breakAtDots = (str) => str.replace(/\./g, '.\u200B');
-/* eslint-enable no-unused-vars */
 const lastSegment = (path) => {
   if (!path) return '';
   const segments = path.split('/');

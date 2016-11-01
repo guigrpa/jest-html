@@ -176,6 +176,7 @@ const specs = {
     giu: '0.8.0',
     'socket.io-client': '1.5.1',
     moment: '^2.0.0',
+    'node-uuid': '1.4.7',
 
     // Pure dev dependencies
     // ---------------------

@@ -2,6 +2,11 @@
 
 [M] major, [m] minor
 
+## 0.3.2 (Nov. 1, 2016)
+
+* Improve client app architecture.
+* Improve test coverage.
+
 ## 0.3.1 (Oct. 31, 2016)
 
 * Much better watch support.

@@ -122,4 +122,16 @@ describe('AppContents', () => {
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('renders a suite with a selected snapshot', () => {
+    const tree = renderer.create(
+      <AppContents
+        fetchedItemType="SUITE"
+        fetchedItem={SUITE_WITH_GROUPS_AND_INDIVIDUAL_SNAPSHOTS}
+        fetchedItemPath="-/path/to/folder/suite1.js.snap"
+        query={{ id: 'individual1 1' }}
+      />
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
