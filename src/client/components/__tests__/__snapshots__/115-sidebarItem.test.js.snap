@@ -1,0 +1,223 @@
+exports[`SidebarGroup renders correctly 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "white",
+      "margin": "0.5em 0",
+      "padding": "0.3em 0",
+    }
+  }>
+  <div
+    style={
+      Object {
+        "color": "#999",
+        "fontSize": "0.8em",
+        "padding": "0.3em 1em",
+        "textTransform": "uppercase",
+      }
+    }>
+    Snapshot group name
+  </div>
+  one
+  two
+</div>
+`;
+
+exports[`SidebarItem renders correctly 1`] = `
+<a
+  className=""
+  href="some/url"
+  id="one"
+  onClick={[Function]}
+  onMouseEnter={undefined}
+  onMouseLeave={undefined}
+  style={
+    Object {
+      "alignItems": "center",
+      "color": "currentColor",
+      "cursor": "pointer",
+      "display": "flex",
+      "flexDirection": "row",
+      "padding": "0.3em 1em",
+      "textDecoration": "none",
+      "wordBreak": "break-word",
+    }
+  }>
+  <div
+    style={
+      Object {
+        "WebkitFlex": "0 0 20px",
+        "flex": "0 0 20px",
+      }
+    }>
+    <i
+      className="giu-icon fa fa-folder-o"
+      style={
+        Object {
+          "color": undefined,
+          "cursor": "pointer",
+          "letterSpacing": "normal",
+        }
+      } />
+  </div>
+  <div
+    style={
+      Object {
+        "WebkitFlex": 1,
+        "flex": 1,
+      }
+    }>
+    an/extremely/amazingly/ultra/hyper/really/very/long/label
+  </div>
+</a>
+`;
+
+exports[`SidebarItem renders correctly when hovered 1`] = `
+<a
+  className=""
+  href="some/url"
+  id="two"
+  onClick={[Function]}
+  onMouseEnter={undefined}
+  onMouseLeave={undefined}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#ddd",
+      "color": "currentColor",
+      "cursor": "pointer",
+      "display": "flex",
+      "flexDirection": "row",
+      "padding": "0.3em 1em",
+      "textDecoration": "none",
+      "wordBreak": "break-word",
+    }
+  }>
+  <div
+    style={
+      Object {
+        "WebkitFlex": "0 0 20px",
+        "flex": "0 0 20px",
+      }
+    }>
+    <i
+      className="giu-icon fa fa-folder-o"
+      style={
+        Object {
+          "color": undefined,
+          "cursor": "pointer",
+          "letterSpacing": "normal",
+        }
+      } />
+  </div>
+  <div
+    style={
+      Object {
+        "WebkitFlex": 1,
+        "flex": 1,
+      }
+    }>
+    two
+  </div>
+</a>
+`;
+
+exports[`SidebarItem renders correctly when selected & hovered 1`] = `
+<a
+  className=""
+  href="some/url"
+  id="four"
+  onClick={[Function]}
+  onMouseEnter={undefined}
+  onMouseLeave={undefined}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#ba360a",
+      "color": "white",
+      "cursor": "pointer",
+      "display": "flex",
+      "flexDirection": "row",
+      "padding": "0.3em 1em",
+      "textDecoration": "none",
+      "wordBreak": "break-word",
+    }
+  }>
+  <div
+    style={
+      Object {
+        "WebkitFlex": "0 0 20px",
+        "flex": "0 0 20px",
+      }
+    }>
+    <i
+      className="giu-icon fa fa-folder-o"
+      style={
+        Object {
+          "color": undefined,
+          "cursor": "pointer",
+          "letterSpacing": "normal",
+        }
+      } />
+  </div>
+  <div
+    style={
+      Object {
+        "WebkitFlex": 1,
+        "flex": 1,
+      }
+    }>
+    four
+  </div>
+</a>
+`;
+
+exports[`SidebarItem renders correctly when selected 1`] = `
+<a
+  className=""
+  href="some/url"
+  id="three"
+  onClick={[Function]}
+  onMouseEnter={undefined}
+  onMouseLeave={undefined}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#ca461a",
+      "color": "white",
+      "cursor": "pointer",
+      "display": "flex",
+      "flexDirection": "row",
+      "padding": "0.3em 1em",
+      "textDecoration": "none",
+      "wordBreak": "break-word",
+    }
+  }>
+  <div
+    style={
+      Object {
+        "WebkitFlex": "0 0 20px",
+        "flex": "0 0 20px",
+      }
+    }>
+    <i
+      className="giu-icon fa fa-folder-o"
+      style={
+        Object {
+          "color": undefined,
+          "cursor": "pointer",
+          "letterSpacing": "normal",
+        }
+      } />
+  </div>
+  <div
+    style={
+      Object {
+        "WebkitFlex": 1,
+        "flex": 1,
+      }
+    }>
+    three
+  </div>
+</a>
+`;

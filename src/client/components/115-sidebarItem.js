@@ -105,5 +105,6 @@ const style = {
 // ==========================================
 export default hoverable(SidebarItem);
 export {
+  SidebarItem as _SidebarItem,
   SidebarGroup,
 };

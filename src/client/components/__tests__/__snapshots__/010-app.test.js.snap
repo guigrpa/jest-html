@@ -1,0 +1,13 @@
+exports[`App renders correctly 1`] = `
+<div
+  dataMockType="AppContents"
+  error={null}
+  fRedirectToRoot={false}
+  fetchedItem={null}
+  fetchedItemPath={null}
+  fetchedItemType={null}
+  onRedirectToRoot={[Function]}
+  query={undefined}>
+  AppContents
+</div>
+`;

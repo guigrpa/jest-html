@@ -2,41 +2,20 @@
 
 /* eslint-env browser */
 import React from 'react';
-import { Redirect } from 'react-router';
 import socketio from 'socket.io-client';
 import {
-  Floats,
-  Spinner, Icon, Button,
-  flexContainer,
   bindAll,
 } from 'giu';
 import type {
   FolderT,
   SnapshotSuiteT,
 } from '../../common/types';
-import Sidebar from './110-sidebar';
-import SidebarItem, { SidebarGroup } from './115-sidebarItem';
-import Preview from './120-preview';
-import LargeMessage from './200-largeMessage';
-
-require('./010-app.sass');
-
-/* eslint-disable no-unused-vars */
-const breakAtSlashes = (str) => str.replace(/\//g, '/\u200B');
-const breakAtDots = (str) => str.replace(/\./g, '.\u200B');
-/* eslint-enable no-unused-vars */
-const lastSegment = (path) => {
-  if (!path) return '';
-  const segments = path.split('/');
-  return segments[segments.length - 1];
-};
-const snapshotName = (id) => {
-  const segments = id.split(' ');
-  return segments.slice(0, segments.length - 1).join(' ');
-};
+import AppContents from './015-appContents';
 
 const socket = socketio.connect();
-
+const socketDisconnect = () => {
+  socket.close();
+};
 
 // ==========================================
 // Component declarations
@@ -57,7 +36,6 @@ type PropsT = {
 class App extends React.Component {
   props: PropsT;
   state: {
-    // sidebar item: currently fetched item
     fetchedItemType: ?SidebarTypeT,
     fetchedItem: ?(FolderT | SnapshotSuiteT),
     fetchedItemPath: ?string,
@@ -76,6 +54,11 @@ class App extends React.Component {
       fRedirectToRoot: false,
     };
     bindAll(this, ['refetch']);
+  }
+
+  // unit testing
+  _setState(state: Object) {
+    this.setState(state);
   }
 
   componentDidMount() {
@@ -105,173 +88,15 @@ class App extends React.Component {
 
   // ------------------------------------------
   render() {
-    if (this.state.fRedirectToRoot) {
-      return <Redirect to="/" />;
-    }
-    if (this.state.error) {
-      return (
-        <LargeMessage>
-          <Icon icon="warning" disabled />{' '}<b>An error occurred:</b><br />
-          {this.state.error}<br />
-          <Button
-            onClick={() => this.setState({ fRedirectToRoot: true })}
-          >
-            <Icon icon="home" disabled />{' '}Home
-          </Button>
-        </LargeMessage>
-      );
-    }
-    if (!this.state.fetchedItem) {
-      return <LargeMessage><Spinner />&nbsp;Loading…</LargeMessage>;
-    }
     return (
-      <div style={style.outer}>
-        <Floats />
-        {this.renderSidebar()}
-        {this.renderPreview()}
-      </div>
-    );
-  }
-
-  renderSidebar() {
-    const fFolder = this.state.fetchedItemType === 'FOLDER';
-    const { fetchedItemPath } = this.state;
-    const { contents, linkBack } = fFolder ? this.renderFolder() : this.renderSuite();
-    let title;
-    if (fFolder) {
-      const folder: FolderT = (this.state.fetchedItem: any);
-      title = folder.parentFolderPath != null
-      ? <span>
-          <Icon icon="folder-open-o" style={style.titleBarIcon} />&nbsp;
-          {lastSegment(fetchedItemPath)}
-        </span>
-      : <span>
-          <Icon icon="home" style={style.titleBarIcon} />&nbsp;Root
-        </span>;
-    } else {
-      title = (
-        <span>
-          <Icon icon="file-o" style={style.titleBarIcon} />&nbsp;
-          {lastSegment(fetchedItemPath).split('.')[0]}
-        </span>
-      );
-    }
-    return (
-      <Sidebar title={title} subtitle={fetchedItemPath} linkBack={linkBack}>
-        {contents}
-      </Sidebar>
-    );
-  }
-
-  renderFolder() {
-    const folder: FolderT = (this.state.fetchedItem: any);
-    const contents = [];
-    folder.childrenFolderPaths.forEach((folderPath) => {
-      const id = `folder_${folderPath}`;
-      let label = folderPath;
-      const tmpIndex = label.indexOf(`${folder.folderPath}/`);
-      if (tmpIndex >= 0) label = label.slice(folder.folderPath.length + 1);
-      label = breakAtDots(label);
-      contents.push(
-        <SidebarItem
-          key={id}
-          id={id}
-          label={label}
-          link={`/folder/${folderPath}`}
-          icon="folder-o"
-          fSelected={false}
-        />
-      );
-    });
-    folder.filePaths.forEach((filePath) => {
-      const id = `suite_${filePath}`;
-      let label = filePath;
-      const tmpIndex = label.indexOf(`${folder.folderPath}/`);
-      if (tmpIndex >= 0) label = label.slice(folder.folderPath.length + 1);
-      label = breakAtDots(label);
-      contents.push(
-        <SidebarItem
-          key={id}
-          id={id}
-          label={label}
-          link={`/suite/${filePath}`}
-          icon="file-o"
-          fSelected={false}
-        />
-      );
-    });
-    const linkBack = folder.parentFolderPath != null
-      ? `/folder/${folder.parentFolderPath}`
-      : null;
-    return { contents, linkBack };
-  }
-
-  renderSuite() {
-    const suite: SnapshotSuiteT = (this.state.fetchedItem: any);
-    const fetchedItemPath: string = (this.state.fetchedItemPath: any);
-    const { query } = this.props.location;
-    const contents = [];
-    const groups = {};
-    Object.keys(suite).forEach((id) => {
-      if (id === '__folderPath') return;
-      const name = snapshotName(id);
-      const snapshot = suite[id];
-      if (groups[name]) {
-        groups[name].snapshots.push(snapshot);
-      } else {
-        groups[name] = { snapshots: [snapshot] };
-      }
-    });
-    Object.keys(groups).forEach((name) => {
-      const { snapshots } = groups[name];
-      if (snapshots.length === 1) {
-        const { id } = snapshots[0];
-        contents.push(
-          <SidebarItem
-            key={id}
-            id={id}
-            label={snapshotName(id)}
-            link={`/suite/${fetchedItemPath}?id=${id}`}
-            icon="camera"
-            fSelected={query && query.id === id}
-          />
-        );
-      } else {
-        const items = snapshots.map(({ id }) =>
-          <SidebarItem
-            key={id}
-            id={id}
-            label={id.slice(name.length).trim()}
-            link={`/suite/${fetchedItemPath}?id=${id}`}
-            icon="camera"
-            fSelected={query && query.id === id}
-          />
-        );
-        contents.push(
-          <SidebarGroup key={name} name={name}>
-            {items}
-          </SidebarGroup>
-        );
-      }
-    });
-    const linkBack = `/folder/${suite.__folderPath}`;
-    return { contents, linkBack };
-  }
-
-  renderPreview() {
-    const { query } = this.props.location;
-    const { fetchedItemType, fetchedItemPath } = this.state;
-    let snapshot;
-    let key = 'preview';
-    if (fetchedItemType === 'SUITE' && query && query.id != null && fetchedItemPath) {
-      const suite: SnapshotSuiteT = (this.state.fetchedItem: any);
-      snapshot = suite[query.id];
-      key = `${fetchedItemPath}_${query.id}`;
-    }
-    return (
-      <Preview
-        key={key}
-        snapshot={snapshot}
+      <AppContents
+        fetchedItemType={this.state.fetchedItemType}
+        fetchedItem={this.state.fetchedItem}
+        fetchedItemPath={this.state.fetchedItemPath}
+        error={this.state.error}
+        onRedirectToRoot={() => { this.setState({ fRedirectToRoot: true }); }}
+        fRedirectToRoot={this.state.fRedirectToRoot}
+        query={this.props.location.query}
       />
     );
   }
@@ -329,17 +154,10 @@ class App extends React.Component {
   }
 }
 
-// ------------------------------------------
-const style = {
-  outer: flexContainer('row', {
-    height: '100vh',
-  }),
-  titleBarIcon: {
-    cursor: 'default',
-  },
-};
-
 // ==========================================
 // Public API
 // ==========================================
 export default App;
+export {
+  socketDisconnect,
+};

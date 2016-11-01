@@ -1,0 +1,67 @@
+exports[`Preview renders correctly with HTML snapshot 1`] = `
+<div
+  dataMockType="Frame"
+  style={
+    Object {
+      "border": "none",
+      "width": "100%",
+    }
+  }>
+  <style>
+    body { color: green }
+  </style>
+  <div
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "<div>Snapshot contents</div>",
+      }
+    } />
+</div>
+`;
+
+exports[`Preview renders correctly with no snapshot 1`] = `
+<div
+  style={
+    Object {
+      "WebkitFlex": 1,
+      "flex": 1,
+      "transform": "translateZ(0)",
+    }
+  }>
+  <div
+    className="giu-large-message"
+    style={
+      Object {
+        "color": "#999999",
+        "fontFamily": "sans-serif",
+        "fontSize": "1.4em",
+        "fontWeight": 100,
+        "padding": "0.8em",
+        "textAlign": "center",
+      }
+    }>
+    No snapshot selected
+  </div>
+</div>
+`;
+
+exports[`Preview renders correctly with non-HTML snapshot 1`] = `
+<div
+  style={
+    Object {
+      "WebkitFlex": 1,
+      "flex": 1,
+      "transform": "translateZ(0)",
+    }
+  }>
+  <pre
+    style={
+      Object {
+        "margin": 0,
+        "padding": "0 1em",
+      }
+    }>
+    Snapshot contents
+  </pre>
+</div>
+`;

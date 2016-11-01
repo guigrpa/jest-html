@@ -1,0 +1,31 @@
+exports[`Root renders correctly 1`] = `
+<div
+  dataMockType="BrowserRouter">
+  <div>
+    <div
+      component={[Function]}
+      dataMockType="Match"
+      exactly={true}
+      pattern="/">
+      Match
+    </div>
+    <div
+      component={[Function]}
+      dataMockType="Match"
+      pattern="/suite/*">
+      Match
+    </div>
+    <div
+      component={[Function]}
+      dataMockType="Match"
+      pattern="/folder/*">
+      Match
+    </div>
+    <div
+      dataMockType="Miss"
+      render={[Function]}>
+      Miss
+    </div>
+  </div>
+</div>
+`;

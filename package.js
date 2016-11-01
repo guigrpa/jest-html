@@ -210,7 +210,7 @@ const specs = {
     'babel-eslint': '7.0.0',
 
     // Testing
-    jest: '16.0.1',
+    jest: '16.0.2',
     'react-test-renderer': '15.3.2',
     'babel-jest': '16.0.0',
     nyc: '8.3.0',
@@ -240,6 +240,10 @@ const specs = {
     coverageReporters: ['json', 'text', 'html'],
     collectCoverageFrom: [
       'src/**/*.js',
+      '!src/previewer.js',
+      '!src/client/startup.js',
+      '!src/server/startup.js',
+      '!src/server/webpackConfig.js',
       '!**/node_modules/**',
       '!**/__tests__/**',
       '!**/__mocks__/**',

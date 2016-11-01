@@ -1,0 +1,538 @@
+exports[`AppContents can redirect to root if needed 1`] = `
+<div
+  dataMockType="Redirect"
+  to="/">
+  Redirect
+</div>
+`;
+
+exports[`AppContents renders a folder with subfolders and suites correctly 1`] = `
+<div
+  style={
+    Object {
+      "display": "flex",
+      "flexDirection": "row",
+      "height": "100vh",
+    }
+  }>
+  <div
+    className="giu-floats"
+    style={
+      Object {
+        "height": 0,
+        "left": 0,
+        "position": "absolute",
+        "top": 0,
+        "width": 0,
+      }
+    } />
+  <div
+    dataMockType="Sidebar"
+    linkBack="/folder/-/path/to"
+    subtitle="-/path/to/snapshots"
+    title={
+      <span>
+        <function Icon() {
+            _classCallCheck(this, Icon);
+        
+            return _possibleConstructorReturn(this, Object.getPrototypeOf(Icon).apply(this, arguments));
+          }
+          icon="folder-open-o"
+          style={
+            Object {
+              "cursor": "default",
+            }
+          } />
+         
+        snapshots
+      </span>
+    }>
+    <div
+      dataMockType="SidebarItem"
+      fSelected={false}
+      icon="folder-o"
+      id="folder_-/path/to/folder/super/nested/folder"
+      label="super/nested/folder"
+      link="/folder/-/path/to/folder/super/nested/folder">
+      SidebarItem
+    </div>
+    <div
+      dataMockType="SidebarItem"
+      fSelected={false}
+      icon="folder-o"
+      id="folder_-/path/to/folder/subdir"
+      label="subdir"
+      link="/folder/-/path/to/folder/subdir">
+      SidebarItem
+    </div>
+    <div
+      dataMockType="SidebarItem"
+      fSelected={false}
+      icon="file-o"
+      id="suite_-/path/to/folder/suite1.snap"
+      label="suite1.​snap"
+      link="/suite/-/path/to/folder/suite1.snap">
+      SidebarItem
+    </div>
+    <div
+      dataMockType="SidebarItem"
+      fSelected={false}
+      icon="file-o"
+      id="suite_-/path/to/folder/suite2.snap"
+      label="suite2.​snap"
+      link="/suite/-/path/to/folder/suite2.snap">
+      SidebarItem
+    </div>
+    <div
+      dataMockType="SidebarItem"
+      fSelected={false}
+      icon="file-o"
+      id="suite_-/path/to/folder/suite3.snap"
+      label="suite3.​snap"
+      link="/suite/-/path/to/folder/suite3.snap">
+      SidebarItem
+    </div>
+  </div>
+  <div
+    dataMockType="Preview"
+    snapshot={undefined}>
+    Preview
+  </div>
+</div>
+`;
+
+exports[`AppContents renders a folder with subfolders correctly 1`] = `
+<div
+  style={
+    Object {
+      "display": "flex",
+      "flexDirection": "row",
+      "height": "100vh",
+    }
+  }>
+  <div
+    className="giu-floats"
+    style={
+      Object {
+        "height": 0,
+        "left": 0,
+        "position": "absolute",
+        "top": 0,
+        "width": 0,
+      }
+    } />
+  <div
+    dataMockType="Sidebar"
+    linkBack="/folder/-/path/to"
+    subtitle="-/path/to/snapshots"
+    title={
+      <span>
+        <function Icon() {
+            _classCallCheck(this, Icon);
+        
+            return _possibleConstructorReturn(this, Object.getPrototypeOf(Icon).apply(this, arguments));
+          }
+          icon="folder-open-o"
+          style={
+            Object {
+              "cursor": "default",
+            }
+          } />
+         
+        snapshots
+      </span>
+    }>
+    <div
+      dataMockType="SidebarItem"
+      fSelected={false}
+      icon="folder-o"
+      id="folder_-/path/to/folder/super/nested/folder"
+      label="super/nested/folder"
+      link="/folder/-/path/to/folder/super/nested/folder">
+      SidebarItem
+    </div>
+    <div
+      dataMockType="SidebarItem"
+      fSelected={false}
+      icon="folder-o"
+      id="folder_-/path/to/folder/subdir"
+      label="subdir"
+      link="/folder/-/path/to/folder/subdir">
+      SidebarItem
+    </div>
+  </div>
+  <div
+    dataMockType="Preview"
+    snapshot={undefined}>
+    Preview
+  </div>
+</div>
+`;
+
+exports[`AppContents renders a folder with suites correctly 1`] = `
+<div
+  style={
+    Object {
+      "display": "flex",
+      "flexDirection": "row",
+      "height": "100vh",
+    }
+  }>
+  <div
+    className="giu-floats"
+    style={
+      Object {
+        "height": 0,
+        "left": 0,
+        "position": "absolute",
+        "top": 0,
+        "width": 0,
+      }
+    } />
+  <div
+    dataMockType="Sidebar"
+    linkBack="/folder/-/path/to"
+    subtitle="-/path/to/snapshots"
+    title={
+      <span>
+        <function Icon() {
+            _classCallCheck(this, Icon);
+        
+            return _possibleConstructorReturn(this, Object.getPrototypeOf(Icon).apply(this, arguments));
+          }
+          icon="folder-open-o"
+          style={
+            Object {
+              "cursor": "default",
+            }
+          } />
+         
+        snapshots
+      </span>
+    }>
+    <div
+      dataMockType="SidebarItem"
+      fSelected={false}
+      icon="file-o"
+      id="suite_-/path/to/folder/suite1.snap"
+      label="suite1.​snap"
+      link="/suite/-/path/to/folder/suite1.snap">
+      SidebarItem
+    </div>
+    <div
+      dataMockType="SidebarItem"
+      fSelected={false}
+      icon="file-o"
+      id="suite_-/path/to/folder/suite2.snap"
+      label="suite2.​snap"
+      link="/suite/-/path/to/folder/suite2.snap">
+      SidebarItem
+    </div>
+    <div
+      dataMockType="SidebarItem"
+      fSelected={false}
+      icon="file-o"
+      id="suite_-/path/to/folder/suite3.snap"
+      label="suite3.​snap"
+      link="/suite/-/path/to/folder/suite3.snap">
+      SidebarItem
+    </div>
+  </div>
+  <div
+    dataMockType="Preview"
+    snapshot={undefined}>
+    Preview
+  </div>
+</div>
+`;
+
+exports[`AppContents renders a spinner while loading 1`] = `
+<div
+  dataMockType="LargeMessage">
+  <i
+    className="giu-icon fa fa-circle-o-notch fa-spin"
+    style={
+      Object {
+        "color": undefined,
+        "cursor": "pointer",
+        "letterSpacing": "normal",
+      }
+    } />
+   Loading…
+</div>
+`;
+
+exports[`AppContents renders a suite with grouped snapshots correctly 1`] = `
+<div
+  style={
+    Object {
+      "display": "flex",
+      "flexDirection": "row",
+      "height": "100vh",
+    }
+  }>
+  <div
+    className="giu-floats"
+    style={
+      Object {
+        "height": 0,
+        "left": 0,
+        "position": "absolute",
+        "top": 0,
+        "width": 0,
+      }
+    } />
+  <div
+    dataMockType="Sidebar"
+    linkBack="/folder/-/path/to/folder"
+    subtitle="-/path/to/folder/suite1.js.snap"
+    title={
+      <span>
+        <function Icon() {
+            _classCallCheck(this, Icon);
+        
+            return _possibleConstructorReturn(this, Object.getPrototypeOf(Icon).apply(this, arguments));
+          }
+          icon="file-o"
+          style={
+            Object {
+              "cursor": "default",
+            }
+          } />
+         
+        suite1
+      </span>
+    }>
+    <div
+      dataMockType="SidebarGroup"
+      name="groupname">
+      <div
+        dataMockType="SidebarItem"
+        fSelected={undefined}
+        icon="camera"
+        id="groupname 1"
+        label="1"
+        link="/suite/-/path/to/folder/suite1.js.snap?id=groupname 1">
+        SidebarItem
+      </div>
+      <div
+        dataMockType="SidebarItem"
+        fSelected={undefined}
+        icon="camera"
+        id="groupname 2"
+        label="2"
+        link="/suite/-/path/to/folder/suite1.js.snap?id=groupname 2">
+        SidebarItem
+      </div>
+    </div>
+    <div
+      dataMockType="SidebarItem"
+      fSelected={undefined}
+      icon="camera"
+      id="individual1 1"
+      label="individual1"
+      link="/suite/-/path/to/folder/suite1.js.snap?id=individual1 1">
+      SidebarItem
+    </div>
+    <div
+      dataMockType="SidebarItem"
+      fSelected={undefined}
+      icon="camera"
+      id="individual2 1"
+      label="individual2"
+      link="/suite/-/path/to/folder/suite1.js.snap?id=individual2 1">
+      SidebarItem
+    </div>
+  </div>
+  <div
+    dataMockType="Preview"
+    snapshot={undefined}>
+    Preview
+  </div>
+</div>
+`;
+
+exports[`AppContents renders a suite with individual snapshots correctly 1`] = `
+<div
+  style={
+    Object {
+      "display": "flex",
+      "flexDirection": "row",
+      "height": "100vh",
+    }
+  }>
+  <div
+    className="giu-floats"
+    style={
+      Object {
+        "height": 0,
+        "left": 0,
+        "position": "absolute",
+        "top": 0,
+        "width": 0,
+      }
+    } />
+  <div
+    dataMockType="Sidebar"
+    linkBack="/folder/-/path/to/folder"
+    subtitle="-/path/to/folder/suite1.js.snap"
+    title={
+      <span>
+        <function Icon() {
+            _classCallCheck(this, Icon);
+        
+            return _possibleConstructorReturn(this, Object.getPrototypeOf(Icon).apply(this, arguments));
+          }
+          icon="file-o"
+          style={
+            Object {
+              "cursor": "default",
+            }
+          } />
+         
+        suite1
+      </span>
+    }>
+    <div
+      dataMockType="SidebarItem"
+      fSelected={undefined}
+      icon="camera"
+      id="individual1 1"
+      label="individual1"
+      link="/suite/-/path/to/folder/suite1.js.snap?id=individual1 1">
+      SidebarItem
+    </div>
+    <div
+      dataMockType="SidebarItem"
+      fSelected={undefined}
+      icon="camera"
+      id="individual2 1"
+      label="individual2"
+      link="/suite/-/path/to/folder/suite1.js.snap?id=individual2 1">
+      SidebarItem
+    </div>
+  </div>
+  <div
+    dataMockType="Preview"
+    snapshot={undefined}>
+    Preview
+  </div>
+</div>
+`;
+
+exports[`AppContents renders error messages 1`] = `
+<div
+  dataMockType="LargeMessage">
+  <i
+    className="giu-icon fa fa-warning"
+    onClick={undefined}
+    style={
+      Object {
+        "color": "#999999",
+        "cursor": undefined,
+        "letterSpacing": "normal",
+      }
+    } />
+   
+  <b>
+    An error occurred:
+  </b>
+  <br />
+  Something horrible!
+  <br />
+  <span
+    className="giu-button"
+    onClick={undefined}
+    style={
+      Object {
+        "WebkitUserSelect": "none",
+        "border": "1px solid #999999",
+        "borderRadius": 5,
+        "cursor": "pointer",
+        "display": "inline-block",
+        "padding": "1px 5px",
+        "userSelect": "none",
+      }
+    }>
+    <i
+      className="giu-icon fa fa-home"
+      onClick={undefined}
+      style={
+        Object {
+          "color": "#999999",
+          "cursor": undefined,
+          "letterSpacing": "normal",
+        }
+      } />
+     
+    Home
+  </span>
+</div>
+`;
+
+exports[`AppContents renders the root folder correctly 1`] = `
+<div
+  style={
+    Object {
+      "display": "flex",
+      "flexDirection": "row",
+      "height": "100vh",
+    }
+  }>
+  <div
+    className="giu-floats"
+    style={
+      Object {
+        "height": 0,
+        "left": 0,
+        "position": "absolute",
+        "top": 0,
+        "width": 0,
+      }
+    } />
+  <div
+    dataMockType="Sidebar"
+    linkBack={null}
+    subtitle="-"
+    title={
+      <span>
+        <function Icon() {
+            _classCallCheck(this, Icon);
+        
+            return _possibleConstructorReturn(this, Object.getPrototypeOf(Icon).apply(this, arguments));
+          }
+          icon="home"
+          style={
+            Object {
+              "cursor": "default",
+            }
+          } />
+         Root
+      </span>
+    }>
+    <div
+      dataMockType="SidebarItem"
+      fSelected={false}
+      icon="folder-o"
+      id="folder_-/path/to/folder"
+      label="path/to/folder"
+      link="/folder/-/path/to/folder">
+      SidebarItem
+    </div>
+    <div
+      dataMockType="SidebarItem"
+      fSelected={false}
+      icon="folder-o"
+      id="folder_-/path/to/folder2"
+      label="path/to/folder2"
+      link="/folder/-/path/to/folder2">
+      SidebarItem
+    </div>
+  </div>
+  <div
+    dataMockType="Preview"
+    snapshot={undefined}>
+    Preview
+  </div>
+</div>
+`;

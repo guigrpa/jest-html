@@ -4,6 +4,7 @@ exports[`Serializer should correctly serialize React components 1`] = `
   \"__visited\": true,
   \"children\": Array [
     \"Text\",
+    5,
   ],
   \"props\": Object {
     \"a\": 3,
@@ -17,6 +18,7 @@ exports[`Serializer should correctly serialize React components 1`] = `
       \"flexDirection\": \"row\",
       \"margin\": 3,
       \"padding\": 2,
+      \"sth\": undefined,
     },
   },
   \"type\": \"div\",
@@ -26,8 +28,9 @@ exports[`Serializer should correctly serialize React components 1`] = `
     b=\"foo\"
     class=\"my-class\"
     for=\"bar\"
-    style=\"border:1px solid blue;flex-direction:row;margin:3px;padding:2px;\">
+    style=\"border:1px solid blue;flex-direction:row;margin:3px;padding:2px;sth:;\">
     Text
+    5
   </div>"
 `;
 
@@ -57,7 +60,6 @@ exports[`Serializer should correctly serialize childless components 1`] = `
 "Object {
   \"$$typeof\": Symbol(react.test.json),
   \"__visited\": true,
-  \"props\": Object {},
   \"type\": \"div\",
 }
 ------------HTML PREVIEW---------------

@@ -3154,7 +3154,7 @@ jest-changed-files@^16.0.0:
   version "16.0.0"
   resolved "https://registry.yarnpkg.com/jest-changed-files/-/jest-changed-files-16.0.0.tgz#7931deff4424182b8173d80e06800d7363b19c45"
 
-jest-cli@^16.0.1:
+jest-cli@^16.0.2:
   version "16.0.2"
   resolved "https://registry.yarnpkg.com/jest-cli/-/jest-cli-16.0.2.tgz#d439b28affa7189aa3d046d2af931f7ebb9af69d"
   dependencies:
@@ -3325,11 +3325,11 @@ jest-util@^16.0.2:
     jest-mock "^16.0.2"
     mkdirp "^0.5.1"
 
-jest@16.0.1:
-  version "16.0.1"
-  resolved "https://registry.yarnpkg.com/jest/-/jest-16.0.1.tgz#538af80e55a96140f55a2e7d3190157eba806d61"
+jest@16.0.2:
+  version "16.0.2"
+  resolved "https://registry.yarnpkg.com/jest/-/jest-16.0.2.tgz#4a2f7f3527465168a0bafe0c3d55055188253f3a"
   dependencies:
-    jest-cli "^16.0.1"
+    jest-cli "^16.0.2"
 
 jodid25519@^1.0.0:
   version "1.0.2"

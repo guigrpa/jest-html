@@ -36,9 +36,10 @@ describe('Serializer', () => {
           margin: 3,
           border: '1px solid blue',
           padding: 2,
+          sth: undefined,
         },
       },
-      children: ['Text'],
+      children: ['Text', 5],
     };
     expect(prettyFormat(obj, { plugins: [serialize] })).toMatchSnapshot();
   });
@@ -59,7 +60,6 @@ describe('Serializer', () => {
     const obj = {
       $$typeof: Symbol.for('react.test.json'),
       type: 'div',
-      props: {},
     };
     expect(prettyFormat(obj, { plugins: [serialize] })).toMatchSnapshot();
   });

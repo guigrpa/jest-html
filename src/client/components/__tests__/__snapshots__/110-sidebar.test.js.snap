@@ -1,0 +1,156 @@
+exports[`Sidebar renders correctly 1`] = `
+<div
+  style={
+    Object {
+      "WebkitFlex": "0 0 18em",
+      "backgroundColor": "#eee",
+      "borderRight": "2px solid #ddd",
+      "flex": "0 0 18em",
+      "fontFamily": "sans-serif",
+      "fontSize": "0.8em",
+      "overflow": "auto",
+      "padding": "0.3em 0",
+    }
+  }>
+  <div
+    style={
+      Object {
+        "alignItems": "baseline",
+        "display": "flex",
+        "flexDirection": "row",
+        "marginBottom": "1.1em",
+        "marginTop": "0.4em",
+      }
+    }>
+    <div
+      style={
+        Object {
+          "WebkitFlex": "0 0 30px",
+          "flex": "0 0 30px",
+        }
+      }>
+      <a
+        className=""
+        href="link/to/parent/folder"
+        onClick={[Function]}
+        style={
+          Object {
+            "color": "currentColor",
+            "margin": "0.3em",
+            "padding": "0.3em",
+          }
+        }>
+        <i
+          className="giu-icon fa fa-chevron-left fa-lg"
+          style={
+            Object {
+              "color": undefined,
+              "cursor": "pointer",
+              "letterSpacing": "normal",
+            }
+          } />
+      </a>
+    </div>
+    <div
+      style={
+        Object {
+          "WebkitFlex": 1,
+          "flex": 1,
+          "fontWeight": "bold",
+          "textAlign": "center",
+        }
+      }
+      title="Subtitle">
+      Title
+    </div>
+    <div
+      style={
+        Object {
+          "WebkitFlex": "0 1 30px",
+          "flex": "0 1 30px",
+        }
+      } />
+  </div>
+  one
+  two
+</div>
+`;
+
+exports[`Sidebar renders correctly without linkBack 1`] = `
+<div
+  style={
+    Object {
+      "WebkitFlex": "0 0 18em",
+      "backgroundColor": "#eee",
+      "borderRight": "2px solid #ddd",
+      "flex": "0 0 18em",
+      "fontFamily": "sans-serif",
+      "fontSize": "0.8em",
+      "overflow": "auto",
+      "padding": "0.3em 0",
+    }
+  }>
+  <div
+    style={
+      Object {
+        "alignItems": "baseline",
+        "display": "flex",
+        "flexDirection": "row",
+        "marginBottom": "1.1em",
+        "marginTop": "0.4em",
+      }
+    }>
+    <div
+      style={
+        Object {
+          "WebkitFlex": "0 0 30px",
+          "flex": "0 0 30px",
+        }
+      }>
+      <a
+        className=""
+        href="#"
+        onClick={[Function]}
+        style={
+          Object {
+            "color": "currentColor",
+            "margin": "0.3em",
+            "padding": "0.3em",
+          }
+        }>
+        <i
+          className="giu-icon fa fa-chevron-left fa-lg"
+          onClick={undefined}
+          style={
+            Object {
+              "color": "#999999",
+              "cursor": undefined,
+              "letterSpacing": "normal",
+            }
+          } />
+      </a>
+    </div>
+    <div
+      style={
+        Object {
+          "WebkitFlex": 1,
+          "flex": 1,
+          "fontWeight": "bold",
+          "textAlign": "center",
+        }
+      }
+      title="Subtitle">
+      Title
+    </div>
+    <div
+      style={
+        Object {
+          "WebkitFlex": "0 1 30px",
+          "flex": "0 1 30px",
+        }
+      } />
+  </div>
+  one
+  two
+</div>
+`;
