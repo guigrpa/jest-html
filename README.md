@@ -1,4 +1,4 @@
-# jest-html [![Build Status](https://travis-ci.org/guigrpa/jest-html.svg?branch=master)](https://travis-ci.org/guigrpa/jest-html) [![npm version](https://img.shields.io/npm/v/jest-html.svg)](https://www.npmjs.com/package/jest-html)
+# jest-html [![npm version](https://img.shields.io/npm/v/jest-html.svg)](https://www.npmjs.com/package/jest-html)
 
 Preview Jest snapshots right in your browser.
 
