@@ -1,6 +1,6 @@
 {
   "name": "jest-html",
-  "version": "0.3.3",
+  "version": "1.0.0",
   "description": "Preview Jest snapshots right in your browser",
   "bin": {
     "jest-html": "lib/previewer.js"

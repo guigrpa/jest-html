@@ -1,6 +1,9 @@
 # Changelog
 
-[M] major, [m] minor
+## 1.0.0 (Nov. 2, 2016)
+
+* Accept comma-separated globs as CLI arguments.
+* Minor CSS fixes.
 
 ## 0.3.3 (Nov. 2, 2016)
 
