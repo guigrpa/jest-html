@@ -227,7 +227,7 @@ class AppContents extends React.PureComponent {
 // ------------------------------------------
 const style = {
   outer: flexContainer('row', {
-    height: '100vh',
+    minHeight: '100vh',
   }),
   titleBarIcon: {
     cursor: 'default',

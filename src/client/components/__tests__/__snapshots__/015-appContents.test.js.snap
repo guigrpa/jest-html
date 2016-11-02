@@ -12,7 +12,7 @@ exports[`AppContents renders a folder with subfolders and suites correctly 1`] =
     Object {
       "display": "flex",
       "flexDirection": "row",
-      "height": "100vh",
+      "minHeight": "100vh",
     }
   }>
   <div
@@ -107,7 +107,7 @@ exports[`AppContents renders a folder with subfolders correctly 1`] = `
     Object {
       "display": "flex",
       "flexDirection": "row",
-      "height": "100vh",
+      "minHeight": "100vh",
     }
   }>
   <div
@@ -175,7 +175,7 @@ exports[`AppContents renders a folder with suites correctly 1`] = `
     Object {
       "display": "flex",
       "flexDirection": "row",
-      "height": "100vh",
+      "minHeight": "100vh",
     }
   }>
   <div
@@ -268,7 +268,7 @@ exports[`AppContents renders a suite with a selected snapshot 1`] = `
     Object {
       "display": "flex",
       "flexDirection": "row",
-      "height": "100vh",
+      "minHeight": "100vh",
     }
   }>
   <div
@@ -364,7 +364,7 @@ exports[`AppContents renders a suite with grouped snapshots correctly 1`] = `
     Object {
       "display": "flex",
       "flexDirection": "row",
-      "height": "100vh",
+      "minHeight": "100vh",
     }
   }>
   <div
@@ -454,7 +454,7 @@ exports[`AppContents renders a suite with individual snapshots correctly 1`] = `
     Object {
       "display": "flex",
       "flexDirection": "row",
-      "height": "100vh",
+      "minHeight": "100vh",
     }
   }>
   <div
@@ -572,7 +572,7 @@ exports[`AppContents renders the root folder correctly 1`] = `
     Object {
       "display": "flex",
       "flexDirection": "row",
-      "height": "100vh",
+      "minHeight": "100vh",
     }
   }>
   <div
