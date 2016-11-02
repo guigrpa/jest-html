@@ -133,8 +133,7 @@ function printInstance(instance, print, indent, opts) {
     result += `>${(escapeHtml(instance.props.value) || '')}` +
       `</${instance.type}>`;
   } else {
-    result += `>${opts.edgeSpacing}${indent('')}` +
-      `${opts.edgeSpacing}</${instance.type}>`;
+    result += `>${opts.edgeSpacing}</${instance.type}>`;
   }
 
   return result;

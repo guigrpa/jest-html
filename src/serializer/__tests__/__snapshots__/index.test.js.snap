@@ -64,6 +64,5 @@ exports[`Serializer should correctly serialize childless components 1`] = `
 }
 ------------HTML PREVIEW---------------
   <div>
-    
   </div>"
 `;

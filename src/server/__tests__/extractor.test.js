@@ -11,9 +11,8 @@ describe('extractor', () => {
     beforeEach(() => {
       extractor.configure({
         snapshotPatterns: [
-          '**/*.snap',
-          '!node_modules/**/*',
-          '!src/**/*',
+          'test/**/*.snap',
+          './example.js.snap',
         ],
         cssPatterns: [
           'test/snapshot.css',
