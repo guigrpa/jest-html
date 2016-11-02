@@ -25,11 +25,19 @@ describe('extractor', () => {
     it('should parse folders', async () => {
       await extractor.start();
       const folder = extractor.getFolder('-/test/exampleSnapshots/a');
-      expect(folder).toMatchSnapshot();
+      expect(normalizeFolder(folder)).toMatchSnapshot();
       const folder2 = extractor.getFolder('-');
-      expect(folder2).toMatchSnapshot();
+      expect(normalizeFolder(folder2)).toMatchSnapshot();
       const file = extractor.getSnapshotSuite('-/example.js.snap');
       expect(file).toMatchSnapshot();
     });
   });
+});
+
+const normalize = (str) => str.normalize('NFKD');
+const normalizeFolder = (folder) => ({
+  childrenFolderPaths: folder.childrenFolderPaths.map(normalize),
+  filePaths: folder.filePaths.map(normalize),
+  folderPath: folder.folderPath != null ? normalize(folder.folderPath) : null,
+  parentFolderPath: folder.parentFolderPath != null ? normalize(folder.parentFolderPath) : null,
 });

@@ -45,12 +45,12 @@ body { color: aliceblue; }
     <div
       class=\"giu-floats\"
       style=\"height:0;left:0;position:absolute;top:0;width:0;\">
-      
+
     </div>
     <div
       class=\"giu-notifications\"
       style=\"bottom:20px;max-width:350px;position:fixed;right:20px;z-index:9000;\">
-      
+
     </div>
     <div
       class=\"giu-hints\">
@@ -60,7 +60,7 @@ body { color: aliceblue; }
         <div
           class=\"giu-backdrop\"
           style=\"background-color:black;cursor:pointer;height:100vh;left:0;opacity:0.6;position:fixed;top:0;width:100vw;\">
-          
+
         </div>
         <div
           style=\"color:white;font-family:\"Gloria Hallelujah\", sans-serif;font-size:20px;\">
@@ -242,12 +242,12 @@ body { color: aliceblue; }
     <div
       class=\"giu-floats\"
       style=\"height:0;left:0;position:absolute;top:0;width:0;\">
-      
+
     </div>
     <div
       class=\"giu-notifications\"
       style=\"bottom:20px;max-width:350px;position:fixed;right:20px;z-index:9000;\">
-      
+
     </div>
     <div
       class=\"giu-hints\">
@@ -257,7 +257,7 @@ body { color: aliceblue; }
         <div
           class=\"giu-backdrop\"
           style=\"background-color:black;cursor:pointer;height:100vh;left:0;opacity:0.6;position:fixed;top:0;width:100vw;\">
-          
+
         </div>
         <div
           style=\"color:white;font-family:\"Gloria Hallelujah\", sans-serif;font-size:20px;\">
@@ -437,12 +437,12 @@ body { color: aliceblue; }
     <div
       class=\"giu-floats\"
       style=\"height:0;left:0;position:absolute;top:0;width:0;\">
-      
+
     </div>
     <div
       class=\"giu-notifications\"
       style=\"bottom:20px;max-width:350px;position:fixed;right:20px;z-index:9000;\">
-      
+
     </div>
     <div
       class=\"giu-hints\">
@@ -452,7 +452,7 @@ body { color: aliceblue; }
         <div
           class=\"giu-backdrop\"
           style=\"background-color:black;cursor:pointer;height:100vh;left:0;opacity:0.6;position:fixed;top:0;width:100vw;\">
-          
+
         </div>
         <div
           style=\"color:white;font-family:\"Gloria Hallelujah\", sans-serif;font-size:20px;\">
@@ -659,12 +659,12 @@ body { color: aliceblue; }
     <div
       class=\"giu-floats\"
       style=\"height:0;left:0;position:absolute;top:0;width:0;\">
-      
+
     </div>
     <div
       class=\"giu-notifications\"
       style=\"bottom:20px;max-width:350px;position:fixed;right:20px;z-index:9000;\">
-      
+
     </div>
     <div
       class=\"giu-hints\">
@@ -674,7 +674,7 @@ body { color: aliceblue; }
         <div
           class=\"giu-backdrop\"
           style=\"background-color:black;cursor:pointer;height:100vh;left:0;opacity:0.6;position:fixed;top:0;width:100vw;\">
-          
+
         </div>
         <div
           style=\"color:white;font-family:\"Gloria Hallelujah\", sans-serif;font-size:20px;\">
