@@ -23,6 +23,7 @@ Object {
     "-/.",
     "-/test/exampleSnapshots/a",
     "-/test/exampleSnapshots/b/b2",
+    "-/test/exampleSnapshots/with spaces",
   ],
   "filePaths": Array [],
   "folderPath": "-",
