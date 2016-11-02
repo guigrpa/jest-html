@@ -2,6 +2,10 @@
 
 [M] major, [m] minor
 
+## 0.3.3 (Nov. 2, 2016)
+
+* Fix push on Windows.
+
 ## 0.3.2 (Nov. 1, 2016)
 
 * Improve client app architecture.
