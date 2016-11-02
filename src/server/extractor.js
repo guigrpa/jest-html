@@ -8,6 +8,7 @@ import debounce from 'lodash.debounce';
 import { clone, merge, addLast } from 'timm';
 import { mainStory, chalk } from 'storyboard';
 import type { StoryT } from 'storyboard';
+import slash from 'slash';
 import { HTML_PREVIEW_SEPARATOR } from '../serializer';
 import type {
   FilePathT,
@@ -229,7 +230,8 @@ const watchStart = (story: StoryT) => {
 //   story.info('extractor', 'Stopped file watcher');
 // };
 
-const cssWatchEvent = (type: string, filePath: string) => {
+const cssWatchEvent = (type: string, filePath0: string) => {
+  const filePath = slash(filePath0);
   mainStory.debug('extractor', 'CSS watch fired: ' +
     `${chalk.bold(type.toUpperCase())} ${chalk.cyan.bold(filePath)}`);
   debouncedCssRefresh();
@@ -242,7 +244,8 @@ const debouncedCssRefresh = debounce(() =>
   .then(() => broadcastSignal())
 , 300);
 
-const snapWatchEvent = (type: string, filePath: string) => {
+const snapWatchEvent = (type: string, filePath0: string) => {
+  const filePath = slash(filePath0);
   mainStory.debug('extractor', 'Snapshot watch fired: ' +
     `${chalk.bold(type.toUpperCase())} ${chalk.cyan.bold(filePath)}`);
   Promise.resolve()

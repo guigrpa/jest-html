@@ -155,6 +155,7 @@ const specs = {
     chokidar: '1.6.1',
     'socket.io': '1.5.1',
     'lodash.debounce': '4.0.8',
+    slash: '1.0.0',
 
     // Express
     express: '^4.14.0',

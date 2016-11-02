@@ -62,6 +62,7 @@
     "lodash.debounce": "4.0.8",
     "opn": "4.0.2",
     "pretty-format": "^4.2.1",
+    "slash": "1.0.0",
     "socket.io": "1.5.1",
     "storyboard": "^2.0.0",
     "timm": "^1.0.0",
