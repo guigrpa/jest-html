@@ -12,7 +12,7 @@ describe('extractor', () => {
       extractor.configure({
         snapshotPatterns: [
           'test/**/*.snap',
-          './example.js.snap',
+          'example.js.snap',
         ],
         cssPatterns: [
           'test/snapshot.css',
