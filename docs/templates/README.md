@@ -51,13 +51,13 @@ To see all CLI options, run `node_modules/.bin/jest-html --help`:
 
     -h, --help                      output usage information
     -V, --version                   output the version number
-    -f --snapshot-patterns [globs]  Glob patterns for snapshot files
-    -c --css-patterns [globs]       Glob patterns for CSS stylesheets used for ALL snapshots
+    -f --snapshot-patterns [globs]  Glob patterns for snapshot files (comma-separated)
+    -c --css-patterns [globs]       Glob patterns for CSS stylesheets that will be used for ALL snapshots (comma-separated)
     -p, --port [port]               Initial port number to use (if unavailable, the next available one will be used)
     --no-watch                      Do not watch initially detected snapshot and css files
 ```
 
-By default, `jest-html` looks for snapshots under `['**/*.snap', '!node_modules/**/*']`, but you can change this using the `--snapshot-patterns` argument.
+By default, `jest-html` looks for snapshots under `**/*.snap,!node_modules/**/*`, but you can change this using the `--snapshot-patterns` argument.
 
 ## Adding custom CSS
 
