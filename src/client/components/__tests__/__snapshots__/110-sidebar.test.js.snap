@@ -74,6 +74,35 @@ exports[`Sidebar renders correctly 1`] = `
   one
   two
 </div>
+------------HTML PREVIEW---------------
+  <div
+    style="-webkit-flex:0 0 18em;background-color:#eee;border-right:2px solid #ddd;flex:0 0 18em;font-family:sans-serif;font-size:0.8em;overflow:auto;padding:0.3em 0;">
+    <div
+      style="align-items:baseline;display:flex;flex-direction:row;margin-bottom:1.1em;margin-top:0.4em;">
+      <div
+        style="-webkit-flex:0 0 30px;flex:0 0 30px;">
+        <a
+          class=""
+          href="link/to/parent/folder"
+          style="color:currentColor;margin:0.3em;padding:0.3em;">
+          <i
+            class="giu-icon fa fa-chevron-left fa-lg"
+            style="cursor:pointer;letter-spacing:normal;">
+          </i>
+        </a>
+      </div>
+      <div
+        style="-webkit-flex:1;flex:1;font-weight:bold;text-align:center;"
+        title="Subtitle">
+        Title
+      </div>
+      <div
+        style="-webkit-flex:0 1 30px;flex:0 1 30px;">
+      </div>
+    </div>
+    one
+    two
+  </div>
 `;
 
 exports[`Sidebar renders correctly without linkBack 1`] = `
@@ -153,4 +182,33 @@ exports[`Sidebar renders correctly without linkBack 1`] = `
   one
   two
 </div>
+------------HTML PREVIEW---------------
+  <div
+    style="-webkit-flex:0 0 18em;background-color:#eee;border-right:2px solid #ddd;flex:0 0 18em;font-family:sans-serif;font-size:0.8em;overflow:auto;padding:0.3em 0;">
+    <div
+      style="align-items:baseline;display:flex;flex-direction:row;margin-bottom:1.1em;margin-top:0.4em;">
+      <div
+        style="-webkit-flex:0 0 30px;flex:0 0 30px;">
+        <a
+          class=""
+          href="#"
+          style="color:currentColor;margin:0.3em;padding:0.3em;">
+          <i
+            class="giu-icon fa fa-chevron-left fa-lg"
+            style="color:#999999;letter-spacing:normal;">
+          </i>
+        </a>
+      </div>
+      <div
+        style="-webkit-flex:1;flex:1;font-weight:bold;text-align:center;"
+        title="Subtitle">
+        Title
+      </div>
+      <div
+        style="-webkit-flex:0 1 30px;flex:0 1 30px;">
+      </div>
+    </div>
+    one
+    two
+  </div>
 `;

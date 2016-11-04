@@ -28,4 +28,30 @@ exports[`Root renders correctly 1`] = `
     </div>
   </div>
 </div>
+------------HTML PREVIEW---------------
+  <div
+    dataMockType="BrowserRouter">
+    <div>
+      <div
+        dataMockType="Match"
+        exactly
+        pattern="/">
+        Match
+      </div>
+      <div
+        dataMockType="Match"
+        pattern="/suite/*">
+        Match
+      </div>
+      <div
+        dataMockType="Match"
+        pattern="/folder/*">
+        Match
+      </div>
+      <div
+        dataMockType="Miss">
+        Miss
+      </div>
+    </div>
+  </div>
 `;

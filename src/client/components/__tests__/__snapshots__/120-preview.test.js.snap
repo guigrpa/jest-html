@@ -17,6 +17,16 @@ exports[`Preview renders correctly with HTML snapshot 1`] = `
       }
     } />
 </div>
+------------HTML PREVIEW---------------
+  <div
+    dataMockType="Frame"
+    style="border:none;width:100%;">
+    <style>
+      body { color: green }
+    </style>
+    <div>
+    </div>
+  </div>
 `;
 
 exports[`Preview renders correctly with no snapshot 1`] = `
@@ -43,6 +53,15 @@ exports[`Preview renders correctly with no snapshot 1`] = `
     No snapshot selected
   </div>
 </div>
+------------HTML PREVIEW---------------
+  <div
+    style="-webkit-flex:1;flex:1;transform:translateZ(0);">
+    <div
+      class="giu-large-message"
+      style="color:#999999;font-family:sans-serif;font-size:1.4em;font-weight:100;padding:0.8em;text-align:center;">
+      No snapshot selected
+    </div>
+  </div>
 `;
 
 exports[`Preview renders correctly with non-HTML snapshot 1`] = `
@@ -64,4 +83,12 @@ exports[`Preview renders correctly with non-HTML snapshot 1`] = `
     Snapshot contents
   </pre>
 </div>
+------------HTML PREVIEW---------------
+  <div
+    style="-webkit-flex:1;flex:1;transform:translateZ(0);">
+    <pre
+      style="margin:0;padding:0 1em;">
+      Snapshot contents
+    </pre>
+  </div>
 `;

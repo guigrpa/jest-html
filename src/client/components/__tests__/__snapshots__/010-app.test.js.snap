@@ -10,4 +10,9 @@ exports[`App renders correctly 1`] = `
   query={undefined}>
   AppContents
 </div>
+------------HTML PREVIEW---------------
+  <div
+    dataMockType="AppContents">
+    AppContents
+  </div>
 `;

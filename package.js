@@ -166,6 +166,10 @@ const specs = {
     'whatwg-fetch': '1.0.0',
   },
 
+  peerDependencies: {
+    jest: '>= 16.1.0',
+  },
+
   devDependencies: {
 
     // Bundled
@@ -212,7 +216,7 @@ const specs = {
     'babel-eslint': '7.0.0',
 
     // Testing
-    jest: '16.0.2',
+    jest: '16.1.0-alpha.691b0e22',
     'react-test-renderer': '15.3.2',
     'babel-jest': '16.0.0',
     nyc: '8.3.0',
@@ -238,6 +242,7 @@ const specs = {
       '^.+\\.(gif|ttf|eot|svg)$': '<rootDir>/test/emptyString.js',
       // 'node-uuid': '<rootDir>/test/mockUuid.js',
     },
+    snapshotSerializers: ['<rootDir>/lib/serializer'],
     coverageDirectory: '.nyc_output',
     coverageReporters: ['json', 'text', 'html'],
     collectCoverageFrom: [
@@ -266,6 +271,7 @@ const _sortDeps = (deps) => {
 };
 specs.dependencies = _sortDeps(specs.dependencies);
 specs.devDependencies = _sortDeps(specs.devDependencies);
+specs.peerDependencies = _sortDeps(specs.peerDependencies);
 const packageJson = `${JSON.stringify(specs, null, '  ')}\n`;
 require('fs').writeFileSync('package.json', packageJson);
 
