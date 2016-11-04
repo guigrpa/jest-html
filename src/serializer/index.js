@@ -70,12 +70,15 @@ function printChildren(children, print, indent, opts) {
 function printProps(props, print, indent, opts) {
   return Object.keys(props).sort().map((propName) => {
     const propValue = props[propName];
+    if (propValue == null) return '';
 
     let printedValue;
     if (typeof propValue === 'string') {
       printedValue = print(propValue);
     } else if (propName === 'style') {
       printedValue = printStyle(propValue, print);
+    } else if (propValue === true) {
+      printedValue = undefined;
     } else {
       return '';
     }
@@ -84,6 +87,7 @@ function printProps(props, print, indent, opts) {
     if (REACT_PROPS_TO_DOM_ATTRS[propName]) {
       printedName = REACT_PROPS_TO_DOM_ATTRS[propName];
     }
+    if (propValue === true) return opts.spacing + indent(printedName);
     return opts.spacing + indent(`${printedName}=`) + printedValue;
   }).join('');
 }
@@ -96,6 +100,7 @@ function printStyle(style, print) {
   let css = '';
   Object.keys(style).sort().forEach((styleName) => {
     const styleValue = style[styleName];
+    if (styleValue === undefined) return;
     css += hyphenateStyleName(styleName);
     css += ':';
     css += printStyleValue(styleName, styleValue);

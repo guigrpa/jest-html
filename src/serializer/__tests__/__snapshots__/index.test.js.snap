@@ -26,9 +26,10 @@ exports[`Serializer should correctly serialize React components 1`] = `
 ------------HTML PREVIEW---------------
   <div
     b=\"foo\"
+    c
     class=\"my-class\"
     for=\"bar\"
-    style=\"border:1px solid blue;flex-direction:row;margin:3px;padding:2px;sth:;\">
+    style=\"border:1px solid blue;flex-direction:row;margin:3px;padding:2px;\">
     Text
     5
   </div>"
@@ -48,7 +49,6 @@ with accents: áéíóú\",
 }
 ------------HTML PREVIEW---------------
   <textarea
-    style=
     value=\"One block
   of text
   with accents: áéíóú\">One block
