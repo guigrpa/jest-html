@@ -1,5 +1,7 @@
 # Changelog
 
+## 1.1.0 (Nov. 5, 2016)
+
 * Serializer: support HTML self-closing tags.
 * Previewer: add button to toggle between raw snapshot and HTML preview.
 * Add Jest peer dependency.

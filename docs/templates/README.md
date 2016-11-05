@@ -11,6 +11,7 @@ Preview Jest snapshots right in your browser.
 * **Custom CSS** stylesheets applicable to all snapshots or individual ones.
 * **Intuitive navigation** through folders, snapshot suites, and even **snapshot groups** within a suite.
 * **Real-time updates** whenever a snapshot or CSS file changes.
+* **Quickly toggle** between the raw snapshots and the HTML previews.
 
 ## Installation
 
