@@ -62,9 +62,44 @@ Object.keys(IS_UNITLESS_NUMBER).forEach((prop) => {
   });
 });
 
-function printChildren(children, print, indent, opts) {
-  return children.map((child) => printInstance(child, print, indent, opts))
-    .join(opts.edgeSpacing);
+function test(object: any) {
+  return object && !object.__visited && object.$$typeof === reactTestInstance;
+}
+
+function printMain(val: Object, print: Function, indent: Function, opts: Object) {
+  const val2 = merge(val, {
+    __visited: true,
+    $$typeof: reactTestInstance,
+  });  // break infinite recursion
+  const snapContents = print(val2, print, indent, opts);
+  const htmlContents = printInstance(val, print, indent, opts);
+  // Indent the HTML preview to clean up diffs wrt. non-HTML-equipped snapshots
+  return `${snapContents}\n${HTML_PREVIEW_SEPARATOR}\n${indent(htmlContents)}`;
+}
+
+function printInstance(instance, print, indent, opts) {
+  if (typeof instance === 'number') return print(instance);
+  if (typeof instance === 'string') return printString(instance);
+
+  let result = `<${instance.type}`;
+
+  if (instance.props) {
+    result += printProps(instance.props, print, indent, opts);
+  }
+
+  const children = instance.children;
+  if (children) {
+    const printedChildren = printChildren(children, print, indent, opts);
+    result += `>${opts.edgeSpacing}${indent(printedChildren)}` +
+      `${opts.edgeSpacing}</${instance.type}>`;
+  } else if (instance.type.toUpperCase() === 'TEXTAREA') {
+    result += `>${(escapeHtml(instance.props.value) || '')}` +
+      `</${instance.type}>`;
+  } else {
+    result += `>${opts.edgeSpacing}</${instance.type}>`;
+  }
+
+  return result;
 }
 
 function printProps(props, print, indent, opts) {
@@ -119,44 +154,9 @@ function printStyleValue(name, value) {
   return String(value).trim();
 }
 
-function printInstance(instance, print, indent, opts) {
-  if (typeof instance === 'number') return print(instance);
-  if (typeof instance === 'string') return printString(instance);
-
-  let result = `<${instance.type}`;
-
-  if (instance.props) {
-    result += printProps(instance.props, print, indent, opts);
-  }
-
-  const children = instance.children;
-  if (children) {
-    const printedChildren = printChildren(children, print, indent, opts);
-    result += `>${opts.edgeSpacing}${indent(printedChildren)}` +
-      `${opts.edgeSpacing}</${instance.type}>`;
-  } else if (instance.type.toUpperCase() === 'TEXTAREA') {
-    result += `>${(escapeHtml(instance.props.value) || '')}` +
-      `</${instance.type}>`;
-  } else {
-    result += `>${opts.edgeSpacing}</${instance.type}>`;
-  }
-
-  return result;
-}
-
-function test(object: any) {
-  return object && !object.__visited && object.$$typeof === reactTestInstance;
-}
-
-function printMain(val: Object, print: Function, indent: Function, opts: Object) {
-  const val2 = merge(val, {
-    __visited: true,
-    $$typeof: reactTestInstance,
-  });  // break infinite recursion
-  const snapContents = print(val2, print, indent, opts);
-  const htmlContents = printInstance(val, print, indent, opts);
-  // Indent the HTML preview to clean up diffs wrt. non-HTML-equipped snapshots
-  return `${snapContents}\n${HTML_PREVIEW_SEPARATOR}\n${indent(htmlContents)}`;
+function printChildren(children, print, indent, opts) {
+  return children.map((child) => printInstance(child, print, indent, opts))
+    .join(opts.edgeSpacing);
 }
 
 export {
