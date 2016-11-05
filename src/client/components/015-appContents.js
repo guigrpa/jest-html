@@ -31,6 +31,8 @@ const snapshotName = (id) => {
   return segments.slice(0, segments.length - 1).join(' ');
 };
 
+const _escape = (str) => encodeURIComponent(str);
+
 // ==========================================
 // Component declarations
 // ==========================================
@@ -124,7 +126,7 @@ class AppContents extends React.PureComponent {
           key={id}
           id={id}
           label={label}
-          link={`/folder/${folderPath}`}
+          link={`/folder/${_escape(folderPath)}`}
           icon="folder-o"
           fSelected={false}
         />
@@ -141,7 +143,7 @@ class AppContents extends React.PureComponent {
           key={id}
           id={id}
           label={label}
-          link={`/suite/${filePath}`}
+          link={`/suite/${_escape(filePath)}`}
           icon="file-o"
           fSelected={false}
         />
@@ -178,7 +180,7 @@ class AppContents extends React.PureComponent {
             key={id}
             id={id}
             label={snapshotName(id)}
-            link={`/suite/${fetchedItemPath}?id=${id}`}
+            link={`/suite/${_escape(fetchedItemPath)}?id=${_escape(id)}`}
             icon="camera"
             fSelected={query && query.id === id}
           />
@@ -189,7 +191,7 @@ class AppContents extends React.PureComponent {
             key={id}
             id={id}
             label={id.slice(name.length).trim()}
-            link={`/suite/${fetchedItemPath}?id=${id}`}
+            link={`/suite/${_escape(fetchedItemPath)}?id=${_escape(id)}`}
             icon="camera"
             fSelected={query && query.id === id}
           />

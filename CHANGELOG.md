@@ -1,5 +1,8 @@
 # Changelog
 
+* Add Jest peer dependency
+* Bugfix: escape folder, suite, snapshot names for compatibility.
+
 ## 1.0.1 (Nov. 4, 2016)
 
 * Bugfix: correct handling of `true` prop values, empty style attributes and null props.
