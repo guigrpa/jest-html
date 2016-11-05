@@ -862,10 +862,8 @@ exports[`AppContents renders error messages 1`] = `
       An error occurred:
     </b>
     <br>
-    </br>
     Something horrible!
     <br>
-    </br>
     <span
       class="giu-button"
       style="-webkit-user-select:none;border:1px solid #999999;border-radius:5px;cursor:pointer;display:inline-block;padding:1px 5px;user-select:none;">

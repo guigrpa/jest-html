@@ -66,3 +66,38 @@ exports[`Serializer should correctly serialize childless components 1`] = `
   <div>
   </div>"
 `;
+
+exports[`Serializer should correctly serialize self-closing elements 1`] = `
+"Object {
+  \"$$typeof\": Symbol(react.test.json),
+  \"__visited\": true,
+  \"children\": Array [
+    Object {
+      \"type\": \"span\",
+    },
+    Object {
+      \"type\": \"br\",
+    },
+    Object {
+      \"props\": Object {
+        \"src\": \"foo.png\",
+      },
+      \"type\": \"img\",
+    },
+    Object {
+      \"type\": \"span\",
+    },
+  ],
+  \"type\": \"div\",
+}
+------------HTML PREVIEW---------------
+  <div>
+    <span>
+    </span>
+    <br>
+    <img
+      src=\"foo.png\">
+    <span>
+    </span>
+  </div>"
+`;

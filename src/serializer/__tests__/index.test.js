@@ -56,6 +56,23 @@ describe('Serializer', () => {
     expect(prettyFormat(obj, { plugins: [serialize] })).toMatchSnapshot();
   });
 
+  it('should correctly serialize self-closing elements', () => {
+    const obj = {
+      $$typeof: Symbol.for('react.test.json'),
+      type: 'div',
+      children: [
+        { type: 'span' },
+        { type: 'br' },
+        {
+          type: 'img',
+          props: { src: 'foo.png' },
+        },
+        { type: 'span' },
+      ],
+    };
+    expect(prettyFormat(obj, { plugins: [serialize] })).toMatchSnapshot();
+  });
+
   it('should correctly serialize childless components', () => {
     const obj = {
       $$typeof: Symbol.for('react.test.json'),

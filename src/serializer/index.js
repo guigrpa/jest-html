@@ -62,6 +62,25 @@ Object.keys(IS_UNITLESS_NUMBER).forEach((prop) => {
   });
 });
 
+const SELF_CLOSING = {
+  area: true,
+  base: true,
+  br: true,
+  col: true,
+  command: true,
+  embed: true,
+  hr: true,
+  img: true,
+  input: true,
+  keygen: true,
+  link: true,
+  meta: true,
+  param: true,
+  source: true,
+  track: true,
+  wbr: true,
+};
+
 function test(object: any) {
   return object && !object.__visited && object.$$typeof === reactTestInstance;
 }
@@ -88,7 +107,9 @@ function printInstance(instance, print, indent, opts) {
   }
 
   const children = instance.children;
-  if (children) {
+  if (SELF_CLOSING[instance.type]) {
+    result += '>';
+  } else if (children) {
     const printedChildren = printChildren(children, print, indent, opts);
     result += `>${opts.edgeSpacing}${indent(printedChildren)}` +
       `${opts.edgeSpacing}</${instance.type}>`;
