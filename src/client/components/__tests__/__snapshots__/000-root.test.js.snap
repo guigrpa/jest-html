@@ -1,29 +1,74 @@
 exports[`Root renders correctly 1`] = `
 <div
   dataMockType="BrowserRouter">
+  <div
+    style={
+      Object {
+        "color": "blue",
+        "fontWeight": "bold",
+      }
+    }>
+    BrowserRouter
+  </div>
   <div>
     <div
       component={[Function]}
       dataMockType="Match"
       exactly={true}
       pattern="/">
+      <div
+        style={
+          Object {
+            "color": "blue",
+            "fontWeight": "bold",
+          }
+        }>
+        Match
+      </div>
       Match
     </div>
     <div
       component={[Function]}
       dataMockType="Match"
       pattern="/suite/*">
+      <div
+        style={
+          Object {
+            "color": "blue",
+            "fontWeight": "bold",
+          }
+        }>
+        Match
+      </div>
       Match
     </div>
     <div
       component={[Function]}
       dataMockType="Match"
       pattern="/folder/*">
+      <div
+        style={
+          Object {
+            "color": "blue",
+            "fontWeight": "bold",
+          }
+        }>
+        Match
+      </div>
       Match
     </div>
     <div
       dataMockType="Miss"
       render={[Function]}>
+      <div
+        style={
+          Object {
+            "color": "blue",
+            "fontWeight": "bold",
+          }
+        }>
+        Miss
+      </div>
       Miss
     </div>
   </div>
@@ -31,25 +76,45 @@ exports[`Root renders correctly 1`] = `
 ------------HTML PREVIEW---------------
   <div
     dataMockType="BrowserRouter">
+    <div
+      style="color:blue;font-weight:bold;">
+      BrowserRouter
+    </div>
     <div>
       <div
         dataMockType="Match"
         exactly
         pattern="/">
+        <div
+          style="color:blue;font-weight:bold;">
+          Match
+        </div>
         Match
       </div>
       <div
         dataMockType="Match"
         pattern="/suite/*">
+        <div
+          style="color:blue;font-weight:bold;">
+          Match
+        </div>
         Match
       </div>
       <div
         dataMockType="Match"
         pattern="/folder/*">
+        <div
+          style="color:blue;font-weight:bold;">
+          Match
+        </div>
         Match
       </div>
       <div
         dataMockType="Miss">
+        <div
+          style="color:blue;font-weight:bold;">
+          Miss
+        </div>
         Miss
       </div>
     </div>

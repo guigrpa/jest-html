@@ -7,6 +7,15 @@ exports[`Preview renders correctly with HTML snapshot 1`] = `
       "width": "100%",
     }
   }>
+  <div
+    style={
+      Object {
+        "color": "blue",
+        "fontWeight": "bold",
+      }
+    }>
+    Frame
+  </div>
   <style>
     body { color: green }
   </style>
@@ -21,6 +30,10 @@ exports[`Preview renders correctly with HTML snapshot 1`] = `
   <div
     dataMockType="Frame"
     style="border:none;width:100%;">
+    <div
+      style="color:blue;font-weight:bold;">
+      Frame
+    </div>
     <style>
       body { color: green }
     </style>
