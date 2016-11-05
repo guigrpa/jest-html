@@ -49,7 +49,7 @@ const start = ({ story = mainStory }: { story: StoryT } = {}) =>
   .then(() => broadcastSignal());
 
 // ---------------------------------
-// CSS
+// Snapshots
 // ---------------------------------
 let _snapshotSuiteDict: SnapshotSuiteDictT = {};
 
@@ -101,7 +101,7 @@ const loadSuite = (filePath: string, commonCss: Array<string>, story: StoryT) =>
     suite[id] = { id, snap, html, css };
   });
   story.debug('extractor', `Found ${Object.keys(rawSnapshots).length} snapshots`);
-  const finalFilePath = `-/${filePath}`;
+  const finalFilePath = `-/${filePath.normalize()}`;
   suite[FOLDER_PATH_ATTR] = path.dirname(finalFilePath);
   _snapshotSuiteDict[finalFilePath] = suite;
 };
@@ -260,7 +260,7 @@ const snapWatchEvent = (type: string, filePath0: string) => {
         .then(() => buildFolderDict(mainStory));
       case 'unlink':
         return Promise.resolve()
-        .then(() => { delete _snapshotSuiteDict[`-/${filePath}`]; })
+        .then(() => { delete _snapshotSuiteDict[`-/${filePath.normalize()}`]; })
         .then(() => buildFolderDict(mainStory));
       default:
         break;
@@ -278,8 +278,10 @@ const broadcastSignal = () => {
 // ---------------------------------
 // Others
 // ---------------------------------
-const getFolder = (folderPath: FolderPathT): ?FolderT => _folderDict[folderPath];
-const getSnapshotSuite = (filePath: FilePathT): ?SnapshotSuiteT => _snapshotSuiteDict[filePath];
+const getFolder = (folderPath: FolderPathT): ?FolderT =>
+  _folderDict[folderPath.normalize()];
+const getSnapshotSuite = (filePath: FilePathT): ?SnapshotSuiteT =>
+  _snapshotSuiteDict[filePath.normalize()];
 
 // =============================================
 // Public API
