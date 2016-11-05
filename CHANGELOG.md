@@ -1,6 +1,7 @@
 # Changelog
 
-* Add Jest peer dependency
+* Serializer: support HTML self-closing tags.
+* Add Jest peer dependency.
 * Bugfix: escape folder, suite, snapshot names for compatibility.
 
 ## 1.0.1 (Nov. 4, 2016)
