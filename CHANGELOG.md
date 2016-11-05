@@ -1,6 +1,7 @@
 # Changelog
 
 * Serializer: support HTML self-closing tags.
+* Previewer: add button to toggle between raw snapshot and HTML preview.
 * Add Jest peer dependency.
 * Bugfix: escape folder, suite, snapshot names for compatibility.
 

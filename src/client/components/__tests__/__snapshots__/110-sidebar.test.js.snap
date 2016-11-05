@@ -69,7 +69,19 @@ exports[`Sidebar renders correctly 1`] = `
           "WebkitFlex": "0 1 30px",
           "flex": "0 1 30px",
         }
-      } />
+      }>
+      <i
+        className="giu-icon fa fa-file-code-o fa-lg"
+        onClick={undefined}
+        style={
+          Object {
+            "color": "gray",
+            "cursor": "pointer",
+            "letterSpacing": "normal",
+          }
+        }
+        title="Toggle raw/HTML snapshot" />
+    </div>
   </div>
   one
   two
@@ -98,6 +110,11 @@ exports[`Sidebar renders correctly 1`] = `
       </div>
       <div
         style="-webkit-flex:0 1 30px;flex:0 1 30px;">
+        <i
+          class="giu-icon fa fa-file-code-o fa-lg"
+          style="color:gray;cursor:pointer;letter-spacing:normal;"
+          title="Toggle raw/HTML snapshot">
+        </i>
       </div>
     </div>
     one
@@ -177,7 +194,19 @@ exports[`Sidebar renders correctly without linkBack 1`] = `
           "WebkitFlex": "0 1 30px",
           "flex": "0 1 30px",
         }
-      } />
+      }>
+      <i
+        className="giu-icon fa fa-file-code-o fa-lg"
+        onClick={undefined}
+        style={
+          Object {
+            "color": "gray",
+            "cursor": "pointer",
+            "letterSpacing": "normal",
+          }
+        }
+        title="Toggle raw/HTML snapshot" />
+    </div>
   </div>
   one
   two
@@ -206,6 +235,11 @@ exports[`Sidebar renders correctly without linkBack 1`] = `
       </div>
       <div
         style="-webkit-flex:0 1 30px;flex:0 1 30px;">
+        <i
+          class="giu-icon fa fa-file-code-o fa-lg"
+          style="color:gray;cursor:pointer;letter-spacing:normal;"
+          title="Toggle raw/HTML snapshot">
+        </i>
       </div>
     </div>
     one

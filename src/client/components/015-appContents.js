@@ -52,6 +52,16 @@ type PropsT = {
 // ==========================================
 class AppContents extends React.PureComponent {
   props: PropsT;
+  state: {
+    fRaw: boolean;
+  };
+
+  constructor(props: PropsT) {
+    super(props);
+    this.state = {
+      fRaw: false,
+    };
+  }
 
   render() {
     if (this.props.fRedirectToRoot) {
@@ -106,7 +116,13 @@ class AppContents extends React.PureComponent {
       );
     }
     return (
-      <Sidebar title={title} subtitle={fetchedItemPath} linkBack={linkBack}>
+      <Sidebar
+        title={title}
+        subtitle={fetchedItemPath}
+        linkBack={linkBack}
+        fRaw={this.state.fRaw}
+        toggleRaw={this.toggleRaw}
+      >
         {contents}
       </Sidebar>
     );
@@ -221,8 +237,14 @@ class AppContents extends React.PureComponent {
       <Preview
         key={key}
         snapshot={snapshot}
+        fRaw={this.state.fRaw}
       />
     );
+  }
+
+  // ------------------------------------------
+  toggleRaw = () => {
+    this.setState({ fRaw: !this.state.fRaw });
   }
 }
 

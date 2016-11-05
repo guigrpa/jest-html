@@ -11,12 +11,13 @@ import LargeMessage from './200-largeMessage';
 // ==========================================
 type PropsT = {
   snapshot: ?SnapshotT,
+  fRaw?: boolean,
 };
 
 // ==========================================
 // Component
 // ==========================================
-const Preview = ({ snapshot }: PropsT) => {
+const Preview = ({ snapshot, fRaw }: PropsT) => {
   if (!snapshot) {
     return (
       <div style={style.outer}>
@@ -24,7 +25,7 @@ const Preview = ({ snapshot }: PropsT) => {
       </div>
     );
   }
-  if (!snapshot.html) {
+  if (fRaw || !snapshot.html) {
     return (
       <div style={style.outer}>
         <pre style={style.outerNonHtml}>{snapshot.snap}</pre>

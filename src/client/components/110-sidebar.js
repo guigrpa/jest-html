@@ -12,6 +12,8 @@ type PropsT = {
   subtitle: ?string,
   linkBack: ?string,
   children?: any,
+  fRaw: boolean,
+  toggleRaw: () => void,
 };
 
 // ==========================================
@@ -22,6 +24,8 @@ const Sidebar = ({
   subtitle,
   linkBack,
   children,
+  fRaw,
+  toggleRaw,
 }: PropsT) =>
   <div style={style.outer}>
     <div style={style.titleBar}>
@@ -36,7 +40,15 @@ const Sidebar = ({
       <div style={style.title} title={subtitle}>
         {title}
       </div>
-      <div style={flexItem('0 1 30px')} />
+      <div style={flexItem('0 1 30px')}>
+        <Icon
+          icon="file-code-o"
+          size="lg"
+          onClick={toggleRaw}
+          style={style.raw(fRaw)}
+          title="Toggle raw/HTML snapshot"
+        />
+      </div>
     </div>
     {children}
   </div>;
@@ -64,6 +76,9 @@ const style = {
   title: flexItem(1, {
     textAlign: 'center',
     fontWeight: 'bold',
+  }),
+  raw: (fRaw) => ({
+    color: fRaw ? 'black' : 'gray',
   }),
 };
 
