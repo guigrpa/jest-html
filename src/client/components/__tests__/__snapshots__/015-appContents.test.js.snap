@@ -11,7 +11,6 @@ exports[`AppContents can redirect to root if needed 1`] = `
     }>
     Redirect
   </div>
-  Redirect
 </div>
 ------------HTML PREVIEW---------------
   <div
@@ -21,7 +20,6 @@ exports[`AppContents can redirect to root if needed 1`] = `
       style="color:blue;font-weight:bold;">
       Redirect
     </div>
-    Redirect
   </div>
 `;
 
@@ -93,7 +91,6 @@ exports[`AppContents renders a folder with subfolders and suites correctly 1`] =
         }>
         SidebarItem
       </div>
-      SidebarItem
     </div>
     <div
       dataMockType="SidebarItem"
@@ -111,7 +108,6 @@ exports[`AppContents renders a folder with subfolders and suites correctly 1`] =
         }>
         SidebarItem
       </div>
-      SidebarItem
     </div>
     <div
       dataMockType="SidebarItem"
@@ -129,7 +125,6 @@ exports[`AppContents renders a folder with subfolders and suites correctly 1`] =
         }>
         SidebarItem
       </div>
-      SidebarItem
     </div>
     <div
       dataMockType="SidebarItem"
@@ -147,7 +142,6 @@ exports[`AppContents renders a folder with subfolders and suites correctly 1`] =
         }>
         SidebarItem
       </div>
-      SidebarItem
     </div>
     <div
       dataMockType="SidebarItem"
@@ -165,7 +159,6 @@ exports[`AppContents renders a folder with subfolders and suites correctly 1`] =
         }>
         SidebarItem
       </div>
-      SidebarItem
     </div>
   </div>
   <div
@@ -181,7 +174,6 @@ exports[`AppContents renders a folder with subfolders and suites correctly 1`] =
       }>
       Preview
     </div>
-    Preview
   </div>
 </div>
 ------------HTML PREVIEW---------------
@@ -209,7 +201,6 @@ exports[`AppContents renders a folder with subfolders and suites correctly 1`] =
           style="color:blue;font-weight:bold;">
           SidebarItem
         </div>
-        SidebarItem
       </div>
       <div
         dataMockType="SidebarItem"
@@ -221,7 +212,6 @@ exports[`AppContents renders a folder with subfolders and suites correctly 1`] =
           style="color:blue;font-weight:bold;">
           SidebarItem
         </div>
-        SidebarItem
       </div>
       <div
         dataMockType="SidebarItem"
@@ -233,7 +223,6 @@ exports[`AppContents renders a folder with subfolders and suites correctly 1`] =
           style="color:blue;font-weight:bold;">
           SidebarItem
         </div>
-        SidebarItem
       </div>
       <div
         dataMockType="SidebarItem"
@@ -245,7 +234,6 @@ exports[`AppContents renders a folder with subfolders and suites correctly 1`] =
           style="color:blue;font-weight:bold;">
           SidebarItem
         </div>
-        SidebarItem
       </div>
       <div
         dataMockType="SidebarItem"
@@ -257,7 +245,6 @@ exports[`AppContents renders a folder with subfolders and suites correctly 1`] =
           style="color:blue;font-weight:bold;">
           SidebarItem
         </div>
-        SidebarItem
       </div>
     </div>
     <div
@@ -266,7 +253,6 @@ exports[`AppContents renders a folder with subfolders and suites correctly 1`] =
         style="color:blue;font-weight:bold;">
         Preview
       </div>
-      Preview
     </div>
   </div>
 `;
@@ -339,7 +325,6 @@ exports[`AppContents renders a folder with subfolders correctly 1`] = `
         }>
         SidebarItem
       </div>
-      SidebarItem
     </div>
     <div
       dataMockType="SidebarItem"
@@ -357,7 +342,6 @@ exports[`AppContents renders a folder with subfolders correctly 1`] = `
         }>
         SidebarItem
       </div>
-      SidebarItem
     </div>
   </div>
   <div
@@ -373,7 +357,6 @@ exports[`AppContents renders a folder with subfolders correctly 1`] = `
       }>
       Preview
     </div>
-    Preview
   </div>
 </div>
 ------------HTML PREVIEW---------------
@@ -401,7 +384,6 @@ exports[`AppContents renders a folder with subfolders correctly 1`] = `
           style="color:blue;font-weight:bold;">
           SidebarItem
         </div>
-        SidebarItem
       </div>
       <div
         dataMockType="SidebarItem"
@@ -413,7 +395,6 @@ exports[`AppContents renders a folder with subfolders correctly 1`] = `
           style="color:blue;font-weight:bold;">
           SidebarItem
         </div>
-        SidebarItem
       </div>
     </div>
     <div
@@ -422,7 +403,6 @@ exports[`AppContents renders a folder with subfolders correctly 1`] = `
         style="color:blue;font-weight:bold;">
         Preview
       </div>
-      Preview
     </div>
   </div>
 `;
@@ -495,7 +475,6 @@ exports[`AppContents renders a folder with suites correctly 1`] = `
         }>
         SidebarItem
       </div>
-      SidebarItem
     </div>
     <div
       dataMockType="SidebarItem"
@@ -513,7 +492,6 @@ exports[`AppContents renders a folder with suites correctly 1`] = `
         }>
         SidebarItem
       </div>
-      SidebarItem
     </div>
     <div
       dataMockType="SidebarItem"
@@ -531,7 +509,6 @@ exports[`AppContents renders a folder with suites correctly 1`] = `
         }>
         SidebarItem
       </div>
-      SidebarItem
     </div>
   </div>
   <div
@@ -547,7 +524,6 @@ exports[`AppContents renders a folder with suites correctly 1`] = `
       }>
       Preview
     </div>
-    Preview
   </div>
 </div>
 ------------HTML PREVIEW---------------
@@ -575,7 +551,6 @@ exports[`AppContents renders a folder with suites correctly 1`] = `
           style="color:blue;font-weight:bold;">
           SidebarItem
         </div>
-        SidebarItem
       </div>
       <div
         dataMockType="SidebarItem"
@@ -587,7 +562,6 @@ exports[`AppContents renders a folder with suites correctly 1`] = `
           style="color:blue;font-weight:bold;">
           SidebarItem
         </div>
-        SidebarItem
       </div>
       <div
         dataMockType="SidebarItem"
@@ -599,7 +573,6 @@ exports[`AppContents renders a folder with suites correctly 1`] = `
           style="color:blue;font-weight:bold;">
           SidebarItem
         </div>
-        SidebarItem
       </div>
     </div>
     <div
@@ -608,7 +581,6 @@ exports[`AppContents renders a folder with suites correctly 1`] = `
         style="color:blue;font-weight:bold;">
         Preview
       </div>
-      Preview
     </div>
   </div>
 `;
@@ -731,7 +703,6 @@ exports[`AppContents renders a suite with a selected snapshot 1`] = `
           }>
           SidebarItem
         </div>
-        SidebarItem
       </div>
       <div
         dataMockType="SidebarItem"
@@ -749,7 +720,6 @@ exports[`AppContents renders a suite with a selected snapshot 1`] = `
           }>
           SidebarItem
         </div>
-        SidebarItem
       </div>
     </div>
     <div
@@ -768,7 +738,6 @@ exports[`AppContents renders a suite with a selected snapshot 1`] = `
         }>
         SidebarItem
       </div>
-      SidebarItem
     </div>
     <div
       dataMockType="SidebarItem"
@@ -786,7 +755,6 @@ exports[`AppContents renders a suite with a selected snapshot 1`] = `
         }>
         SidebarItem
       </div>
-      SidebarItem
     </div>
   </div>
   <div
@@ -808,7 +776,6 @@ exports[`AppContents renders a suite with a selected snapshot 1`] = `
       }>
       Preview
     </div>
-    Preview
   </div>
 </div>
 ------------HTML PREVIEW---------------
@@ -843,7 +810,6 @@ exports[`AppContents renders a suite with a selected snapshot 1`] = `
             style="color:blue;font-weight:bold;">
             SidebarItem
           </div>
-          SidebarItem
         </div>
         <div
           dataMockType="SidebarItem"
@@ -855,7 +821,6 @@ exports[`AppContents renders a suite with a selected snapshot 1`] = `
             style="color:blue;font-weight:bold;">
             SidebarItem
           </div>
-          SidebarItem
         </div>
       </div>
       <div
@@ -869,7 +834,6 @@ exports[`AppContents renders a suite with a selected snapshot 1`] = `
           style="color:blue;font-weight:bold;">
           SidebarItem
         </div>
-        SidebarItem
       </div>
       <div
         dataMockType="SidebarItem"
@@ -881,7 +845,6 @@ exports[`AppContents renders a suite with a selected snapshot 1`] = `
           style="color:blue;font-weight:bold;">
           SidebarItem
         </div>
-        SidebarItem
       </div>
     </div>
     <div
@@ -890,7 +853,6 @@ exports[`AppContents renders a suite with a selected snapshot 1`] = `
         style="color:blue;font-weight:bold;">
         Preview
       </div>
-      Preview
     </div>
   </div>
 `;
@@ -975,7 +937,6 @@ exports[`AppContents renders a suite with grouped snapshots correctly 1`] = `
           }>
           SidebarItem
         </div>
-        SidebarItem
       </div>
       <div
         dataMockType="SidebarItem"
@@ -993,7 +954,6 @@ exports[`AppContents renders a suite with grouped snapshots correctly 1`] = `
           }>
           SidebarItem
         </div>
-        SidebarItem
       </div>
     </div>
     <div
@@ -1012,7 +972,6 @@ exports[`AppContents renders a suite with grouped snapshots correctly 1`] = `
         }>
         SidebarItem
       </div>
-      SidebarItem
     </div>
     <div
       dataMockType="SidebarItem"
@@ -1030,7 +989,6 @@ exports[`AppContents renders a suite with grouped snapshots correctly 1`] = `
         }>
         SidebarItem
       </div>
-      SidebarItem
     </div>
   </div>
   <div
@@ -1046,7 +1004,6 @@ exports[`AppContents renders a suite with grouped snapshots correctly 1`] = `
       }>
       Preview
     </div>
-    Preview
   </div>
 </div>
 ------------HTML PREVIEW---------------
@@ -1081,7 +1038,6 @@ exports[`AppContents renders a suite with grouped snapshots correctly 1`] = `
             style="color:blue;font-weight:bold;">
             SidebarItem
           </div>
-          SidebarItem
         </div>
         <div
           dataMockType="SidebarItem"
@@ -1093,7 +1049,6 @@ exports[`AppContents renders a suite with grouped snapshots correctly 1`] = `
             style="color:blue;font-weight:bold;">
             SidebarItem
           </div>
-          SidebarItem
         </div>
       </div>
       <div
@@ -1106,7 +1061,6 @@ exports[`AppContents renders a suite with grouped snapshots correctly 1`] = `
           style="color:blue;font-weight:bold;">
           SidebarItem
         </div>
-        SidebarItem
       </div>
       <div
         dataMockType="SidebarItem"
@@ -1118,7 +1072,6 @@ exports[`AppContents renders a suite with grouped snapshots correctly 1`] = `
           style="color:blue;font-weight:bold;">
           SidebarItem
         </div>
-        SidebarItem
       </div>
     </div>
     <div
@@ -1127,7 +1080,6 @@ exports[`AppContents renders a suite with grouped snapshots correctly 1`] = `
         style="color:blue;font-weight:bold;">
         Preview
       </div>
-      Preview
     </div>
   </div>
 `;
@@ -1200,7 +1152,6 @@ exports[`AppContents renders a suite with individual snapshots correctly 1`] = `
         }>
         SidebarItem
       </div>
-      SidebarItem
     </div>
     <div
       dataMockType="SidebarItem"
@@ -1218,7 +1169,6 @@ exports[`AppContents renders a suite with individual snapshots correctly 1`] = `
         }>
         SidebarItem
       </div>
-      SidebarItem
     </div>
   </div>
   <div
@@ -1234,7 +1184,6 @@ exports[`AppContents renders a suite with individual snapshots correctly 1`] = `
       }>
       Preview
     </div>
-    Preview
   </div>
 </div>
 ------------HTML PREVIEW---------------
@@ -1262,7 +1211,6 @@ exports[`AppContents renders a suite with individual snapshots correctly 1`] = `
           style="color:blue;font-weight:bold;">
           SidebarItem
         </div>
-        SidebarItem
       </div>
       <div
         dataMockType="SidebarItem"
@@ -1274,7 +1222,6 @@ exports[`AppContents renders a suite with individual snapshots correctly 1`] = `
           style="color:blue;font-weight:bold;">
           SidebarItem
         </div>
-        SidebarItem
       </div>
     </div>
     <div
@@ -1283,7 +1230,6 @@ exports[`AppContents renders a suite with individual snapshots correctly 1`] = `
         style="color:blue;font-weight:bold;">
         Preview
       </div>
-      Preview
     </div>
   </div>
 `;
@@ -1443,7 +1389,6 @@ exports[`AppContents renders the root folder correctly 1`] = `
         }>
         SidebarItem
       </div>
-      SidebarItem
     </div>
     <div
       dataMockType="SidebarItem"
@@ -1461,7 +1406,6 @@ exports[`AppContents renders the root folder correctly 1`] = `
         }>
         SidebarItem
       </div>
-      SidebarItem
     </div>
   </div>
   <div
@@ -1477,7 +1421,6 @@ exports[`AppContents renders the root folder correctly 1`] = `
       }>
       Preview
     </div>
-    Preview
   </div>
 </div>
 ------------HTML PREVIEW---------------
@@ -1504,7 +1447,6 @@ exports[`AppContents renders the root folder correctly 1`] = `
           style="color:blue;font-weight:bold;">
           SidebarItem
         </div>
-        SidebarItem
       </div>
       <div
         dataMockType="SidebarItem"
@@ -1516,7 +1458,6 @@ exports[`AppContents renders the root folder correctly 1`] = `
           style="color:blue;font-weight:bold;">
           SidebarItem
         </div>
-        SidebarItem
       </div>
     </div>
     <div
@@ -1525,7 +1466,6 @@ exports[`AppContents renders the root folder correctly 1`] = `
         style="color:blue;font-weight:bold;">
         Preview
       </div>
-      Preview
     </div>
   </div>
 `;

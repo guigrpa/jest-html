@@ -17,7 +17,6 @@ exports[`App renders correctly 1`] = `
     }>
     AppContents
   </div>
-  AppContents
 </div>
 ------------HTML PREVIEW---------------
   <div
@@ -26,6 +25,5 @@ exports[`App renders correctly 1`] = `
       style="color:blue;font-weight:bold;">
       AppContents
     </div>
-    AppContents
   </div>
 `;
