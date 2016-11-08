@@ -2,7 +2,7 @@
 
 // import printString from 'pretty-format/printString';
 import escapeHtml from 'escape-html';
-import { merge, set as timmSet } from 'timm';
+import { merge } from 'timm';
 import hyphenateStyleName from './hyphenateStyleName';
 
 const reactTestInstance = Symbol.for('react.test.json');

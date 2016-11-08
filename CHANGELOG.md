@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.0 (Nov. 8, 2016)
+
+* Serializer: improve spacing and indentation. Handles cases such as: boolean props, elements with 1 or 0 props (inlined), space-preserving styles (`whiteSpace: pre`), etc.
+
 ## 1.1.0 (Nov. 5, 2016)
 
 * Serializer: support HTML self-closing tags.
