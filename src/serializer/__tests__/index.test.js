@@ -106,4 +106,41 @@ describe('Serializer', () => {
     };
     expect(prettyFormat(obj, { plugins: [serialize] })).toMatchSnapshot();
   });
+
+  it('should correctly serialize divs with whiteSpace: pre style', () => {
+    const obj = {
+      $$typeof: Symbol.for('react.test.json'),
+      type: 'div',
+      children: [
+        { type: 'span', children: ['A normal span'] },
+        {
+          type: 'div',
+          props: {
+            foo: 'bar',
+            foo2: 'bar2',
+            style: { whiteSpace: 'pre' },
+          },
+          children: [
+            'A div without whiteSpace:',
+            { type: 'span', props: { a: '3', b: '4' }, children: ['ABC'] },
+            {
+              type: 'span',
+              props: { a: true },
+              children: ['DEF\nGHI'],
+            },
+            {
+              type: 'span',
+              props: { a: true },
+              children: [
+                'JKL',
+                { type: 'span', children: ['MNO'] },
+              ],
+            },
+          ],
+        },
+        { type: 'span', children: ['Another normal span'] },
+      ],
+    };
+    expect(prettyFormat(obj, { plugins: [serialize] })).toMatchSnapshot();
+  });
 });

@@ -2,7 +2,7 @@
 
 // import printString from 'pretty-format/printString';
 import escapeHtml from 'escape-html';
-import { merge } from 'timm';
+import { merge, set as timmSet } from 'timm';
 import hyphenateStyleName from './hyphenateStyleName';
 
 const reactTestInstance = Symbol.for('react.test.json');
@@ -109,18 +109,25 @@ function printInstance(instance, print, indent, opts) {
 
   if (SELF_CLOSING[instance.type]) return result;
 
+  let opts2 = opts;
+  let indent2 = indent;
+  if (filteredProps.style && filteredProps.style.whiteSpace === 'pre') {
+    opts2 = merge(opts, { edgeSpacing: '' });
+    indent2 = (str) => str;
+  }
+
   const children = instance.children;
   if (children) {
-    const printedChildren = printChildren(children, print, indent, opts);
-    result += `${opts.edgeSpacing}${indent(printedChildren)}` +
-      `${opts.edgeSpacing}</${instance.type}>`;
+    const printedChildren = printChildren(children, print, indent2, opts2);
+    result += `${opts2.edgeSpacing}${indent2(printedChildren)}` +
+      `${opts2.edgeSpacing}</${instance.type}>`;
   } else if (instance.type.toUpperCase() === 'TEXTAREA') {
     result += `${(escapeHtml(instance.props.value) || '')}` +
       `</${instance.type}>`;
   } else if (numProps <= 1) {
     result += `</${instance.type}>`;
   } else {
-    result += `${opts.edgeSpacing}</${instance.type}>`;
+    result += `${opts2.edgeSpacing}</${instance.type}>`;
   }
 
   return result;

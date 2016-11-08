@@ -66,6 +66,93 @@ exports[`Serializer should correctly serialize childless components 1`] = `
 <div></div>"
 `;
 
+exports[`Serializer should correctly serialize divs with whiteSpace: pre style 1`] = `
+"Object {
+  \"$$typeof\": Symbol(react.test.json),
+  \"__visited\": true,
+  \"children\": Array [
+    Object {
+      \"children\": Array [
+        \"A normal span\",
+      ],
+      \"type\": \"span\",
+    },
+    Object {
+      \"children\": Array [
+        \"A div without whiteSpace:\",
+        Object {
+          \"children\": Array [
+            \"ABC\",
+          ],
+          \"props\": Object {
+            \"a\": \"3\",
+            \"b\": \"4\",
+          },
+          \"type\": \"span\",
+        },
+        Object {
+          \"children\": Array [
+            \"DEF
+GHI\",
+          ],
+          \"props\": Object {
+            \"a\": true,
+          },
+          \"type\": \"span\",
+        },
+        Object {
+          \"children\": Array [
+            \"JKL\",
+            Object {
+              \"children\": Array [
+                \"MNO\",
+              ],
+              \"type\": \"span\",
+            },
+          ],
+          \"props\": Object {
+            \"a\": true,
+          },
+          \"type\": \"span\",
+        },
+      ],
+      \"props\": Object {
+        \"foo\": \"bar\",
+        \"foo2\": \"bar2\",
+        \"style\": Object {
+          \"whiteSpace\": \"pre\",
+        },
+      },
+      \"type\": \"div\",
+    },
+    Object {
+      \"children\": Array [
+        \"Another normal span\",
+      ],
+      \"type\": \"span\",
+    },
+  ],
+  \"type\": \"div\",
+}
+------------HTML PREVIEW---------------
+<div>
+  <span>
+    A normal span
+  </span>
+  <div
+    foo=\"bar\"
+    foo2=\"bar2\"
+    style=\"white-space:pre;\"
+  >A div without whiteSpace:<span
+  a=\"3\"
+  b=\"4\">ABC</span><span a>DEF
+  GHI</span><span a>JKL<span>MNO</span></span></div>
+  <span>
+    Another normal span
+  </span>
+</div>"
+`;
+
 exports[`Serializer should correctly serialize elements with one prop 1`] = `
 "Object {
   \"$$typeof\": Symbol(react.test.json),
