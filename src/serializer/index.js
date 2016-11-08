@@ -101,11 +101,10 @@ function printInstance(instance, print, indent, opts) {
 
   let result = `<${instance.type}`;
 
-  let numProps = 0;
-  if (instance.props) {
-    result += printProps(instance.props, print, indent, opts);
-    numProps = Object.keys(instance.props).length;
-  }
+  const filteredProps = filterProps(instance.props);
+  const numProps = Object.keys(filteredProps).length;
+  result += printProps(filteredProps, print, indent, opts);
+  if (numProps > 1) result += opts.edgeSpacing;
   result += '>';
 
   if (SELF_CLOSING[instance.type]) return result;
@@ -125,6 +124,18 @@ function printInstance(instance, print, indent, opts) {
   }
 
   return result;
+}
+
+function filterProps(props = {}) {
+  const out = {};
+  Object.keys(props).forEach((name) => {
+    const val = props[name];
+    if (val == null) return;
+    if (typeof val === 'string' || name === 'style' || val === true) {
+      out[name] = val;
+    }
+  });
+  return out;
 }
 
 function printProps(props, print, indent, opts) {

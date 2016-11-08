@@ -29,7 +29,8 @@ exports[`Preview renders correctly with HTML snapshot 1`] = `
 ------------HTML PREVIEW---------------
 <div
   dataMockType="Frame"
-  style="border:none;width:100%;">
+  style="border:none;width:100%;"
+>
   <div style="color:blue;font-weight:bold;">
     Frame
   </div>
@@ -68,7 +69,8 @@ exports[`Preview renders correctly with no snapshot 1`] = `
 <div style="-webkit-flex:1;flex:1;transform:translateZ(0);">
   <div
     class="giu-large-message"
-    style="color:#999999;font-family:sans-serif;font-size:1.4em;font-weight:100;padding:0.8em;text-align:center;">
+    style="color:#999999;font-family:sans-serif;font-size:1.4em;font-weight:100;padding:0.8em;text-align:center;"
+  >
     No snapshot selected
   </div>
 </div>

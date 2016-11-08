@@ -29,7 +29,8 @@ exports[`Serializer should correctly serialize React components 1`] = `
   c
   class=\"my-class\"
   for=\"bar\"
-  style=\"border:1px solid blue;flex-direction:row;margin:3px;padding:2px;\">
+  style=\"border:1px solid blue;flex-direction:row;margin:3px;padding:2px;\"
+>
   Text
   5
 </div>"
@@ -48,8 +49,7 @@ with accents: áéíóú\",
   \"type\": \"textarea\",
 }
 ------------HTML PREVIEW---------------
-<textarea
-  value=\"One block
+<textarea value=\"One block
 of text
 with accents: áéíóú\">One block
 of text
@@ -77,6 +77,20 @@ exports[`Serializer should correctly serialize elements with one prop 1`] = `
 }
 ------------HTML PREVIEW---------------
 <div foo=\"bar\"></div>"
+`;
+
+exports[`Serializer should correctly serialize elements with several props but only one valid one 1`] = `
+"Object {
+  \"$$typeof\": Symbol(react.test.json),
+  \"__visited\": true,
+  \"props\": Object {
+    \"no\": false,
+    \"yes\": true,
+  },
+  \"type\": \"div\",
+}
+------------HTML PREVIEW---------------
+<div yes></div>"
 `;
 
 exports[`Serializer should correctly serialize elements with zero props 1`] = `

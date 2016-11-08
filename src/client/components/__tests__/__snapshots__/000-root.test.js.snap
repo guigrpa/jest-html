@@ -78,27 +78,29 @@ exports[`Root renders correctly 1`] = `
     <div
       dataMockType="Match"
       exactly
-      pattern="/">
+      pattern="/"
+    >
       <div style="color:blue;font-weight:bold;">
         Match
       </div>
     </div>
     <div
       dataMockType="Match"
-      pattern="/suite/*">
+      pattern="/suite/*"
+    >
       <div style="color:blue;font-weight:bold;">
         Match
       </div>
     </div>
     <div
       dataMockType="Match"
-      pattern="/folder/*">
+      pattern="/folder/*"
+    >
       <div style="color:blue;font-weight:bold;">
         Match
       </div>
     </div>
-    <div
-      dataMockType="Miss">
+    <div dataMockType="Miss">
       <div style="color:blue;font-weight:bold;">
         Miss
       </div>

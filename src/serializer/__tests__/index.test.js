@@ -90,6 +90,15 @@ describe('Serializer', () => {
     expect(prettyFormat(obj, { plugins: [serialize] })).toMatchSnapshot();
   });
 
+  it('should correctly serialize elements with several props but only one valid one', () => {
+    const obj = {
+      $$typeof: Symbol.for('react.test.json'),
+      type: 'div',
+      props: { yes: true, no: false },
+    };
+    expect(prettyFormat(obj, { plugins: [serialize] })).toMatchSnapshot();
+  });
+
   it('should correctly serialize childless components', () => {
     const obj = {
       $$typeof: Symbol.for('react.test.json'),

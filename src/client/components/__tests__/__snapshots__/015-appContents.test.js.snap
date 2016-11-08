@@ -15,7 +15,8 @@ exports[`AppContents can redirect to root if needed 1`] = `
 ------------HTML PREVIEW---------------
 <div
   dataMockType="Redirect"
-  to="/">
+  to="/"
+>
   <div style="color:blue;font-weight:bold;">
     Redirect
   </div>
@@ -179,12 +180,14 @@ exports[`AppContents renders a folder with subfolders and suites correctly 1`] =
 <div style="display:flex;flex-direction:row;min-height:100vh;">
   <div
     class="giu-floats"
-    style="height:0;left:0;position:absolute;top:0;width:0;">
+    style="height:0;left:0;position:absolute;top:0;width:0;"
+  >
   </div>
   <div
     dataMockType="Sidebar"
     linkBack="/folder/-/path/to"
-    subtitle="-/path/to/snapshots">
+    subtitle="-/path/to/snapshots"
+  >
     <div style="color:blue;font-weight:bold;">
       Sidebar
     </div>
@@ -193,7 +196,8 @@ exports[`AppContents renders a folder with subfolders and suites correctly 1`] =
       icon="folder-o"
       id="folder_-/path/to/folder/super/nested/folder"
       label="super/nested/folder"
-      link="/folder/-%2Fpath%2Fto%2Ffolder%2Fsuper%2Fnested%2Ffolder">
+      link="/folder/-%2Fpath%2Fto%2Ffolder%2Fsuper%2Fnested%2Ffolder"
+    >
       <div style="color:blue;font-weight:bold;">
         SidebarItem
       </div>
@@ -203,7 +207,8 @@ exports[`AppContents renders a folder with subfolders and suites correctly 1`] =
       icon="folder-o"
       id="folder_-/path/to/folder/subdir"
       label="subdir"
-      link="/folder/-%2Fpath%2Fto%2Ffolder%2Fsubdir">
+      link="/folder/-%2Fpath%2Fto%2Ffolder%2Fsubdir"
+    >
       <div style="color:blue;font-weight:bold;">
         SidebarItem
       </div>
@@ -213,7 +218,8 @@ exports[`AppContents renders a folder with subfolders and suites correctly 1`] =
       icon="file-o"
       id="suite_-/path/to/folder/suite1.snap"
       label="suite1.​snap"
-      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.snap">
+      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.snap"
+    >
       <div style="color:blue;font-weight:bold;">
         SidebarItem
       </div>
@@ -223,7 +229,8 @@ exports[`AppContents renders a folder with subfolders and suites correctly 1`] =
       icon="file-o"
       id="suite_-/path/to/folder/suite2.snap"
       label="suite2.​snap"
-      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite2.snap">
+      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite2.snap"
+    >
       <div style="color:blue;font-weight:bold;">
         SidebarItem
       </div>
@@ -233,14 +240,14 @@ exports[`AppContents renders a folder with subfolders and suites correctly 1`] =
       icon="file-o"
       id="suite_-/path/to/folder/suite3.snap"
       label="suite3.​snap"
-      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite3.snap">
+      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite3.snap"
+    >
       <div style="color:blue;font-weight:bold;">
         SidebarItem
       </div>
     </div>
   </div>
-  <div
-    dataMockType="Preview">
+  <div dataMockType="Preview">
     <div style="color:blue;font-weight:bold;">
       Preview
     </div>
@@ -354,12 +361,14 @@ exports[`AppContents renders a folder with subfolders correctly 1`] = `
 <div style="display:flex;flex-direction:row;min-height:100vh;">
   <div
     class="giu-floats"
-    style="height:0;left:0;position:absolute;top:0;width:0;">
+    style="height:0;left:0;position:absolute;top:0;width:0;"
+  >
   </div>
   <div
     dataMockType="Sidebar"
     linkBack="/folder/-/path/to"
-    subtitle="-/path/to/snapshots">
+    subtitle="-/path/to/snapshots"
+  >
     <div style="color:blue;font-weight:bold;">
       Sidebar
     </div>
@@ -368,7 +377,8 @@ exports[`AppContents renders a folder with subfolders correctly 1`] = `
       icon="folder-o"
       id="folder_-/path/to/folder/super/nested/folder"
       label="super/nested/folder"
-      link="/folder/-%2Fpath%2Fto%2Ffolder%2Fsuper%2Fnested%2Ffolder">
+      link="/folder/-%2Fpath%2Fto%2Ffolder%2Fsuper%2Fnested%2Ffolder"
+    >
       <div style="color:blue;font-weight:bold;">
         SidebarItem
       </div>
@@ -378,14 +388,14 @@ exports[`AppContents renders a folder with subfolders correctly 1`] = `
       icon="folder-o"
       id="folder_-/path/to/folder/subdir"
       label="subdir"
-      link="/folder/-%2Fpath%2Fto%2Ffolder%2Fsubdir">
+      link="/folder/-%2Fpath%2Fto%2Ffolder%2Fsubdir"
+    >
       <div style="color:blue;font-weight:bold;">
         SidebarItem
       </div>
     </div>
   </div>
-  <div
-    dataMockType="Preview">
+  <div dataMockType="Preview">
     <div style="color:blue;font-weight:bold;">
       Preview
     </div>
@@ -516,12 +526,14 @@ exports[`AppContents renders a folder with suites correctly 1`] = `
 <div style="display:flex;flex-direction:row;min-height:100vh;">
   <div
     class="giu-floats"
-    style="height:0;left:0;position:absolute;top:0;width:0;">
+    style="height:0;left:0;position:absolute;top:0;width:0;"
+  >
   </div>
   <div
     dataMockType="Sidebar"
     linkBack="/folder/-/path/to"
-    subtitle="-/path/to/snapshots">
+    subtitle="-/path/to/snapshots"
+  >
     <div style="color:blue;font-weight:bold;">
       Sidebar
     </div>
@@ -530,7 +542,8 @@ exports[`AppContents renders a folder with suites correctly 1`] = `
       icon="file-o"
       id="suite_-/path/to/folder/suite1.snap"
       label="suite1.​snap"
-      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.snap">
+      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.snap"
+    >
       <div style="color:blue;font-weight:bold;">
         SidebarItem
       </div>
@@ -540,7 +553,8 @@ exports[`AppContents renders a folder with suites correctly 1`] = `
       icon="file-o"
       id="suite_-/path/to/folder/suite2.snap"
       label="suite2.​snap"
-      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite2.snap">
+      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite2.snap"
+    >
       <div style="color:blue;font-weight:bold;">
         SidebarItem
       </div>
@@ -550,14 +564,14 @@ exports[`AppContents renders a folder with suites correctly 1`] = `
       icon="file-o"
       id="suite_-/path/to/folder/suite3.snap"
       label="suite3.​snap"
-      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite3.snap">
+      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite3.snap"
+    >
       <div style="color:blue;font-weight:bold;">
         SidebarItem
       </div>
     </div>
   </div>
-  <div
-    dataMockType="Preview">
+  <div dataMockType="Preview">
     <div style="color:blue;font-weight:bold;">
       Preview
     </div>
@@ -595,7 +609,8 @@ exports[`AppContents renders a spinner while loading 1`] = `
   </div>
   <i
     class="giu-icon fa fa-circle-o-notch fa-spin"
-    style="cursor:pointer;letter-spacing:normal;">
+    style="cursor:pointer;letter-spacing:normal;"
+  >
   </i>
    Loading…
 </div>
@@ -760,18 +775,21 @@ exports[`AppContents renders a suite with a selected snapshot 1`] = `
 <div style="display:flex;flex-direction:row;min-height:100vh;">
   <div
     class="giu-floats"
-    style="height:0;left:0;position:absolute;top:0;width:0;">
+    style="height:0;left:0;position:absolute;top:0;width:0;"
+  >
   </div>
   <div
     dataMockType="Sidebar"
     linkBack="/folder/-/path/to/folder"
-    subtitle="-/path/to/folder/suite1.js.snap">
+    subtitle="-/path/to/folder/suite1.js.snap"
+  >
     <div style="color:blue;font-weight:bold;">
       Sidebar
     </div>
     <div
       dataMockType="SidebarGroup"
-      name="groupname">
+      name="groupname"
+    >
       <div style="color:blue;font-weight:bold;">
         SidebarGroup
       </div>
@@ -780,7 +798,8 @@ exports[`AppContents renders a suite with a selected snapshot 1`] = `
         icon="camera"
         id="groupname 1"
         label="1"
-        link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=groupname%201">
+        link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=groupname%201"
+      >
         <div style="color:blue;font-weight:bold;">
           SidebarItem
         </div>
@@ -790,7 +809,8 @@ exports[`AppContents renders a suite with a selected snapshot 1`] = `
         icon="camera"
         id="groupname 2"
         label="2"
-        link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=groupname%202">
+        link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=groupname%202"
+      >
         <div style="color:blue;font-weight:bold;">
           SidebarItem
         </div>
@@ -802,7 +822,8 @@ exports[`AppContents renders a suite with a selected snapshot 1`] = `
       icon="camera"
       id="individual1 1"
       label="individual1"
-      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=individual1%201">
+      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=individual1%201"
+    >
       <div style="color:blue;font-weight:bold;">
         SidebarItem
       </div>
@@ -812,14 +833,14 @@ exports[`AppContents renders a suite with a selected snapshot 1`] = `
       icon="camera"
       id="individual2 1"
       label="individual2"
-      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=individual2%201">
+      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=individual2%201"
+    >
       <div style="color:blue;font-weight:bold;">
         SidebarItem
       </div>
     </div>
   </div>
-  <div
-    dataMockType="Preview">
+  <div dataMockType="Preview">
     <div style="color:blue;font-weight:bold;">
       Preview
     </div>
@@ -980,18 +1001,21 @@ exports[`AppContents renders a suite with grouped snapshots correctly 1`] = `
 <div style="display:flex;flex-direction:row;min-height:100vh;">
   <div
     class="giu-floats"
-    style="height:0;left:0;position:absolute;top:0;width:0;">
+    style="height:0;left:0;position:absolute;top:0;width:0;"
+  >
   </div>
   <div
     dataMockType="Sidebar"
     linkBack="/folder/-/path/to/folder"
-    subtitle="-/path/to/folder/suite1.js.snap">
+    subtitle="-/path/to/folder/suite1.js.snap"
+  >
     <div style="color:blue;font-weight:bold;">
       Sidebar
     </div>
     <div
       dataMockType="SidebarGroup"
-      name="groupname">
+      name="groupname"
+    >
       <div style="color:blue;font-weight:bold;">
         SidebarGroup
       </div>
@@ -1000,7 +1024,8 @@ exports[`AppContents renders a suite with grouped snapshots correctly 1`] = `
         icon="camera"
         id="groupname 1"
         label="1"
-        link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=groupname%201">
+        link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=groupname%201"
+      >
         <div style="color:blue;font-weight:bold;">
           SidebarItem
         </div>
@@ -1010,7 +1035,8 @@ exports[`AppContents renders a suite with grouped snapshots correctly 1`] = `
         icon="camera"
         id="groupname 2"
         label="2"
-        link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=groupname%202">
+        link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=groupname%202"
+      >
         <div style="color:blue;font-weight:bold;">
           SidebarItem
         </div>
@@ -1021,7 +1047,8 @@ exports[`AppContents renders a suite with grouped snapshots correctly 1`] = `
       icon="camera"
       id="individual1 1"
       label="individual1"
-      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=individual1%201">
+      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=individual1%201"
+    >
       <div style="color:blue;font-weight:bold;">
         SidebarItem
       </div>
@@ -1031,14 +1058,14 @@ exports[`AppContents renders a suite with grouped snapshots correctly 1`] = `
       icon="camera"
       id="individual2 1"
       label="individual2"
-      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=individual2%201">
+      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=individual2%201"
+    >
       <div style="color:blue;font-weight:bold;">
         SidebarItem
       </div>
     </div>
   </div>
-  <div
-    dataMockType="Preview">
+  <div dataMockType="Preview">
     <div style="color:blue;font-weight:bold;">
       Preview
     </div>
@@ -1152,12 +1179,14 @@ exports[`AppContents renders a suite with individual snapshots correctly 1`] = `
 <div style="display:flex;flex-direction:row;min-height:100vh;">
   <div
     class="giu-floats"
-    style="height:0;left:0;position:absolute;top:0;width:0;">
+    style="height:0;left:0;position:absolute;top:0;width:0;"
+  >
   </div>
   <div
     dataMockType="Sidebar"
     linkBack="/folder/-/path/to/folder"
-    subtitle="-/path/to/folder/suite1.js.snap">
+    subtitle="-/path/to/folder/suite1.js.snap"
+  >
     <div style="color:blue;font-weight:bold;">
       Sidebar
     </div>
@@ -1166,7 +1195,8 @@ exports[`AppContents renders a suite with individual snapshots correctly 1`] = `
       icon="camera"
       id="individual1 1"
       label="individual1"
-      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=individual1%201">
+      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=individual1%201"
+    >
       <div style="color:blue;font-weight:bold;">
         SidebarItem
       </div>
@@ -1176,14 +1206,14 @@ exports[`AppContents renders a suite with individual snapshots correctly 1`] = `
       icon="camera"
       id="individual2 1"
       label="individual2"
-      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=individual2%201">
+      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=individual2%201"
+    >
       <div style="color:blue;font-weight:bold;">
         SidebarItem
       </div>
     </div>
   </div>
-  <div
-    dataMockType="Preview">
+  <div dataMockType="Preview">
     <div style="color:blue;font-weight:bold;">
       Preview
     </div>
@@ -1255,7 +1285,8 @@ exports[`AppContents renders error messages 1`] = `
   </div>
   <i
     class="giu-icon fa fa-warning"
-    style="color:#999999;letter-spacing:normal;">
+    style="color:#999999;letter-spacing:normal;"
+  >
   </i>
    
   <b>
@@ -1266,10 +1297,12 @@ exports[`AppContents renders error messages 1`] = `
   <br>
   <span
     class="giu-button"
-    style="-webkit-user-select:none;border:1px solid #999999;border-radius:5px;cursor:pointer;display:inline-block;padding:1px 5px;user-select:none;">
+    style="-webkit-user-select:none;border:1px solid #999999;border-radius:5px;cursor:pointer;display:inline-block;padding:1px 5px;user-select:none;"
+  >
     <i
       class="giu-icon fa fa-home"
-      style="color:#999999;letter-spacing:normal;">
+      style="color:#999999;letter-spacing:normal;"
+    >
     </i>
      
     Home
@@ -1382,11 +1415,13 @@ exports[`AppContents renders the root folder correctly 1`] = `
 <div style="display:flex;flex-direction:row;min-height:100vh;">
   <div
     class="giu-floats"
-    style="height:0;left:0;position:absolute;top:0;width:0;">
+    style="height:0;left:0;position:absolute;top:0;width:0;"
+  >
   </div>
   <div
     dataMockType="Sidebar"
-    subtitle="-">
+    subtitle="-"
+  >
     <div style="color:blue;font-weight:bold;">
       Sidebar
     </div>
@@ -1395,7 +1430,8 @@ exports[`AppContents renders the root folder correctly 1`] = `
       icon="folder-o"
       id="folder_-/path/to/folder"
       label="path/to/folder"
-      link="/folder/-%2Fpath%2Fto%2Ffolder">
+      link="/folder/-%2Fpath%2Fto%2Ffolder"
+    >
       <div style="color:blue;font-weight:bold;">
         SidebarItem
       </div>
@@ -1405,14 +1441,14 @@ exports[`AppContents renders the root folder correctly 1`] = `
       icon="folder-o"
       id="folder_-/path/to/folder2"
       label="path/to/folder2"
-      link="/folder/-%2Fpath%2Fto%2Ffolder2">
+      link="/folder/-%2Fpath%2Fto%2Ffolder2"
+    >
       <div style="color:blue;font-weight:bold;">
         SidebarItem
       </div>
     </div>
   </div>
-  <div
-    dataMockType="Preview">
+  <div dataMockType="Preview">
     <div style="color:blue;font-weight:bold;">
       Preview
     </div>
