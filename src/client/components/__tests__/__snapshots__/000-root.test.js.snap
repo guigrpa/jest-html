@@ -70,45 +70,45 @@ exports[`Root renders correctly 1`] = `
   </div>
 </div>
 ------------HTML PREVIEW---------------
+<div
+  dataMockType="BrowserRouter">
   <div
-    dataMockType="BrowserRouter">
+    style="color:blue;font-weight:bold;">
+    BrowserRouter
+  </div>
+  <div>
     <div
-      style="color:blue;font-weight:bold;">
-      BrowserRouter
+      dataMockType="Match"
+      exactly
+      pattern="/">
+      <div
+        style="color:blue;font-weight:bold;">
+        Match
+      </div>
     </div>
-    <div>
+    <div
+      dataMockType="Match"
+      pattern="/suite/*">
       <div
-        dataMockType="Match"
-        exactly
-        pattern="/">
-        <div
-          style="color:blue;font-weight:bold;">
-          Match
-        </div>
+        style="color:blue;font-weight:bold;">
+        Match
       </div>
+    </div>
+    <div
+      dataMockType="Match"
+      pattern="/folder/*">
       <div
-        dataMockType="Match"
-        pattern="/suite/*">
-        <div
-          style="color:blue;font-weight:bold;">
-          Match
-        </div>
+        style="color:blue;font-weight:bold;">
+        Match
       </div>
+    </div>
+    <div
+      dataMockType="Miss">
       <div
-        dataMockType="Match"
-        pattern="/folder/*">
-        <div
-          style="color:blue;font-weight:bold;">
-          Match
-        </div>
-      </div>
-      <div
-        dataMockType="Miss">
-        <div
-          style="color:blue;font-weight:bold;">
-          Miss
-        </div>
+        style="color:blue;font-weight:bold;">
+        Miss
       </div>
     </div>
   </div>
+</div>
 `;

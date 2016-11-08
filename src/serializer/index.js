@@ -92,8 +92,7 @@ function printMain(val: Object, print: Function, indent: Function, opts: Object)
   });  // break infinite recursion
   const snapContents = print(val2, print, indent, opts);
   const htmlContents = printInstance(val, print, indent, opts);
-  // Indent the HTML preview to clean up diffs wrt. non-HTML-equipped snapshots
-  return `${snapContents}\n${HTML_PREVIEW_SEPARATOR}\n${indent(htmlContents)}`;
+  return `${snapContents}\n${HTML_PREVIEW_SEPARATOR}\n${htmlContents}`;
 }
 
 function printInstance(instance, print, indent, opts) {

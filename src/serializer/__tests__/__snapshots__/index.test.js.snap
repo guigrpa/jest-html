@@ -24,15 +24,15 @@ exports[`Serializer should correctly serialize React components 1`] = `
   \"type\": \"div\",
 }
 ------------HTML PREVIEW---------------
-  <div
-    b=\"foo\"
-    c
-    class=\"my-class\"
-    for=\"bar\"
-    style=\"border:1px solid blue;flex-direction:row;margin:3px;padding:2px;\">
-    Text
-    5
-  </div>"
+<div
+  b=\"foo\"
+  c
+  class=\"my-class\"
+  for=\"bar\"
+  style=\"border:1px solid blue;flex-direction:row;margin:3px;padding:2px;\">
+  Text
+  5
+</div>"
 `;
 
 exports[`Serializer should correctly serialize Textareas 1`] = `
@@ -48,12 +48,12 @@ with accents: áéíóú\",
   \"type\": \"textarea\",
 }
 ------------HTML PREVIEW---------------
-  <textarea
-    value=\"One block
-  of text
-  with accents: áéíóú\">One block
-  of text
-  with accents: áéíóú</textarea>"
+<textarea
+  value=\"One block
+of text
+with accents: áéíóú\">One block
+of text
+with accents: áéíóú</textarea>"
 `;
 
 exports[`Serializer should correctly serialize childless components 1`] = `
@@ -63,8 +63,8 @@ exports[`Serializer should correctly serialize childless components 1`] = `
   \"type\": \"div\",
 }
 ------------HTML PREVIEW---------------
-  <div>
-  </div>"
+<div>
+</div>"
 `;
 
 exports[`Serializer should correctly serialize self-closing elements 1`] = `
@@ -91,13 +91,13 @@ exports[`Serializer should correctly serialize self-closing elements 1`] = `
   \"type\": \"div\",
 }
 ------------HTML PREVIEW---------------
-  <div>
-    <span>
-    </span>
-    <br>
-    <img
-      src=\"foo.png\">
-    <span>
-    </span>
-  </div>"
+<div>
+  <span>
+  </span>
+  <br>
+  <img
+    src=\"foo.png\">
+  <span>
+  </span>
+</div>"
 `;
