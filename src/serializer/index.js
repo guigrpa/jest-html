@@ -1,6 +1,6 @@
 // @flow
 
-import printString from 'pretty-format/printString';
+// import printString from 'pretty-format/printString';
 import escapeHtml from 'escape-html';
 import { merge } from 'timm';
 import hyphenateStyleName from './hyphenateStyleName';
@@ -97,32 +97,43 @@ function printMain(val: Object, print: Function, indent: Function, opts: Object)
 
 function printInstance(instance, print, indent, opts) {
   if (typeof instance === 'number') return print(instance);
-  if (typeof instance === 'string') return printString(instance);
+  if (typeof instance === 'string') return escapeHtml(instance);
 
   let result = `<${instance.type}`;
 
+  let numProps = 0;
   if (instance.props) {
     result += printProps(instance.props, print, indent, opts);
+    numProps = Object.keys(instance.props).length;
   }
+  result += '>';
+
+  if (SELF_CLOSING[instance.type]) return result;
 
   const children = instance.children;
-  if (SELF_CLOSING[instance.type]) {
-    result += '>';
-  } else if (children) {
+  if (children) {
     const printedChildren = printChildren(children, print, indent, opts);
-    result += `>${opts.edgeSpacing}${indent(printedChildren)}` +
+    result += `${opts.edgeSpacing}${indent(printedChildren)}` +
       `${opts.edgeSpacing}</${instance.type}>`;
   } else if (instance.type.toUpperCase() === 'TEXTAREA') {
-    result += `>${(escapeHtml(instance.props.value) || '')}` +
+    result += `${(escapeHtml(instance.props.value) || '')}` +
       `</${instance.type}>`;
+  } else if (numProps <= 1) {
+    result += `</${instance.type}>`;
   } else {
-    result += `>${opts.edgeSpacing}</${instance.type}>`;
+    result += `${opts.edgeSpacing}</${instance.type}>`;
   }
 
   return result;
 }
 
 function printProps(props, print, indent, opts) {
+  const numProps = Object.keys(props).length;
+  /* eslint-disable prefer-template */
+  const wrapProp = numProps <= 1
+    ? (name, val) => ` ${name}` + (val === undefined ? '' : `=${val}`)
+    : (name, val) => opts.spacing + indent(name) + (val === undefined ? '' : `=${val}`);
+  /* eslint-enable prefer-template */
   return Object.keys(props).sort().map((propName) => {
     const propValue = props[propName];
     if (propValue == null) return '';
@@ -142,8 +153,8 @@ function printProps(props, print, indent, opts) {
     if (REACT_PROPS_TO_DOM_ATTRS[propName]) {
       printedName = REACT_PROPS_TO_DOM_ATTRS[propName];
     }
-    if (propValue === true) return opts.spacing + indent(printedName);
-    return opts.spacing + indent(`${printedName}=`) + printedValue;
+    if (propValue === true) return wrapProp(printedName);
+    return wrapProp(printedName, printedValue);
   }).join('');
 }
 

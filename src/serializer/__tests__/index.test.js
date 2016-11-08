@@ -73,6 +73,23 @@ describe('Serializer', () => {
     expect(prettyFormat(obj, { plugins: [serialize] })).toMatchSnapshot();
   });
 
+  it('should correctly serialize elements with zero props', () => {
+    const obj = {
+      $$typeof: Symbol.for('react.test.json'),
+      type: 'div',
+    };
+    expect(prettyFormat(obj, { plugins: [serialize] })).toMatchSnapshot();
+  });
+
+  it('should correctly serialize elements with one prop', () => {
+    const obj = {
+      $$typeof: Symbol.for('react.test.json'),
+      type: 'div',
+      props: { foo: 'bar' },
+    };
+    expect(prettyFormat(obj, { plugins: [serialize] })).toMatchSnapshot();
+  });
+
   it('should correctly serialize childless components', () => {
     const obj = {
       $$typeof: Symbol.for('react.test.json'),

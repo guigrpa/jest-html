@@ -21,8 +21,7 @@ exports[`App renders correctly 1`] = `
 ------------HTML PREVIEW---------------
 <div
   dataMockType="AppContents">
-  <div
-    style="color:blue;font-weight:bold;">
+  <div style="color:blue;font-weight:bold;">
     AppContents
   </div>
 </div>

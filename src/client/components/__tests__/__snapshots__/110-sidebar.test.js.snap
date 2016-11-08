@@ -87,12 +87,9 @@ exports[`Sidebar renders correctly 1`] = `
   two
 </div>
 ------------HTML PREVIEW---------------
-<div
-  style="-webkit-flex:0 0 18em;background-color:#eee;border-right:2px solid #ddd;flex:0 0 18em;font-family:sans-serif;font-size:0.8em;overflow:auto;padding:0.3em 0;">
-  <div
-    style="align-items:baseline;display:flex;flex-direction:row;margin-bottom:1.1em;margin-top:0.4em;">
-    <div
-      style="-webkit-flex:0 0 30px;flex:0 0 30px;">
+<div style="-webkit-flex:0 0 18em;background-color:#eee;border-right:2px solid #ddd;flex:0 0 18em;font-family:sans-serif;font-size:0.8em;overflow:auto;padding:0.3em 0;">
+  <div style="align-items:baseline;display:flex;flex-direction:row;margin-bottom:1.1em;margin-top:0.4em;">
+    <div style="-webkit-flex:0 0 30px;flex:0 0 30px;">
       <a
         class=""
         href="link/to/parent/folder"
@@ -108,8 +105,7 @@ exports[`Sidebar renders correctly 1`] = `
       title="Subtitle">
       Title
     </div>
-    <div
-      style="-webkit-flex:0 1 30px;flex:0 1 30px;">
+    <div style="-webkit-flex:0 1 30px;flex:0 1 30px;">
       <i
         class="giu-icon fa fa-file-code-o fa-lg"
         style="color:gray;cursor:pointer;letter-spacing:normal;"
@@ -212,12 +208,9 @@ exports[`Sidebar renders correctly without linkBack 1`] = `
   two
 </div>
 ------------HTML PREVIEW---------------
-<div
-  style="-webkit-flex:0 0 18em;background-color:#eee;border-right:2px solid #ddd;flex:0 0 18em;font-family:sans-serif;font-size:0.8em;overflow:auto;padding:0.3em 0;">
-  <div
-    style="align-items:baseline;display:flex;flex-direction:row;margin-bottom:1.1em;margin-top:0.4em;">
-    <div
-      style="-webkit-flex:0 0 30px;flex:0 0 30px;">
+<div style="-webkit-flex:0 0 18em;background-color:#eee;border-right:2px solid #ddd;flex:0 0 18em;font-family:sans-serif;font-size:0.8em;overflow:auto;padding:0.3em 0;">
+  <div style="align-items:baseline;display:flex;flex-direction:row;margin-bottom:1.1em;margin-top:0.4em;">
+    <div style="-webkit-flex:0 0 30px;flex:0 0 30px;">
       <a
         class=""
         href="#"
@@ -233,8 +226,7 @@ exports[`Sidebar renders correctly without linkBack 1`] = `
       title="Subtitle">
       Title
     </div>
-    <div
-      style="-webkit-flex:0 1 30px;flex:0 1 30px;">
+    <div style="-webkit-flex:0 1 30px;flex:0 1 30px;">
       <i
         class="giu-icon fa fa-file-code-o fa-lg"
         style="color:gray;cursor:pointer;letter-spacing:normal;"

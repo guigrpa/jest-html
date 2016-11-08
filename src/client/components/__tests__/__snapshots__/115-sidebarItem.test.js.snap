@@ -22,10 +22,8 @@ exports[`SidebarGroup renders correctly 1`] = `
   two
 </div>
 ------------HTML PREVIEW---------------
-<div
-  style="background-color:white;margin:0.5em 0;padding:0.3em 0;">
-  <div
-    style="color:#999;font-size:0.8em;padding:0.3em 1em;text-transform:uppercase;">
+<div style="background-color:white;margin:0.5em 0;padding:0.3em 0;">
+  <div style="color:#999;font-size:0.8em;padding:0.3em 1em;text-transform:uppercase;">
     Snapshot group name
   </div>
   one
@@ -86,15 +84,13 @@ exports[`SidebarItem renders correctly 1`] = `
   href="some/url"
   id="one"
   style="align-items:center;color:currentColor;cursor:pointer;display:flex;flex-direction:row;padding:0.3em 1em;text-decoration:none;word-break:break-word;">
-  <div
-    style="-webkit-flex:0 0 20px;flex:0 0 20px;">
+  <div style="-webkit-flex:0 0 20px;flex:0 0 20px;">
     <i
       class="giu-icon fa fa-folder-o"
       style="cursor:pointer;letter-spacing:normal;">
     </i>
   </div>
-  <div
-    style="-webkit-flex:1;flex:1;">
+  <div style="-webkit-flex:1;flex:1;">
     an/extremely/amazingly/ultra/hyper/really/very/long/label
   </div>
 </a>
@@ -154,15 +150,13 @@ exports[`SidebarItem renders correctly when hovered 1`] = `
   href="some/url"
   id="two"
   style="align-items:center;background-color:#ddd;color:currentColor;cursor:pointer;display:flex;flex-direction:row;padding:0.3em 1em;text-decoration:none;word-break:break-word;">
-  <div
-    style="-webkit-flex:0 0 20px;flex:0 0 20px;">
+  <div style="-webkit-flex:0 0 20px;flex:0 0 20px;">
     <i
       class="giu-icon fa fa-folder-o"
       style="cursor:pointer;letter-spacing:normal;">
     </i>
   </div>
-  <div
-    style="-webkit-flex:1;flex:1;">
+  <div style="-webkit-flex:1;flex:1;">
     two
   </div>
 </a>
@@ -222,15 +216,13 @@ exports[`SidebarItem renders correctly when selected & hovered 1`] = `
   href="some/url"
   id="four"
   style="align-items:center;background-color:#ba360a;color:white;cursor:pointer;display:flex;flex-direction:row;padding:0.3em 1em;text-decoration:none;word-break:break-word;">
-  <div
-    style="-webkit-flex:0 0 20px;flex:0 0 20px;">
+  <div style="-webkit-flex:0 0 20px;flex:0 0 20px;">
     <i
       class="giu-icon fa fa-folder-o"
       style="cursor:pointer;letter-spacing:normal;">
     </i>
   </div>
-  <div
-    style="-webkit-flex:1;flex:1;">
+  <div style="-webkit-flex:1;flex:1;">
     four
   </div>
 </a>
@@ -290,15 +282,13 @@ exports[`SidebarItem renders correctly when selected 1`] = `
   href="some/url"
   id="three"
   style="align-items:center;background-color:#ca461a;color:white;cursor:pointer;display:flex;flex-direction:row;padding:0.3em 1em;text-decoration:none;word-break:break-word;">
-  <div
-    style="-webkit-flex:0 0 20px;flex:0 0 20px;">
+  <div style="-webkit-flex:0 0 20px;flex:0 0 20px;">
     <i
       class="giu-icon fa fa-folder-o"
       style="cursor:pointer;letter-spacing:normal;">
     </i>
   </div>
-  <div
-    style="-webkit-flex:1;flex:1;">
+  <div style="-webkit-flex:1;flex:1;">
     three
   </div>
 </a>
