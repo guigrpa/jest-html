@@ -50,11 +50,7 @@ exports[`AppContents renders a folder with subfolders and suites correctly 1`] =
     subtitle="-/path/to/snapshots"
     title={
       <span>
-        <function Icon() {
-            _classCallCheck(this, Icon);
-        
-            return _possibleConstructorReturn(this, Object.getPrototypeOf(Icon).apply(this, arguments));
-          }
+        <Icon
           icon="folder-open-o"
           style={
             Object {
@@ -282,11 +278,7 @@ exports[`AppContents renders a folder with subfolders correctly 1`] = `
     subtitle="-/path/to/snapshots"
     title={
       <span>
-        <function Icon() {
-            _classCallCheck(this, Icon);
-        
-            return _possibleConstructorReturn(this, Object.getPrototypeOf(Icon).apply(this, arguments));
-          }
+        <Icon
           icon="folder-open-o"
           style={
             Object {
@@ -430,11 +422,7 @@ exports[`AppContents renders a folder with suites correctly 1`] = `
     subtitle="-/path/to/snapshots"
     title={
       <span>
-        <function Icon() {
-            _classCallCheck(this, Icon);
-        
-            return _possibleConstructorReturn(this, Object.getPrototypeOf(Icon).apply(this, arguments));
-          }
+        <Icon
           icon="folder-open-o"
           style={
             Object {
@@ -643,11 +631,7 @@ exports[`AppContents renders a suite with a selected snapshot 1`] = `
     subtitle="-/path/to/folder/suite1.js.snap"
     title={
       <span>
-        <function Icon() {
-            _classCallCheck(this, Icon);
-        
-            return _possibleConstructorReturn(this, Object.getPrototypeOf(Icon).apply(this, arguments));
-          }
+        <Icon
           icon="file-o"
           style={
             Object {
@@ -875,11 +859,7 @@ exports[`AppContents renders a suite with grouped snapshots correctly 1`] = `
     subtitle="-/path/to/folder/suite1.js.snap"
     title={
       <span>
-        <function Icon() {
-            _classCallCheck(this, Icon);
-        
-            return _possibleConstructorReturn(this, Object.getPrototypeOf(Icon).apply(this, arguments));
-          }
+        <Icon
           icon="file-o"
           style={
             Object {
@@ -1100,11 +1080,7 @@ exports[`AppContents renders a suite with individual snapshots correctly 1`] = `
     subtitle="-/path/to/folder/suite1.js.snap"
     title={
       <span>
-        <function Icon() {
-            _classCallCheck(this, Icon);
-        
-            return _possibleConstructorReturn(this, Object.getPrototypeOf(Icon).apply(this, arguments));
-          }
+        <Icon
           icon="file-o"
           style={
             Object {
@@ -1337,11 +1313,7 @@ exports[`AppContents renders the root folder correctly 1`] = `
     subtitle="-"
     title={
       <span>
-        <function Icon() {
-            _classCallCheck(this, Icon);
-        
-            return _possibleConstructorReturn(this, Object.getPrototypeOf(Icon).apply(this, arguments));
-          }
+        <Icon
           icon="home"
           style={
             Object {
