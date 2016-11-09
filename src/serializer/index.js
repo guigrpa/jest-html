@@ -9,7 +9,7 @@ const reactTestInstance = Symbol.for('react.test.json');
 const HTML_PREVIEW_SEPARATOR = '------------HTML PREVIEW---------------';
 
 // From React: src/renderers/dom/shared/HTMLDOMPropertyConfig.js
-const REACT_PROPS_TO_DOM_ATTRS = {
+const REACT_PROPS_TO_DOM_ATTRS: { [key: string]: string } = {
   acceptCharset: 'accept-charset',
   className: 'class',
   htmlFor: 'for',
