@@ -167,7 +167,7 @@ const specs = {
   },
 
   peerDependencies: {
-    jest: '>= 16.1.0',
+    jest: '>= 17.0.0',
   },
 
   devDependencies: {
@@ -216,9 +216,9 @@ const specs = {
     'babel-eslint': '7.0.0',
 
     // Testing
-    jest: '16.1.0-alpha.691b0e22',
+    jest: '17.0.0',
+    'babel-jest': '17.0.0',
     'react-test-renderer': '15.3.2',
-    'babel-jest': '16.0.0',
     nyc: '8.3.0',
     coveralls: '2.11.14',
 
