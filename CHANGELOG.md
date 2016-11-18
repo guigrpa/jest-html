@@ -1,8 +1,12 @@
 # Changelog
 
+## 1.2.2 (Nov. 18, 2016)
+
+- Bump deps.
+
 ## 1.2.1 (Nov. 9, 2016)
 
-* Update peerDependencies
+* Update peerDependencies.
 
 ## 1.2.0 (Nov. 8, 2016)
 

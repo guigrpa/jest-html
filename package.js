@@ -6,7 +6,7 @@
 // Basic config
 // ===============================================
 const NAME = 'jest-html';
-const VERSION = '1.2.1';
+const VERSION = '1.2.2';
 const DESCRIPTION = 'Preview Jest snapshots right in your browser';
 const KEYWORDS = ['Jest', 'test', 'snapshot', 'serializer', 'html', 'preview'];
 
@@ -144,7 +144,7 @@ const specs = {
   // Deps
   // -----------------------------------------------
   dependencies: {
-    timm: '^1.0.0',
+    timm: '^1.2.1',
     storyboard: '^2.0.0',
     commander: '^2.9.0',
 
@@ -173,10 +173,10 @@ const specs = {
   devDependencies: {
 
     // Bundled
-    react: '15.3.2',
-    'react-dom': '15.3.2',
+    react: '15.4.0',
+    'react-dom': '15.4.0',
+    'react-addons-pure-render-mixin': '15.4.0', // required by giu as peer dep, delete when we update giu
     'react-frame-component': '0.6.6',
-    'react-addons-pure-render-mixin': '15.3.2',
     'react-router': '4.0.0-alpha.5',
     giu: '0.8.0',
     'socket.io-client': '1.5.1',
@@ -216,9 +216,9 @@ const specs = {
     'babel-eslint': '7.0.0',
 
     // Testing
-    jest: '17.0.0',
-    'babel-jest': '17.0.0',
-    'react-test-renderer': '15.3.2',
+    jest: '17.0.3',
+    'babel-jest': '17.0.2',
+    'react-test-renderer': '15.4.0',
     nyc: '8.3.0',
     coveralls: '2.11.14',
 
@@ -226,7 +226,7 @@ const specs = {
     'extract-docs': '1.3.0',
     'xxl': '0.1.1',
     'cross-env': '2.0.1',
-    'flow-bin': '0.33.0',
+    'flow-bin': '0.35.0',
   },
 
   // -----------------------------------------------
