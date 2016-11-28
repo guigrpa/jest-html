@@ -8,13 +8,10 @@ import debounce from 'lodash.debounce';
 import { clone, merge, addLast } from 'timm';
 import { mainStory, chalk } from 'storyboard';
 import type { StoryT } from 'storyboard';
-import slash from 'slash';
 import { HTML_PREVIEW_SEPARATOR } from '../serializer';
 import type {
-  FilePathT,
-  FolderPathT,
-  FolderT,
-  SnapshotSuiteT,
+  FilePathT, FolderPathT,
+  FolderT, SnapshotSuiteT, SnapshotT,
 } from '../common/types';
 
 type ConfigT = {|
@@ -28,6 +25,8 @@ type SnapshotSuiteDictT = { [filePath: FilePathT]: SnapshotSuiteT };
 type FolderDictT = { [folderPath: FolderPathT]: FolderT };
 
 const FOLDER_PATH_ATTR = '__folderPath';
+const DIRTY_ATTR = '__dirty';
+const DELETED_ATTR = '__deleted';
 
 let _config: ConfigT;
 let _folderDict: FolderDictT = {};
@@ -79,12 +78,8 @@ const updateSnapshotCss = (story: StoryT = mainStory) => {
   Object.keys(_snapshotSuiteDict).forEach((filePath) => {
     const suite = _snapshotSuiteDict[filePath];
     const suiteCss = getSuiteCss(filePath, story);
-    Object.keys(suite).forEach((id) => {
-      if (id === FOLDER_PATH_ATTR) return;
-      const snapshot = suite[id];
-      const css = suiteCss != null ? addLast(commonCss, suiteCss) : commonCss;
-      snapshot.css = css;
-    });
+    const css = suiteCss != null ? addLast(commonCss, suiteCss) : commonCss;
+    forEachSnapshot(suite, (snapshot) => { snapshot.css = css; }); // eslint-disable-line no-param-reassign, max-len
   });
 };
 
@@ -93,17 +88,48 @@ const loadSuite = (filePath: string, commonCss: Array<string>, story: StoryT) =>
   const absPath = path.resolve(process.cwd(), filePath);
   const rawSnapshots = loadSnapshot(absPath);
   const suiteCss = getSuiteCss(filePath, story);
-  const suite: SnapshotSuiteT = {};
-  Object.keys(rawSnapshots).forEach((id) => {
-    const snapshot = rawSnapshots[id];
-    const [snap, html] = snapshot.split(HTML_PREVIEW_SEPARATOR);
-    const css = suiteCss != null ? addLast(commonCss, suiteCss) : commonCss;
-    suite[id] = { id, snap, html, css };
-  });
-  story.debug('extractor', `Found ${Object.keys(rawSnapshots).length} snapshots`);
   const finalFilePath = `-/${filePath.normalize()}`;
+  const prevSuite = _snapshotSuiteDict[finalFilePath];
+  // $FlowFixMe
+  const suite: SnapshotSuiteT = {};
+  let suiteDirty = false;
+  const nextIds = Object.keys(rawSnapshots);
+  nextIds.forEach((id) => {
+    const rawSnapshot = rawSnapshots[id];
+    const [snap, html] = rawSnapshot.split(HTML_PREVIEW_SEPARATOR);
+    const css = suiteCss != null ? addLast(commonCss, suiteCss) : commonCss;
+    const snapshot: SnapshotT = { id, snap, html, css, dirty: false, deleted: false };
+    if (prevSuite && prevSuite[id]) {
+      const prevSnapshot = prevSuite[id];
+      const prevBaseline = prevSnapshot.baseline;
+      // Copy the previous baseline, if any
+      if (prevBaseline != null) {
+        snapshot.baseline = prevBaseline;
+        snapshot.dirty = html !== prevBaseline.html || snap !== prevBaseline.snap;
+      // Create a new baseline if the snapshot's SNAP or HTML have changed
+      } else if (html !== prevSnapshot.html || snap !== prevSnapshot.snap) {
+        snapshot.baseline = { html: prevSnapshot.html, snap: prevSnapshot.snap };
+        snapshot.dirty = true;
+      }
+    }
+    suite[id] = snapshot;
+    suiteDirty = suiteDirty || snapshot.dirty;
+  });
+  if (prevSuite != null) {
+    forEachSnapshot(prevSuite, (snapshot) => {
+      const { id } = snapshot;
+      if (nextIds.indexOf(id) < 0) {
+        snapshot.deleted = true;   // eslint-disable-line no-param-reassign
+        suite[id] = snapshot;
+        suiteDirty = true;
+      }
+    });
+  }
+  story.debug('extractor', `Found ${Object.keys(rawSnapshots).length} snapshots`);
   suite[FOLDER_PATH_ATTR] = path.dirname(finalFilePath);
-  _snapshotSuiteDict[finalFilePath] = suite;
+  suite[DIRTY_ATTR] = suiteDirty;
+  suite[DELETED_ATTR] = false;
+  _snapshotSuiteDict[finalFilePath] = sortSnapshots(suite);
 };
 
 const loadSnapshot = (absPath: string): Object => {
@@ -111,6 +137,12 @@ const loadSnapshot = (absPath: string): Object => {
   delete require.cache[require.resolve(absPath)];
   return require(absPath);
   /* eslint-enable global-require */
+};
+
+const sortSnapshots = (suite): Object => {
+  const out = {};
+  Object.keys(suite).sort().forEach((id) => { out[id] = suite[id]; });
+  return out;
 };
 
 // ---------------------------------
@@ -155,20 +187,25 @@ const buildFolderDict = (story: StoryT) => {
   story.info('extractor', 'Building folder tree...');
   const nextDict: FolderDictT = {};
 
-  // Sort file paths to simplify tree generation
-  const filePaths: Array<FilePathT> = Object.keys(_snapshotSuiteDict).sort();
-
   // Create root node
   let curFolderPath: FolderPathT = '-';
   let curFolder: FolderT = {
-    folderPath: '-',
-    filePaths: [],
     parentFolderPath: null,
+    folderPath: '-',
+    dirty: false,
+
+    filePaths: [],
+    suiteDirtyFlags: [],
+
     childrenFolderPaths: [],
+    childrenFolderDirtyFlags: [],
   };
   nextDict['-'] = curFolder;
 
   story.debug('extractor', 'Snapshot tree:', { attach: nextDict });
+
+  // Sort file paths to simplify tree generation
+  const filePaths: Array<FilePathT> = Object.keys(_snapshotSuiteDict).sort();
 
   // Process all file paths
   filePaths.forEach((filePath) => {
@@ -190,15 +227,50 @@ const buildFolderDict = (story: StoryT) => {
       if (!fFound) throw new Error('Error building path tree');
       nextDict[parentFolderPath].childrenFolderPaths.push(folderPath);
       curFolder = nextDict[folderPath] = {
-        folderPath,
-        filePaths: [filePath],
         parentFolderPath,
+        folderPath,
+        dirty: false,
+
+        filePaths: [filePath],
+        suiteDirtyFlags: [],
+
         childrenFolderPaths: [],
+        childrenFolderDirtyFlags: [],
       };
       curFolderPath = folderPath;
     }
+    // // Set dirty flags (and bubble)
+    // if (_snapshotSuiteDict[filePath][DIRTY_ATTR] && !curFolder.dirty) {
+    //   curFolder.dirty = true;
+    //   let folder = curFolder;
+    //   while (folder != null) {
+    //     const { parentFolderPath } = folder;
+    //     if (parentFolderPath == null) break;
+    //     folder = nextDict[parentFolderPath];
+    //     folder.dirty = true;
+    //   }
+    // }
   });
+
+  // Update children dirty flags for each folder
+  updateChildrenDirtyFlags(nextDict, _snapshotSuiteDict, '-');
   _folderDict = nextDict;
+};
+
+// Update dirty flags, recursively, top-down
+const updateChildrenDirtyFlags = (
+  folderDict: FolderDictT,
+  suiteDict: SnapshotSuiteDictT,
+  folderPath: FolderPathT
+): boolean => {
+  const curFolder = folderDict[folderPath];
+  curFolder.suiteDirtyFlags = curFolder.filePaths.map((filePath) =>
+    _snapshotSuiteDict[filePath][DIRTY_ATTR]);
+  curFolder.childrenFolderDirtyFlags = curFolder.childrenFolderPaths.map((subFolderPath) =>
+    updateChildrenDirtyFlags(folderDict, suiteDict, subFolderPath));
+  curFolder.dirty = curFolder.suiteDirtyFlags.some(Boolean) ||
+    curFolder.childrenFolderDirtyFlags.some(Boolean);
+  return curFolder.dirty;
 };
 
 // ---------------------------------
@@ -253,15 +325,21 @@ const snapWatchEvent = (type: string, filePath0: string) => {
     const commonCss = getCommonCss();
     switch (type) {
       case 'change':
-        return loadSuite(filePath, commonCss, mainStory);
       case 'add':
         return Promise.resolve()
         .then(() => loadSuite(filePath, commonCss, mainStory))
         .then(() => buildFolderDict(mainStory));
       case 'unlink':
         return Promise.resolve()
-        .then(() => { delete _snapshotSuiteDict[`-/${filePath.normalize()}`]; })
-        .then(() => buildFolderDict(mainStory));
+        .then(() => {
+          const suite = _snapshotSuiteDict[`-/${filePath.normalize()}`];
+          if (suite) {
+            suite[DIRTY_ATTR] = true;
+            suite[DELETED_ATTR] = true;
+            return buildFolderDict(mainStory);
+          }
+          return null;
+        });
       default:
         break;
     }
@@ -282,6 +360,15 @@ const getFolder = (folderPath: FolderPathT): ?FolderT =>
   _folderDict[folderPath.normalize()];
 const getSnapshotSuite = (filePath: FilePathT): ?SnapshotSuiteT =>
   _snapshotSuiteDict[filePath.normalize()];
+
+const forEachSnapshot = (suite: SnapshotSuiteT, cb: (snapshot: SnapshotT) => any) => {
+  Object.keys(suite).forEach((id) => {
+    if (id === FOLDER_PATH_ATTR || id === DIRTY_ATTR || id === DELETED_ATTR) return;
+    cb(suite[id]);
+  });
+};
+
+const slash = (str) => str.replace(/\\/g, '/');
 
 // =============================================
 // Public API

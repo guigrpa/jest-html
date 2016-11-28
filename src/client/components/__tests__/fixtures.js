@@ -46,6 +46,8 @@ export const ROOT_FOLDER = {
 
 export const SUITE_WITH_INDIVIDUAL_SNAPSHOTS = {
   __folderPath: '-/path/to/folder',
+  __dirty: false,
+  __deleted: false,
   'individual1 1': {
     id: 'individual1 1',
     snap: 'contents3',
@@ -60,6 +62,7 @@ export const SUITE_WITH_INDIVIDUAL_SNAPSHOTS = {
 
 export const SUITE_WITH_GROUPS_AND_INDIVIDUAL_SNAPSHOTS = {
   __folderPath: '-/path/to/folder',
+  __dirty: false,
   'groupname 1': {
     id: 'groupname 1',
     snap: 'contents1',

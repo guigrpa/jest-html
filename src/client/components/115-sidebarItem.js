@@ -2,7 +2,8 @@
 
 import React from 'react';
 import { Link } from 'react-router';
-import { Icon, hoverable, flexContainer, flexItem } from 'giu';
+import { Icon, hoverable, flexContainer, flexItem, darken, lighten } from 'giu';
+import { UI } from '../gral/constants';
 
 // ==========================================
 // Component declarations
@@ -10,9 +11,13 @@ import { Icon, hoverable, flexContainer, flexItem } from 'giu';
 type PropsT = {
   id: string,
   label: string,
+  dirty?: boolean,
+  deleted?: boolean,
   icon: string,
   link: string,
   fSelected: boolean,
+  showBaseline?: () => any,
+  hideBaseline?: () => any,
   // hoverable HOC
   onHoverStart: Function,
   onHoverStop: Function,
@@ -25,19 +30,32 @@ type PropsT = {
 const SidebarItem = ({
   id,
   label,
+  dirty,
+  deleted,
   icon,
   link,
   fSelected,
+  showBaseline,
+  hideBaseline,
   hovering,
   onHoverStart,
   onHoverStop,
 }: PropsT) => {
   const fHovered = hovering === id;
+  const elDirty = dirty && !deleted
+    ? <DirtyIcon
+        id={id}
+        fSelected={fSelected}
+        fCanHover={!!showBaseline}
+        onHoverStart={showBaseline}
+        onHoverStop={hideBaseline}
+      />
+    : null;
   return (
     <Link
       id={id}
       to={link}
-      style={style.outer({ fSelected, fHovered })}
+      style={style.outer({ fSelected, fHovered, fDeleted: deleted })}
       onMouseEnter={onHoverStart}
       onMouseLeave={onHoverStop}
     >
@@ -45,7 +63,10 @@ const SidebarItem = ({
         <Icon icon={icon} />
       </div>
       <div style={flexItem(1)}>
-        {label}
+        {label}{' '}{deleted && <i>(deleted)</i>}
+      </div>
+      <div style={flexItem('0 0 10px')}>
+        {elDirty}
       </div>
     </Link>
   );
@@ -62,29 +83,60 @@ const SidebarGroup = ({ name, children }: {
     {children}
   </div>;
 
+const DirtyIcon = hoverable(({ hovering, id, fSelected, fCanHover, onHoverStart, onHoverStop }) => {
+  let tooltip = 'Modified since the last time jest-html was launched';
+  if (hovering) {
+    tooltip += '; press ESC to dismiss this tooltip';
+  } else {
+    tooltip += fCanHover
+      ? '; select this snapshot and hover to see baseline'
+      : '; click for more details on what changed';
+  }
+  return (
+    <Icon
+      id={id}
+      icon="asterisk"
+      onMouseEnter={fSelected && onHoverStart}
+      onMouseLeave={fSelected && onHoverStop}
+      style={style.dirtyIcon({ fSelected, fCanHover, fHovering: hovering })}
+      title={tooltip}
+    />
+  );
+});
+
 // ------------------------------------------
 const style = {
-  outer: ({ fSelected, fHovered }: {
+  outer: ({ fSelected, fHovered, fDeleted }: {
     fSelected?: boolean,
     fHovered?: boolean,
+    fDeleted?: boolean,
   }) => {
     let backgroundColor;
-    if (fSelected && fHovered) {
-      backgroundColor = '#ba360a';
-    } else if (fHovered) {
-      backgroundColor = '#ddd';
-    } else if (fSelected) {
-      backgroundColor = '#ca461a';
-    }
+    if (fSelected && fHovered) backgroundColor = darken(UI.color.accentBg, 10);
+    else if (fHovered) backgroundColor = darken('white', 10);
+    else if (fSelected) backgroundColor = UI.color.accentBg;
+    let color = 'currentColor';
+    if (fSelected && fDeleted) color = lighten(UI.color.accentBg, 25);
+    else if (fDeleted) color = UI.color.textDim;
+    else if (fSelected) color = UI.color.accentFg;
     return flexContainer('row', {
       padding: '0.3em 1em',
       cursor: 'pointer',
-      color: fSelected ? 'white' : 'currentColor',
+      color,
       backgroundColor,
       wordBreak: 'break-word',
       alignItems: 'center',
       textDecoration: 'none',
     });
+  },
+  dirtyIcon: ({ fSelected, fCanHover, fHovering }) => {
+    let color;
+    if (fSelected && fCanHover && fHovering) color = lighten(UI.color.accentBg, 25);
+    else if (fSelected && fCanHover) color = UI.color.accentFg;
+    else if (fSelected) color = lighten(UI.color.accentBg, 25);
+    else if (fCanHover) color = UI.color.accentBg;
+    else color = UI.color.textDim;
+    return { color };
   },
   group: {
     margin: '0.5em 0',

@@ -12,12 +12,13 @@ import LargeMessage from './200-largeMessage';
 type PropsT = {
   snapshot: ?SnapshotT,
   fRaw?: boolean,
+  fShowBaseline?: boolean,
 };
 
 // ==========================================
 // Component
 // ==========================================
-const Preview = ({ snapshot, fRaw }: PropsT) => {
+const Preview = ({ snapshot, fRaw, fShowBaseline }: PropsT) => {
   if (!snapshot) {
     return (
       <div style={style.outer}>
@@ -25,15 +26,18 @@ const Preview = ({ snapshot, fRaw }: PropsT) => {
       </div>
     );
   }
-  if (fRaw || !snapshot.html) {
+  const snapshotData = fShowBaseline && snapshot.baseline
+    ? snapshot.baseline
+    : snapshot;
+  if (fRaw || !snapshotData.html) {
     return (
       <div style={style.outer}>
-        <pre style={style.outerNonHtml}>{snapshot.snap}</pre>
+        <pre style={style.outerNonHtml}>{snapshotData.snap}</pre>
       </div>
     );
   }
   const css = (snapshot.css || []).join('\n');
-  const contents = { __html: snapshot.html };
+  const contents = { __html: snapshotData.html };
   /* eslint-disable react/no-danger */
   return (
     <Frame
@@ -50,6 +54,8 @@ const Preview = ({ snapshot, fRaw }: PropsT) => {
 const style = {
   outer: flexItem(1, {
     transform: 'translateZ(0)',  // isolate it!
+    maxHeight: '100vh',
+    overflow: 'auto',
   }),
   outerNonHtml: {
     margin: 0,
@@ -58,6 +64,8 @@ const style = {
   frame: {
     border: 'none',
     width: '100%',
+    maxHeight: '100vh',
+    overflow: 'auto',
   },
 };
 

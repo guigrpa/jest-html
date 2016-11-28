@@ -1,5 +1,8 @@
 # Changelog
 
+- Support **snapshot visual diffing** (current snapshot contents vs. the baseline loaded when jest-html launches).
+- Previewer: tweak layout.
+
 ## 1.2.2 (Nov. 18, 2016)
 
 - Bump deps.

@@ -4,3 +4,24 @@ body.jest
   height: 100vh
 body.jest #app
   height: 100vh
+
+=animation($value)
+  -webkit-animation: #{$value}
+  -moz-animation: #{$value}
+  -ms-animation: #{$value}
+  -o-animation: #{$value}
+  animation: #{$value}
+
+=keyframes($value)
+  @-webkit-keyframes #{$value}
+  @-moz-keyframes #{$value}
+  @-ms-keyframes #{$value}
+  @-o-keyframes #{$value}
+  @keyframes #{$value}
+
++keyframes('pulsate {0% {transform: scale(1); opacity: 0.6} 50% {transform: scale(1.1); opacity: 0.5}} 100% {transform: scale(1); opacity: 0.6} ')
+
+.pulsate
+  +animation(pulsate 2s)
+  animation-iteration-count: infinite
+  opacity: 0.6

@@ -12,6 +12,7 @@ import type {
   FolderT,
   SnapshotSuiteT,
 } from '../../common/types';
+import { UI } from '../gral/constants';
 import Sidebar from './110-sidebar';
 import SidebarItem, { SidebarGroup } from './115-sidebarItem';
 import Preview from './120-preview';
@@ -53,13 +54,15 @@ type PropsT = {
 class AppContents extends React.PureComponent {
   props: PropsT;
   state: {
-    fRaw: boolean;
+    fRaw: boolean,
+    fShowBaseline: boolean,
   };
 
   constructor(props: PropsT) {
     super(props);
     this.state = {
       fRaw: false,
+      fShowBaseline: false,
     };
   }
 
@@ -88,6 +91,7 @@ class AppContents extends React.PureComponent {
         <Floats />
         {this.renderSidebar()}
         {this.renderPreview()}
+        {this.state.fShowBaseline && this.renderBaselineWarning()}
       </div>
     );
   }
@@ -131,7 +135,7 @@ class AppContents extends React.PureComponent {
   renderFolder() {
     const folder: FolderT = (this.props.fetchedItem: any);
     const contents = [];
-    folder.childrenFolderPaths.forEach((folderPath) => {
+    folder.childrenFolderPaths.forEach((folderPath, idx) => {
       const id = `folder_${folderPath}`;
       let label = folderPath;
       const tmpIndex = label.indexOf(`${folder.folderPath}/`);
@@ -142,13 +146,14 @@ class AppContents extends React.PureComponent {
           key={id}
           id={id}
           label={label}
+          dirty={folder.childrenFolderDirtyFlags[idx]}
           link={`/folder/${_escape(folderPath)}`}
           icon="folder-o"
           fSelected={false}
         />
       );
     });
-    folder.filePaths.forEach((filePath) => {
+    folder.filePaths.forEach((filePath, idx) => {
       const id = `suite_${filePath}`;
       let label = filePath;
       const tmpIndex = label.indexOf(`${folder.folderPath}/`);
@@ -159,6 +164,7 @@ class AppContents extends React.PureComponent {
           key={id}
           id={id}
           label={label}
+          dirty={folder.suiteDirtyFlags[idx]}
           link={`/suite/${_escape(filePath)}`}
           icon="file-o"
           fSelected={false}
@@ -173,12 +179,11 @@ class AppContents extends React.PureComponent {
 
   renderSuite() {
     const suite: SnapshotSuiteT = (this.props.fetchedItem: any);
-    const fetchedItemPath: string = (this.props.fetchedItemPath: any);
     const { query } = this.props;
     const contents = [];
     const groups = {};
     Object.keys(suite).forEach((id) => {
-      if (id === '__folderPath') return;
+      if (id === '__folderPath' || id === '__dirty' || id === '__deleted') return;
       const name = snapshotName(id);
       const snapshot = suite[id];
       if (groups[name]) {
@@ -190,28 +195,15 @@ class AppContents extends React.PureComponent {
     Object.keys(groups).forEach((name) => {
       const { snapshots } = groups[name];
       if (snapshots.length === 1) {
-        const { id } = snapshots[0];
-        contents.push(
-          <SidebarItem
-            key={id}
-            id={id}
-            label={snapshotName(id)}
-            link={`/suite/${_escape(fetchedItemPath)}?id=${_escape(id)}`}
-            icon="camera"
-            fSelected={query && query.id === id}
-          />
-        );
+        const snapshot = snapshots[0];
+        const { id, dirty, deleted } = snapshot;
+        contents.push(this.renderSnapshotSidebarItem(
+          id, snapshotName(id), dirty, deleted, query));
       } else {
-        const items = snapshots.map(({ id }) =>
-          <SidebarItem
-            key={id}
-            id={id}
-            label={id.slice(name.length).trim()}
-            link={`/suite/${_escape(fetchedItemPath)}?id=${_escape(id)}`}
-            icon="camera"
-            fSelected={query && query.id === id}
-          />
-        );
+        const items = snapshots.map(({ id, dirty, deleted }) => {
+          const label = id.slice(name.length).trim();
+          return this.renderSnapshotSidebarItem(id, label, dirty, deleted, query);
+        });
         contents.push(
           <SidebarGroup key={name} name={name}>
             {items}
@@ -221,6 +213,30 @@ class AppContents extends React.PureComponent {
     });
     const linkBack = `/folder/${suite.__folderPath}`;
     return { contents, linkBack };
+  }
+
+  renderSnapshotSidebarItem(
+    id: string,
+    label: string,
+    dirty: boolean,
+    deleted: boolean,
+    query: ?Object
+  ) {
+    const fetchedItemPath: any = this.props.fetchedItemPath;
+    return (
+      <SidebarItem
+        key={id}
+        id={id}
+        label={label}
+        dirty={dirty}
+        deleted={deleted}
+        link={`/suite/${_escape(fetchedItemPath)}?id=${_escape(id)}`}
+        icon="camera"
+        fSelected={query && query.id === id}
+        showBaseline={this.showBaseline}
+        hideBaseline={this.hideBaseline}
+      />
+    );
   }
 
   renderPreview() {
@@ -238,14 +254,23 @@ class AppContents extends React.PureComponent {
         key={key}
         snapshot={snapshot}
         fRaw={this.state.fRaw}
+        fShowBaseline={this.state.fShowBaseline}
       />
     );
   }
 
-  // ------------------------------------------
-  toggleRaw = () => {
-    this.setState({ fRaw: !this.state.fRaw });
+  renderBaselineWarning() {
+    return (
+      <div className="pulsate" style={style.baselineWarning}>
+        <Icon icon="undo" />
+      </div>
+    );
   }
+
+  // ------------------------------------------
+  toggleRaw = () => { this.setState({ fRaw: !this.state.fRaw }); }
+  showBaseline = () => { this.setState({ fShowBaseline: true }); }
+  hideBaseline = () => { this.setState({ fShowBaseline: false }); }
 }
 
 // ------------------------------------------
@@ -255,6 +280,15 @@ const style = {
   }),
   titleBarIcon: {
     cursor: 'default',
+  },
+  baselineWarning: {
+    fontWeight: 'bold',
+    fontFamily: 'sans-serif',
+    fontSize: 32,
+    position: 'fixed',
+    color: UI.color.accentBg,
+    top: 10,
+    right: 20,
   },
 };
 

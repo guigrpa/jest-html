@@ -39,4 +39,5 @@ const normalizeFolder = (folder) => ({
   filePaths: folder.filePaths.map(normalize),
   folderPath: folder.folderPath != null ? normalize(folder.folderPath) : null,
   parentFolderPath: folder.parentFolderPath != null ? normalize(folder.parentFolderPath) : null,
+  dirty: folder.dirty,
 });

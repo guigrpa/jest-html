@@ -666,11 +666,15 @@ exports[`AppContents renders a suite with a selected snapshot 1`] = `
       </div>
       <div
         dataMockType="SidebarItem"
+        deleted={undefined}
+        dirty={undefined}
         fSelected={false}
+        hideBaseline={[Function]}
         icon="camera"
         id="groupname 1"
         label="1"
-        link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=groupname%201">
+        link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=groupname%201"
+        showBaseline={[Function]}>
         <div
           style={
             Object {
@@ -683,11 +687,15 @@ exports[`AppContents renders a suite with a selected snapshot 1`] = `
       </div>
       <div
         dataMockType="SidebarItem"
+        deleted={undefined}
+        dirty={undefined}
         fSelected={false}
+        hideBaseline={[Function]}
         icon="camera"
         id="groupname 2"
         label="2"
-        link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=groupname%202">
+        link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=groupname%202"
+        showBaseline={[Function]}>
         <div
           style={
             Object {
@@ -701,11 +709,15 @@ exports[`AppContents renders a suite with a selected snapshot 1`] = `
     </div>
     <div
       dataMockType="SidebarItem"
+      deleted={undefined}
+      dirty={undefined}
       fSelected={true}
+      hideBaseline={[Function]}
       icon="camera"
       id="individual1 1"
       label="individual1"
-      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=individual1%201">
+      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=individual1%201"
+      showBaseline={[Function]}>
       <div
         style={
           Object {
@@ -718,11 +730,15 @@ exports[`AppContents renders a suite with a selected snapshot 1`] = `
     </div>
     <div
       dataMockType="SidebarItem"
+      deleted={undefined}
+      dirty={undefined}
       fSelected={false}
+      hideBaseline={[Function]}
       icon="camera"
       id="individual2 1"
       label="individual2"
-      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=individual2%201">
+      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=individual2%201"
+      showBaseline={[Function]}>
       <div
         style={
           Object {
@@ -737,6 +753,7 @@ exports[`AppContents renders a suite with a selected snapshot 1`] = `
   <div
     dataMockType="Preview"
     fRaw={false}
+    fShowBaseline={false}
     snapshot={
       Object {
         "css": Array [],
@@ -894,11 +911,15 @@ exports[`AppContents renders a suite with grouped snapshots correctly 1`] = `
       </div>
       <div
         dataMockType="SidebarItem"
+        deleted={undefined}
+        dirty={undefined}
         fSelected={undefined}
+        hideBaseline={[Function]}
         icon="camera"
         id="groupname 1"
         label="1"
-        link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=groupname%201">
+        link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=groupname%201"
+        showBaseline={[Function]}>
         <div
           style={
             Object {
@@ -911,11 +932,15 @@ exports[`AppContents renders a suite with grouped snapshots correctly 1`] = `
       </div>
       <div
         dataMockType="SidebarItem"
+        deleted={undefined}
+        dirty={undefined}
         fSelected={undefined}
+        hideBaseline={[Function]}
         icon="camera"
         id="groupname 2"
         label="2"
-        link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=groupname%202">
+        link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=groupname%202"
+        showBaseline={[Function]}>
         <div
           style={
             Object {
@@ -929,11 +954,15 @@ exports[`AppContents renders a suite with grouped snapshots correctly 1`] = `
     </div>
     <div
       dataMockType="SidebarItem"
+      deleted={undefined}
+      dirty={undefined}
       fSelected={undefined}
+      hideBaseline={[Function]}
       icon="camera"
       id="individual1 1"
       label="individual1"
-      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=individual1%201">
+      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=individual1%201"
+      showBaseline={[Function]}>
       <div
         style={
           Object {
@@ -946,11 +975,15 @@ exports[`AppContents renders a suite with grouped snapshots correctly 1`] = `
     </div>
     <div
       dataMockType="SidebarItem"
+      deleted={undefined}
+      dirty={undefined}
       fSelected={undefined}
+      hideBaseline={[Function]}
       icon="camera"
       id="individual2 1"
       label="individual2"
-      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=individual2%201">
+      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=individual2%201"
+      showBaseline={[Function]}>
       <div
         style={
           Object {
@@ -965,6 +998,7 @@ exports[`AppContents renders a suite with grouped snapshots correctly 1`] = `
   <div
     dataMockType="Preview"
     fRaw={false}
+    fShowBaseline={false}
     snapshot={undefined}>
     <div
       style={
@@ -1103,11 +1137,15 @@ exports[`AppContents renders a suite with individual snapshots correctly 1`] = `
     </div>
     <div
       dataMockType="SidebarItem"
+      deleted={undefined}
+      dirty={undefined}
       fSelected={undefined}
+      hideBaseline={[Function]}
       icon="camera"
       id="individual1 1"
       label="individual1"
-      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=individual1%201">
+      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=individual1%201"
+      showBaseline={[Function]}>
       <div
         style={
           Object {
@@ -1120,11 +1158,15 @@ exports[`AppContents renders a suite with individual snapshots correctly 1`] = `
     </div>
     <div
       dataMockType="SidebarItem"
+      deleted={undefined}
+      dirty={undefined}
       fSelected={undefined}
+      hideBaseline={[Function]}
       icon="camera"
       id="individual2 1"
       label="individual2"
-      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=individual2%201">
+      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=individual2%201"
+      showBaseline={[Function]}>
       <div
         style={
           Object {
@@ -1139,6 +1181,7 @@ exports[`AppContents renders a suite with individual snapshots correctly 1`] = `
   <div
     dataMockType="Preview"
     fRaw={false}
+    fShowBaseline={false}
     snapshot={undefined}>
     <div
       style={
