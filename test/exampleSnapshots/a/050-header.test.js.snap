@@ -70,7 +70,7 @@ exports[`Header renders correctly 1`] = `
     style="-webkit-flex:0 0 2.5em;align-items:center;background-color:#dcd6ff;display:flex;flex:0 0 2.5em;flex-direction:row;padding:5px 8px;">
     <div
       style="-webkit-flex:1;flex:1;">
-      
+
     </div>
     <div
       style="font-size:1.3em;font-weight:900;letter-spacing:3px;">
@@ -80,7 +80,7 @@ exports[`Header renders correctly 1`] = `
         id="madyBtnSettings"
         style="color:;cursor:pointer;letter-spacing:normal;margin-left:10px;"
         title="Settings">
-        
+
       </i>
     </div>
     <div
@@ -88,7 +88,7 @@ exports[`Header renders correctly 1`] = `
       <i
         class="giu-icon fa fa-question-circle"
         style="color:;cursor:pointer;letter-spacing:normal;">
-        
+
       </i>
     </div>
   </div>
@@ -169,13 +169,13 @@ exports[`Header shows hints when the info button is clicked 1`] = `
   <div>
     <div
       class="giu-hints">
-      
+
     </div>
     <div
       style="-webkit-flex:0 0 2.5em;align-items:center;background-color:#dcd6ff;display:flex;flex:0 0 2.5em;flex-direction:row;padding:5px 8px;">
       <div
         style="-webkit-flex:1;flex:1;">
-        
+
       </div>
       <div
         style="font-size:1.3em;font-weight:900;letter-spacing:3px;">
@@ -185,7 +185,7 @@ exports[`Header shows hints when the info button is clicked 1`] = `
           id="madyBtnSettings"
           style="color:;cursor:pointer;letter-spacing:normal;margin-left:10px;"
           title="Settings">
-          
+
         </i>
       </div>
       <div
@@ -193,7 +193,7 @@ exports[`Header shows hints when the info button is clicked 1`] = `
         <i
           class="giu-icon fa fa-question-circle"
           style="color:;cursor:pointer;letter-spacing:normal;">
-          
+
         </i>
       </div>
     </div>
@@ -335,7 +335,7 @@ exports[`Header shows hints when the info button is clicked 2`] = `
         <div
           class="giu-backdrop"
           style="background-color:black;cursor:pointer;height:100vh;left:0;opacity:0.6;position:fixed;top:0;width:100vw;">
-          
+
         </div>
         <div
           style="color:white;font-family:\"Gloria Hallelujah\", sans-serif;font-size:20px;">
@@ -350,7 +350,7 @@ exports[`Header shows hints when the info button is clicked 2`] = `
       style="-webkit-flex:0 0 2.5em;align-items:center;background-color:#dcd6ff;display:flex;flex:0 0 2.5em;flex-direction:row;padding:5px 8px;">
       <div
         style="-webkit-flex:1;flex:1;">
-        
+
       </div>
       <div
         style="font-size:1.3em;font-weight:900;letter-spacing:3px;">
@@ -360,7 +360,7 @@ exports[`Header shows hints when the info button is clicked 2`] = `
           id="madyBtnSettings"
           style="color:;cursor:pointer;letter-spacing:normal;margin-left:10px;"
           title="Settings">
-          
+
         </i>
       </div>
       <div
@@ -368,7 +368,7 @@ exports[`Header shows hints when the info button is clicked 2`] = `
         <i
           class="giu-icon fa fa-question-circle"
           style="color:;cursor:pointer;letter-spacing:normal;">
-          
+
         </i>
       </div>
     </div>

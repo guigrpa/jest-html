@@ -87,7 +87,7 @@ exports[`HoverableTranslation renders correctly with translation 1`] = `
     <div
       class="giu-floats"
       style="height:0;left:0;position:absolute;top:0;width:0;">
-      
+
     </div>
     <div
       style="margin-bottom:-2px;padding-right:40px;">
@@ -195,7 +195,7 @@ exports[`HoverableTranslation renders correctly without translation 1`] = `
     <div
       class="giu-floats"
       style="height:0;left:0;position:absolute;top:0;width:0;">
-      
+
     </div>
     <div
       style="margin-bottom:-2px;padding-right:40px;">
