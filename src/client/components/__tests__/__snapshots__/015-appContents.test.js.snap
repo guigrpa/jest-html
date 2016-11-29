@@ -73,6 +73,7 @@ exports[`AppContents renders a folder with subfolders and suites correctly 1`] =
     </div>
     <div
       dataMockType="SidebarItem"
+      dirty={false}
       fSelected={false}
       icon="folder-o"
       id="folder_-/path/to/folder/super/nested/folder"
@@ -90,6 +91,7 @@ exports[`AppContents renders a folder with subfolders and suites correctly 1`] =
     </div>
     <div
       dataMockType="SidebarItem"
+      dirty={false}
       fSelected={false}
       icon="folder-o"
       id="folder_-/path/to/folder/subdir"
@@ -107,6 +109,7 @@ exports[`AppContents renders a folder with subfolders and suites correctly 1`] =
     </div>
     <div
       dataMockType="SidebarItem"
+      dirty={false}
       fSelected={false}
       icon="file-o"
       id="suite_-/path/to/folder/suite1.snap"
@@ -124,6 +127,7 @@ exports[`AppContents renders a folder with subfolders and suites correctly 1`] =
     </div>
     <div
       dataMockType="SidebarItem"
+      dirty={false}
       fSelected={false}
       icon="file-o"
       id="suite_-/path/to/folder/suite2.snap"
@@ -141,6 +145,7 @@ exports[`AppContents renders a folder with subfolders and suites correctly 1`] =
     </div>
     <div
       dataMockType="SidebarItem"
+      dirty={false}
       fSelected={false}
       icon="file-o"
       id="suite_-/path/to/folder/suite3.snap"
@@ -160,6 +165,7 @@ exports[`AppContents renders a folder with subfolders and suites correctly 1`] =
   <div
     dataMockType="Preview"
     fRaw={false}
+    fShowBaseline={false}
     snapshot={undefined}>
     <div
       style={
@@ -301,6 +307,7 @@ exports[`AppContents renders a folder with subfolders correctly 1`] = `
     </div>
     <div
       dataMockType="SidebarItem"
+      dirty={false}
       fSelected={false}
       icon="folder-o"
       id="folder_-/path/to/folder/super/nested/folder"
@@ -318,6 +325,7 @@ exports[`AppContents renders a folder with subfolders correctly 1`] = `
     </div>
     <div
       dataMockType="SidebarItem"
+      dirty={false}
       fSelected={false}
       icon="folder-o"
       id="folder_-/path/to/folder/subdir"
@@ -337,6 +345,7 @@ exports[`AppContents renders a folder with subfolders correctly 1`] = `
   <div
     dataMockType="Preview"
     fRaw={false}
+    fShowBaseline={false}
     snapshot={undefined}>
     <div
       style={
@@ -445,6 +454,7 @@ exports[`AppContents renders a folder with suites correctly 1`] = `
     </div>
     <div
       dataMockType="SidebarItem"
+      dirty={false}
       fSelected={false}
       icon="file-o"
       id="suite_-/path/to/folder/suite1.snap"
@@ -462,6 +472,7 @@ exports[`AppContents renders a folder with suites correctly 1`] = `
     </div>
     <div
       dataMockType="SidebarItem"
+      dirty={false}
       fSelected={false}
       icon="file-o"
       id="suite_-/path/to/folder/suite2.snap"
@@ -479,6 +490,7 @@ exports[`AppContents renders a folder with suites correctly 1`] = `
     </div>
     <div
       dataMockType="SidebarItem"
+      dirty={false}
       fSelected={false}
       icon="file-o"
       id="suite_-/path/to/folder/suite3.snap"
@@ -498,6 +510,7 @@ exports[`AppContents renders a folder with suites correctly 1`] = `
   <div
     dataMockType="Preview"
     fRaw={false}
+    fShowBaseline={false}
     snapshot={undefined}>
     <div
       style={
@@ -666,8 +679,8 @@ exports[`AppContents renders a suite with a selected snapshot 1`] = `
       </div>
       <div
         dataMockType="SidebarItem"
-        deleted={undefined}
-        dirty={undefined}
+        deleted={false}
+        dirty={false}
         fSelected={false}
         hideBaseline={[Function]}
         icon="camera"
@@ -687,8 +700,8 @@ exports[`AppContents renders a suite with a selected snapshot 1`] = `
       </div>
       <div
         dataMockType="SidebarItem"
-        deleted={undefined}
-        dirty={undefined}
+        deleted={false}
+        dirty={false}
         fSelected={false}
         hideBaseline={[Function]}
         icon="camera"
@@ -709,8 +722,8 @@ exports[`AppContents renders a suite with a selected snapshot 1`] = `
     </div>
     <div
       dataMockType="SidebarItem"
-      deleted={undefined}
-      dirty={undefined}
+      deleted={false}
+      dirty={false}
       fSelected={true}
       hideBaseline={[Function]}
       icon="camera"
@@ -730,8 +743,8 @@ exports[`AppContents renders a suite with a selected snapshot 1`] = `
     </div>
     <div
       dataMockType="SidebarItem"
-      deleted={undefined}
-      dirty={undefined}
+      deleted={false}
+      dirty={false}
       fSelected={false}
       hideBaseline={[Function]}
       icon="camera"
@@ -757,6 +770,8 @@ exports[`AppContents renders a suite with a selected snapshot 1`] = `
     snapshot={
       Object {
         "css": Array [],
+        "deleted": false,
+        "dirty": false,
         "id": "individual1 1",
         "snap": "contents3",
       }
@@ -911,8 +926,8 @@ exports[`AppContents renders a suite with grouped snapshots correctly 1`] = `
       </div>
       <div
         dataMockType="SidebarItem"
-        deleted={undefined}
-        dirty={undefined}
+        deleted={false}
+        dirty={false}
         fSelected={undefined}
         hideBaseline={[Function]}
         icon="camera"
@@ -932,8 +947,8 @@ exports[`AppContents renders a suite with grouped snapshots correctly 1`] = `
       </div>
       <div
         dataMockType="SidebarItem"
-        deleted={undefined}
-        dirty={undefined}
+        deleted={false}
+        dirty={false}
         fSelected={undefined}
         hideBaseline={[Function]}
         icon="camera"
@@ -954,8 +969,8 @@ exports[`AppContents renders a suite with grouped snapshots correctly 1`] = `
     </div>
     <div
       dataMockType="SidebarItem"
-      deleted={undefined}
-      dirty={undefined}
+      deleted={false}
+      dirty={false}
       fSelected={undefined}
       hideBaseline={[Function]}
       icon="camera"
@@ -975,8 +990,8 @@ exports[`AppContents renders a suite with grouped snapshots correctly 1`] = `
     </div>
     <div
       dataMockType="SidebarItem"
-      deleted={undefined}
-      dirty={undefined}
+      deleted={false}
+      dirty={false}
       fSelected={undefined}
       hideBaseline={[Function]}
       icon="camera"
@@ -1378,6 +1393,7 @@ exports[`AppContents renders the root folder correctly 1`] = `
     </div>
     <div
       dataMockType="SidebarItem"
+      dirty={false}
       fSelected={false}
       icon="folder-o"
       id="folder_-/path/to/folder"
@@ -1395,6 +1411,7 @@ exports[`AppContents renders the root folder correctly 1`] = `
     </div>
     <div
       dataMockType="SidebarItem"
+      dirty={false}
       fSelected={false}
       icon="folder-o"
       id="folder_-/path/to/folder2"
@@ -1414,6 +1431,7 @@ exports[`AppContents renders the root folder correctly 1`] = `
   <div
     dataMockType="Preview"
     fRaw={false}
+    fShowBaseline={false}
     snapshot={undefined}>
     <div
       style={
