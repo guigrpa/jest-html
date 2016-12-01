@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.3.1 (Dec. 1, 2016)
+
+* Bugfix: add babel-polyfill to the server side
+
 ## 1.3.0 (Dec. 1, 2016)
 
 * Previewer:
