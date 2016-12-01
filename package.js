@@ -6,7 +6,7 @@
 // Basic config
 // ===============================================
 const NAME = 'jest-html';
-const VERSION = '1.2.2';
+const VERSION = '1.3.0';
 const DESCRIPTION = 'Preview Jest snapshots right in your browser';
 const KEYWORDS = ['Jest', 'test', 'snapshot', 'serializer', 'html', 'preview'];
 
