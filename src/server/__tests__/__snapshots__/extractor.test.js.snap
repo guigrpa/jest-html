@@ -3,6 +3,7 @@ Object {
   "childrenFolderPaths": Array [
     "-/test/exampleSnapshots/a/éxtra",
   ],
+  "dirty": false,
   "filePaths": Array [
     "-/test/exampleSnapshots/a/010-ápp.test.js.snap",
     "-/test/exampleSnapshots/a/050-header.test.js.snap",
@@ -24,6 +25,7 @@ Object {
     "-/test/exampleSnapshots/b/b2",
     "-/test/exampleSnapshots/with spaces",
   ],
+  "dirty": false,
   "filePaths": Array [
     "-/example.js.snap",
   ],
@@ -40,6 +42,8 @@ Object {
 body { color: aliceblue; }
 ",
     ],
+    "deleted": false,
+    "dirty": false,
     "html": "
   <div
     style=\"background-color:white;display:flex;flex-direction:column;min-height:100%;padding:0px 10px;\">
@@ -235,6 +239,8 @@ body { color: aliceblue; }
 body { color: aliceblue; }
 ",
     ],
+    "deleted": false,
+    "dirty": false,
     "html": "
   <div
     style=\"background-color:white;display:flex;flex-direction:column;min-height:100%;padding:0px 10px;\">
@@ -428,6 +434,8 @@ body { color: aliceblue; }
 body { color: aliceblue; }
 ",
     ],
+    "deleted": false,
+    "dirty": false,
     "html": "
   <div
     style=\"background-color:white;display:flex;flex-direction:column;min-height:100%;padding:0px 10px;\">
@@ -648,6 +656,8 @@ body { color: aliceblue; }
 body { color: aliceblue; }
 ",
     ],
+    "deleted": false,
+    "dirty": false,
     "html": "
   <div
     style=\"background-color:white;display:flex;flex-direction:column;min-height:100%;padding:0px 10px;\">
@@ -835,6 +845,8 @@ body { color: aliceblue; }
 </div>
 ",
   },
+  "__deleted": false,
+  "__dirty": false,
   "__folderPath": "-",
 }
 `;

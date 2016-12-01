@@ -7,7 +7,8 @@ exports[`App renders correctly 1`] = `
   fetchedItemPath={null}
   fetchedItemType={null}
   onRedirectToRoot={[Function]}
-  query={undefined}>
+  query={undefined}
+  saveAsBaseline={[Function]}>
   <div
     style={
       Object {

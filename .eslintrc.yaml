@@ -17,6 +17,7 @@ rules:
     - allowForLoopAfterthoughts: true
   no-continue: off
   no-duplicate-imports: off
+  no-mixed-operators: off
   key-spacing:
     - warn
     - beforeColon: false

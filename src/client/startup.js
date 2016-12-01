@@ -6,8 +6,8 @@ import 'babel-polyfill';
 import 'whatwg-fetch';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { setLocalStorageNamespace } from 'giu';
 import Root from './components/000-root';
 
-const rootElement = document.getElementById('app');
-
-ReactDOM.render(<Root />, rootElement);
+setLocalStorageNamespace('jest-html');
+ReactDOM.render(<Root />, document.getElementById('app'));

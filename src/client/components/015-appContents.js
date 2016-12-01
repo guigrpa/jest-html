@@ -4,14 +4,17 @@
 import React from 'react';
 import { Redirect } from 'react-router';
 import {
-  Floats,
+  Floats, Hints,
   Spinner, Icon, Button,
   flexContainer,
+  hintDefine, hintShow,
 } from 'giu';
 import type {
   FolderT,
   SnapshotSuiteT,
 } from '../../common/types';
+import { UI } from '../gral/constants';
+import { waitUntil } from '../gral/helpers';
 import Sidebar from './110-sidebar';
 import SidebarItem, { SidebarGroup } from './115-sidebarItem';
 import Preview from './120-preview';
@@ -45,6 +48,7 @@ type PropsT = {
   onRedirectToRoot: () => void;
   fRedirectToRoot: boolean,
   query: ?Object,
+  saveAsBaseline: (snapshotId: string) => any,
 };
 
 // ==========================================
@@ -53,28 +57,29 @@ type PropsT = {
 class AppContents extends React.PureComponent {
   props: PropsT;
   state: {
-    fRaw: boolean;
+    fRaw: boolean,
+    fShowBaseline: boolean,
   };
 
   constructor(props: PropsT) {
     super(props);
     this.state = {
       fRaw: false,
+      fShowBaseline: false,
     };
   }
 
+  componentDidMount() { this.hintIfNeeded(); }
+
+  // ------------------------------------------
   render() {
-    if (this.props.fRedirectToRoot) {
-      return <Redirect to="/" />;
-    }
+    if (this.props.fRedirectToRoot) return <Redirect to="/" />;
     if (this.props.error) {
       return (
         <LargeMessage>
           <Icon icon="warning" disabled />{' '}<b>An error occurred:</b><br />
           {this.props.error}<br />
-          <Button
-            onClick={this.props.onRedirectToRoot}
-          >
+          <Button onClick={this.props.onRedirectToRoot}>
             <Icon icon="home" disabled />{' '}Home
           </Button>
         </LargeMessage>
@@ -86,8 +91,10 @@ class AppContents extends React.PureComponent {
     return (
       <div style={style.outer}>
         <Floats />
+        <Hints />
         {this.renderSidebar()}
         {this.renderPreview()}
+        {this.state.fShowBaseline && this.renderBaselineWarning()}
       </div>
     );
   }
@@ -131,7 +138,7 @@ class AppContents extends React.PureComponent {
   renderFolder() {
     const folder: FolderT = (this.props.fetchedItem: any);
     const contents = [];
-    folder.childrenFolderPaths.forEach((folderPath) => {
+    folder.childrenFolderPaths.forEach((folderPath, idx) => {
       const id = `folder_${folderPath}`;
       let label = folderPath;
       const tmpIndex = label.indexOf(`${folder.folderPath}/`);
@@ -142,13 +149,14 @@ class AppContents extends React.PureComponent {
           key={id}
           id={id}
           label={label}
+          dirty={folder.childrenFolderDirtyFlags[idx]}
           link={`/folder/${_escape(folderPath)}`}
           icon="folder-o"
           fSelected={false}
         />
       );
     });
-    folder.filePaths.forEach((filePath) => {
+    folder.filePaths.forEach((filePath, idx) => {
       const id = `suite_${filePath}`;
       let label = filePath;
       const tmpIndex = label.indexOf(`${folder.folderPath}/`);
@@ -159,6 +167,7 @@ class AppContents extends React.PureComponent {
           key={id}
           id={id}
           label={label}
+          dirty={folder.suiteDirtyFlags[idx]}
           link={`/suite/${_escape(filePath)}`}
           icon="file-o"
           fSelected={false}
@@ -173,12 +182,11 @@ class AppContents extends React.PureComponent {
 
   renderSuite() {
     const suite: SnapshotSuiteT = (this.props.fetchedItem: any);
-    const fetchedItemPath: string = (this.props.fetchedItemPath: any);
     const { query } = this.props;
     const contents = [];
     const groups = {};
     Object.keys(suite).forEach((id) => {
-      if (id === '__folderPath') return;
+      if (id === '__folderPath' || id === '__dirty' || id === '__deleted') return;
       const name = snapshotName(id);
       const snapshot = suite[id];
       if (groups[name]) {
@@ -190,28 +198,15 @@ class AppContents extends React.PureComponent {
     Object.keys(groups).forEach((name) => {
       const { snapshots } = groups[name];
       if (snapshots.length === 1) {
-        const { id } = snapshots[0];
-        contents.push(
-          <SidebarItem
-            key={id}
-            id={id}
-            label={snapshotName(id)}
-            link={`/suite/${_escape(fetchedItemPath)}?id=${_escape(id)}`}
-            icon="camera"
-            fSelected={query && query.id === id}
-          />
-        );
+        const snapshot = snapshots[0];
+        const { id, dirty, deleted } = snapshot;
+        contents.push(this.renderSnapshotSidebarItem(
+          id, snapshotName(id), dirty, deleted, query));
       } else {
-        const items = snapshots.map(({ id }) =>
-          <SidebarItem
-            key={id}
-            id={id}
-            label={id.slice(name.length).trim()}
-            link={`/suite/${_escape(fetchedItemPath)}?id=${_escape(id)}`}
-            icon="camera"
-            fSelected={query && query.id === id}
-          />
-        );
+        const items = snapshots.map(({ id, dirty, deleted }) => {
+          const label = id.slice(name.length).trim();
+          return this.renderSnapshotSidebarItem(id, label, dirty, deleted, query);
+        });
         contents.push(
           <SidebarGroup key={name} name={name}>
             {items}
@@ -221,6 +216,31 @@ class AppContents extends React.PureComponent {
     });
     const linkBack = `/folder/${suite.__folderPath}`;
     return { contents, linkBack };
+  }
+
+  renderSnapshotSidebarItem(
+    id: string,
+    label: string,
+    dirty: boolean,
+    deleted: boolean,
+    query: ?Object
+  ) {
+    const fetchedItemPath: any = this.props.fetchedItemPath;
+    return (
+      <SidebarItem
+        key={id}
+        id={id}
+        label={label}
+        dirty={dirty}
+        deleted={deleted}
+        link={`/suite/${_escape(fetchedItemPath)}?id=${_escape(id)}`}
+        icon="camera"
+        fSelected={query && query.id === id}
+        showBaseline={this.showBaseline}
+        hideBaseline={this.hideBaseline}
+        saveAsBaseline={this.props.saveAsBaseline}
+      />
+    );
   }
 
   renderPreview() {
@@ -238,13 +258,76 @@ class AppContents extends React.PureComponent {
         key={key}
         snapshot={snapshot}
         fRaw={this.state.fRaw}
+        fShowBaseline={this.state.fShowBaseline}
       />
     );
   }
 
+  renderBaselineWarning() {
+    return (
+      <div className="pulsate" style={style.baselineWarning}>
+        <Icon icon="undo" />
+      </div>
+    );
+  }
+
   // ------------------------------------------
-  toggleRaw = () => {
-    this.setState({ fRaw: !this.state.fRaw });
+  toggleRaw = () => { this.setState({ fRaw: !this.state.fRaw }); }
+  showBaseline = () => { this.setState({ fShowBaseline: true }); }
+  hideBaseline = () => { this.setState({ fShowBaseline: false }); }
+
+  // ------------------------------------------
+  hintIfNeeded = async () => {
+    try {
+      await waitUntil(() => !!document.getElementById('jh-sidebar'), 2000, 'hintMain');
+    } catch (err) { return; }
+    const elements = () => {
+      const out = [];
+      let node;
+      node = document.getElementById('jh-sidebar');
+      if (node) {
+        const bcr = node.getBoundingClientRect();
+        const x = bcr.width / 2;
+        const y = window.innerHeight / 2;
+        out.push({
+          type: 'LABEL', x, y, align: 'center',
+          children: 'Navigate through folders, suites and snapshots',
+        });
+        out.push({
+          type: 'ARROW', from: { x, y },
+          to: { x, y: y - 40 },
+          counterclockwise: true,
+        });
+
+        const x2 = bcr.width + ((window.innerWidth - bcr.width) / 2);
+        out.push({
+          type: 'LABEL', x: x2, y, align: 'center',
+          children: 'Previews will appear here',
+        });
+        out.push({
+          type: 'ARROW', from: { x: x2, y },
+          to: { x: x2, y: y - 40 },
+          counterclockwise: true,
+        });
+      }
+      node = document.getElementById('jh-toggle-raw');
+      if (node) {
+        const bcr = node.getBoundingClientRect();
+        const x = bcr.right + 60;
+        const y = bcr.top + (bcr.height / 2);
+        out.push({
+          type: 'LABEL', x, y, align: 'left',
+          children: 'Toggle between raw snapshot and HTML preview',
+        });
+        out.push({
+          type: 'ARROW', from: { x, y },
+          to: { x: bcr.right + 6, y },
+        });
+      }
+      return out;
+    };
+    hintDefine('main', { elements, closeLabel: 'Enjoy testing!' });
+    hintShow('main');
   }
 }
 
@@ -255,6 +338,15 @@ const style = {
   }),
   titleBarIcon: {
     cursor: 'default',
+  },
+  baselineWarning: {
+    fontWeight: 'bold',
+    fontFamily: 'sans-serif',
+    fontSize: 32,
+    position: 'fixed',
+    color: UI.color.accentBg,
+    top: 10,
+    right: 20,
   },
 };
 

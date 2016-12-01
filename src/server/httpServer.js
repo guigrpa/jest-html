@@ -72,6 +72,13 @@ function init(options: {|
     const { filePath } = req.body;
     res.json(extractor.getSnapshotSuite(filePath));
   });
+  expressApp.post('/api/saveAsBaseline', (req, res) => {
+    mainStory.debug('http', `REQ: ${chalk.cyan('/api/saveAsBaseline ')}`,
+      { attach: req.body, attachInline: true });
+    const { filePath, id } = req.body;
+    extractor.saveAsBaseline(filePath, id);
+    res.json({});
+  });
 
   // Static assets
   expressApp.use(express.static(ABS_ASSET_PATH));

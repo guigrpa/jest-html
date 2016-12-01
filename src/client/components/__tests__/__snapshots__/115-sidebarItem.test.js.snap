@@ -76,6 +76,7 @@ exports[`SidebarItem renders correctly 1`] = `
       }
     }>
     an/extremely/amazingly/ultra/hyper/really/very/long/label
+     
   </div>
 </a>
 ------------HTML PREVIEW---------------
@@ -94,6 +95,7 @@ exports[`SidebarItem renders correctly 1`] = `
   </div>
   <div style="-webkit-flex:1;flex:1;">
     an/extremely/amazingly/ultra/hyper/really/very/long/label
+     
   </div>
 </a>
 `;
@@ -109,7 +111,7 @@ exports[`SidebarItem renders correctly when hovered 1`] = `
   style={
     Object {
       "alignItems": "center",
-      "backgroundColor": "#ddd",
+      "backgroundColor": "#e6e6e6",
       "color": "currentColor",
       "cursor": "pointer",
       "display": "flex",
@@ -144,6 +146,7 @@ exports[`SidebarItem renders correctly when hovered 1`] = `
       }
     }>
     two
+     
   </div>
 </a>
 ------------HTML PREVIEW---------------
@@ -151,7 +154,7 @@ exports[`SidebarItem renders correctly when hovered 1`] = `
   class=""
   href="some/url"
   id="two"
-  style="align-items:center;background-color:#ddd;color:currentColor;cursor:pointer;display:flex;flex-direction:row;padding:0.3em 1em;text-decoration:none;word-break:break-word;"
+  style="align-items:center;background-color:#e6e6e6;color:currentColor;cursor:pointer;display:flex;flex-direction:row;padding:0.3em 1em;text-decoration:none;word-break:break-word;"
 >
   <div style="-webkit-flex:0 0 20px;flex:0 0 20px;">
     <i
@@ -162,6 +165,7 @@ exports[`SidebarItem renders correctly when hovered 1`] = `
   </div>
   <div style="-webkit-flex:1;flex:1;">
     two
+     
   </div>
 </a>
 `;
@@ -177,7 +181,7 @@ exports[`SidebarItem renders correctly when selected & hovered 1`] = `
   style={
     Object {
       "alignItems": "center",
-      "backgroundColor": "#ba360a",
+      "backgroundColor": "#9d3614",
       "color": "white",
       "cursor": "pointer",
       "display": "flex",
@@ -212,6 +216,7 @@ exports[`SidebarItem renders correctly when selected & hovered 1`] = `
       }
     }>
     four
+     
   </div>
 </a>
 ------------HTML PREVIEW---------------
@@ -219,7 +224,7 @@ exports[`SidebarItem renders correctly when selected & hovered 1`] = `
   class=""
   href="some/url"
   id="four"
-  style="align-items:center;background-color:#ba360a;color:white;cursor:pointer;display:flex;flex-direction:row;padding:0.3em 1em;text-decoration:none;word-break:break-word;"
+  style="align-items:center;background-color:#9d3614;color:white;cursor:pointer;display:flex;flex-direction:row;padding:0.3em 1em;text-decoration:none;word-break:break-word;"
 >
   <div style="-webkit-flex:0 0 20px;flex:0 0 20px;">
     <i
@@ -230,6 +235,7 @@ exports[`SidebarItem renders correctly when selected & hovered 1`] = `
   </div>
   <div style="-webkit-flex:1;flex:1;">
     four
+     
   </div>
 </a>
 `;
@@ -280,6 +286,7 @@ exports[`SidebarItem renders correctly when selected 1`] = `
       }
     }>
     three
+     
   </div>
 </a>
 ------------HTML PREVIEW---------------
@@ -298,6 +305,7 @@ exports[`SidebarItem renders correctly when selected 1`] = `
   </div>
   <div style="-webkit-flex:1;flex:1;">
     three
+     
   </div>
 </a>
 `;

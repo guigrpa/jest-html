@@ -97,6 +97,7 @@ class App extends React.Component {
         onRedirectToRoot={() => { this.setState({ fRedirectToRoot: true }); }}
         fRedirectToRoot={this.state.fRedirectToRoot}
         query={this.props.location.query}
+        saveAsBaseline={this.saveAsBaseline}
       />
     );
   }
@@ -111,7 +112,8 @@ class App extends React.Component {
     }
   }
 
-  fetchFolder(folderPath: string) {
+  fetchFolder(folderPath: ?string) {
+    if (folderPath == null) return;
     fetch('/api/folder', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
@@ -126,13 +128,13 @@ class App extends React.Component {
       });
     })
     .catch(() => {
-      this.setState({
-        error: `Could not find ${folderPath}`,
-      });
+      // $FlowFixMe
+      this.setState({ error: `Could not find ${folderPath}` });
     });
   }
 
-  fetchSuite(filePath: string) {
+  fetchSuite(filePath: ?string) {
+    if (filePath == null) return;
     fetch('/api/suite', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
@@ -147,9 +149,19 @@ class App extends React.Component {
       });
     })
     .catch(() => {
-      this.setState({
-        error: `Could not find ${filePath}`,
-      });
+      // $FlowFixMe
+      this.setState({ error: `Could not find ${filePath}` });
+    });
+  }
+
+  saveAsBaseline = (snapshotId: string) => {
+    fetch('/api/saveAsBaseline', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({
+        filePath: this.state.fetchedItemPath,
+        id: snapshotId,
+      }),
     });
   }
 }

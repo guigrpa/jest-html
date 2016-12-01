@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.3.0 (Dec. 1, 2016)
+
+* Previewer:
+    - Support **snapshot visual diffing** (current snapshot contents vs. the baseline loaded when jest-html launches). Allow the user to save current snapshot as the new baseline.
+    - Add usage hints.
+    - Tweak layout.
+
 ## 1.2.2 (Nov. 18, 2016)
 
 - Bump deps.

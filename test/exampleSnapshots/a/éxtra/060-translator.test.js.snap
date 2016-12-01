@@ -51,7 +51,7 @@ exports[`Translator allows changing the language of a column 1`] = `
           }
         }>
         MESSAGES
-         
+
         <span
           style={
             Object {
@@ -63,14 +63,14 @@ exports[`Translator allows changing the language of a column 1`] = `
             title="Used messages">
             2
           </span>
-           / 
+           /
           <span
             title="Total messages">
             2
           </span>
           ]
         </span>
-         
+
         <i
           className="giu-icon fa fa-refresh"
           onClick={[Function]}
@@ -165,7 +165,7 @@ exports[`Translator allows changing the language of a column 1`] = `
             </option>
           </select>
         </div>
-         
+
         <span
           style={
             Object {
@@ -177,14 +177,14 @@ exports[`Translator allows changing the language of a column 1`] = `
             title="Translations">
             1
           </span>
-           / 
+           /
           <span
             title="Used messages">
             2
           </span>
           ]
         </span>
-         
+
         <i
           className="giu-icon fa fa-remove"
           id={0}
@@ -468,7 +468,7 @@ exports[`Translator allows changing the language of a column 1`] = `
               "paddingRight": 17,
             }
           }>
-          
+
         </div>
         <div
           style={
@@ -490,7 +490,7 @@ exports[`Translator allows changing the language of a column 1`] = `
     <div
       class="giu-floats"
       style="height:0;left:0;position:absolute;top:0;width:0;">
-      
+
     </div>
     <div
       style="-webkit-flex:1 0 10em;display:flex;flex:1 0 10em;flex-direction:column;margin-top:5px;">
@@ -500,7 +500,7 @@ exports[`Translator allows changing the language of a column 1`] = `
         <div
           style="-webkit-flex:1 1 0px;background-color:#f2f0ff;border-bottom:1px solid #1600a3;flex:1 1 0px;font-weight:900;letter-spacing:3px;margin-right:5px;padding-bottom:3px;padding-left:5px;padding-right:17px;padding-top:3px;text-align:center;">
           MESSAGES
-           
+
           <span
             style="color:darkgrey;">
             [
@@ -508,19 +508,19 @@ exports[`Translator allows changing the language of a column 1`] = `
               title="Used messages">
               2
             </span>
-             / 
+             /
             <span
               title="Total messages">
               2
             </span>
             ]
           </span>
-           
+
           <i
             class="giu-icon fa fa-refresh"
             style="color:;cursor:pointer;letter-spacing:normal;"
             title="Parse source files to update the message list">
-            
+
           </i>
         </div>
         <div
@@ -532,7 +532,7 @@ exports[`Translator allows changing the language of a column 1`] = `
             <i
               class="giu-icon fa fa-caret-down"
               style="color:;cursor:pointer;letter-spacing:normal;margin-right:5px;">
-              
+
             </i>
             es
             <select
@@ -556,7 +556,7 @@ exports[`Translator allows changing the language of a column 1`] = `
               </option>
             </select>
           </div>
-           
+
           <span
             style="color:darkgrey;">
             [
@@ -564,19 +564,19 @@ exports[`Translator allows changing the language of a column 1`] = `
               title="Translations">
               1
             </span>
-             / 
+             /
             <span
               title="Used messages">
               2
             </span>
             ]
           </span>
-           
+
           <i
             class="giu-icon fa fa-remove"
             style="color:;cursor:pointer;letter-spacing:normal;"
             title="Remove column (does NOT delete any translations)">
-            
+
           </i>
         </div>
         <div
@@ -586,12 +586,12 @@ exports[`Translator allows changing the language of a column 1`] = `
           <i
             class="giu-icon fa fa-plus"
             style="color:;cursor:pointer;letter-spacing:normal;">
-            
+
           </i>
         </div>
         <div
           style="-webkit-flex:0 0 NaNpx;flex:0 0 NaNpx;">
-          
+
         </div>
       </div>
       <div
@@ -610,11 +610,11 @@ exports[`Translator allows changing the language of a column 1`] = `
           style="-webkit-flex:1 1 0px;display:flex;flex:1 1 0px;flex-direction:row;">
           <div
             style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:17px;">
-            
+
           </div>
           <div
             style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:5px;">
-            
+
           </div>
         </div>
       </div>
@@ -675,7 +675,7 @@ exports[`Translator allows changing the language of a column 2`] = `
           }
         }>
         MESSAGES
-         
+
         <span
           style={
             Object {
@@ -687,14 +687,14 @@ exports[`Translator allows changing the language of a column 2`] = `
             title="Used messages">
             2
           </span>
-           / 
+           /
           <span
             title="Total messages">
             2
           </span>
           ]
         </span>
-         
+
         <i
           className="giu-icon fa fa-refresh"
           onClick={[Function]}
@@ -789,7 +789,7 @@ exports[`Translator allows changing the language of a column 2`] = `
             </option>
           </select>
         </div>
-         
+
         <span
           style={
             Object {
@@ -801,14 +801,14 @@ exports[`Translator allows changing the language of a column 2`] = `
             title="Translations">
             0
           </span>
-           / 
+           /
           <span
             title="Used messages">
             2
           </span>
           ]
         </span>
-         
+
         <i
           className="giu-icon fa fa-remove"
           id={0}
@@ -1092,7 +1092,7 @@ exports[`Translator allows changing the language of a column 2`] = `
               "paddingRight": 17,
             }
           }>
-          
+
         </div>
         <div
           style={
@@ -1114,7 +1114,7 @@ exports[`Translator allows changing the language of a column 2`] = `
     <div
       class="giu-floats"
       style="height:0;left:0;position:absolute;top:0;width:0;">
-      
+
     </div>
     <div
       style="-webkit-flex:1 0 10em;display:flex;flex:1 0 10em;flex-direction:column;margin-top:5px;">
@@ -1124,7 +1124,7 @@ exports[`Translator allows changing the language of a column 2`] = `
         <div
           style="-webkit-flex:1 1 0px;background-color:#f2f0ff;border-bottom:1px solid #1600a3;flex:1 1 0px;font-weight:900;letter-spacing:3px;margin-right:5px;padding-bottom:3px;padding-left:5px;padding-right:17px;padding-top:3px;text-align:center;">
           MESSAGES
-           
+
           <span
             style="color:darkgrey;">
             [
@@ -1132,19 +1132,19 @@ exports[`Translator allows changing the language of a column 2`] = `
               title="Used messages">
               2
             </span>
-             / 
+             /
             <span
               title="Total messages">
               2
             </span>
             ]
           </span>
-           
+
           <i
             class="giu-icon fa fa-refresh"
             style="color:;cursor:pointer;letter-spacing:normal;"
             title="Parse source files to update the message list">
-            
+
           </i>
         </div>
         <div
@@ -1156,7 +1156,7 @@ exports[`Translator allows changing the language of a column 2`] = `
             <i
               class="giu-icon fa fa-caret-down"
               style="color:;cursor:pointer;letter-spacing:normal;margin-right:5px;">
-              
+
             </i>
             en
             <select
@@ -1180,7 +1180,7 @@ exports[`Translator allows changing the language of a column 2`] = `
               </option>
             </select>
           </div>
-           
+
           <span
             style="color:darkgrey;">
             [
@@ -1188,19 +1188,19 @@ exports[`Translator allows changing the language of a column 2`] = `
               title="Translations">
               0
             </span>
-             / 
+             /
             <span
               title="Used messages">
               2
             </span>
             ]
           </span>
-           
+
           <i
             class="giu-icon fa fa-remove"
             style="color:;cursor:pointer;letter-spacing:normal;"
             title="Remove column (does NOT delete any translations)">
-            
+
           </i>
         </div>
         <div
@@ -1210,12 +1210,12 @@ exports[`Translator allows changing the language of a column 2`] = `
           <i
             class="giu-icon fa fa-plus"
             style="color:;cursor:pointer;letter-spacing:normal;">
-            
+
           </i>
         </div>
         <div
           style="-webkit-flex:0 0 NaNpx;flex:0 0 NaNpx;">
-          
+
         </div>
       </div>
       <div
@@ -1234,11 +1234,11 @@ exports[`Translator allows changing the language of a column 2`] = `
           style="-webkit-flex:1 1 0px;display:flex;flex:1 1 0px;flex-direction:row;">
           <div
             style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:17px;">
-            
+
           </div>
           <div
             style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:5px;">
-            
+
           </div>
         </div>
       </div>
@@ -1299,7 +1299,7 @@ exports[`Translator allows removing columns 1`] = `
           }
         }>
         MESSAGES
-         
+
         <span
           style={
             Object {
@@ -1311,14 +1311,14 @@ exports[`Translator allows removing columns 1`] = `
             title="Used messages">
             2
           </span>
-           / 
+           /
           <span
             title="Total messages">
             2
           </span>
           ]
         </span>
-         
+
         <i
           className="giu-icon fa fa-refresh"
           onClick={[Function]}
@@ -1413,7 +1413,7 @@ exports[`Translator allows removing columns 1`] = `
             </option>
           </select>
         </div>
-         
+
         <span
           style={
             Object {
@@ -1425,14 +1425,14 @@ exports[`Translator allows removing columns 1`] = `
             title="Translations">
             1
           </span>
-           / 
+           /
           <span
             title="Used messages">
             2
           </span>
           ]
         </span>
-         
+
         <i
           className="giu-icon fa fa-remove"
           id={0}
@@ -1716,7 +1716,7 @@ exports[`Translator allows removing columns 1`] = `
               "paddingRight": 17,
             }
           }>
-          
+
         </div>
         <div
           style={
@@ -1738,7 +1738,7 @@ exports[`Translator allows removing columns 1`] = `
     <div
       class="giu-floats"
       style="height:0;left:0;position:absolute;top:0;width:0;">
-      
+
     </div>
     <div
       style="-webkit-flex:1 0 10em;display:flex;flex:1 0 10em;flex-direction:column;margin-top:5px;">
@@ -1748,7 +1748,7 @@ exports[`Translator allows removing columns 1`] = `
         <div
           style="-webkit-flex:1 1 0px;background-color:#f2f0ff;border-bottom:1px solid #1600a3;flex:1 1 0px;font-weight:900;letter-spacing:3px;margin-right:5px;padding-bottom:3px;padding-left:5px;padding-right:17px;padding-top:3px;text-align:center;">
           MESSAGES
-           
+
           <span
             style="color:darkgrey;">
             [
@@ -1756,19 +1756,19 @@ exports[`Translator allows removing columns 1`] = `
               title="Used messages">
               2
             </span>
-             / 
+             /
             <span
               title="Total messages">
               2
             </span>
             ]
           </span>
-           
+
           <i
             class="giu-icon fa fa-refresh"
             style="color:;cursor:pointer;letter-spacing:normal;"
             title="Parse source files to update the message list">
-            
+
           </i>
         </div>
         <div
@@ -1780,7 +1780,7 @@ exports[`Translator allows removing columns 1`] = `
             <i
               class="giu-icon fa fa-caret-down"
               style="color:;cursor:pointer;letter-spacing:normal;margin-right:5px;">
-              
+
             </i>
             es
             <select
@@ -1804,7 +1804,7 @@ exports[`Translator allows removing columns 1`] = `
               </option>
             </select>
           </div>
-           
+
           <span
             style="color:darkgrey;">
             [
@@ -1812,19 +1812,19 @@ exports[`Translator allows removing columns 1`] = `
               title="Translations">
               1
             </span>
-             / 
+             /
             <span
               title="Used messages">
               2
             </span>
             ]
           </span>
-           
+
           <i
             class="giu-icon fa fa-remove"
             style="color:;cursor:pointer;letter-spacing:normal;"
             title="Remove column (does NOT delete any translations)">
-            
+
           </i>
         </div>
         <div
@@ -1834,12 +1834,12 @@ exports[`Translator allows removing columns 1`] = `
           <i
             class="giu-icon fa fa-plus"
             style="color:;cursor:pointer;letter-spacing:normal;">
-            
+
           </i>
         </div>
         <div
           style="-webkit-flex:0 0 NaNpx;flex:0 0 NaNpx;">
-          
+
         </div>
       </div>
       <div
@@ -1858,11 +1858,11 @@ exports[`Translator allows removing columns 1`] = `
           style="-webkit-flex:1 1 0px;display:flex;flex:1 1 0px;flex-direction:row;">
           <div
             style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:17px;">
-            
+
           </div>
           <div
             style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:5px;">
-            
+
           </div>
         </div>
       </div>
@@ -1923,7 +1923,7 @@ exports[`Translator renders correctly with a selection 1`] = `
           }
         }>
         MESSAGES
-         
+
         <span
           style={
             Object {
@@ -1935,14 +1935,14 @@ exports[`Translator renders correctly with a selection 1`] = `
             title="Used messages">
             2
           </span>
-           / 
+           /
           <span
             title="Total messages">
             2
           </span>
           ]
         </span>
-         
+
         <i
           className="giu-icon fa fa-refresh"
           onClick={[Function]}
@@ -2037,7 +2037,7 @@ exports[`Translator renders correctly with a selection 1`] = `
             </option>
           </select>
         </div>
-         
+
         <span
           style={
             Object {
@@ -2049,14 +2049,14 @@ exports[`Translator renders correctly with a selection 1`] = `
             title="Translations">
             1
           </span>
-           / 
+           /
           <span
             title="Used messages">
             2
           </span>
           ]
         </span>
-         
+
         <i
           className="giu-icon fa fa-remove"
           id={0}
@@ -2152,7 +2152,7 @@ exports[`Translator renders correctly with a selection 1`] = `
             </option>
           </select>
         </div>
-         
+
         <span
           style={
             Object {
@@ -2164,14 +2164,14 @@ exports[`Translator renders correctly with a selection 1`] = `
             title="Translations">
             1
           </span>
-           / 
+           /
           <span
             title="Used messages">
             2
           </span>
           ]
         </span>
-         
+
         <i
           className="giu-icon fa fa-remove"
           id={1}
@@ -2267,7 +2267,7 @@ exports[`Translator renders correctly with a selection 1`] = `
             </option>
           </select>
         </div>
-         
+
         <span
           style={
             Object {
@@ -2279,14 +2279,14 @@ exports[`Translator renders correctly with a selection 1`] = `
             title="Translations">
             0
           </span>
-           / 
+           /
           <span
             title="Used messages">
             2
           </span>
           ]
         </span>
-         
+
         <i
           className="giu-icon fa fa-remove"
           id={2}
@@ -2575,7 +2575,7 @@ exports[`Translator renders correctly with a selection 1`] = `
               "paddingRight": 17,
             }
           }>
-          
+
         </div>
         <div
           style={
@@ -2619,7 +2619,7 @@ exports[`Translator renders correctly with a selection 1`] = `
     <div
       class="giu-floats"
       style="height:0;left:0;position:absolute;top:0;width:0;">
-      
+
     </div>
     <div
       style="-webkit-flex:1 0 10em;display:flex;flex:1 0 10em;flex-direction:column;margin-top:5px;">
@@ -2629,7 +2629,7 @@ exports[`Translator renders correctly with a selection 1`] = `
         <div
           style="-webkit-flex:1 1 0px;background-color:#f2f0ff;border-bottom:1px solid #1600a3;flex:1 1 0px;font-weight:900;letter-spacing:3px;margin-right:5px;padding-bottom:3px;padding-left:5px;padding-right:17px;padding-top:3px;text-align:center;">
           MESSAGES
-           
+
           <span
             style="color:darkgrey;">
             [
@@ -2637,19 +2637,19 @@ exports[`Translator renders correctly with a selection 1`] = `
               title="Used messages">
               2
             </span>
-             / 
+             /
             <span
               title="Total messages">
               2
             </span>
             ]
           </span>
-           
+
           <i
             class="giu-icon fa fa-refresh"
             style="color:;cursor:pointer;letter-spacing:normal;"
             title="Parse source files to update the message list">
-            
+
           </i>
         </div>
         <div
@@ -2661,7 +2661,7 @@ exports[`Translator renders correctly with a selection 1`] = `
             <i
               class="giu-icon fa fa-caret-down"
               style="color:;cursor:pointer;letter-spacing:normal;margin-right:5px;">
-              
+
             </i>
             ca
             <select
@@ -2685,7 +2685,7 @@ exports[`Translator renders correctly with a selection 1`] = `
               </option>
             </select>
           </div>
-           
+
           <span
             style="color:darkgrey;">
             [
@@ -2693,19 +2693,19 @@ exports[`Translator renders correctly with a selection 1`] = `
               title="Translations">
               1
             </span>
-             / 
+             /
             <span
               title="Used messages">
               2
             </span>
             ]
           </span>
-           
+
           <i
             class="giu-icon fa fa-remove"
             style="color:;cursor:pointer;letter-spacing:normal;"
             title="Remove column (does NOT delete any translations)">
-            
+
           </i>
         </div>
         <div
@@ -2717,7 +2717,7 @@ exports[`Translator renders correctly with a selection 1`] = `
             <i
               class="giu-icon fa fa-caret-down"
               style="color:;cursor:pointer;letter-spacing:normal;margin-right:5px;">
-              
+
             </i>
             es
             <select
@@ -2741,7 +2741,7 @@ exports[`Translator renders correctly with a selection 1`] = `
               </option>
             </select>
           </div>
-           
+
           <span
             style="color:darkgrey;">
             [
@@ -2749,19 +2749,19 @@ exports[`Translator renders correctly with a selection 1`] = `
               title="Translations">
               1
             </span>
-             / 
+             /
             <span
               title="Used messages">
               2
             </span>
             ]
           </span>
-           
+
           <i
             class="giu-icon fa fa-remove"
             style="color:;cursor:pointer;letter-spacing:normal;"
             title="Remove column (does NOT delete any translations)">
-            
+
           </i>
         </div>
         <div
@@ -2773,7 +2773,7 @@ exports[`Translator renders correctly with a selection 1`] = `
             <i
               class="giu-icon fa fa-caret-down"
               style="color:;cursor:pointer;letter-spacing:normal;margin-right:5px;">
-              
+
             </i>
             en
             <select
@@ -2797,7 +2797,7 @@ exports[`Translator renders correctly with a selection 1`] = `
               </option>
             </select>
           </div>
-           
+
           <span
             style="color:darkgrey;">
             [
@@ -2805,19 +2805,19 @@ exports[`Translator renders correctly with a selection 1`] = `
               title="Translations">
               0
             </span>
-             / 
+             /
             <span
               title="Used messages">
               2
             </span>
             ]
           </span>
-           
+
           <i
             class="giu-icon fa fa-remove"
             style="color:;cursor:pointer;letter-spacing:normal;"
             title="Remove column (does NOT delete any translations)">
-            
+
           </i>
         </div>
         <div
@@ -2827,12 +2827,12 @@ exports[`Translator renders correctly with a selection 1`] = `
           <i
             class="giu-icon fa fa-plus"
             style="color:#999999;cursor:;letter-spacing:normal;">
-            
+
           </i>
         </div>
         <div
           style="-webkit-flex:0 0 NaNpx;flex:0 0 NaNpx;">
-          
+
         </div>
       </div>
       <div
@@ -2851,19 +2851,19 @@ exports[`Translator renders correctly with a selection 1`] = `
           style="-webkit-flex:1 1 0px;display:flex;flex:1 1 0px;flex-direction:row;">
           <div
             style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:17px;">
-            
+
           </div>
           <div
             style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:5px;">
-            
+
           </div>
           <div
             style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:5px;">
-            
+
           </div>
           <div
             style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:5px;">
-            
+
           </div>
         </div>
       </div>
@@ -2924,7 +2924,7 @@ exports[`Translator renders correctly with default columns 1`] = `
           }
         }>
         MESSAGES
-         
+
         <span
           style={
             Object {
@@ -2936,14 +2936,14 @@ exports[`Translator renders correctly with default columns 1`] = `
             title="Used messages">
             2
           </span>
-           / 
+           /
           <span
             title="Total messages">
             2
           </span>
           ]
         </span>
-         
+
         <i
           className="giu-icon fa fa-refresh"
           onClick={[Function]}
@@ -3038,7 +3038,7 @@ exports[`Translator renders correctly with default columns 1`] = `
             </option>
           </select>
         </div>
-         
+
         <span
           style={
             Object {
@@ -3050,14 +3050,14 @@ exports[`Translator renders correctly with default columns 1`] = `
             title="Translations">
             1
           </span>
-           / 
+           /
           <span
             title="Used messages">
             2
           </span>
           ]
         </span>
-         
+
         <i
           className="giu-icon fa fa-remove"
           id={0}
@@ -3341,7 +3341,7 @@ exports[`Translator renders correctly with default columns 1`] = `
               "paddingRight": 17,
             }
           }>
-          
+
         </div>
         <div
           style={
@@ -3363,7 +3363,7 @@ exports[`Translator renders correctly with default columns 1`] = `
     <div
       class="giu-floats"
       style="height:0;left:0;position:absolute;top:0;width:0;">
-      
+
     </div>
     <div
       style="-webkit-flex:1 0 10em;display:flex;flex:1 0 10em;flex-direction:column;margin-top:5px;">
@@ -3373,7 +3373,7 @@ exports[`Translator renders correctly with default columns 1`] = `
         <div
           style="-webkit-flex:1 1 0px;background-color:#f2f0ff;border-bottom:1px solid #1600a3;flex:1 1 0px;font-weight:900;letter-spacing:3px;margin-right:5px;padding-bottom:3px;padding-left:5px;padding-right:17px;padding-top:3px;text-align:center;">
           MESSAGES
-           
+
           <span
             style="color:darkgrey;">
             [
@@ -3381,19 +3381,19 @@ exports[`Translator renders correctly with default columns 1`] = `
               title="Used messages">
               2
             </span>
-             / 
+             /
             <span
               title="Total messages">
               2
             </span>
             ]
           </span>
-           
+
           <i
             class="giu-icon fa fa-refresh"
             style="color:;cursor:pointer;letter-spacing:normal;"
             title="Parse source files to update the message list">
-            
+
           </i>
         </div>
         <div
@@ -3405,7 +3405,7 @@ exports[`Translator renders correctly with default columns 1`] = `
             <i
               class="giu-icon fa fa-caret-down"
               style="color:;cursor:pointer;letter-spacing:normal;margin-right:5px;">
-              
+
             </i>
             es
             <select
@@ -3429,7 +3429,7 @@ exports[`Translator renders correctly with default columns 1`] = `
               </option>
             </select>
           </div>
-           
+
           <span
             style="color:darkgrey;">
             [
@@ -3437,19 +3437,19 @@ exports[`Translator renders correctly with default columns 1`] = `
               title="Translations">
               1
             </span>
-             / 
+             /
             <span
               title="Used messages">
               2
             </span>
             ]
           </span>
-           
+
           <i
             class="giu-icon fa fa-remove"
             style="color:;cursor:pointer;letter-spacing:normal;"
             title="Remove column (does NOT delete any translations)">
-            
+
           </i>
         </div>
         <div
@@ -3459,12 +3459,12 @@ exports[`Translator renders correctly with default columns 1`] = `
           <i
             class="giu-icon fa fa-plus"
             style="color:;cursor:pointer;letter-spacing:normal;">
-            
+
           </i>
         </div>
         <div
           style="-webkit-flex:0 0 NaNpx;flex:0 0 NaNpx;">
-          
+
         </div>
       </div>
       <div
@@ -3483,11 +3483,11 @@ exports[`Translator renders correctly with default columns 1`] = `
           style="-webkit-flex:1 1 0px;display:flex;flex:1 1 0px;flex-direction:row;">
           <div
             style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:17px;">
-            
+
           </div>
           <div
             style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:5px;">
-            
+
           </div>
         </div>
       </div>
@@ -3548,7 +3548,7 @@ exports[`Translator renders correctly with fixed columns 1`] = `
           }
         }>
         MESSAGES
-         
+
         <span
           style={
             Object {
@@ -3560,14 +3560,14 @@ exports[`Translator renders correctly with fixed columns 1`] = `
             title="Used messages">
             2
           </span>
-           / 
+           /
           <span
             title="Total messages">
             2
           </span>
           ]
         </span>
-         
+
         <i
           className="giu-icon fa fa-refresh"
           onClick={[Function]}
@@ -3662,7 +3662,7 @@ exports[`Translator renders correctly with fixed columns 1`] = `
             </option>
           </select>
         </div>
-         
+
         <span
           style={
             Object {
@@ -3674,14 +3674,14 @@ exports[`Translator renders correctly with fixed columns 1`] = `
             title="Translations">
             1
           </span>
-           / 
+           /
           <span
             title="Used messages">
             2
           </span>
           ]
         </span>
-         
+
         <i
           className="giu-icon fa fa-remove"
           id={0}
@@ -3777,7 +3777,7 @@ exports[`Translator renders correctly with fixed columns 1`] = `
             </option>
           </select>
         </div>
-         
+
         <span
           style={
             Object {
@@ -3789,14 +3789,14 @@ exports[`Translator renders correctly with fixed columns 1`] = `
             title="Translations">
             1
           </span>
-           / 
+           /
           <span
             title="Used messages">
             2
           </span>
           ]
         </span>
-         
+
         <i
           className="giu-icon fa fa-remove"
           id={1}
@@ -4082,7 +4082,7 @@ exports[`Translator renders correctly with fixed columns 1`] = `
               "paddingRight": 17,
             }
           }>
-          
+
         </div>
         <div
           style={
@@ -4115,7 +4115,7 @@ exports[`Translator renders correctly with fixed columns 1`] = `
     <div
       class="giu-floats"
       style="height:0;left:0;position:absolute;top:0;width:0;">
-      
+
     </div>
     <div
       style="-webkit-flex:1 0 10em;display:flex;flex:1 0 10em;flex-direction:column;margin-top:5px;">
@@ -4125,7 +4125,7 @@ exports[`Translator renders correctly with fixed columns 1`] = `
         <div
           style="-webkit-flex:1 1 0px;background-color:#f2f0ff;border-bottom:1px solid #1600a3;flex:1 1 0px;font-weight:900;letter-spacing:3px;margin-right:5px;padding-bottom:3px;padding-left:5px;padding-right:17px;padding-top:3px;text-align:center;">
           MESSAGES
-           
+
           <span
             style="color:darkgrey;">
             [
@@ -4133,19 +4133,19 @@ exports[`Translator renders correctly with fixed columns 1`] = `
               title="Used messages">
               2
             </span>
-             / 
+             /
             <span
               title="Total messages">
               2
             </span>
             ]
           </span>
-           
+
           <i
             class="giu-icon fa fa-refresh"
             style="color:;cursor:pointer;letter-spacing:normal;"
             title="Parse source files to update the message list">
-            
+
           </i>
         </div>
         <div
@@ -4157,7 +4157,7 @@ exports[`Translator renders correctly with fixed columns 1`] = `
             <i
               class="giu-icon fa fa-caret-down"
               style="color:;cursor:pointer;letter-spacing:normal;margin-right:5px;">
-              
+
             </i>
             ca
             <select
@@ -4181,7 +4181,7 @@ exports[`Translator renders correctly with fixed columns 1`] = `
               </option>
             </select>
           </div>
-           
+
           <span
             style="color:darkgrey;">
             [
@@ -4189,19 +4189,19 @@ exports[`Translator renders correctly with fixed columns 1`] = `
               title="Translations">
               1
             </span>
-             / 
+             /
             <span
               title="Used messages">
               2
             </span>
             ]
           </span>
-           
+
           <i
             class="giu-icon fa fa-remove"
             style="color:;cursor:pointer;letter-spacing:normal;"
             title="Remove column (does NOT delete any translations)">
-            
+
           </i>
         </div>
         <div
@@ -4213,7 +4213,7 @@ exports[`Translator renders correctly with fixed columns 1`] = `
             <i
               class="giu-icon fa fa-caret-down"
               style="color:;cursor:pointer;letter-spacing:normal;margin-right:5px;">
-              
+
             </i>
             es
             <select
@@ -4237,7 +4237,7 @@ exports[`Translator renders correctly with fixed columns 1`] = `
               </option>
             </select>
           </div>
-           
+
           <span
             style="color:darkgrey;">
             [
@@ -4245,19 +4245,19 @@ exports[`Translator renders correctly with fixed columns 1`] = `
               title="Translations">
               1
             </span>
-             / 
+             /
             <span
               title="Used messages">
               2
             </span>
             ]
           </span>
-           
+
           <i
             class="giu-icon fa fa-remove"
             style="color:;cursor:pointer;letter-spacing:normal;"
             title="Remove column (does NOT delete any translations)">
-            
+
           </i>
         </div>
         <div
@@ -4267,12 +4267,12 @@ exports[`Translator renders correctly with fixed columns 1`] = `
           <i
             class="giu-icon fa fa-plus"
             style="color:;cursor:pointer;letter-spacing:normal;">
-            
+
           </i>
         </div>
         <div
           style="-webkit-flex:0 0 NaNpx;flex:0 0 NaNpx;">
-          
+
         </div>
       </div>
       <div
@@ -4291,15 +4291,15 @@ exports[`Translator renders correctly with fixed columns 1`] = `
           style="-webkit-flex:1 1 0px;display:flex;flex:1 1 0px;flex-direction:row;">
           <div
             style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:17px;">
-            
+
           </div>
           <div
             style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:5px;">
-            
+
           </div>
           <div
             style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:5px;">
-            
+
           </div>
         </div>
       </div>
@@ -4360,7 +4360,7 @@ exports[`Translator renders correctly with fixed columns using up all available 
           }
         }>
         MESSAGES
-         
+
         <span
           style={
             Object {
@@ -4372,14 +4372,14 @@ exports[`Translator renders correctly with fixed columns using up all available 
             title="Used messages">
             2
           </span>
-           / 
+           /
           <span
             title="Total messages">
             2
           </span>
           ]
         </span>
-         
+
         <i
           className="giu-icon fa fa-refresh"
           onClick={[Function]}
@@ -4474,7 +4474,7 @@ exports[`Translator renders correctly with fixed columns using up all available 
             </option>
           </select>
         </div>
-         
+
         <span
           style={
             Object {
@@ -4486,14 +4486,14 @@ exports[`Translator renders correctly with fixed columns using up all available 
             title="Translations">
             1
           </span>
-           / 
+           /
           <span
             title="Used messages">
             2
           </span>
           ]
         </span>
-         
+
         <i
           className="giu-icon fa fa-remove"
           id={0}
@@ -4589,7 +4589,7 @@ exports[`Translator renders correctly with fixed columns using up all available 
             </option>
           </select>
         </div>
-         
+
         <span
           style={
             Object {
@@ -4601,14 +4601,14 @@ exports[`Translator renders correctly with fixed columns using up all available 
             title="Translations">
             1
           </span>
-           / 
+           /
           <span
             title="Used messages">
             2
           </span>
           ]
         </span>
-         
+
         <i
           className="giu-icon fa fa-remove"
           id={1}
@@ -4704,7 +4704,7 @@ exports[`Translator renders correctly with fixed columns using up all available 
             </option>
           </select>
         </div>
-         
+
         <span
           style={
             Object {
@@ -4716,14 +4716,14 @@ exports[`Translator renders correctly with fixed columns using up all available 
             title="Translations">
             0
           </span>
-           / 
+           /
           <span
             title="Used messages">
             2
           </span>
           ]
         </span>
-         
+
         <i
           className="giu-icon fa fa-remove"
           id={2}
@@ -5012,7 +5012,7 @@ exports[`Translator renders correctly with fixed columns using up all available 
               "paddingRight": 17,
             }
           }>
-          
+
         </div>
         <div
           style={
@@ -5056,7 +5056,7 @@ exports[`Translator renders correctly with fixed columns using up all available 
     <div
       class="giu-floats"
       style="height:0;left:0;position:absolute;top:0;width:0;">
-      
+
     </div>
     <div
       style="-webkit-flex:1 0 10em;display:flex;flex:1 0 10em;flex-direction:column;margin-top:5px;">
@@ -5066,7 +5066,7 @@ exports[`Translator renders correctly with fixed columns using up all available 
         <div
           style="-webkit-flex:1 1 0px;background-color:#f2f0ff;border-bottom:1px solid #1600a3;flex:1 1 0px;font-weight:900;letter-spacing:3px;margin-right:5px;padding-bottom:3px;padding-left:5px;padding-right:17px;padding-top:3px;text-align:center;">
           MESSAGES
-           
+
           <span
             style="color:darkgrey;">
             [
@@ -5074,19 +5074,19 @@ exports[`Translator renders correctly with fixed columns using up all available 
               title="Used messages">
               2
             </span>
-             / 
+             /
             <span
               title="Total messages">
               2
             </span>
             ]
           </span>
-           
+
           <i
             class="giu-icon fa fa-refresh"
             style="color:;cursor:pointer;letter-spacing:normal;"
             title="Parse source files to update the message list">
-            
+
           </i>
         </div>
         <div
@@ -5098,7 +5098,7 @@ exports[`Translator renders correctly with fixed columns using up all available 
             <i
               class="giu-icon fa fa-caret-down"
               style="color:;cursor:pointer;letter-spacing:normal;margin-right:5px;">
-              
+
             </i>
             ca
             <select
@@ -5122,7 +5122,7 @@ exports[`Translator renders correctly with fixed columns using up all available 
               </option>
             </select>
           </div>
-           
+
           <span
             style="color:darkgrey;">
             [
@@ -5130,19 +5130,19 @@ exports[`Translator renders correctly with fixed columns using up all available 
               title="Translations">
               1
             </span>
-             / 
+             /
             <span
               title="Used messages">
               2
             </span>
             ]
           </span>
-           
+
           <i
             class="giu-icon fa fa-remove"
             style="color:;cursor:pointer;letter-spacing:normal;"
             title="Remove column (does NOT delete any translations)">
-            
+
           </i>
         </div>
         <div
@@ -5154,7 +5154,7 @@ exports[`Translator renders correctly with fixed columns using up all available 
             <i
               class="giu-icon fa fa-caret-down"
               style="color:;cursor:pointer;letter-spacing:normal;margin-right:5px;">
-              
+
             </i>
             es
             <select
@@ -5178,7 +5178,7 @@ exports[`Translator renders correctly with fixed columns using up all available 
               </option>
             </select>
           </div>
-           
+
           <span
             style="color:darkgrey;">
             [
@@ -5186,19 +5186,19 @@ exports[`Translator renders correctly with fixed columns using up all available 
               title="Translations">
               1
             </span>
-             / 
+             /
             <span
               title="Used messages">
               2
             </span>
             ]
           </span>
-           
+
           <i
             class="giu-icon fa fa-remove"
             style="color:;cursor:pointer;letter-spacing:normal;"
             title="Remove column (does NOT delete any translations)">
-            
+
           </i>
         </div>
         <div
@@ -5210,7 +5210,7 @@ exports[`Translator renders correctly with fixed columns using up all available 
             <i
               class="giu-icon fa fa-caret-down"
               style="color:;cursor:pointer;letter-spacing:normal;margin-right:5px;">
-              
+
             </i>
             en
             <select
@@ -5234,7 +5234,7 @@ exports[`Translator renders correctly with fixed columns using up all available 
               </option>
             </select>
           </div>
-           
+
           <span
             style="color:darkgrey;">
             [
@@ -5242,19 +5242,19 @@ exports[`Translator renders correctly with fixed columns using up all available 
               title="Translations">
               0
             </span>
-             / 
+             /
             <span
               title="Used messages">
               2
             </span>
             ]
           </span>
-           
+
           <i
             class="giu-icon fa fa-remove"
             style="color:;cursor:pointer;letter-spacing:normal;"
             title="Remove column (does NOT delete any translations)">
-            
+
           </i>
         </div>
         <div
@@ -5264,12 +5264,12 @@ exports[`Translator renders correctly with fixed columns using up all available 
           <i
             class="giu-icon fa fa-plus"
             style="color:#999999;cursor:;letter-spacing:normal;">
-            
+
           </i>
         </div>
         <div
           style="-webkit-flex:0 0 NaNpx;flex:0 0 NaNpx;">
-          
+
         </div>
       </div>
       <div
@@ -5288,19 +5288,19 @@ exports[`Translator renders correctly with fixed columns using up all available 
           style="-webkit-flex:1 1 0px;display:flex;flex:1 1 0px;flex-direction:row;">
           <div
             style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:17px;">
-            
+
           </div>
           <div
             style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:5px;">
-            
+
           </div>
           <div
             style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:5px;">
-            
+
           </div>
           <div
             style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:5px;">
-            
+
           </div>
         </div>
       </div>
@@ -5361,7 +5361,7 @@ exports[`Translator renders correctly with no content 1`] = `
           }
         }>
         MESSAGES
-         
+
         <span
           style={
             Object {
@@ -5373,14 +5373,14 @@ exports[`Translator renders correctly with no content 1`] = `
             title="Used messages">
             0
           </span>
-           / 
+           /
           <span
             title="Total messages">
             0
           </span>
           ]
         </span>
-         
+
         <i
           className="giu-icon fa fa-refresh"
           onClick={[Function]}
@@ -5475,7 +5475,7 @@ exports[`Translator renders correctly with no content 1`] = `
             </option>
           </select>
         </div>
-         
+
         <span
           style={
             Object {
@@ -5487,14 +5487,14 @@ exports[`Translator renders correctly with no content 1`] = `
             title="Translations">
             0
           </span>
-           / 
+           /
           <span
             title="Used messages">
             0
           </span>
           ]
         </span>
-         
+
         <i
           className="giu-icon fa fa-remove"
           id={0}
@@ -5584,7 +5584,7 @@ exports[`Translator renders correctly with no content 1`] = `
                 "textAlign": "center",
               }
             }>
-            No messages. Click on 
+            No messages. Click on
             <i
               className="giu-icon fa fa-refresh"
               onClick={undefined}
@@ -5618,7 +5618,7 @@ exports[`Translator renders correctly with no content 1`] = `
     <div
       class="giu-floats"
       style="height:0;left:0;position:absolute;top:0;width:0;">
-      
+
     </div>
     <div
       style="-webkit-flex:1 0 10em;display:flex;flex:1 0 10em;flex-direction:column;margin-top:5px;">
@@ -5628,7 +5628,7 @@ exports[`Translator renders correctly with no content 1`] = `
         <div
           style="-webkit-flex:1 1 0px;background-color:#f2f0ff;border-bottom:1px solid #1600a3;flex:1 1 0px;font-weight:900;letter-spacing:3px;margin-right:5px;padding-bottom:3px;padding-left:5px;padding-right:17px;padding-top:3px;text-align:center;">
           MESSAGES
-           
+
           <span
             style="color:darkgrey;">
             [
@@ -5636,19 +5636,19 @@ exports[`Translator renders correctly with no content 1`] = `
               title="Used messages">
               0
             </span>
-             / 
+             /
             <span
               title="Total messages">
               0
             </span>
             ]
           </span>
-           
+
           <i
             class="giu-icon fa fa-refresh"
             style="color:;cursor:pointer;letter-spacing:normal;"
             title="Parse source files to update the message list">
-            
+
           </i>
         </div>
         <div
@@ -5660,7 +5660,7 @@ exports[`Translator renders correctly with no content 1`] = `
             <i
               class="giu-icon fa fa-caret-down"
               style="color:;cursor:pointer;letter-spacing:normal;margin-right:5px;">
-              
+
             </i>
             es
             <select
@@ -5684,7 +5684,7 @@ exports[`Translator renders correctly with no content 1`] = `
               </option>
             </select>
           </div>
-           
+
           <span
             style="color:darkgrey;">
             [
@@ -5692,19 +5692,19 @@ exports[`Translator renders correctly with no content 1`] = `
               title="Translations">
               0
             </span>
-             / 
+             /
             <span
               title="Used messages">
               0
             </span>
             ]
           </span>
-           
+
           <i
             class="giu-icon fa fa-remove"
             style="color:;cursor:pointer;letter-spacing:normal;"
             title="Remove column (does NOT delete any translations)">
-            
+
           </i>
         </div>
         <div
@@ -5714,12 +5714,12 @@ exports[`Translator renders correctly with no content 1`] = `
           <i
             class="giu-icon fa fa-plus"
             style="color:;cursor:pointer;letter-spacing:normal;">
-            
+
           </i>
         </div>
         <div
           style="-webkit-flex:0 0 NaNpx;flex:0 0 NaNpx;">
-          
+
         </div>
       </div>
       <div
@@ -5733,18 +5733,18 @@ exports[`Translator renders correctly with no content 1`] = `
             <div
               class="giu-large-message"
               style="color:#999999;font-size:1.4em;font-weight:700;padding:0.8em;text-align:center;">
-              No messages. Click on 
+              No messages. Click on
               <i
                 class="giu-icon fa fa-refresh"
                 style="color:#999999;cursor:;letter-spacing:normal;">
-                
+
               </i>
                to refresh
             </div>
           </div>
           <div
             style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:5px;">
-            
+
           </div>
         </div>
       </div>
@@ -5805,7 +5805,7 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
           }
         }>
         MESSAGES
-         
+
         <span
           style={
             Object {
@@ -5817,14 +5817,14 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
             title="Used messages">
             2
           </span>
-           / 
+           /
           <span
             title="Total messages">
             2
           </span>
           ]
         </span>
-         
+
         <i
           className="giu-icon fa fa-refresh"
           onClick={[Function]}
@@ -5919,7 +5919,7 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
             </option>
           </select>
         </div>
-         
+
         <span
           style={
             Object {
@@ -5931,14 +5931,14 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
             title="Translations">
             1
           </span>
-           / 
+           /
           <span
             title="Used messages">
             2
           </span>
           ]
         </span>
-         
+
         <i
           className="giu-icon fa fa-remove"
           id={0}
@@ -6034,7 +6034,7 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
             </option>
           </select>
         </div>
-         
+
         <span
           style={
             Object {
@@ -6046,14 +6046,14 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
             title="Translations">
             1
           </span>
-           / 
+           /
           <span
             title="Used messages">
             2
           </span>
           ]
         </span>
-         
+
         <i
           className="giu-icon fa fa-remove"
           id={1}
@@ -6149,7 +6149,7 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
             </option>
           </select>
         </div>
-         
+
         <span
           style={
             Object {
@@ -6161,14 +6161,14 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
             title="Translations">
             0
           </span>
-           / 
+           /
           <span
             title="Used messages">
             2
           </span>
           ]
         </span>
-         
+
         <i
           className="giu-icon fa fa-remove"
           id={2}
@@ -6457,7 +6457,7 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
               "paddingRight": 17,
             }
           }>
-          
+
         </div>
         <div
           style={
@@ -6501,7 +6501,7 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
     <div
       class="giu-floats"
       style="height:0;left:0;position:absolute;top:0;width:0;">
-      
+
     </div>
     <div
       style="-webkit-flex:1 0 10em;display:flex;flex:1 0 10em;flex-direction:column;margin-top:5px;">
@@ -6511,7 +6511,7 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
         <div
           style="-webkit-flex:1 1 0px;background-color:#f2f0ff;border-bottom:1px solid #1600a3;flex:1 1 0px;font-weight:900;letter-spacing:3px;margin-right:5px;padding-bottom:3px;padding-left:5px;padding-right:17px;padding-top:3px;text-align:center;">
           MESSAGES
-           
+
           <span
             style="color:darkgrey;">
             [
@@ -6519,19 +6519,19 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
               title="Used messages">
               2
             </span>
-             / 
+             /
             <span
               title="Total messages">
               2
             </span>
             ]
           </span>
-           
+
           <i
             class="giu-icon fa fa-refresh"
             style="color:;cursor:pointer;letter-spacing:normal;"
             title="Parse source files to update the message list">
-            
+
           </i>
         </div>
         <div
@@ -6543,7 +6543,7 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
             <i
               class="giu-icon fa fa-caret-down"
               style="color:;cursor:pointer;letter-spacing:normal;margin-right:5px;">
-              
+
             </i>
             ca
             <select
@@ -6567,7 +6567,7 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
               </option>
             </select>
           </div>
-           
+
           <span
             style="color:darkgrey;">
             [
@@ -6575,19 +6575,19 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
               title="Translations">
               1
             </span>
-             / 
+             /
             <span
               title="Used messages">
               2
             </span>
             ]
           </span>
-           
+
           <i
             class="giu-icon fa fa-remove"
             style="color:;cursor:pointer;letter-spacing:normal;"
             title="Remove column (does NOT delete any translations)">
-            
+
           </i>
         </div>
         <div
@@ -6599,7 +6599,7 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
             <i
               class="giu-icon fa fa-caret-down"
               style="color:;cursor:pointer;letter-spacing:normal;margin-right:5px;">
-              
+
             </i>
             es
             <select
@@ -6623,7 +6623,7 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
               </option>
             </select>
           </div>
-           
+
           <span
             style="color:darkgrey;">
             [
@@ -6631,19 +6631,19 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
               title="Translations">
               1
             </span>
-             / 
+             /
             <span
               title="Used messages">
               2
             </span>
             ]
           </span>
-           
+
           <i
             class="giu-icon fa fa-remove"
             style="color:;cursor:pointer;letter-spacing:normal;"
             title="Remove column (does NOT delete any translations)">
-            
+
           </i>
         </div>
         <div
@@ -6655,7 +6655,7 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
             <i
               class="giu-icon fa fa-caret-down"
               style="color:;cursor:pointer;letter-spacing:normal;margin-right:5px;">
-              
+
             </i>
             en
             <select
@@ -6679,7 +6679,7 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
               </option>
             </select>
           </div>
-           
+
           <span
             style="color:darkgrey;">
             [
@@ -6687,19 +6687,19 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
               title="Translations">
               0
             </span>
-             / 
+             /
             <span
               title="Used messages">
               2
             </span>
             ]
           </span>
-           
+
           <i
             class="giu-icon fa fa-remove"
             style="color:;cursor:pointer;letter-spacing:normal;"
             title="Remove column (does NOT delete any translations)">
-            
+
           </i>
         </div>
         <div
@@ -6709,12 +6709,12 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
           <i
             class="giu-icon fa fa-plus"
             style="color:#999999;cursor:;letter-spacing:normal;">
-            
+
           </i>
         </div>
         <div
           style="-webkit-flex:0 0 NaNpx;flex:0 0 NaNpx;">
-          
+
         </div>
       </div>
       <div
@@ -6733,19 +6733,19 @@ exports[`Translator when adding a column, it corresponds to a new language 1`] =
           style="-webkit-flex:1 1 0px;display:flex;flex:1 1 0px;flex-direction:row;">
           <div
             style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:17px;">
-            
+
           </div>
           <div
             style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:5px;">
-            
+
           </div>
           <div
             style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:5px;">
-            
+
           </div>
           <div
             style="-webkit-flex:1 1 0px;background-color:#f2f0ff;flex:1 1 0px;margin-right:5px;padding-left:5px;padding-right:5px;">
-            
+
           </div>
         </div>
       </div>

@@ -56,7 +56,7 @@ exports[`Details renders correctly with a selection but no data yet 1`] = `
       <i
         class="giu-icon fa fa-circle-o-notch fa-spin"
         style="color:;cursor:pointer;letter-spacing:normal;">
-        
+
       </i>
     </div>
   </div>
@@ -142,7 +142,7 @@ exports[`Details when the details for the selection are available renders correc
       Some details
     </div>
     Used since
-     
+
     <span
       style={
         Object {
@@ -154,9 +154,9 @@ exports[`Details when the details for the selection are available renders correc
       6 months ago
     </span>
     <span>
-       
+
       until
-       
+
       <span
         style={
           Object {
@@ -182,16 +182,16 @@ exports[`Details when the details for the selection are available renders correc
         Some details
       </div>
       Used since
-       
+
       <span
         style="color:#444;font-weight:bold;"
         title="Monday, April 18, 2016 7:37 AM">
         6 months ago
       </span>
       <span>
-         
+
         until
-         
+
         <span
           style="color:#444;font-weight:bold;"
           title="Thursday, April 21, 2016 7:37 AM">
@@ -230,7 +230,7 @@ exports[`Details when the details for the selection are available renders correc
       Some details
     </div>
     Used since
-     
+
     <span
       style={
         Object {
@@ -266,7 +266,7 @@ exports[`Details when the details for the selection are available renders correc
         Some details
       </div>
       Used since
-       
+
       <span
         style="color:#444;font-weight:bold;"
         title="Monday, April 18, 2016 7:37 AM">
