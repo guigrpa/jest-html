@@ -1,5 +1,6 @@
 exports[`Sidebar renders correctly 1`] = `
 <div
+  id="jh-sidebar"
   style={
     Object {
       "WebkitFlex": "0 0 18em",
@@ -72,6 +73,7 @@ exports[`Sidebar renders correctly 1`] = `
       }>
       <i
         className="giu-icon fa fa-file-code-o fa-lg"
+        id="jh-toggle-raw"
         onClick={undefined}
         style={
           Object {
@@ -87,7 +89,10 @@ exports[`Sidebar renders correctly 1`] = `
   two
 </div>
 ------------HTML PREVIEW---------------
-<div style="-webkit-flex:0 0 18em;background-color:#eee;border-right:2px solid #ddd;flex:0 0 18em;font-family:sans-serif;font-size:0.8em;overflow:auto;padding:0.3em 0;">
+<div
+  id="jh-sidebar"
+  style="-webkit-flex:0 0 18em;background-color:#eee;border-right:2px solid #ddd;flex:0 0 18em;font-family:sans-serif;font-size:0.8em;overflow:auto;padding:0.3em 0;"
+>
   <div style="align-items:baseline;display:flex;flex-direction:row;margin-bottom:1.1em;margin-top:0.4em;">
     <div style="-webkit-flex:0 0 30px;flex:0 0 30px;">
       <a
@@ -111,6 +116,7 @@ exports[`Sidebar renders correctly 1`] = `
     <div style="-webkit-flex:0 1 30px;flex:0 1 30px;">
       <i
         class="giu-icon fa fa-file-code-o fa-lg"
+        id="jh-toggle-raw"
         style="color:gray;cursor:pointer;letter-spacing:normal;"
         title="Toggle raw/HTML snapshot"
       >
@@ -124,6 +130,7 @@ exports[`Sidebar renders correctly 1`] = `
 
 exports[`Sidebar renders correctly without linkBack 1`] = `
 <div
+  id="jh-sidebar"
   style={
     Object {
       "WebkitFlex": "0 0 18em",
@@ -197,6 +204,7 @@ exports[`Sidebar renders correctly without linkBack 1`] = `
       }>
       <i
         className="giu-icon fa fa-file-code-o fa-lg"
+        id="jh-toggle-raw"
         onClick={undefined}
         style={
           Object {
@@ -212,7 +220,10 @@ exports[`Sidebar renders correctly without linkBack 1`] = `
   two
 </div>
 ------------HTML PREVIEW---------------
-<div style="-webkit-flex:0 0 18em;background-color:#eee;border-right:2px solid #ddd;flex:0 0 18em;font-family:sans-serif;font-size:0.8em;overflow:auto;padding:0.3em 0;">
+<div
+  id="jh-sidebar"
+  style="-webkit-flex:0 0 18em;background-color:#eee;border-right:2px solid #ddd;flex:0 0 18em;font-family:sans-serif;font-size:0.8em;overflow:auto;padding:0.3em 0;"
+>
   <div style="align-items:baseline;display:flex;flex-direction:row;margin-bottom:1.1em;margin-top:0.4em;">
     <div style="-webkit-flex:0 0 30px;flex:0 0 30px;">
       <a
@@ -236,6 +247,7 @@ exports[`Sidebar renders correctly without linkBack 1`] = `
     <div style="-webkit-flex:0 1 30px;flex:0 1 30px;">
       <i
         class="giu-icon fa fa-file-code-o fa-lg"
+        id="jh-toggle-raw"
         style="color:gray;cursor:pointer;letter-spacing:normal;"
         title="Toggle raw/HTML snapshot"
       >

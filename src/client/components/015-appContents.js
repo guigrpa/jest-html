@@ -4,15 +4,17 @@
 import React from 'react';
 import { Redirect } from 'react-router';
 import {
-  Floats,
+  Floats, Hints,
   Spinner, Icon, Button,
   flexContainer,
+  hintDefine, hintShow,
 } from 'giu';
 import type {
   FolderT,
   SnapshotSuiteT,
 } from '../../common/types';
 import { UI } from '../gral/constants';
+import { waitUntil } from '../gral/helpers';
 import Sidebar from './110-sidebar';
 import SidebarItem, { SidebarGroup } from './115-sidebarItem';
 import Preview from './120-preview';
@@ -46,6 +48,7 @@ type PropsT = {
   onRedirectToRoot: () => void;
   fRedirectToRoot: boolean,
   query: ?Object,
+  saveAsBaseline: (snapshotId: string) => any,
 };
 
 // ==========================================
@@ -66,18 +69,17 @@ class AppContents extends React.PureComponent {
     };
   }
 
+  componentDidMount() { this.hintIfNeeded(); }
+
+  // ------------------------------------------
   render() {
-    if (this.props.fRedirectToRoot) {
-      return <Redirect to="/" />;
-    }
+    if (this.props.fRedirectToRoot) return <Redirect to="/" />;
     if (this.props.error) {
       return (
         <LargeMessage>
           <Icon icon="warning" disabled />{' '}<b>An error occurred:</b><br />
           {this.props.error}<br />
-          <Button
-            onClick={this.props.onRedirectToRoot}
-          >
+          <Button onClick={this.props.onRedirectToRoot}>
             <Icon icon="home" disabled />{' '}Home
           </Button>
         </LargeMessage>
@@ -89,6 +91,7 @@ class AppContents extends React.PureComponent {
     return (
       <div style={style.outer}>
         <Floats />
+        <Hints />
         {this.renderSidebar()}
         {this.renderPreview()}
         {this.state.fShowBaseline && this.renderBaselineWarning()}
@@ -235,6 +238,7 @@ class AppContents extends React.PureComponent {
         fSelected={query && query.id === id}
         showBaseline={this.showBaseline}
         hideBaseline={this.hideBaseline}
+        saveAsBaseline={this.props.saveAsBaseline}
       />
     );
   }
@@ -271,6 +275,60 @@ class AppContents extends React.PureComponent {
   toggleRaw = () => { this.setState({ fRaw: !this.state.fRaw }); }
   showBaseline = () => { this.setState({ fShowBaseline: true }); }
   hideBaseline = () => { this.setState({ fShowBaseline: false }); }
+
+  // ------------------------------------------
+  hintIfNeeded = async () => {
+    try {
+      await waitUntil(() => !!document.getElementById('jh-sidebar'), 2000, 'hintMain');
+    } catch (err) { return; }
+    const elements = () => {
+      const out = [];
+      let node;
+      node = document.getElementById('jh-sidebar');
+      if (node) {
+        const bcr = node.getBoundingClientRect();
+        const x = bcr.width / 2;
+        const y = window.innerHeight / 2;
+        out.push({
+          type: 'LABEL', x, y, align: 'center',
+          children: 'Navigate through folders, suites and snapshots',
+        });
+        out.push({
+          type: 'ARROW', from: { x, y },
+          to: { x, y: y - 40 },
+          counterclockwise: true,
+        });
+
+        const x2 = bcr.width + ((window.innerWidth - bcr.width) / 2);
+        out.push({
+          type: 'LABEL', x: x2, y, align: 'center',
+          children: 'Previews will appear here',
+        });
+        out.push({
+          type: 'ARROW', from: { x: x2, y },
+          to: { x: x2, y: y - 40 },
+          counterclockwise: true,
+        });
+      }
+      node = document.getElementById('jh-toggle-raw');
+      if (node) {
+        const bcr = node.getBoundingClientRect();
+        const x = bcr.right + 60;
+        const y = bcr.top + (bcr.height / 2);
+        out.push({
+          type: 'LABEL', x, y, align: 'left',
+          children: 'Toggle between raw snapshot and HTML preview',
+        });
+        out.push({
+          type: 'ARROW', from: { x, y },
+          to: { x: bcr.right + 6, y },
+        });
+      }
+      return out;
+    };
+    hintDefine('main', { elements, closeLabel: 'Enjoy testing!' });
+    hintShow('main');
+  }
 }
 
 // ------------------------------------------

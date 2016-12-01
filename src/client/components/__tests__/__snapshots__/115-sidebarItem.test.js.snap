@@ -78,13 +78,6 @@ exports[`SidebarItem renders correctly 1`] = `
     an/extremely/amazingly/ultra/hyper/really/very/long/label
      
   </div>
-  <div
-    style={
-      Object {
-        "WebkitFlex": "0 0 10px",
-        "flex": "0 0 10px",
-      }
-    } />
 </a>
 ------------HTML PREVIEW---------------
 <a
@@ -104,7 +97,6 @@ exports[`SidebarItem renders correctly 1`] = `
     an/extremely/amazingly/ultra/hyper/really/very/long/label
      
   </div>
-  <div style="-webkit-flex:0 0 10px;flex:0 0 10px;"></div>
 </a>
 `;
 
@@ -156,13 +148,6 @@ exports[`SidebarItem renders correctly when hovered 1`] = `
     two
      
   </div>
-  <div
-    style={
-      Object {
-        "WebkitFlex": "0 0 10px",
-        "flex": "0 0 10px",
-      }
-    } />
 </a>
 ------------HTML PREVIEW---------------
 <a
@@ -182,7 +167,6 @@ exports[`SidebarItem renders correctly when hovered 1`] = `
     two
      
   </div>
-  <div style="-webkit-flex:0 0 10px;flex:0 0 10px;"></div>
 </a>
 `;
 
@@ -234,13 +218,6 @@ exports[`SidebarItem renders correctly when selected & hovered 1`] = `
     four
      
   </div>
-  <div
-    style={
-      Object {
-        "WebkitFlex": "0 0 10px",
-        "flex": "0 0 10px",
-      }
-    } />
 </a>
 ------------HTML PREVIEW---------------
 <a
@@ -260,7 +237,6 @@ exports[`SidebarItem renders correctly when selected & hovered 1`] = `
     four
      
   </div>
-  <div style="-webkit-flex:0 0 10px;flex:0 0 10px;"></div>
 </a>
 `;
 
@@ -312,13 +288,6 @@ exports[`SidebarItem renders correctly when selected 1`] = `
     three
      
   </div>
-  <div
-    style={
-      Object {
-        "WebkitFlex": "0 0 10px",
-        "flex": "0 0 10px",
-      }
-    } />
 </a>
 ------------HTML PREVIEW---------------
 <a
@@ -338,6 +307,5 @@ exports[`SidebarItem renders correctly when selected 1`] = `
     three
      
   </div>
-  <div style="-webkit-flex:0 0 10px;flex:0 0 10px;"></div>
 </a>
 `;

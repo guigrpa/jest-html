@@ -40,37 +40,33 @@ const configure = (newConfig: $Shape<ConfigT>) => {
   _config = (merge(_config, newConfig): any);
 };
 
-const start = ({ story = mainStory }: { story: StoryT } = {}) =>
-  Promise.resolve()
-  .then(() => loadCommonCss(story))
-  .then(() => loadAllSnapshots(story))
-  .then(() => { if (_config.watch) watchStart(story); })
-  .then(() => broadcastSignal());
+const start = async ({ story = mainStory }: { story: StoryT } = {}) => {
+  await loadCommonCss(story);
+  await loadAllSnapshots(story);
+  if (_config.watch) watchStart(story);
+  broadcastSignal();
+};
 
 // ---------------------------------
 // Snapshots
 // ---------------------------------
 let _snapshotSuiteDict: SnapshotSuiteDictT = {};
 
-const loadAllSnapshots = (story: StoryT = mainStory) => {
+const loadAllSnapshots = async (story: StoryT = mainStory) => {
   const childStory = story.child({ src: 'extractor', title: 'Refresh snapshots' });
-  return Promise.resolve()
-  .then(() => globby(_config.snapshotPatterns))
-  .then((filePaths) => {
+  try {
+    const filePaths = await globby(_config.snapshotPatterns);
     childStory.info('extractor', 'Reading snapshot files...');
     const commonCss = getCommonCss();
     _snapshotSuiteDict = {};
-    filePaths.forEach((filePath) => {
-      loadSuite(filePath, commonCss, childStory);
-    });
+    for (let i = 0; i < filePaths.length; i++) {
+      await loadSuite(filePaths[i], commonCss, childStory);
+    }
     buildFolderDict(childStory);
     childStory.debug('extractor', 'Snapshot tree:', { attach: _folderDict });
+  } finally {
     childStory.close();
-  })
-  .catch((err) => {
-    childStory.close();
-    throw err;
-  });
+  }
 };
 
 const updateSnapshotCss = (story: StoryT = mainStory) => {
@@ -83,7 +79,7 @@ const updateSnapshotCss = (story: StoryT = mainStory) => {
   });
 };
 
-const loadSuite = (filePath: string, commonCss: Array<string>, story: StoryT) => {
+const loadSuite = async (filePath: string, commonCss: Array<string>, story: StoryT) => {
   story.info('extractor', `Processing ${chalk.cyan.bold(filePath)}...`);
   const absPath = path.resolve(process.cwd(), filePath);
   const rawSnapshots = loadSnapshot(absPath);
@@ -94,7 +90,8 @@ const loadSuite = (filePath: string, commonCss: Array<string>, story: StoryT) =>
   const suite: SnapshotSuiteT = {};
   let suiteDirty = false;
   const nextIds = Object.keys(rawSnapshots);
-  nextIds.forEach((id) => {
+  for (let i = 0; i < nextIds.length; i++) {
+    const id = nextIds[i];
     const rawSnapshot = rawSnapshots[id];
     const [snap, html] = rawSnapshot.split(HTML_PREVIEW_SEPARATOR);
     const css = suiteCss != null ? addLast(commonCss, suiteCss) : commonCss;
@@ -114,7 +111,7 @@ const loadSuite = (filePath: string, commonCss: Array<string>, story: StoryT) =>
     }
     suite[id] = snapshot;
     suiteDirty = suiteDirty || snapshot.dirty;
-  });
+  }
   if (prevSuite != null) {
     forEachSnapshot(prevSuite, (snapshot) => {
       const { id } = snapshot;
@@ -130,6 +127,18 @@ const loadSuite = (filePath: string, commonCss: Array<string>, story: StoryT) =>
   suite[DIRTY_ATTR] = suiteDirty;
   suite[DELETED_ATTR] = false;
   _snapshotSuiteDict[finalFilePath] = sortSnapshots(suite);
+};
+
+const saveAsBaseline = (filePath: string, id: string) => {
+  const suite = _snapshotSuiteDict[filePath.normalize()];
+  if (suite == null) return;
+  const snapshot = suite[id];
+  if (snapshot == null || !snapshot.baseline) return;
+  delete snapshot.baseline;
+  snapshot.dirty = false;
+  suite.__dirty = false;
+  buildFolderDict(mainStory);
+  broadcastSignal();
 };
 
 const loadSnapshot = (absPath: string): Object => {
@@ -152,15 +161,12 @@ let _commonCss: Array<string> = [];
 
 const getCommonCss = () => _commonCss;
 
-const loadCommonCss = (story: StoryT = mainStory): Promise<void> => {
+const loadCommonCss = async (story: StoryT = mainStory): Promise<void> => {
   story.info('extractor', 'Extracting common CSS...');
-  return Promise.resolve()
-  .then(() => globby(_config.cssPatterns))
-  .then((cssPaths) => {
-    _commonCss = cssPaths.map((cssPath) => {
-      story.info('extractor', `Processing ${chalk.cyan.bold(cssPath)}...`);
-      return fs.readFileSync(cssPath, 'utf8');
-    });
+  const cssPaths = await globby(_config.cssPatterns);
+  _commonCss = cssPaths.map((cssPath) => {
+    story.info('extractor', `Processing ${chalk.cyan.bold(cssPath)}...`);
+    return fs.readFileSync(cssPath, 'utf8');
   });
 };
 
@@ -239,17 +245,6 @@ const buildFolderDict = (story: StoryT) => {
       };
       curFolderPath = folderPath;
     }
-    // // Set dirty flags (and bubble)
-    // if (_snapshotSuiteDict[filePath][DIRTY_ATTR] && !curFolder.dirty) {
-    //   curFolder.dirty = true;
-    //   let folder = curFolder;
-    //   while (folder != null) {
-    //     const { parentFolderPath } = folder;
-    //     if (parentFolderPath == null) break;
-    //     folder = nextDict[parentFolderPath];
-    //     folder.dirty = true;
-    //   }
-    // }
   });
 
   // Update children dirty flags for each folder
@@ -378,4 +373,5 @@ export {
   start,
   getFolder,
   getSnapshotSuite,
+  saveAsBaseline,
 };

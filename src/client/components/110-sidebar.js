@@ -27,7 +27,7 @@ const Sidebar = ({
   fRaw,
   toggleRaw,
 }: PropsT) =>
-  <div style={style.outer}>
+  <div style={style.outer} id="jh-sidebar">
     <div style={style.titleBar}>
       <div style={flexItem('0 0 30px')}>
         <Link
@@ -42,6 +42,7 @@ const Sidebar = ({
       </div>
       <div style={flexItem('0 1 30px')}>
         <Icon
+          id="jh-toggle-raw"
           icon="file-code-o"
           size="lg"
           onClick={toggleRaw}

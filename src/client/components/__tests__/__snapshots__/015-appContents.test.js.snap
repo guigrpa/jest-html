@@ -44,6 +44,8 @@ exports[`AppContents renders a folder with subfolders and suites correctly 1`] =
       }
     } />
   <div
+    className="giu-hints" />
+  <div
     dataMockType="Sidebar"
     fRaw={false}
     linkBack="/folder/-/path/to"
@@ -185,6 +187,7 @@ exports[`AppContents renders a folder with subfolders and suites correctly 1`] =
     style="height:0;left:0;position:absolute;top:0;width:0;"
   >
   </div>
+  <div class="giu-hints"></div>
   <div
     dataMockType="Sidebar"
     linkBack="/folder/-/path/to"
@@ -278,6 +281,8 @@ exports[`AppContents renders a folder with subfolders correctly 1`] = `
       }
     } />
   <div
+    className="giu-hints" />
+  <div
     dataMockType="Sidebar"
     fRaw={false}
     linkBack="/folder/-/path/to"
@@ -365,6 +370,7 @@ exports[`AppContents renders a folder with subfolders correctly 1`] = `
     style="height:0;left:0;position:absolute;top:0;width:0;"
   >
   </div>
+  <div class="giu-hints"></div>
   <div
     dataMockType="Sidebar"
     linkBack="/folder/-/path/to"
@@ -424,6 +430,8 @@ exports[`AppContents renders a folder with suites correctly 1`] = `
         "width": 0,
       }
     } />
+  <div
+    className="giu-hints" />
   <div
     dataMockType="Sidebar"
     fRaw={false}
@@ -530,6 +538,7 @@ exports[`AppContents renders a folder with suites correctly 1`] = `
     style="height:0;left:0;position:absolute;top:0;width:0;"
   >
   </div>
+  <div class="giu-hints"></div>
   <div
     dataMockType="Sidebar"
     linkBack="/folder/-/path/to"
@@ -638,6 +647,8 @@ exports[`AppContents renders a suite with a selected snapshot 1`] = `
       }
     } />
   <div
+    className="giu-hints" />
+  <div
     dataMockType="Sidebar"
     fRaw={false}
     linkBack="/folder/-/path/to/folder"
@@ -687,6 +698,7 @@ exports[`AppContents renders a suite with a selected snapshot 1`] = `
         id="groupname 1"
         label="1"
         link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=groupname%201"
+        saveAsBaseline={undefined}
         showBaseline={[Function]}>
         <div
           style={
@@ -708,6 +720,7 @@ exports[`AppContents renders a suite with a selected snapshot 1`] = `
         id="groupname 2"
         label="2"
         link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=groupname%202"
+        saveAsBaseline={undefined}
         showBaseline={[Function]}>
         <div
           style={
@@ -730,6 +743,7 @@ exports[`AppContents renders a suite with a selected snapshot 1`] = `
       id="individual1 1"
       label="individual1"
       link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=individual1%201"
+      saveAsBaseline={undefined}
       showBaseline={[Function]}>
       <div
         style={
@@ -751,6 +765,7 @@ exports[`AppContents renders a suite with a selected snapshot 1`] = `
       id="individual2 1"
       label="individual2"
       link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=individual2%201"
+      saveAsBaseline={undefined}
       showBaseline={[Function]}>
       <div
         style={
@@ -794,6 +809,7 @@ exports[`AppContents renders a suite with a selected snapshot 1`] = `
     style="height:0;left:0;position:absolute;top:0;width:0;"
   >
   </div>
+  <div class="giu-hints"></div>
   <div
     dataMockType="Sidebar"
     linkBack="/folder/-/path/to/folder"
@@ -885,6 +901,8 @@ exports[`AppContents renders a suite with grouped snapshots correctly 1`] = `
       }
     } />
   <div
+    className="giu-hints" />
+  <div
     dataMockType="Sidebar"
     fRaw={false}
     linkBack="/folder/-/path/to/folder"
@@ -934,6 +952,7 @@ exports[`AppContents renders a suite with grouped snapshots correctly 1`] = `
         id="groupname 1"
         label="1"
         link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=groupname%201"
+        saveAsBaseline={undefined}
         showBaseline={[Function]}>
         <div
           style={
@@ -955,6 +974,7 @@ exports[`AppContents renders a suite with grouped snapshots correctly 1`] = `
         id="groupname 2"
         label="2"
         link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=groupname%202"
+        saveAsBaseline={undefined}
         showBaseline={[Function]}>
         <div
           style={
@@ -977,6 +997,7 @@ exports[`AppContents renders a suite with grouped snapshots correctly 1`] = `
       id="individual1 1"
       label="individual1"
       link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=individual1%201"
+      saveAsBaseline={undefined}
       showBaseline={[Function]}>
       <div
         style={
@@ -998,6 +1019,7 @@ exports[`AppContents renders a suite with grouped snapshots correctly 1`] = `
       id="individual2 1"
       label="individual2"
       link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=individual2%201"
+      saveAsBaseline={undefined}
       showBaseline={[Function]}>
       <div
         style={
@@ -1033,6 +1055,7 @@ exports[`AppContents renders a suite with grouped snapshots correctly 1`] = `
     style="height:0;left:0;position:absolute;top:0;width:0;"
   >
   </div>
+  <div class="giu-hints"></div>
   <div
     dataMockType="Sidebar"
     linkBack="/folder/-/path/to/folder"
@@ -1123,6 +1146,8 @@ exports[`AppContents renders a suite with individual snapshots correctly 1`] = `
       }
     } />
   <div
+    className="giu-hints" />
+  <div
     dataMockType="Sidebar"
     fRaw={false}
     linkBack="/folder/-/path/to/folder"
@@ -1160,6 +1185,7 @@ exports[`AppContents renders a suite with individual snapshots correctly 1`] = `
       id="individual1 1"
       label="individual1"
       link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=individual1%201"
+      saveAsBaseline={undefined}
       showBaseline={[Function]}>
       <div
         style={
@@ -1181,6 +1207,7 @@ exports[`AppContents renders a suite with individual snapshots correctly 1`] = `
       id="individual2 1"
       label="individual2"
       link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=individual2%201"
+      saveAsBaseline={undefined}
       showBaseline={[Function]}>
       <div
         style={
@@ -1216,6 +1243,7 @@ exports[`AppContents renders a suite with individual snapshots correctly 1`] = `
     style="height:0;left:0;position:absolute;top:0;width:0;"
   >
   </div>
+  <div class="giu-hints"></div>
   <div
     dataMockType="Sidebar"
     linkBack="/folder/-/path/to/folder"
@@ -1365,6 +1393,8 @@ exports[`AppContents renders the root folder correctly 1`] = `
       }
     } />
   <div
+    className="giu-hints" />
+  <div
     dataMockType="Sidebar"
     fRaw={false}
     linkBack={null}
@@ -1451,6 +1481,7 @@ exports[`AppContents renders the root folder correctly 1`] = `
     style="height:0;left:0;position:absolute;top:0;width:0;"
   >
   </div>
+  <div class="giu-hints"></div>
   <div
     dataMockType="Sidebar"
     subtitle="-"

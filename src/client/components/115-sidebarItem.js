@@ -1,14 +1,23 @@
 // @flow
 
+/* eslint-env browser */
 import React from 'react';
 import { Link } from 'react-router';
-import { Icon, hoverable, flexContainer, flexItem, darken, lighten } from 'giu';
+import {
+  Icon, hoverable,
+  flexContainer, flexItem,
+  darken, lighten,
+  isHintShown, hintDefine, hintShow,
+} from 'giu';
 import { UI } from '../gral/constants';
+import { isWaiting } from '../gral/helpers';
+
+let fHintAlreadyShown = false;
 
 // ==========================================
 // Component declarations
 // ==========================================
-type PropsT = {
+type Props = {
   id: string,
   label: string,
   dirty?: boolean,
@@ -18,59 +27,104 @@ type PropsT = {
   fSelected: boolean,
   showBaseline?: () => any,
   hideBaseline?: () => any,
+  saveAsBaseline?: (snapshotId: string) => any,
   // hoverable HOC
+  hovering: any,
   onHoverStart: Function,
   onHoverStop: Function,
-  hovering: any,
 };
 
 // ==========================================
 // Component
 // ==========================================
-const SidebarItem = ({
-  id,
-  label,
-  dirty,
-  deleted,
-  icon,
-  link,
-  fSelected,
-  showBaseline,
-  hideBaseline,
-  hovering,
-  onHoverStart,
-  onHoverStop,
-}: PropsT) => {
-  const fHovered = hovering === id;
-  const elDirty = dirty && !deleted
-    ? <DirtyIcon
+class SidebarItem extends React.Component {
+  props: Props;
+  fDirtyIconShown: boolean;
+
+  componentDidMount() { this.hintIfNeeded(); }
+  componentDidUpdate() { this.hintIfNeeded(); }
+
+  // ------------------------------------------
+  render() {
+    const { id, deleted, fSelected } = this.props;
+    const fHovered = this.props.hovering === id;
+    return (
+      <Link
         id={id}
-        fSelected={fSelected}
-        fCanHover={!!showBaseline}
-        onHoverStart={showBaseline}
-        onHoverStop={hideBaseline}
-      />
-    : null;
-  return (
-    <Link
-      id={id}
-      to={link}
-      style={style.outer({ fSelected, fHovered, fDeleted: deleted })}
-      onMouseEnter={onHoverStart}
-      onMouseLeave={onHoverStop}
-    >
-      <div style={flexItem('0 0 20px')}>
-        <Icon icon={icon} />
+        to={this.props.link}
+        style={style.outer({ fSelected, fHovered, fDeleted: deleted })}
+        onMouseEnter={this.props.onHoverStart}
+        onMouseLeave={this.props.onHoverStop}
+      >
+        <div style={flexItem('0 0 20px')}>
+          <Icon icon={this.props.icon} />
+        </div>
+        <div style={flexItem(1)}>
+          {this.props.label}{' '}{deleted && <i>(deleted)</i>}
+        </div>
+        {this.renderDirtyIcon()}
+      </Link>
+    );
+  }
+
+  renderDirtyIcon() {
+    this.fDirtyIconShown = Boolean(this.props.dirty) && !this.props.deleted;
+    if (!this.fDirtyIconShown) return null;
+    const { saveAsBaseline, showBaseline, hideBaseline } = this.props;
+    return (
+      <div
+        className="jh-dirty-icon"
+        style={flexItem('0 0 15px', { textAlign: 'right' })}
+      >
+        <DirtyIcon
+          id={this.props.id}
+          fSelected={this.props.fSelected}
+          fSnapshot={!!showBaseline}
+          onHoverStart={showBaseline}
+          onHoverStop={hideBaseline}
+          onClick={(ev) => {
+            saveAsBaseline && saveAsBaseline(ev.target.id);
+            hideBaseline && hideBaseline();
+          }}
+        />
       </div>
-      <div style={flexItem(1)}>
-        {label}{' '}{deleted && <i>(deleted)</i>}
-      </div>
-      <div style={flexItem('0 0 10px')}>
-        {elDirty}
-      </div>
-    </Link>
-  );
-};
+    );
+  }
+
+  // ------------------------------------------
+  hintIfNeeded() {
+    if (!this.fDirtyIconShown) return;
+    if (fHintAlreadyShown || isHintShown() || isWaiting()) return;
+    const elements = () => {
+      const out = [];
+      const node = document.getElementsByClassName('jh-dirty-icon')[0];
+      if (node) {
+        const bcr = node.getBoundingClientRect();
+        const x = bcr.left + bcr.width + 70;
+        const y = bcr.top + (bcr.height / 2);
+        out.push({
+          type: 'LABEL', x, y, align: 'left',
+          children: (
+            <span>
+              Changed! <span style={style.highlight}>In snapshots,</span>{' '}hover
+              to see the baseline (old) version, and click to accept as
+              a new baseline
+            </span>
+          ),
+        });
+        out.push({
+          type: 'ARROW', from: { x, y },
+          to: { x: x - 70 + 5, y },
+          counterclockwise: true,
+        });
+      }
+      return out;
+    };
+    hintDefine('dirtyIcon', { elements });
+    hintShow('dirtyIcon');
+    fHintAlreadyShown = true;
+  }
+}
 
 const SidebarGroup = ({ name, children }: {
   name: string,
@@ -83,14 +137,22 @@ const SidebarGroup = ({ name, children }: {
     {children}
   </div>;
 
-const DirtyIcon = hoverable(({ hovering, id, fSelected, fCanHover, onHoverStart, onHoverStop }) => {
+const DirtyIcon = hoverable(({
+  hovering,
+  id,
+  fSelected,
+  fSnapshot,
+  onHoverStart,
+  onHoverStop,
+  onClick,
+}) => {
   let tooltip = 'Modified since the last time jest-html was launched';
   if (hovering) {
-    tooltip += '; press ESC to dismiss this tooltip';
+    tooltip += '. Click to save baseline. Press ESC to dismiss this tooltip';
   } else {
-    tooltip += fCanHover
-      ? '; select this snapshot and hover to see baseline'
-      : '; click for more details on what changed';
+    tooltip += fSnapshot
+      ? '. Select this snapshot and hover to see baseline'
+      : '. Click for more details on what changed';
   }
   return (
     <Icon
@@ -98,7 +160,8 @@ const DirtyIcon = hoverable(({ hovering, id, fSelected, fCanHover, onHoverStart,
       icon="asterisk"
       onMouseEnter={fSelected && onHoverStart}
       onMouseLeave={fSelected && onHoverStop}
-      style={style.dirtyIcon({ fSelected, fCanHover, fHovering: hovering })}
+      onClick={fSnapshot && onClick}
+      style={style.dirtyIcon({ fSelected, fSnapshot, fHovering: hovering })}
       title={tooltip}
     />
   );
@@ -129,12 +192,12 @@ const style = {
       textDecoration: 'none',
     });
   },
-  dirtyIcon: ({ fSelected, fCanHover, fHovering }) => {
+  dirtyIcon: ({ fSelected, fSnapshot, fHovering }) => {
     let color;
-    if (fSelected && fCanHover && fHovering) color = lighten(UI.color.accentBg, 25);
-    else if (fSelected && fCanHover) color = UI.color.accentFg;
+    if (fSelected && fSnapshot && fHovering) color = lighten(UI.color.accentBg, 25);
+    else if (fSelected && fSnapshot) color = UI.color.accentFg;
     else if (fSelected) color = lighten(UI.color.accentBg, 25);
-    else if (fCanHover) color = UI.color.accentBg;
+    else if (fSnapshot) color = UI.color.accentBg;
     else color = UI.color.textDim;
     return { color };
   },
@@ -149,6 +212,10 @@ const style = {
     padding: '0.3em 1em',
     fontSize: '0.8em',
     textTransform: 'uppercase',
+  },
+  highlight: {
+    fontWeight: 'bold',
+    color: 'yellow',
   },
 };
 
