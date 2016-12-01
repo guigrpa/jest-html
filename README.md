@@ -8,6 +8,7 @@ Preview Jest snapshots right in your browser. **Compatible with Jest 17 and high
 
 * **Preview of React component snapshots in your browser** (snapshots and browser devtools, yay!).
 * **Compatible with non-React** snapshots as well.
+* **Snapshot diffing (both HTML and raw)** and visible indicators that a descendant suite or snapshot has changed.
 * **Custom CSS** stylesheets applicable to all snapshots or individual ones.
 * **Intuitive navigation** through folders, snapshot suites, and even **snapshot groups** within a suite.
 * **Real-time updates** whenever a snapshot or CSS file changes.
