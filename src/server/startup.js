@@ -1,5 +1,6 @@
 // @flow
 
+import 'babel-polyfill';
 import { mainStory, config } from 'storyboard/lib/withConsoleListener';
 import program from 'commander';
 import opn from 'opn';
