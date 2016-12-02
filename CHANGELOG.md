@@ -1,8 +1,12 @@
 # Changelog
 
+## 1.3.2 (Dec. 2, 2016)
+
+* Bugfix: remove client-side sources from npm package to avoid Flow errors with transitive deps.
+
 ## 1.3.1 (Dec. 1, 2016)
 
-* Bugfix: add babel-polyfill to the server side
+* Bugfix: add babel-polyfill to the server side.
 
 ## 1.3.0 (Dec. 1, 2016)
 
