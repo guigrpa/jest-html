@@ -27,6 +27,7 @@ node_modules
 /.travis.yml
 /.gitignore
 /.npmignore
+/.watchmanconfig
 /docs/templates
 /tools
 /test
@@ -37,4 +38,7 @@ node_modules
 /exampleSnapshots
 *.snap
 /snapshot.css
-/src/client
+/src
+/lib/client
+/docs
+/__mocks__

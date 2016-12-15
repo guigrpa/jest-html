@@ -6,7 +6,7 @@
 // Basic config
 // ===============================================
 const NAME = 'jest-html';
-const VERSION = '1.3.2';
+const VERSION = '1.3.3';
 const DESCRIPTION = 'Preview Jest snapshots right in your browser';
 const KEYWORDS = ['Jest', 'test', 'snapshot', 'serializer', 'html', 'preview'];
 
@@ -174,10 +174,9 @@ const specs = {
     // Bundled
     react: '15.4.0',
     'react-dom': '15.4.0',
-    'react-addons-pure-render-mixin': '15.4.0', // required by giu as peer dep, delete when we update giu
     'react-frame-component': '0.6.6',
     'react-router': '4.0.0-alpha.5',
-    giu: '0.9.0',
+    giu: '0.9.2',
     'socket.io-client': '1.5.1',
     moment: '^2.0.0',
     'node-uuid': '1.4.7',

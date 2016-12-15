@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.3.3 (Dec. 15, 2016)
+
+* Bugfix: remove all other sources from npm package to avoid Flow errors with transitive deps.
+
 ## 1.3.2 (Dec. 2, 2016)
 
 * Bugfix: remove client-side sources from npm package to avoid Flow errors with transitive deps.

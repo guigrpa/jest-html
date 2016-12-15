@@ -4,7 +4,6 @@
 <PROJECT_ROOT>/lib/.*
 <PROJECT_ROOT>/node_modules/fbjs
 <PROJECT_ROOT>/node_modules/jest/.*
-<PROJECT_ROOT>/node_modules/giu/.*
 
 [options]
 module.name_mapper='^\(.*\)\.sass$' -> '<PROJECT_ROOT>/tools/sass.js.flow'
