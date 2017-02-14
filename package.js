@@ -101,7 +101,7 @@ const specs = {
     // Static analysis
     lint:                       'eslint src',
     flow:                       'flow check || exit 0',
-    xxl:                        "xxl --src \"[\\\"src\\\"]\"",  // eslint-disable-line quotes
+    xxl:                        'xxl',
 
     // Testing - general
     test:                       'npm run testCovFull',
@@ -145,7 +145,8 @@ const specs = {
   // -----------------------------------------------
   dependencies: {
     timm: '^1.2.1',
-    storyboard: '^2.0.0',
+    storyboard: '^3.0.0-rc.2',
+    'storyboard-preset-console': '^3.0.0-rc.2',
     commander: '^2.9.0',
 
     'pretty-format': '^4.2.1',
@@ -221,8 +222,8 @@ const specs = {
     coveralls: '2.11.14',
 
     // Other tools
-    'extract-docs': '1.3.0',
-    'xxl': '0.1.1',
+    'extract-docs': '^1.3.0',
+    'xxl': '^1.0.0',
     'cross-env': '2.0.1',
     'flow-bin': '0.35.0',
   },

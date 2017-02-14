@@ -4,13 +4,12 @@
 
 import path                 from 'path';
 import http                 from 'http';
-import storyboard           from 'storyboard';
+import { mainStory, chalk } from 'storyboard';
 import express              from 'express';
 import bodyParser           from 'body-parser';
 import socketio             from 'socket.io';
 import * as extractor       from './extractor';
 
-const { mainStory, chalk } = storyboard;
 let webpack;
 let webpackDevMiddleware;
 let webpackHotMiddleware;

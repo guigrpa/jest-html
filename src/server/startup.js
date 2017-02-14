@@ -1,7 +1,8 @@
 // @flow
 
 import 'babel-polyfill';
-import { mainStory, config } from 'storyboard/lib/withConsoleListener';
+import 'storyboard-preset-console';
+import { mainStory, config } from 'storyboard';
 import program from 'commander';
 import opn from 'opn';
 import * as httpServer from './httpServer';
