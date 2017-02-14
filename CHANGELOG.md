@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.3.4 (Feb. 14, 2017)
+
+* Bump Storyboard dependency to v3.x.
+
 ## 1.3.3 (Dec. 15, 2016)
 
 * Bugfix: remove all other sources from npm package to avoid Flow errors with transitive deps.
