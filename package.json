@@ -111,6 +111,7 @@
   },
   "jest": {
     "testRegex": "src/.*__tests__/.*\\.(test|spec)\\.(js|jsx)$",
+    "roots": ["<rootDir>/src"],
     "moduleNameMapper": {
       "^typeface-.*": "<rootDir>/test/emptyObject.js",
       "^.+\\.(css|less|sass)$": "<rootDir>/test/emptyObject.js",

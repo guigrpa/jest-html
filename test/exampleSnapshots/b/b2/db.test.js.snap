@@ -1,0 +1,140 @@
+exports[`db should allow creating keys 1`] = `
+Object {
+  "context": "someContext",
+  "firstUsed": "2016-10-05T08:00:00.000Z",
+  "id": "someContext_someText",
+  "sources": Array [],
+  "text": "someText",
+  "unusedSince": null,
+}
+`;
+
+exports[`db should allow creating keys 2`] = `
+Array [
+  Object {
+    "context": "someContext",
+    "firstUsed": "2016-10-05T08:00:00.000Z",
+    "id": "someContext_someText",
+    "sources": Array [],
+    "text": "someText",
+    "unusedSince": null,
+  },
+]
+`;
+
+exports[`db should allow creating translations 1`] = `
+Object {
+  "id": "deterministicId",
+  "keyId": "someContext_someText",
+  "lang": "es",
+  "translation": "algúnTexto",
+}
+`;
+
+exports[`db should allow creating translations 2`] = `
+Array [
+  Object {
+    "id": "deterministicId",
+    "keyId": "someContext_someText",
+    "lang": "es",
+    "translation": "algúnTexto",
+  },
+]
+`;
+
+exports[`db should allow deleting keys 1`] = `
+Object {
+  "context": "someContext",
+  "firstUsed": "2016-10-05T08:00:00.000Z",
+  "id": "someContext_someText",
+  "sources": Array [],
+  "text": "someText",
+  "unusedSince": "2016-10-05T12:00:00.000Z",
+}
+`;
+
+exports[`db should allow deleting keys 2`] = `
+Array [
+  Object {
+    "context": null,
+    "firstUsed": null,
+    "id": "anotherText",
+    "sources": Array [],
+    "text": "anotherText",
+    "unusedSince": null,
+  },
+]
+`;
+
+exports[`db should allow deleting translations 1`] = `
+Object {
+  "keyId": "someContext_someText",
+  "lang": "ca",
+  "translation": "Una traducción mejor",
+}
+`;
+
+exports[`db should allow deleting translations 2`] = `
+Array [
+  Object {
+    "keyId": "someContext_someText",
+    "lang": "es",
+    "translation": "algúnTexto",
+  },
+]
+`;
+
+exports[`db should allow updating keys 1`] = `
+Object {
+  "context": "someContext",
+  "firstUsed": "2016-10-05T08:00:00.000Z",
+  "id": "someContext_someText",
+  "sources": Array [],
+  "text": "someText",
+  "unusedSince": "2016-10-05T12:00:00.000Z",
+}
+`;
+
+exports[`db should allow updating keys 2`] = `
+Array [
+  Object {
+    "context": "someContext",
+    "firstUsed": "2016-10-05T08:00:00.000Z",
+    "id": "someContext_someText",
+    "sources": Array [],
+    "text": "someText",
+    "unusedSince": "2016-10-05T12:00:00.000Z",
+  },
+  Object {
+    "context": null,
+    "firstUsed": null,
+    "id": "anotherText",
+    "sources": Array [],
+    "text": "anotherText",
+    "unusedSince": null,
+  },
+]
+`;
+
+exports[`db should allow updating translations 1`] = `
+Object {
+  "keyId": "someContext_someText",
+  "lang": "ca",
+  "translation": "Una traducción mejor",
+}
+`;
+
+exports[`db should allow updating translations 2`] = `
+Array [
+  Object {
+    "keyId": "someContext_someText",
+    "lang": "es",
+    "translation": "algúnTexto",
+  },
+  Object {
+    "keyId": "someContext_someText",
+    "lang": "ca",
+    "translation": "Una traducción mejor",
+  },
+]
+`;
