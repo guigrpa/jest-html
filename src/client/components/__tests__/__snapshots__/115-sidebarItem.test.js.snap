@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`SidebarGroup renders correctly 1`] = `
 <div
   style={
@@ -6,7 +8,8 @@ exports[`SidebarGroup renders correctly 1`] = `
       "margin": "0.5em 0",
       "padding": "0.3em 0",
     }
-  }>
+  }
+>
   <div
     style={
       Object {
@@ -15,7 +18,8 @@ exports[`SidebarGroup renders correctly 1`] = `
         "padding": "0.3em 1em",
         "textTransform": "uppercase",
       }
-    }>
+    }
+  >
     Snapshot group name
   </div>
   one
@@ -50,23 +54,27 @@ exports[`SidebarItem renders correctly 1`] = `
       "textDecoration": "none",
       "wordBreak": "break-word",
     }
-  }>
+  }
+>
   <div
     style={
       Object {
         "WebkitFlex": "0 0 20px",
         "flex": "0 0 20px",
       }
-    }>
+    }
+  >
     <i
       className="giu-icon fa fa-folder-o"
       style={
         Object {
           "color": undefined,
           "cursor": "pointer",
+          "fontSize": undefined,
           "letterSpacing": "normal",
         }
-      } />
+      }
+    />
   </div>
   <div
     style={
@@ -74,7 +82,8 @@ exports[`SidebarItem renders correctly 1`] = `
         "WebkitFlex": 1,
         "flex": 1,
       }
-    }>
+    }
+  >
     an/extremely/amazingly/ultra/hyper/really/very/long/label
      
   </div>
@@ -120,23 +129,27 @@ exports[`SidebarItem renders correctly when hovered 1`] = `
       "textDecoration": "none",
       "wordBreak": "break-word",
     }
-  }>
+  }
+>
   <div
     style={
       Object {
         "WebkitFlex": "0 0 20px",
         "flex": "0 0 20px",
       }
-    }>
+    }
+  >
     <i
       className="giu-icon fa fa-folder-o"
       style={
         Object {
           "color": undefined,
           "cursor": "pointer",
+          "fontSize": undefined,
           "letterSpacing": "normal",
         }
-      } />
+      }
+    />
   </div>
   <div
     style={
@@ -144,7 +157,8 @@ exports[`SidebarItem renders correctly when hovered 1`] = `
         "WebkitFlex": 1,
         "flex": 1,
       }
-    }>
+    }
+  >
     two
      
   </div>
@@ -190,23 +204,27 @@ exports[`SidebarItem renders correctly when selected & hovered 1`] = `
       "textDecoration": "none",
       "wordBreak": "break-word",
     }
-  }>
+  }
+>
   <div
     style={
       Object {
         "WebkitFlex": "0 0 20px",
         "flex": "0 0 20px",
       }
-    }>
+    }
+  >
     <i
       className="giu-icon fa fa-folder-o"
       style={
         Object {
           "color": undefined,
           "cursor": "pointer",
+          "fontSize": undefined,
           "letterSpacing": "normal",
         }
-      } />
+      }
+    />
   </div>
   <div
     style={
@@ -214,7 +232,8 @@ exports[`SidebarItem renders correctly when selected & hovered 1`] = `
         "WebkitFlex": 1,
         "flex": 1,
       }
-    }>
+    }
+  >
     four
      
   </div>
@@ -260,23 +279,27 @@ exports[`SidebarItem renders correctly when selected 1`] = `
       "textDecoration": "none",
       "wordBreak": "break-word",
     }
-  }>
+  }
+>
   <div
     style={
       Object {
         "WebkitFlex": "0 0 20px",
         "flex": "0 0 20px",
       }
-    }>
+    }
+  >
     <i
       className="giu-icon fa fa-folder-o"
       style={
         Object {
           "color": undefined,
           "cursor": "pointer",
+          "fontSize": undefined,
           "letterSpacing": "normal",
         }
-      } />
+      }
+    />
   </div>
   <div
     style={
@@ -284,7 +307,8 @@ exports[`SidebarItem renders correctly when selected 1`] = `
         "WebkitFlex": 1,
         "flex": 1,
       }
-    }>
+    }
+  >
     three
      
   </div>

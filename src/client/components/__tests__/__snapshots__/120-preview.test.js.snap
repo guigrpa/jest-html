@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`Preview renders correctly with HTML snapshot 1`] = `
 <div
   dataMockType="Frame"
@@ -8,14 +10,16 @@ exports[`Preview renders correctly with HTML snapshot 1`] = `
       "overflow": "auto",
       "width": "100%",
     }
-  }>
+  }
+>
   <div
     style={
       Object {
         "color": "blue",
         "fontWeight": "bold",
       }
-    }>
+    }
+  >
     Frame
   </div>
   <style>
@@ -26,7 +30,8 @@ exports[`Preview renders correctly with HTML snapshot 1`] = `
       Object {
         "__html": "<div>Snapshot contents</div>",
       }
-    } />
+    }
+  />
 </div>
 ------------HTML PREVIEW---------------
 <div
@@ -53,7 +58,8 @@ exports[`Preview renders correctly with no snapshot 1`] = `
       "overflow": "auto",
       "transform": "translateZ(0)",
     }
-  }>
+  }
+>
   <div
     className="giu-large-message"
     style={
@@ -65,7 +71,8 @@ exports[`Preview renders correctly with no snapshot 1`] = `
         "padding": "0.8em",
         "textAlign": "center",
       }
-    }>
+    }
+  >
     No snapshot selected
   </div>
 </div>
@@ -90,14 +97,16 @@ exports[`Preview renders correctly with non-HTML snapshot 1`] = `
       "overflow": "auto",
       "transform": "translateZ(0)",
     }
-  }>
+  }
+>
   <pre
     style={
       Object {
         "margin": 0,
         "padding": "0 1em",
       }
-    }>
+    }
+  >
     Snapshot contents
   </pre>
 </div>
