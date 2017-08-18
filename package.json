@@ -1,6 +1,6 @@
 {
   "name": "jest-html",
-  "version": "1.3.4",
+  "version": "1.3.5",
   "description": "Preview Jest snapshots right in your browser",
   "bin": {
     "jest-html": "lib/previewer.js"
@@ -11,7 +11,14 @@
   },
   "author": "Guillermo Grau Panea",
   "license": "MIT",
-  "keywords": ["Jest", "test", "snapshot", "serializer", "html", "preview"],
+  "keywords": [
+    "Jest",
+    "test",
+    "snapshot",
+    "serializer",
+    "html",
+    "preview"
+  ],
   "homepage": "https://github.com/guigrpa/jest-html#readme",
   "bugs": {
     "url": "https://github.com/guigrpa/jest-html/issues"
@@ -111,15 +118,23 @@
   },
   "jest": {
     "testRegex": "src/.*__tests__/.*\\.(test|spec)\\.(js|jsx)$",
-    "roots": ["<rootDir>/src"],
+    "roots": [
+      "<rootDir>/src"
+    ],
     "moduleNameMapper": {
       "^typeface-.*": "<rootDir>/test/emptyObject.js",
       "^.+\\.(css|less|sass)$": "<rootDir>/test/emptyObject.js",
       "^.+\\.(gif|ttf|eot|svg)$": "<rootDir>/test/emptyString.js"
     },
     "coverageDirectory": ".nyc_output",
-    "coverageReporters": ["json", "text", "html"],
-    "snapshotSerializers": ["<rootDir>/lib/serializer"],
+    "coverageReporters": [
+      "json",
+      "text",
+      "html"
+    ],
+    "snapshotSerializers": [
+      "<rootDir>/lib/serializer"
+    ],
     "collectCoverageFrom": [
       "src/**/*.js",
       "!src/previewer.js",
