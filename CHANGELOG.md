@@ -1,4 +1,4 @@
-# Changelog
+* Bugfix: when a suite contains multiple dirty snapshots, marking one of them as the new baseline no longer marks the whole suite as clean.
 
 ## 1.3.4 (Feb. 14, 2017)
 

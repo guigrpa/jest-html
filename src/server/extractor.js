@@ -162,7 +162,7 @@ const saveAsBaseline = (filePath: string, id: string) => {
   if (snapshot == null || !snapshot.baseline) return;
   delete snapshot.baseline;
   snapshot.dirty = false;
-  suite.__dirty = false;
+  suite.__dirty = isSuiteDirty(suite);
   buildFolderDict(mainStory);
   broadcastSignal();
 };
@@ -411,6 +411,22 @@ const forEachSnapshot = (
       return;
     cb(suite[id]);
   });
+};
+
+const isSuiteDirty = (suite: SnapshotSuiteT) => {
+  const keys = Object.keys(suite);
+  for (let i = 0; i < keys.length; i++) {
+    const key = keys[i];
+    if (
+      key === FOLDER_PATH_ATTR ||
+      key === DIRTY_ATTR ||
+      key === DELETED_ATTR
+    ) {
+      continue;
+    }
+    if (suite[key].dirty) return true;
+  }
+  return false;
 };
 
 const slash = str => str.replace(/\\/g, '/');
