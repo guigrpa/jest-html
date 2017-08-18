@@ -1,35 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`Serializer should correctly serialize React components 1`] = `
 "Object {
-  \"$$typeof\": Symbol(react.test.json),
-  \"__visited\": true,
-  \"children\": Array [
-    \"Text\",
+  \\"$$typeof\\": Symbol(react.test.json),
+  \\"__visited\\": true,
+  \\"children\\": Array [
+    \\"Text\\",
     5,
   ],
-  \"props\": Object {
-    \"a\": 3,
-    \"b\": \"foo\",
-    \"c\": true,
-    \"className\": \"my-class\",
-    \"d\": false,
-    \"htmlFor\": \"bar\",
-    \"style\": Object {
-      \"border\": \"1px solid blue\",
-      \"flexDirection\": \"row\",
-      \"margin\": 3,
-      \"padding\": 2,
-      \"sth\": undefined,
+  \\"props\\": Object {
+    \\"a\\": 3,
+    \\"b\\": \\"foo\\",
+    \\"c\\": true,
+    \\"className\\": \\"my-class\\",
+    \\"d\\": false,
+    \\"htmlFor\\": \\"bar\\",
+    \\"style\\": Object {
+      \\"border\\": \\"1px solid blue\\",
+      \\"flexDirection\\": \\"row\\",
+      \\"margin\\": 3,
+      \\"padding\\": 2,
+      \\"sth\\": undefined,
     },
   },
-  \"type\": \"div\",
+  \\"type\\": \\"div\\",
 }
 ------------HTML PREVIEW---------------
 <div
-  b=\"foo\"
+  b=\\"foo\\"
   c
-  class=\"my-class\"
-  for=\"bar\"
-  style=\"border:1px solid blue;flex-direction:row;margin:3px;padding:2px;\"
+  class=\\"my-class\\"
+  for=\\"bar\\"
+  style=\\"border:1px solid blue;flex-direction:row;margin:3px;padding:2px;\\"
 >
   Text
   5
@@ -38,29 +40,29 @@ exports[`Serializer should correctly serialize React components 1`] = `
 
 exports[`Serializer should correctly serialize Textareas 1`] = `
 "Object {
-  \"$$typeof\": Symbol(react.test.json),
-  \"__visited\": true,
-  \"props\": Object {
-    \"style\": null,
-    \"value\": \"One block
+  \\"$$typeof\\": Symbol(react.test.json),
+  \\"__visited\\": true,
+  \\"props\\": Object {
+    \\"style\\": null,
+    \\"value\\": \\"One block
 of text
-with accents: áéíóú\",
+with accents: áéíóú\\",
   },
-  \"type\": \"textarea\",
+  \\"type\\": \\"textarea\\",
 }
 ------------HTML PREVIEW---------------
-<textarea value=\"One block
+<textarea value=\\"One block
 of text
-with accents: áéíóú\">One block
+with accents: áéíóú\\">One block
 of text
 with accents: áéíóú</textarea>"
 `;
 
 exports[`Serializer should correctly serialize childless components 1`] = `
 "Object {
-  \"$$typeof\": Symbol(react.test.json),
-  \"__visited\": true,
-  \"type\": \"div\",
+  \\"$$typeof\\": Symbol(react.test.json),
+  \\"__visited\\": true,
+  \\"type\\": \\"div\\",
 }
 ------------HTML PREVIEW---------------
 <div></div>"
@@ -68,71 +70,71 @@ exports[`Serializer should correctly serialize childless components 1`] = `
 
 exports[`Serializer should correctly serialize divs with whiteSpace: pre style 1`] = `
 "Object {
-  \"$$typeof\": Symbol(react.test.json),
-  \"__visited\": true,
-  \"children\": Array [
+  \\"$$typeof\\": Symbol(react.test.json),
+  \\"__visited\\": true,
+  \\"children\\": Array [
     Object {
-      \"children\": Array [
-        \"A normal span\",
+      \\"children\\": Array [
+        \\"A normal span\\",
       ],
-      \"type\": \"span\",
+      \\"type\\": \\"span\\",
     },
     Object {
-      \"children\": Array [
-        \"A div without whiteSpace:\",
+      \\"children\\": Array [
+        \\"A div without whiteSpace:\\",
         Object {
-          \"children\": Array [
-            \"ABC\",
+          \\"children\\": Array [
+            \\"ABC\\",
           ],
-          \"props\": Object {
-            \"a\": \"3\",
-            \"b\": \"4\",
+          \\"props\\": Object {
+            \\"a\\": \\"3\\",
+            \\"b\\": \\"4\\",
           },
-          \"type\": \"span\",
+          \\"type\\": \\"span\\",
         },
         Object {
-          \"children\": Array [
-            \"DEF
-GHI\",
+          \\"children\\": Array [
+            \\"DEF
+GHI\\",
           ],
-          \"props\": Object {
-            \"a\": true,
+          \\"props\\": Object {
+            \\"a\\": true,
           },
-          \"type\": \"span\",
+          \\"type\\": \\"span\\",
         },
         Object {
-          \"children\": Array [
-            \"JKL\",
+          \\"children\\": Array [
+            \\"JKL\\",
             Object {
-              \"children\": Array [
-                \"MNO\",
+              \\"children\\": Array [
+                \\"MNO\\",
               ],
-              \"type\": \"span\",
+              \\"type\\": \\"span\\",
             },
           ],
-          \"props\": Object {
-            \"a\": true,
+          \\"props\\": Object {
+            \\"a\\": true,
           },
-          \"type\": \"span\",
+          \\"type\\": \\"span\\",
         },
       ],
-      \"props\": Object {
-        \"foo\": \"bar\",
-        \"foo2\": \"bar2\",
-        \"style\": Object {
-          \"whiteSpace\": \"pre\",
+      \\"props\\": Object {
+        \\"foo\\": \\"bar\\",
+        \\"foo2\\": \\"bar2\\",
+        \\"style\\": Object {
+          \\"whiteSpace\\": \\"pre\\",
         },
       },
-      \"type\": \"div\",
+      \\"type\\": \\"div\\",
     },
     Object {
-      \"children\": Array [
-        \"Another normal span\",
+      \\"children\\": Array [
+        \\"Another normal span\\",
       ],
-      \"type\": \"span\",
+      \\"type\\": \\"span\\",
     },
   ],
-  \"type\": \"div\",
+  \\"type\\": \\"div\\",
 }
 ------------HTML PREVIEW---------------
 <div>
@@ -140,12 +142,12 @@ GHI\",
     A normal span
   </span>
   <div
-    foo=\"bar\"
-    foo2=\"bar2\"
-    style=\"white-space:pre;\"
+    foo=\\"bar\\"
+    foo2=\\"bar2\\"
+    style=\\"white-space:pre;\\"
   >A div without whiteSpace:<span
-  a=\"3\"
-  b=\"4\">ABC</span><span a>DEF
+  a=\\"3\\"
+  b=\\"4\\">ABC</span><span a>DEF
   GHI</span><span a>JKL<span>MNO</span></span></div>
   <span>
     Another normal span
@@ -155,26 +157,26 @@ GHI\",
 
 exports[`Serializer should correctly serialize elements with one prop 1`] = `
 "Object {
-  \"$$typeof\": Symbol(react.test.json),
-  \"__visited\": true,
-  \"props\": Object {
-    \"foo\": \"bar\",
+  \\"$$typeof\\": Symbol(react.test.json),
+  \\"__visited\\": true,
+  \\"props\\": Object {
+    \\"foo\\": \\"bar\\",
   },
-  \"type\": \"div\",
+  \\"type\\": \\"div\\",
 }
 ------------HTML PREVIEW---------------
-<div foo=\"bar\"></div>"
+<div foo=\\"bar\\"></div>"
 `;
 
 exports[`Serializer should correctly serialize elements with several props but only one valid one 1`] = `
 "Object {
-  \"$$typeof\": Symbol(react.test.json),
-  \"__visited\": true,
-  \"props\": Object {
-    \"no\": false,
-    \"yes\": true,
+  \\"$$typeof\\": Symbol(react.test.json),
+  \\"__visited\\": true,
+  \\"props\\": Object {
+    \\"no\\": false,
+    \\"yes\\": true,
   },
-  \"type\": \"div\",
+  \\"type\\": \\"div\\",
 }
 ------------HTML PREVIEW---------------
 <div yes></div>"
@@ -182,9 +184,9 @@ exports[`Serializer should correctly serialize elements with several props but o
 
 exports[`Serializer should correctly serialize elements with zero props 1`] = `
 "Object {
-  \"$$typeof\": Symbol(react.test.json),
-  \"__visited\": true,
-  \"type\": \"div\",
+  \\"$$typeof\\": Symbol(react.test.json),
+  \\"__visited\\": true,
+  \\"type\\": \\"div\\",
 }
 ------------HTML PREVIEW---------------
 <div></div>"
@@ -192,32 +194,32 @@ exports[`Serializer should correctly serialize elements with zero props 1`] = `
 
 exports[`Serializer should correctly serialize self-closing elements 1`] = `
 "Object {
-  \"$$typeof\": Symbol(react.test.json),
-  \"__visited\": true,
-  \"children\": Array [
+  \\"$$typeof\\": Symbol(react.test.json),
+  \\"__visited\\": true,
+  \\"children\\": Array [
     Object {
-      \"type\": \"span\",
+      \\"type\\": \\"span\\",
     },
     Object {
-      \"type\": \"br\",
+      \\"type\\": \\"br\\",
     },
     Object {
-      \"props\": Object {
-        \"src\": \"foo.png\",
+      \\"props\\": Object {
+        \\"src\\": \\"foo.png\\",
       },
-      \"type\": \"img\",
+      \\"type\\": \\"img\\",
     },
     Object {
-      \"type\": \"span\",
+      \\"type\\": \\"span\\",
     },
   ],
-  \"type\": \"div\",
+  \\"type\\": \\"div\\",
 }
 ------------HTML PREVIEW---------------
 <div>
   <span></span>
   <br>
-  <img src=\"foo.png\">
+  <img src=\\"foo.png\\">
   <span></span>
 </div>"
 `;
