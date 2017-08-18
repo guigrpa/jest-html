@@ -6,6 +6,4 @@ const UI = {
   },
 };
 
-export {
-  UI,
-};
+export { UI };

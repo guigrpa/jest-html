@@ -3,13 +3,8 @@
 /* eslint-env browser */
 import React from 'react';
 import socketio from 'socket.io-client';
-import {
-  bindAll,
-} from 'giu';
-import type {
-  FolderT,
-  SnapshotSuiteT,
-} from '../../common/types';
+import { bindAll } from 'giu';
+import type { FolderT, SnapshotSuiteT } from '../../common/types';
 import AppContents from './015-appContents';
 
 const socket = socketio.connect();
@@ -94,7 +89,9 @@ class App extends React.Component {
         fetchedItem={this.state.fetchedItem}
         fetchedItemPath={this.state.fetchedItemPath}
         error={this.state.error}
-        onRedirectToRoot={() => { this.setState({ fRedirectToRoot: true }); }}
+        onRedirectToRoot={() => {
+          this.setState({ fRedirectToRoot: true });
+        }}
         fRedirectToRoot={this.state.fRedirectToRoot}
         query={this.props.location.query}
         saveAsBaseline={this.saveAsBaseline}
@@ -119,18 +116,18 @@ class App extends React.Component {
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify({ folderPath }),
     })
-    .then((res) => res.json())
-    .then((folder: FolderT) => {
-      this.setState({
-        fetchedItemType: 'FOLDER',
-        fetchedItem: folder,
-        fetchedItemPath: folderPath,
+      .then(res => res.json())
+      .then((folder: FolderT) => {
+        this.setState({
+          fetchedItemType: 'FOLDER',
+          fetchedItem: folder,
+          fetchedItemPath: folderPath,
+        });
+      })
+      .catch(() => {
+        // $FlowFixMe
+        this.setState({ error: `Could not find ${folderPath}` });
       });
-    })
-    .catch(() => {
-      // $FlowFixMe
-      this.setState({ error: `Could not find ${folderPath}` });
-    });
   }
 
   fetchSuite(filePath: ?string) {
@@ -140,18 +137,18 @@ class App extends React.Component {
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify({ filePath }),
     })
-    .then((res) => res.json())
-    .then((suite: SnapshotSuiteT) => {
-      this.setState({
-        fetchedItemType: 'SUITE',
-        fetchedItem: suite,
-        fetchedItemPath: filePath,
+      .then(res => res.json())
+      .then((suite: SnapshotSuiteT) => {
+        this.setState({
+          fetchedItemType: 'SUITE',
+          fetchedItem: suite,
+          fetchedItemPath: filePath,
+        });
+      })
+      .catch(() => {
+        // $FlowFixMe
+        this.setState({ error: `Could not find ${filePath}` });
       });
-    })
-    .catch(() => {
-      // $FlowFixMe
-      this.setState({ error: `Could not find ${filePath}` });
-    });
   }
 
   saveAsBaseline = (snapshotId: string) => {
@@ -163,13 +160,11 @@ class App extends React.Component {
         id: snapshotId,
       }),
     });
-  }
+  };
 }
 
 // ==========================================
 // Public API
 // ==========================================
 export default App;
-export {
-  socketDisconnect,
-};
+export { socketDisconnect };

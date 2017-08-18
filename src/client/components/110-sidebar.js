@@ -30,10 +30,7 @@ const Sidebar = ({
   <div style={style.outer} id="jh-sidebar">
     <div style={style.titleBar}>
       <div style={flexItem('0 0 30px')}>
-        <Link
-          to={linkBack || '#'}
-          style={style.back}
-        >
+        <Link to={linkBack || '#'} style={style.back}>
           <Icon icon="chevron-left" size="lg" disabled={linkBack == null} />
         </Link>
       </div>
@@ -78,7 +75,7 @@ const style = {
     textAlign: 'center',
     fontWeight: 'bold',
   }),
-  raw: (fRaw) => ({
+  raw: fRaw => ({
     color: fRaw ? 'black' : 'gray',
   }),
 };

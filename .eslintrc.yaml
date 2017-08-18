@@ -1,9 +1,12 @@
 parser: babel-eslint
-extends: airbnb
+extends:
+  - airbnb
+  - prettier
 plugins:
   - flowtype
 rules:
   eqeqeq: ['error', 'allow-null']
+  indent: off # prettier!
   no-unused-expressions:
     - error
     - allowShortCircuit: true
@@ -18,6 +21,7 @@ rules:
   no-continue: off
   no-duplicate-imports: off
   no-mixed-operators: off
+  no-await-in-loop: off
   key-spacing:
     - warn
     - beforeColon: false
@@ -25,16 +29,19 @@ rules:
       mode: 'minimum'
   object-property-newline: off
   class-methods-use-this: off
-  arrow-parens: ['error', 'always']
+  arrow-parens: off
   react/sort-comp: off
   react/jsx-first-prop-new-line: off
   react/jsx-indent: off
   react/jsx-indent-props: off
   react/jsx-closing-bracket-location: off
   react/jsx-filename-extension: off
+  react/jsx-wrap-multilines: off
   react/forbid-prop-types: off
   react/prop-types: off
   react/require-extension: off
+  react/require-default-props: off
+  react/no-did-update-set-state: off
   import/no-extraneous-dependencies:
     - error
     - devDependencies: true
@@ -42,6 +49,7 @@ rules:
       optionalDependencies: false
   import/prefer-default-export: off
   jsx-a11y/no-static-element-interactions: off
+  jsx-a11y/href-no-hash: off
 globals:
   # Flow
   SyntheticEvent: false

@@ -10,8 +10,11 @@ import { mainStory, chalk } from 'storyboard';
 import type { StoryT } from 'storyboard';
 import { HTML_PREVIEW_SEPARATOR } from '../serializer';
 import type {
-  FilePathT, FolderPathT,
-  FolderT, SnapshotSuiteT, SnapshotT,
+  FilePathT,
+  FolderPathT,
+  FolderT,
+  SnapshotSuiteT,
+  SnapshotT,
 } from '../common/types';
 
 type ConfigT = {|
@@ -53,7 +56,10 @@ const start = async ({ story = mainStory }: { story: StoryT } = {}) => {
 let _snapshotSuiteDict: SnapshotSuiteDictT = {};
 
 const loadAllSnapshots = async (story: StoryT = mainStory) => {
-  const childStory = story.child({ src: 'extractor', title: 'Refresh snapshots' });
+  const childStory = story.child({
+    src: 'extractor',
+    title: 'Refresh snapshots',
+  });
   try {
     const filePaths = await globby(_config.snapshotPatterns);
     childStory.info('extractor', 'Reading snapshot files...');
@@ -71,15 +77,21 @@ const loadAllSnapshots = async (story: StoryT = mainStory) => {
 
 const updateSnapshotCss = (story: StoryT = mainStory) => {
   const commonCss = getCommonCss();
-  Object.keys(_snapshotSuiteDict).forEach((filePath) => {
+  Object.keys(_snapshotSuiteDict).forEach(filePath => {
     const suite = _snapshotSuiteDict[filePath];
     const suiteCss = getSuiteCss(filePath, story);
     const css = suiteCss != null ? addLast(commonCss, suiteCss) : commonCss;
-    forEachSnapshot(suite, (snapshot) => { snapshot.css = css; }); // eslint-disable-line no-param-reassign, max-len
+    forEachSnapshot(suite, snapshot => {
+      snapshot.css = css; // eslint-disable-line no-param-reassign
+    });
   });
 };
 
-const loadSuite = async (filePath: string, commonCss: Array<string>, story: StoryT) => {
+const loadSuite = async (
+  filePath: string,
+  commonCss: Array<string>,
+  story: StoryT
+) => {
   story.info('extractor', `Processing ${chalk.cyan.bold(filePath)}...`);
   const absPath = path.resolve(process.cwd(), filePath);
   const rawSnapshots = loadSnapshot(absPath);
@@ -95,17 +107,28 @@ const loadSuite = async (filePath: string, commonCss: Array<string>, story: Stor
     const rawSnapshot = rawSnapshots[id];
     const [snap, html] = rawSnapshot.split(HTML_PREVIEW_SEPARATOR);
     const css = suiteCss != null ? addLast(commonCss, suiteCss) : commonCss;
-    const snapshot: SnapshotT = { id, snap, html, css, dirty: false, deleted: false };
+    const snapshot: SnapshotT = {
+      id,
+      snap,
+      html,
+      css,
+      dirty: false,
+      deleted: false,
+    };
     if (prevSuite && prevSuite[id]) {
       const prevSnapshot = prevSuite[id];
       const prevBaseline = prevSnapshot.baseline;
       // Copy the previous baseline, if any
       if (prevBaseline != null) {
         snapshot.baseline = prevBaseline;
-        snapshot.dirty = html !== prevBaseline.html || snap !== prevBaseline.snap;
-      // Create a new baseline if the snapshot's SNAP or HTML have changed
+        snapshot.dirty =
+          html !== prevBaseline.html || snap !== prevBaseline.snap;
+        // Create a new baseline if the snapshot's SNAP or HTML have changed
       } else if (html !== prevSnapshot.html || snap !== prevSnapshot.snap) {
-        snapshot.baseline = { html: prevSnapshot.html, snap: prevSnapshot.snap };
+        snapshot.baseline = {
+          html: prevSnapshot.html,
+          snap: prevSnapshot.snap,
+        };
         snapshot.dirty = true;
       }
     }
@@ -113,16 +136,19 @@ const loadSuite = async (filePath: string, commonCss: Array<string>, story: Stor
     suiteDirty = suiteDirty || snapshot.dirty;
   }
   if (prevSuite != null) {
-    forEachSnapshot(prevSuite, (snapshot) => {
+    forEachSnapshot(prevSuite, snapshot => {
       const { id } = snapshot;
       if (nextIds.indexOf(id) < 0) {
-        snapshot.deleted = true;   // eslint-disable-line no-param-reassign
+        snapshot.deleted = true; // eslint-disable-line no-param-reassign
         suite[id] = snapshot;
         suiteDirty = true;
       }
     });
   }
-  story.debug('extractor', `Found ${Object.keys(rawSnapshots).length} snapshots`);
+  story.debug(
+    'extractor',
+    `Found ${Object.keys(rawSnapshots).length} snapshots`
+  );
   suite[FOLDER_PATH_ATTR] = path.dirname(finalFilePath);
   suite[DIRTY_ATTR] = suiteDirty;
   suite[DELETED_ATTR] = false;
@@ -150,7 +176,9 @@ const loadSnapshot = (absPath: string): Object => {
 
 const sortSnapshots = (suite): Object => {
   const out = {};
-  Object.keys(suite).sort().forEach((id) => { out[id] = suite[id]; });
+  Object.keys(suite).sort().forEach(id => {
+    out[id] = suite[id];
+  });
   return out;
 };
 
@@ -164,7 +192,7 @@ const getCommonCss = () => _commonCss;
 const loadCommonCss = async (story: StoryT = mainStory): Promise<void> => {
   story.info('extractor', 'Extracting common CSS...');
   const cssPaths = await globby(_config.cssPatterns);
-  _commonCss = cssPaths.map((cssPath) => {
+  _commonCss = cssPaths.map(cssPath => {
     story.info('extractor', `Processing ${chalk.cyan.bold(cssPath)}...`);
     return fs.readFileSync(cssPath, 'utf8');
   });
@@ -177,7 +205,9 @@ const getSuiteCss = (filePath: string, story: StoryT): ?string => {
     story.debug('extractor', `Trying to read ${chalk.cyan.bold(cssPath)}...`);
     suiteCss = fs.readFileSync(cssPath, 'utf8');
     story.info('extractor', `Found custom CSS in ${chalk.cyan.bold(cssPath)}`);
-  } catch (err) { /* no file exists */ }
+  } catch (err) {
+    /* no file exists */
+  }
   return suiteCss;
 };
 
@@ -214,7 +244,7 @@ const buildFolderDict = (story: StoryT) => {
   const filePaths: Array<FilePathT> = Object.keys(_snapshotSuiteDict).sort();
 
   // Process all file paths
-  filePaths.forEach((filePath) => {
+  filePaths.forEach(filePath => {
     story.debug('extractor', `File: ${filePath}`);
     const folderPath: FolderPathT = path.dirname(filePath);
     if (folderPath === curFolderPath) {
@@ -232,7 +262,7 @@ const buildFolderDict = (story: StoryT) => {
       }
       if (!fFound) throw new Error('Error building path tree');
       nextDict[parentFolderPath].childrenFolderPaths.push(folderPath);
-      curFolder = nextDict[folderPath] = {
+      nextDict[folderPath] = {
         parentFolderPath,
         folderPath,
         dirty: false,
@@ -243,6 +273,7 @@ const buildFolderDict = (story: StoryT) => {
         childrenFolderPaths: [],
         childrenFolderDirtyFlags: [],
       };
+      curFolder = nextDict[folderPath];
       curFolderPath = folderPath;
     }
   });
@@ -259,11 +290,15 @@ const updateChildrenDirtyFlags = (
   folderPath: FolderPathT
 ): boolean => {
   const curFolder = folderDict[folderPath];
-  curFolder.suiteDirtyFlags = curFolder.filePaths.map((filePath) =>
-    _snapshotSuiteDict[filePath][DIRTY_ATTR]);
-  curFolder.childrenFolderDirtyFlags = curFolder.childrenFolderPaths.map((subFolderPath) =>
-    updateChildrenDirtyFlags(folderDict, suiteDict, subFolderPath));
-  curFolder.dirty = curFolder.suiteDirtyFlags.some(Boolean) ||
+  curFolder.suiteDirtyFlags = curFolder.filePaths.map(
+    filePath => _snapshotSuiteDict[filePath][DIRTY_ATTR]
+  );
+  curFolder.childrenFolderDirtyFlags = curFolder.childrenFolderPaths.map(
+    subFolderPath =>
+      updateChildrenDirtyFlags(folderDict, suiteDict, subFolderPath)
+  );
+  curFolder.dirty =
+    curFolder.suiteDirtyFlags.some(Boolean) ||
     curFolder.childrenFolderDirtyFlags.some(Boolean);
   return curFolder.dirty;
 };
@@ -276,16 +311,20 @@ const watchStart = (story: StoryT) => {
   _watchers = {};
   // const glob = _config.snapshotPatterns.concat(_config.cssPatterns);
   const options = {
-    ignored: /[\/\\]\./,
+    ignored: /[/\\]\./,
     ignoreInitial: true,
   };
   _watchers.css = chokidar.watch(_config.cssPatterns, options);
   _watchers.snap = chokidar.watch(_config.snapshotPatterns, options);
-  ['change', 'add', 'unlink'].forEach((type) => {
+  ['change', 'add', 'unlink'].forEach(type => {
     // $FlowFixMe
-    _watchers.css.on(type, (filePath) => { cssWatchEvent(type, filePath); });
+    _watchers.css.on(type, filePath => {
+      cssWatchEvent(type, filePath);
+    });
     // $FlowFixMe
-    _watchers.snap.on(type, (filePath) => { snapWatchEvent(type, filePath); });
+    _watchers.snap.on(type, filePath => {
+      snapWatchEvent(type, filePath);
+    });
   });
   story.info('extractor', 'Started watching over snapshot and CSS files');
 };
@@ -299,48 +338,55 @@ const watchStart = (story: StoryT) => {
 
 const cssWatchEvent = (type: string, filePath0: string) => {
   const filePath = slash(filePath0);
-  mainStory.debug('extractor', 'CSS watch fired: ' +
-    `${chalk.bold(type.toUpperCase())} ${chalk.cyan.bold(filePath)}`);
+  mainStory.debug(
+    'extractor',
+    'CSS watch fired: ' +
+      `${chalk.bold(type.toUpperCase())} ${chalk.cyan.bold(filePath)}`
+  );
   debouncedCssRefresh();
 };
 
-const debouncedCssRefresh = debounce(() =>
-  Promise.resolve()
-  .then(() => loadCommonCss())
-  .then(() => updateSnapshotCss())
-  .then(() => broadcastSignal())
-, 300);
+const debouncedCssRefresh = debounce(
+  () =>
+    Promise.resolve()
+      .then(() => loadCommonCss())
+      .then(() => updateSnapshotCss())
+      .then(() => broadcastSignal()),
+  300
+);
 
 const snapWatchEvent = (type: string, filePath0: string) => {
   const filePath = slash(filePath0);
-  mainStory.debug('extractor', 'Snapshot watch fired: ' +
-    `${chalk.bold(type.toUpperCase())} ${chalk.cyan.bold(filePath)}`);
+  mainStory.debug(
+    'extractor',
+    'Snapshot watch fired: ' +
+      `${chalk.bold(type.toUpperCase())} ${chalk.cyan.bold(filePath)}`
+  );
   Promise.resolve()
-  .then(() => {
-    const commonCss = getCommonCss();
-    switch (type) {
-      case 'change':
-      case 'add':
-        return Promise.resolve()
-        .then(() => loadSuite(filePath, commonCss, mainStory))
-        .then(() => buildFolderDict(mainStory));
-      case 'unlink':
-        return Promise.resolve()
-        .then(() => {
-          const suite = _snapshotSuiteDict[`-/${filePath.normalize()}`];
-          if (suite) {
-            suite[DIRTY_ATTR] = true;
-            suite[DELETED_ATTR] = true;
-            return buildFolderDict(mainStory);
-          }
-          return null;
-        });
-      default:
-        break;
-    }
-    return null;
-  })
-  .then(() => broadcastSignal());
+    .then(() => {
+      const commonCss = getCommonCss();
+      switch (type) {
+        case 'change':
+        case 'add':
+          return Promise.resolve()
+            .then(() => loadSuite(filePath, commonCss, mainStory))
+            .then(() => buildFolderDict(mainStory));
+        case 'unlink':
+          return Promise.resolve().then(() => {
+            const suite = _snapshotSuiteDict[`-/${filePath.normalize()}`];
+            if (suite) {
+              suite[DIRTY_ATTR] = true;
+              suite[DELETED_ATTR] = true;
+              return buildFolderDict(mainStory);
+            }
+            return null;
+          });
+        default:
+          break;
+      }
+      return null;
+    })
+    .then(() => broadcastSignal());
 };
 
 const broadcastSignal = () => {
@@ -356,22 +402,20 @@ const getFolder = (folderPath: FolderPathT): ?FolderT =>
 const getSnapshotSuite = (filePath: FilePathT): ?SnapshotSuiteT =>
   _snapshotSuiteDict[filePath.normalize()];
 
-const forEachSnapshot = (suite: SnapshotSuiteT, cb: (snapshot: SnapshotT) => any) => {
-  Object.keys(suite).forEach((id) => {
-    if (id === FOLDER_PATH_ATTR || id === DIRTY_ATTR || id === DELETED_ATTR) return;
+const forEachSnapshot = (
+  suite: SnapshotSuiteT,
+  cb: (snapshot: SnapshotT) => any
+) => {
+  Object.keys(suite).forEach(id => {
+    if (id === FOLDER_PATH_ATTR || id === DIRTY_ATTR || id === DELETED_ATTR)
+      return;
     cb(suite[id]);
   });
 };
 
-const slash = (str) => str.replace(/\\/g, '/');
+const slash = str => str.replace(/\\/g, '/');
 
 // =============================================
 // Public API
 // =============================================
-export {
-  configure,
-  start,
-  getFolder,
-  getSnapshotSuite,
-  saveAsBaseline,
-};
+export { configure, start, getFolder, getSnapshotSuite, saveAsBaseline };

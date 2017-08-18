@@ -3,9 +3,10 @@
 const WAIT_INTERVAL = 25;
 const waiters = {};
 
-const delay = (ms: number) => new Promise((resolve) => {
-  setTimeout(resolve, ms);
-});
+const delay = (ms: number) =>
+  new Promise(resolve => {
+    setTimeout(resolve, ms);
+  });
 
 const waitUntil = async (
   cb: () => boolean,
@@ -32,8 +33,4 @@ const isWaiting = (id?: string) => {
   return Object.keys(waiters).length !== 0;
 };
 
-export {
-  delay,
-  waitUntil,
-  isWaiting,
-};
+export { delay, waitUntil, isWaiting };

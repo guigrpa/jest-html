@@ -9,27 +9,28 @@ jest.mock('react-dom');
 
 describe('Sidebar', () => {
   it('renders correctly', () => {
-    const tree = renderer.create(
-      <Sidebar
-        title="Title"
-        subtitle="Subtitle"
-        linkBack="link/to/parent/folder"
-      >
-        {['one', 'two']}
-      </Sidebar>
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <Sidebar
+          title="Title"
+          subtitle="Subtitle"
+          linkBack="link/to/parent/folder"
+        >
+          {['one', 'two']}
+        </Sidebar>
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('renders correctly without linkBack', () => {
-    const tree = renderer.create(
-      <Sidebar
-        title="Title"
-        subtitle="Subtitle"
-      >
-        {['one', 'two']}
-      </Sidebar>
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <Sidebar title="Title" subtitle="Subtitle">
+          {['one', 'two']}
+        </Sidebar>
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

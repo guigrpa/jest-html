@@ -4,15 +4,16 @@
 import React from 'react';
 import { Redirect } from 'react-router';
 import {
-  Floats, Hints,
-  Spinner, Icon, Button,
+  Floats,
+  Hints,
+  Spinner,
+  Icon,
+  Button,
   flexContainer,
-  hintDefine, hintShow,
+  hintDefine,
+  hintShow,
 } from 'giu';
-import type {
-  FolderT,
-  SnapshotSuiteT,
-} from '../../common/types';
+import type { FolderT, SnapshotSuiteT } from '../../common/types';
 import { UI } from '../gral/constants';
 import { waitUntil } from '../gral/helpers';
 import Sidebar from './110-sidebar';
@@ -23,18 +24,18 @@ import LargeMessage from './200-largeMessage';
 require('./010-app.sass');
 
 // const breakAtSlashes = (str) => str.replace(/\//g, '/\u200B');
-const breakAtDots = (str) => str.replace(/\./g, '.\u200B');
-const lastSegment = (path) => {
+const breakAtDots = str => str.replace(/\./g, '.\u200B');
+const lastSegment = path => {
   if (!path) return '';
   const segments = path.split('/');
   return segments[segments.length - 1];
 };
-const snapshotName = (id) => {
+const snapshotName = id => {
   const segments = id.split(' ');
   return segments.slice(0, segments.length - 1).join(' ');
 };
 
-const _escape = (str) => encodeURIComponent(str);
+const _escape = str => encodeURIComponent(str);
 
 // ==========================================
 // Component declarations
@@ -45,7 +46,7 @@ type PropsT = {
   fetchedItem: ?(FolderT | SnapshotSuiteT),
   fetchedItemPath: ?string,
   error: ?string,
-  onRedirectToRoot: () => void;
+  onRedirectToRoot: () => void,
   fRedirectToRoot: boolean,
   query: ?Object,
   saveAsBaseline: (snapshotId: string) => any,
@@ -69,7 +70,9 @@ class AppContents extends React.PureComponent {
     };
   }
 
-  componentDidMount() { this.hintIfNeeded(); }
+  componentDidMount() {
+    this.hintIfNeeded();
+  }
 
   // ------------------------------------------
   render() {
@@ -77,16 +80,22 @@ class AppContents extends React.PureComponent {
     if (this.props.error) {
       return (
         <LargeMessage>
-          <Icon icon="warning" disabled />{' '}<b>An error occurred:</b><br />
-          {this.props.error}<br />
+          <Icon icon="warning" disabled /> <b>An error occurred:</b>
+          <br />
+          {this.props.error}
+          <br />
           <Button onClick={this.props.onRedirectToRoot}>
-            <Icon icon="home" disabled />{' '}Home
+            <Icon icon="home" disabled /> Home
           </Button>
         </LargeMessage>
       );
     }
     if (!this.props.fetchedItem) {
-      return <LargeMessage><Spinner />&nbsp;Loading…</LargeMessage>;
+      return (
+        <LargeMessage>
+          <Spinner />&nbsp;Loading…
+        </LargeMessage>
+      );
     }
     return (
       <div style={style.outer}>
@@ -102,18 +111,21 @@ class AppContents extends React.PureComponent {
   renderSidebar() {
     const fFolder = this.props.fetchedItemType === 'FOLDER';
     const { fetchedItemPath } = this.props;
-    const { contents, linkBack } = fFolder ? this.renderFolder() : this.renderSuite();
+    const { contents, linkBack } = fFolder
+      ? this.renderFolder()
+      : this.renderSuite();
     let title;
     if (fFolder) {
       const folder: FolderT = (this.props.fetchedItem: any);
-      title = folder.parentFolderPath != null
-      ? <span>
-          <Icon icon="folder-open-o" style={style.titleBarIcon} />&nbsp;
-          {lastSegment(fetchedItemPath)}
-        </span>
-      : <span>
-          <Icon icon="home" style={style.titleBarIcon} />&nbsp;Root
-        </span>;
+      title =
+        folder.parentFolderPath != null
+          ? <span>
+              <Icon icon="folder-open-o" style={style.titleBarIcon} />&nbsp;
+              {lastSegment(fetchedItemPath)}
+            </span>
+          : <span>
+              <Icon icon="home" style={style.titleBarIcon} />&nbsp;Root
+            </span>;
     } else {
       title = (
         <span>
@@ -174,9 +186,10 @@ class AppContents extends React.PureComponent {
         />
       );
     });
-    const linkBack = folder.parentFolderPath != null
-      ? `/folder/${folder.parentFolderPath}`
-      : null;
+    const linkBack =
+      folder.parentFolderPath != null
+        ? `/folder/${folder.parentFolderPath}`
+        : null;
     return { contents, linkBack };
   }
 
@@ -185,8 +198,9 @@ class AppContents extends React.PureComponent {
     const { query } = this.props;
     const contents = [];
     const groups = {};
-    Object.keys(suite).forEach((id) => {
-      if (id === '__folderPath' || id === '__dirty' || id === '__deleted') return;
+    Object.keys(suite).forEach(id => {
+      if (id === '__folderPath' || id === '__dirty' || id === '__deleted')
+        return;
       const name = snapshotName(id);
       const snapshot = suite[id];
       if (groups[name]) {
@@ -195,17 +209,30 @@ class AppContents extends React.PureComponent {
         groups[name] = { snapshots: [snapshot] };
       }
     });
-    Object.keys(groups).forEach((name) => {
+    Object.keys(groups).forEach(name => {
       const { snapshots } = groups[name];
       if (snapshots.length === 1) {
         const snapshot = snapshots[0];
         const { id, dirty, deleted } = snapshot;
-        contents.push(this.renderSnapshotSidebarItem(
-          id, snapshotName(id), dirty, deleted, query));
+        contents.push(
+          this.renderSnapshotSidebarItem(
+            id,
+            snapshotName(id),
+            dirty,
+            deleted,
+            query
+          )
+        );
       } else {
         const items = snapshots.map(({ id, dirty, deleted }) => {
           const label = id.slice(name.length).trim();
-          return this.renderSnapshotSidebarItem(id, label, dirty, deleted, query);
+          return this.renderSnapshotSidebarItem(
+            id,
+            label,
+            dirty,
+            deleted,
+            query
+          );
         });
         contents.push(
           <SidebarGroup key={name} name={name}>
@@ -248,7 +275,12 @@ class AppContents extends React.PureComponent {
     const { fetchedItemType, fetchedItemPath } = this.props;
     let snapshot;
     let key = 'preview';
-    if (fetchedItemType === 'SUITE' && query && query.id != null && fetchedItemPath) {
+    if (
+      fetchedItemType === 'SUITE' &&
+      query &&
+      query.id != null &&
+      fetchedItemPath
+    ) {
       const suite: SnapshotSuiteT = (this.props.fetchedItem: any);
       snapshot = suite[query.id];
       key = `${fetchedItemPath}_${query.id}`;
@@ -272,15 +304,27 @@ class AppContents extends React.PureComponent {
   }
 
   // ------------------------------------------
-  toggleRaw = () => { this.setState({ fRaw: !this.state.fRaw }); }
-  showBaseline = () => { this.setState({ fShowBaseline: true }); }
-  hideBaseline = () => { this.setState({ fShowBaseline: false }); }
+  toggleRaw = () => {
+    this.setState({ fRaw: !this.state.fRaw });
+  };
+  showBaseline = () => {
+    this.setState({ fShowBaseline: true });
+  };
+  hideBaseline = () => {
+    this.setState({ fShowBaseline: false });
+  };
 
   // ------------------------------------------
   hintIfNeeded = async () => {
     try {
-      await waitUntil(() => !!document.getElementById('jh-sidebar'), 2000, 'hintMain');
-    } catch (err) { return; }
+      await waitUntil(
+        () => !!document.getElementById('jh-sidebar'),
+        2000,
+        'hintMain'
+      );
+    } catch (err) {
+      return;
+    }
     const elements = () => {
       const out = [];
       let node;
@@ -290,22 +334,30 @@ class AppContents extends React.PureComponent {
         const x = bcr.width / 2;
         const y = window.innerHeight / 2;
         out.push({
-          type: 'LABEL', x, y, align: 'center',
+          type: 'LABEL',
+          x,
+          y,
+          align: 'center',
           children: 'Navigate through folders, suites and snapshots',
         });
         out.push({
-          type: 'ARROW', from: { x, y },
+          type: 'ARROW',
+          from: { x, y },
           to: { x, y: y - 40 },
           counterclockwise: true,
         });
 
-        const x2 = bcr.width + ((window.innerWidth - bcr.width) / 2);
+        const x2 = bcr.width + (window.innerWidth - bcr.width) / 2;
         out.push({
-          type: 'LABEL', x: x2, y, align: 'center',
+          type: 'LABEL',
+          x: x2,
+          y,
+          align: 'center',
           children: 'Previews will appear here',
         });
         out.push({
-          type: 'ARROW', from: { x: x2, y },
+          type: 'ARROW',
+          from: { x: x2, y },
           to: { x: x2, y: y - 40 },
           counterclockwise: true,
         });
@@ -314,13 +366,17 @@ class AppContents extends React.PureComponent {
       if (node) {
         const bcr = node.getBoundingClientRect();
         const x = bcr.right + 60;
-        const y = bcr.top + (bcr.height / 2);
+        const y = bcr.top + bcr.height / 2;
         out.push({
-          type: 'LABEL', x, y, align: 'left',
+          type: 'LABEL',
+          x,
+          y,
+          align: 'left',
           children: 'Toggle between raw snapshot and HTML preview',
         });
         out.push({
-          type: 'ARROW', from: { x, y },
+          type: 'ARROW',
+          from: { x, y },
           to: { x: bcr.right + 6, y },
         });
       }
@@ -328,7 +384,7 @@ class AppContents extends React.PureComponent {
     };
     hintDefine('main', { elements, closeLabel: 'Enjoy testing!' });
     hintShow('main');
-  }
+  };
 }
 
 // ------------------------------------------

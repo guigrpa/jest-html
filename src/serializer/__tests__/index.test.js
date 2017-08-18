@@ -131,10 +131,7 @@ describe('Serializer', () => {
             {
               type: 'span',
               props: { a: true },
-              children: [
-                'JKL',
-                { type: 'span', children: ['MNO'] },
-              ],
+              children: ['JKL', { type: 'span', children: ['MNO'] }],
             },
           ],
         },

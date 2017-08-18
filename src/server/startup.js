@@ -26,16 +26,28 @@ process.on('SIGINT', () => {
 // ==============================================
 program
   .version(pkg.version)
-  .option('-f --snapshot-patterns [globs]',
+  .option(
+    '-f --snapshot-patterns [globs]',
     'Glob patterns for snapshot files (comma-separated)',
-    DEFAULT_SNAPSHOT_PATTERNS)
-  .option('-c --css-patterns [globs]',
+    DEFAULT_SNAPSHOT_PATTERNS
+  )
+  .option(
+    '-c --css-patterns [globs]',
     'Glob patterns for CSS stylesheets ' +
-    'that will be used for ALL snapshots (comma-separated)',
-    DEFAULT_CSS_PATTERNS)
-  .option('-p, --port [port]', 'Initial port number to use ' +
-    '(if unavailable, the next available one will be used)', Number, DEFAULT_PORT)
-  .option('--no-watch', 'Do not watch initially detected snapshot and css files')
+      'that will be used for ALL snapshots (comma-separated)',
+    DEFAULT_CSS_PATTERNS
+  )
+  .option(
+    '-p, --port [port]',
+    'Initial port number to use ' +
+      '(if unavailable, the next available one will be used)',
+    Number,
+    DEFAULT_PORT
+  )
+  .option(
+    '--no-watch',
+    'Do not watch initially detected snapshot and css files'
+  )
   .parse(process.argv);
 
 const cliOptions = program.opts();
@@ -47,8 +59,7 @@ mainStory.info('startup', 'CLI options:', { attach: cliOptions });
 let finalPort;
 let socketioServer;
 const httpInit = () =>
-  httpServer.init({ port: cliOptions.port })
-  .then((port) => {
+  httpServer.init({ port: cliOptions.port }).then(port => {
     finalPort = port;
     socketioServer = httpServer.getSocketioServer();
   });
@@ -63,7 +74,6 @@ const extractorInit = () => {
   return extractor.start();
 };
 
-Promise.resolve()
-.then(httpInit)
-.then(extractorInit)
-.then(() => { opn(`http://localhost:${finalPort}/`); });
+Promise.resolve().then(httpInit).then(extractorInit).then(() => {
+  opn(`http://localhost:${finalPort}/`);
+});

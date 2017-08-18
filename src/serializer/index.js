@@ -55,8 +55,8 @@ const IS_UNITLESS_NUMBER = {
   strokeOpacity: true,
   strokeWidth: true,
 };
-Object.keys(IS_UNITLESS_NUMBER).forEach((prop) => {
-  ['Webkit', 'ms', 'Moz', 'O'].forEach((prefix) => {
+Object.keys(IS_UNITLESS_NUMBER).forEach(prop => {
+  ['Webkit', 'ms', 'Moz', 'O'].forEach(prefix => {
     const styleName = prefix + prop.charAt(0).toUpperCase() + prop.substring(1);
     IS_UNITLESS_NUMBER[styleName] = IS_UNITLESS_NUMBER[prop];
   });
@@ -85,11 +85,16 @@ function test(object: any) {
   return object && !object.__visited && object.$$typeof === reactTestInstance;
 }
 
-function printMain(val: Object, print: Function, indent: Function, opts: Object) {
+function printMain(
+  val: Object,
+  print: Function,
+  indent: Function,
+  opts: Object
+) {
   const val2 = merge(val, {
     __visited: true,
     $$typeof: reactTestInstance,
-  });  // break infinite recursion
+  }); // break infinite recursion
   const snapContents = print(val2, print, indent, opts);
   const htmlContents = printInstance(val, print, indent, opts);
   return `${snapContents}\n${HTML_PREVIEW_SEPARATOR}\n${htmlContents}`;
@@ -113,17 +118,17 @@ function printInstance(instance, print, indent, opts) {
   let indent2 = indent;
   if (filteredProps.style && filteredProps.style.whiteSpace === 'pre') {
     opts2 = merge(opts, { edgeSpacing: '' });
-    indent2 = (str) => str;
+    indent2 = str => str;
   }
 
   const children = instance.children;
   if (children) {
     const printedChildren = printChildren(children, print, indent2, opts2);
-    result += `${opts2.edgeSpacing}${indent2(printedChildren)}` +
+    result +=
+      `${opts2.edgeSpacing}${indent2(printedChildren)}` +
       `${opts2.edgeSpacing}</${instance.type}>`;
   } else if (instance.type.toUpperCase() === 'TEXTAREA') {
-    result += `${(escapeHtml(instance.props.value) || '')}` +
-      `</${instance.type}>`;
+    result += `${escapeHtml(instance.props.value) || ''}</${instance.type}>`;
   } else if (numProps <= 1) {
     result += `</${instance.type}>`;
   } else {
@@ -135,7 +140,7 @@ function printInstance(instance, print, indent, opts) {
 
 function filterProps(props = {}) {
   const out = {};
-  Object.keys(props).forEach((name) => {
+  Object.keys(props).forEach(name => {
     const val = props[name];
     if (val == null) return;
     if (typeof val === 'string' || name === 'style' || val === true) {
@@ -148,32 +153,37 @@ function filterProps(props = {}) {
 function printProps(props, print, indent, opts) {
   const numProps = Object.keys(props).length;
   /* eslint-disable prefer-template */
-  const wrapProp = numProps <= 1
-    ? (name, val) => ` ${name}` + (val === undefined ? '' : `=${val}`)
-    : (name, val) => opts.spacing + indent(name) + (val === undefined ? '' : `=${val}`);
+  const wrapProp =
+    numProps <= 1
+      ? (name, val) => ` ${name}` + (val === undefined ? '' : `=${val}`)
+      : (name, val) =>
+          opts.spacing + indent(name) + (val === undefined ? '' : `=${val}`);
   /* eslint-enable prefer-template */
-  return Object.keys(props).sort().map((propName) => {
-    const propValue = props[propName];
-    if (propValue == null) return '';
+  return Object.keys(props)
+    .sort()
+    .map(propName => {
+      const propValue = props[propName];
+      if (propValue == null) return '';
 
-    let printedValue;
-    if (typeof propValue === 'string') {
-      printedValue = print(propValue);
-    } else if (propName === 'style') {
-      printedValue = printStyle(propValue, print);
-    } else if (propValue === true) {
-      printedValue = undefined;
-    } else {
-      return '';
-    }
+      let printedValue;
+      if (typeof propValue === 'string') {
+        printedValue = print(propValue);
+      } else if (propName === 'style') {
+        printedValue = printStyle(propValue, print);
+      } else if (propValue === true) {
+        printedValue = undefined;
+      } else {
+        return '';
+      }
 
-    let printedName = propName;
-    if (REACT_PROPS_TO_DOM_ATTRS[propName]) {
-      printedName = REACT_PROPS_TO_DOM_ATTRS[propName];
-    }
-    if (propValue === true) return wrapProp(printedName);
-    return wrapProp(printedName, printedValue);
-  }).join('');
+      let printedName = propName;
+      if (REACT_PROPS_TO_DOM_ATTRS[propName]) {
+        printedName = REACT_PROPS_TO_DOM_ATTRS[propName];
+      }
+      if (propValue === true) return wrapProp(printedName);
+      return wrapProp(printedName, printedValue);
+    })
+    .join('');
 }
 
 function printStyle(style, print) {
@@ -182,7 +192,7 @@ function printStyle(style, print) {
   }
 
   let css = '';
-  Object.keys(style).sort().forEach((styleName) => {
+  Object.keys(style).sort().forEach(styleName => {
     const styleValue = style[styleName];
     if (styleValue === undefined) return;
     css += hyphenateStyleName(styleName);
@@ -204,12 +214,9 @@ function printStyleValue(name, value) {
 }
 
 function printChildren(children, print, indent, opts) {
-  return children.map((child) => printInstance(child, print, indent, opts))
+  return children
+    .map(child => printInstance(child, print, indent, opts))
     .join(opts.edgeSpacing);
 }
 
-export {
-  test,
-  printMain as print,
-  HTML_PREVIEW_SEPARATOR,
-};
+export { test, printMain as print, HTML_PREVIEW_SEPARATOR };

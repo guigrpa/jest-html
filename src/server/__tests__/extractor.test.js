@@ -10,13 +10,8 @@ describe('extractor', () => {
   describe('with no RT features', () => {
     beforeEach(() => {
       extractor.configure({
-        snapshotPatterns: [
-          'test/**/*.snap',
-          'example.js.snap',
-        ],
-        cssPatterns: [
-          'test/snapshot.css',
-        ],
+        snapshotPatterns: ['test/**/*.snap', 'example.js.snap'],
+        cssPatterns: ['test/snapshot.css'],
         watch: false,
       });
     });
@@ -33,11 +28,12 @@ describe('extractor', () => {
   });
 });
 
-const normalize = (str) => str.normalize('NFKD');
-const normalizeFolder = (folder) => ({
+const normalize = str => str.normalize('NFKD');
+const normalizeFolder = folder => ({
   childrenFolderPaths: folder.childrenFolderPaths.map(normalize),
   filePaths: folder.filePaths.map(normalize),
   folderPath: folder.folderPath != null ? normalize(folder.folderPath) : null,
-  parentFolderPath: folder.parentFolderPath != null ? normalize(folder.parentFolderPath) : null,
+  parentFolderPath:
+    folder.parentFolderPath != null ? normalize(folder.parentFolderPath) : null,
   dirty: folder.dirty,
 });

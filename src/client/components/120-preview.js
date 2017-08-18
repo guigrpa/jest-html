@@ -26,13 +26,14 @@ const Preview = ({ snapshot, fRaw, fShowBaseline }: PropsT) => {
       </div>
     );
   }
-  const snapshotData = fShowBaseline && snapshot.baseline
-    ? snapshot.baseline
-    : snapshot;
+  const snapshotData =
+    fShowBaseline && snapshot.baseline ? snapshot.baseline : snapshot;
   if (fRaw || !snapshotData.html) {
     return (
       <div style={style.outer}>
-        <pre style={style.outerNonHtml}>{snapshotData.snap}</pre>
+        <pre style={style.outerNonHtml}>
+          {snapshotData.snap}
+        </pre>
       </div>
     );
   }
@@ -40,10 +41,10 @@ const Preview = ({ snapshot, fRaw, fShowBaseline }: PropsT) => {
   const contents = { __html: snapshotData.html };
   /* eslint-disable react/no-danger */
   return (
-    <Frame
-      style={style.frame}
-    >
-      <style>{css}</style>
+    <Frame style={style.frame}>
+      <style>
+        {css}
+      </style>
       <div dangerouslySetInnerHTML={contents} />
     </Frame>
   );
@@ -53,7 +54,7 @@ const Preview = ({ snapshot, fRaw, fShowBaseline }: PropsT) => {
 // ------------------------------------------
 const style = {
   outer: flexItem(1, {
-    transform: 'translateZ(0)',  // isolate it!
+    transform: 'translateZ(0)', // isolate it!
     maxHeight: '100vh',
     overflow: 'auto',
   }),

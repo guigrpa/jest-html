@@ -9,12 +9,14 @@ jest.mock('react-dom');
 
 describe('LargeMessage', () => {
   it('renders correctly', () => {
-    const tree = renderer.create(
-      <LargeMessage>
-        An error has occurred:<br />
-        Undefined is not a function!
-      </LargeMessage>
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <LargeMessage>
+          An error has occurred:<br />
+          Undefined is not a function!
+        </LargeMessage>
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

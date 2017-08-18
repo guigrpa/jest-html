@@ -24,114 +24,123 @@ jest.mock('../115-sidebarItem', () => {
   return mock;
 });
 jest.mock('../120-preview', () => require('./mockComponent')('Preview'));
-jest.mock('../200-largeMessage', () => require('./mockComponent')('LargeMessage'));
+jest.mock('../200-largeMessage', () =>
+  require('./mockComponent')('LargeMessage')
+);
 
 describe('AppContents', () => {
-  beforeEach(() => { require('whatwg-fetch'); });
+  beforeEach(() => {
+    require('whatwg-fetch');
+  });
 
   it('can redirect to root if needed', () => {
-    const tree = renderer.create(
-      <AppContents
-        fRedirectToRoot
-      />
-    ).toJSON();
+    const tree = renderer.create(<AppContents fRedirectToRoot />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('renders error messages', () => {
-    const tree = renderer.create(
-      <AppContents
-        error="Something horrible!"
-      />
-    ).toJSON();
+    const tree = renderer
+      .create(<AppContents error="Something horrible!" />)
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('renders a spinner while loading', () => {
-    const tree = renderer.create(
-      <AppContents
-        error={null}
-        fetchedItem={null}
-      />
-    ).toJSON();
+    const tree = renderer
+      .create(<AppContents error={null} fetchedItem={null} />)
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('renders a folder with subfolders correctly', () => {
-    const tree = renderer.create(
-      <AppContents
-        fetchedItemType="FOLDER"
-        fetchedItem={FOLDER_WITH_SUBFOLDERS}
-        fetchedItemPath="-/path/to/snapshots"
-      />
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <AppContents
+          fetchedItemType="FOLDER"
+          fetchedItem={FOLDER_WITH_SUBFOLDERS}
+          fetchedItemPath="-/path/to/snapshots"
+        />
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('renders a folder with suites correctly', () => {
-    const tree = renderer.create(
-      <AppContents
-        fetchedItemType="FOLDER"
-        fetchedItem={FOLDER_WITH_SUITES}
-        fetchedItemPath="-/path/to/snapshots"
-      />
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <AppContents
+          fetchedItemType="FOLDER"
+          fetchedItem={FOLDER_WITH_SUITES}
+          fetchedItemPath="-/path/to/snapshots"
+        />
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('renders a folder with subfolders and suites correctly', () => {
-    const tree = renderer.create(
-      <AppContents
-        fetchedItemType="FOLDER"
-        fetchedItem={FOLDER_WITH_SUBFOLDERS_AND_SUITES}
-        fetchedItemPath="-/path/to/snapshots"
-      />
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <AppContents
+          fetchedItemType="FOLDER"
+          fetchedItem={FOLDER_WITH_SUBFOLDERS_AND_SUITES}
+          fetchedItemPath="-/path/to/snapshots"
+        />
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('renders the root folder correctly', () => {
-    const tree = renderer.create(
-      <AppContents
-        fetchedItemType="FOLDER"
-        fetchedItem={ROOT_FOLDER}
-        fetchedItemPath="-"
-      />
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <AppContents
+          fetchedItemType="FOLDER"
+          fetchedItem={ROOT_FOLDER}
+          fetchedItemPath="-"
+        />
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('renders a suite with individual snapshots correctly', () => {
-    const tree = renderer.create(
-      <AppContents
-        fetchedItemType="SUITE"
-        fetchedItem={SUITE_WITH_INDIVIDUAL_SNAPSHOTS}
-        fetchedItemPath="-/path/to/folder/suite1.js.snap"
-      />
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <AppContents
+          fetchedItemType="SUITE"
+          fetchedItem={SUITE_WITH_INDIVIDUAL_SNAPSHOTS}
+          fetchedItemPath="-/path/to/folder/suite1.js.snap"
+        />
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('renders a suite with grouped snapshots correctly', () => {
-    const tree = renderer.create(
-      <AppContents
-        fetchedItemType="SUITE"
-        fetchedItem={SUITE_WITH_GROUPS_AND_INDIVIDUAL_SNAPSHOTS}
-        fetchedItemPath="-/path/to/folder/suite1.js.snap"
-      />
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <AppContents
+          fetchedItemType="SUITE"
+          fetchedItem={SUITE_WITH_GROUPS_AND_INDIVIDUAL_SNAPSHOTS}
+          fetchedItemPath="-/path/to/folder/suite1.js.snap"
+        />
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('renders a suite with a selected snapshot', () => {
-    const tree = renderer.create(
-      <AppContents
-        fetchedItemType="SUITE"
-        fetchedItem={SUITE_WITH_GROUPS_AND_INDIVIDUAL_SNAPSHOTS}
-        fetchedItemPath="-/path/to/folder/suite1.js.snap"
-        query={{ id: 'individual1 1' }}
-      />
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <AppContents
+          fetchedItemType="SUITE"
+          fetchedItem={SUITE_WITH_GROUPS_AND_INDIVIDUAL_SNAPSHOTS}
+          fetchedItemPath="-/path/to/folder/suite1.js.snap"
+          query={{ id: 'individual1 1' }}
+        />
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

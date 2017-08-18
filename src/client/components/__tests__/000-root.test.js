@@ -12,13 +12,13 @@ jest.mock('react-router', () => ({
   Miss: require('./mockComponent')('Miss'),
 }));
 jest.mock('../010-app', () => require('./mockComponent')('App'));
-jest.mock('../200-largeMessage', () => require('./mockComponent')('LargeMessage'));
+jest.mock('../200-largeMessage', () =>
+  require('./mockComponent')('LargeMessage')
+);
 
 describe('Root', () => {
   it('renders correctly', () => {
-    const tree = renderer.create(
-      <Root />
-    ).toJSON();
+    const tree = renderer.create(<Root />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

@@ -2,13 +2,13 @@
 
 /* eslint-disable import/prefer-default-export */
 
-import path                 from 'path';
-import http                 from 'http';
+import path from 'path';
+import http from 'http';
 import { mainStory, chalk } from 'storyboard';
-import express              from 'express';
-import bodyParser           from 'body-parser';
-import socketio             from 'socket.io';
-import * as extractor       from './extractor';
+import express from 'express';
+import bodyParser from 'body-parser';
+import socketio from 'socket.io';
+import * as extractor from './extractor';
 
 let webpack;
 let webpackDevMiddleware;
@@ -16,10 +16,10 @@ let webpackHotMiddleware;
 let webpackConfig;
 /* eslint-disable global-require */
 if (process.env.NODE_ENV !== 'production') {
-  webpack              = require('webpack');
+  webpack = require('webpack');
   webpackDevMiddleware = require('webpack-dev-middleware');
   webpackHotMiddleware = require('webpack-hot-middleware');
-  webpackConfig        = require('./webpackConfig').default;
+  webpackConfig = require('./webpackConfig').default;
 }
 /* eslint-enable global-require */
 
@@ -29,21 +29,21 @@ const ABS_ASSET_PATH = path.resolve(__dirname, ASSET_PATH);
 let _socketioServer;
 
 // Returns the final port that was found free
-function init(options: {|
-  port: number,
-|}): Promise<number> {
+function init(options: {| port: number |}): Promise<number> {
   // Disable flow on Express
   const expressApp: any = express();
 
   // Webpack middleware (for development)
   if (process.env.NODE_ENV !== 'production') {
     const compiler = webpack(webpackConfig);
-    expressApp.use(webpackDevMiddleware(compiler, {
-      noInfo: true,
-      quiet: false,
-      publicPath: webpackConfig.output.publicPath,
-      stats: { colors: true },
-    }));
+    expressApp.use(
+      webpackDevMiddleware(compiler, {
+        noInfo: true,
+        quiet: false,
+        publicPath: webpackConfig.output.publicPath,
+        stats: { colors: true },
+      })
+    );
     expressApp.use(webpackHotMiddleware(compiler));
   }
 
@@ -60,20 +60,26 @@ function init(options: {|
 
   // API
   expressApp.post('/api/folder', (req, res) => {
-    mainStory.debug('http', `REQ: ${chalk.cyan('/api/folder')}`,
-      { attach: req.body, attachInline: true });
+    mainStory.debug('http', `REQ: ${chalk.cyan('/api/folder')}`, {
+      attach: req.body,
+      attachInline: true,
+    });
     const { folderPath } = req.body;
     res.json(extractor.getFolder(folderPath));
   });
   expressApp.post('/api/suite', (req, res) => {
-    mainStory.debug('http', `REQ: ${chalk.cyan('/api/suite ')}`,
-      { attach: req.body, attachInline: true });
+    mainStory.debug('http', `REQ: ${chalk.cyan('/api/suite ')}`, {
+      attach: req.body,
+      attachInline: true,
+    });
     const { filePath } = req.body;
     res.json(extractor.getSnapshotSuite(filePath));
   });
   expressApp.post('/api/saveAsBaseline', (req, res) => {
-    mainStory.debug('http', `REQ: ${chalk.cyan('/api/saveAsBaseline ')}`,
-      { attach: req.body, attachInline: true });
+    mainStory.debug('http', `REQ: ${chalk.cyan('/api/saveAsBaseline ')}`, {
+      attach: req.body,
+      attachInline: true,
+    });
     const { filePath, id } = req.body;
     extractor.saveAsBaseline(filePath, id);
     res.json({});
@@ -122,7 +128,4 @@ const getSocketioServer = () => _socketioServer;
 // =============================================
 // Public API
 // =============================================
-export {
-  init,
-  getSocketioServer,
-};
+export { init, getSocketioServer };

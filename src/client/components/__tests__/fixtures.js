@@ -15,19 +15,12 @@ export const FOLDER_WITH_SUBFOLDERS_AND_SUITES = merge(FOLDER_BASE, {
     '-/path/to/folder/suite2.snap',
     '-/path/to/folder/suite3.snap',
   ],
-  suiteDirtyFlags: [
-    false,
-    false,
-    false,
-  ],
+  suiteDirtyFlags: [false, false, false],
   childrenFolderPaths: [
     '-/path/to/folder/super/nested/folder',
     '-/path/to/folder/subdir',
   ],
-  childrenFolderDirtyFlags: [
-    false,
-    false,
-  ],
+  childrenFolderDirtyFlags: [false, false],
 });
 
 export const FOLDER_WITH_SUBFOLDERS = merge(FOLDER_BASE, {
@@ -35,10 +28,7 @@ export const FOLDER_WITH_SUBFOLDERS = merge(FOLDER_BASE, {
     '-/path/to/folder/super/nested/folder',
     '-/path/to/folder/subdir',
   ],
-  childrenFolderDirtyFlags: [
-    false,
-    false,
-  ],
+  childrenFolderDirtyFlags: [false, false],
 });
 
 export const FOLDER_WITH_SUITES = merge(FOLDER_BASE, {
@@ -47,11 +37,7 @@ export const FOLDER_WITH_SUITES = merge(FOLDER_BASE, {
     '-/path/to/folder/suite2.snap',
     '-/path/to/folder/suite3.snap',
   ],
-  suiteDirtyFlags: [
-    false,
-    false,
-    false,
-  ],
+  suiteDirtyFlags: [false, false, false],
 });
 
 export const ROOT_FOLDER = {
@@ -59,14 +45,8 @@ export const ROOT_FOLDER = {
   filePaths: [],
   suiteDirtyFlags: [],
   parentFolderPath: null,
-  childrenFolderPaths: [
-    '-/path/to/folder',
-    '-/path/to/folder2',
-  ],
-  childrenFolderDirtyFlags: [
-    false,
-    false,
-  ],
+  childrenFolderPaths: ['-/path/to/folder', '-/path/to/folder2'],
+  childrenFolderDirtyFlags: [false, false],
 };
 
 export const SUITE_WITH_INDIVIDUAL_SNAPSHOTS = {

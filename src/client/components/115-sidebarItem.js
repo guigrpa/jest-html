@@ -4,10 +4,15 @@
 import React from 'react';
 import { Link } from 'react-router';
 import {
-  Icon, hoverable,
-  flexContainer, flexItem,
-  darken, lighten,
-  isHintShown, hintDefine, hintShow,
+  Icon,
+  hoverable,
+  flexContainer,
+  flexItem,
+  darken,
+  lighten,
+  isHintShown,
+  hintDefine,
+  hintShow,
 } from 'giu';
 import { UI } from '../gral/constants';
 import { isWaiting } from '../gral/helpers';
@@ -41,8 +46,12 @@ class SidebarItem extends React.Component {
   props: Props;
   fDirtyIconShown: boolean;
 
-  componentDidMount() { this.hintIfNeeded(); }
-  componentDidUpdate() { this.hintIfNeeded(); }
+  componentDidMount() {
+    this.hintIfNeeded();
+  }
+  componentDidUpdate() {
+    this.hintIfNeeded();
+  }
 
   // ------------------------------------------
   render() {
@@ -60,7 +69,7 @@ class SidebarItem extends React.Component {
           <Icon icon={this.props.icon} />
         </div>
         <div style={flexItem(1)}>
-          {this.props.label}{' '}{deleted && <i>(deleted)</i>}
+          {this.props.label} {deleted && <i>(deleted)</i>}
         </div>
         {this.renderDirtyIcon()}
       </Link>
@@ -82,7 +91,7 @@ class SidebarItem extends React.Component {
           fSnapshot={!!showBaseline}
           onHoverStart={showBaseline}
           onHoverStop={hideBaseline}
-          onClick={(ev) => {
+          onClick={ev => {
             saveAsBaseline && saveAsBaseline(ev.target.id);
             hideBaseline && hideBaseline();
           }}
@@ -101,19 +110,23 @@ class SidebarItem extends React.Component {
       if (node) {
         const bcr = node.getBoundingClientRect();
         const x = bcr.left + bcr.width + 70;
-        const y = bcr.top + (bcr.height / 2);
+        const y = bcr.top + bcr.height / 2;
         out.push({
-          type: 'LABEL', x, y, align: 'left',
+          type: 'LABEL',
+          x,
+          y,
+          align: 'left',
           children: (
             <span>
-              Changed! <span style={style.highlight}>In snapshots,</span>{' '}hover
-              to see the baseline (old) version, and click to accept as
-              a new baseline
+              Changed! <span style={style.highlight}>In snapshots,</span> hover
+              to see the baseline (old) version, and click to accept as a new
+              baseline
             </span>
           ),
         });
         out.push({
-          type: 'ARROW', from: { x, y },
+          type: 'ARROW',
+          from: { x, y },
           to: { x: x - 70 + 5, y },
           counterclockwise: true,
         });
@@ -126,10 +139,7 @@ class SidebarItem extends React.Component {
   }
 }
 
-const SidebarGroup = ({ name, children }: {
-  name: string,
-  children?: any,
-}) =>
+const SidebarGroup = ({ name, children }: { name: string, children?: any }) =>
   <div style={style.group}>
     <div style={style.groupTitle}>
       {name}
@@ -137,39 +147,45 @@ const SidebarGroup = ({ name, children }: {
     {children}
   </div>;
 
-const DirtyIcon = hoverable(({
-  hovering,
-  id,
-  fSelected,
-  fSnapshot,
-  onHoverStart,
-  onHoverStop,
-  onClick,
-}) => {
-  let tooltip = 'Modified since the last time jest-html was launched';
-  if (hovering) {
-    tooltip += '. Click to save baseline. Press ESC to dismiss this tooltip';
-  } else {
-    tooltip += fSnapshot
-      ? '. Select this snapshot and hover to see baseline'
-      : '. Click for more details on what changed';
+const DirtyIcon = hoverable(
+  ({
+    hovering,
+    id,
+    fSelected,
+    fSnapshot,
+    onHoverStart,
+    onHoverStop,
+    onClick,
+  }) => {
+    let tooltip = 'Modified since the last time jest-html was launched';
+    if (hovering) {
+      tooltip += '. Click to save baseline. Press ESC to dismiss this tooltip';
+    } else {
+      tooltip += fSnapshot
+        ? '. Select this snapshot and hover to see baseline'
+        : '. Click for more details on what changed';
+    }
+    return (
+      <Icon
+        id={id}
+        icon="asterisk"
+        onMouseEnter={fSelected && onHoverStart}
+        onMouseLeave={fSelected && onHoverStop}
+        onClick={fSnapshot && onClick}
+        style={style.dirtyIcon({ fSelected, fSnapshot, fHovering: hovering })}
+        title={tooltip}
+      />
+    );
   }
-  return (
-    <Icon
-      id={id}
-      icon="asterisk"
-      onMouseEnter={fSelected && onHoverStart}
-      onMouseLeave={fSelected && onHoverStop}
-      onClick={fSnapshot && onClick}
-      style={style.dirtyIcon({ fSelected, fSnapshot, fHovering: hovering })}
-      title={tooltip}
-    />
-  );
-});
+);
 
 // ------------------------------------------
 const style = {
-  outer: ({ fSelected, fHovered, fDeleted }: {
+  outer: ({
+    fSelected,
+    fHovered,
+    fDeleted,
+  }: {
     fSelected?: boolean,
     fHovered?: boolean,
     fDeleted?: boolean,
@@ -194,7 +210,8 @@ const style = {
   },
   dirtyIcon: ({ fSelected, fSnapshot, fHovering }) => {
     let color;
-    if (fSelected && fSnapshot && fHovering) color = lighten(UI.color.accentBg, 25);
+    if (fSelected && fSnapshot && fHovering)
+      color = lighten(UI.color.accentBg, 25);
     else if (fSelected && fSnapshot) color = UI.color.accentFg;
     else if (fSelected) color = lighten(UI.color.accentBg, 25);
     else if (fSnapshot) color = UI.color.accentBg;
@@ -223,7 +240,4 @@ const style = {
 // Public API
 // ==========================================
 export default hoverable(SidebarItem);
-export {
-  SidebarItem as _SidebarItem,
-  SidebarGroup,
-};
+export { SidebarItem as _SidebarItem, SidebarGroup };

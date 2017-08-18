@@ -15,11 +15,7 @@ const Root = () =>
       <Match exactly pattern="/" component={App} />
       <Match pattern="/suite/*" component={App} />
       <Match pattern="/folder/*" component={App} />
-      <Miss render={() => (
-        <LargeMessage>
-          Ooops! 404!
-        </LargeMessage>
-      )} />
+      <Miss render={() => <LargeMessage>Ooops! 404!</LargeMessage>} />
     </div>
   </BrowserRouter>;
 
