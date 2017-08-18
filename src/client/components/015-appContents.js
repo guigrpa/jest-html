@@ -262,7 +262,7 @@ class AppContents extends React.PureComponent {
         deleted={deleted}
         link={`/suite/${_escape(fetchedItemPath)}?id=${_escape(id)}`}
         icon="camera"
-        fSelected={query && query.id === id}
+        fSelected={!!query && query.id === id}
         showBaseline={this.showBaseline}
         hideBaseline={this.hideBaseline}
         saveAsBaseline={this.props.saveAsBaseline}

@@ -1,6 +1,8 @@
 // @flow
 
 /* eslint-env browser */
+/* eslint-disable react/no-multi-comp */
+
 import React from 'react';
 import { Link } from 'react-router';
 import {
@@ -44,6 +46,7 @@ type Props = {
 // ==========================================
 class SidebarItem extends React.Component {
   props: Props;
+  static defaultProps = {};
   fDirtyIconShown: boolean;
 
   componentDidMount() {
@@ -147,16 +150,20 @@ const SidebarGroup = ({ name, children }: { name: string, children?: any }) =>
     {children}
   </div>;
 
-const DirtyIcon = hoverable(
-  ({
-    hovering,
-    id,
-    fSelected,
-    fSnapshot,
-    onHoverStart,
-    onHoverStop,
-    onClick,
-  }) => {
+class _DirtyIcon extends React.Component {
+  props: any;
+  static defaultProps: any;
+
+  render() {
+    const {
+      hovering,
+      id,
+      fSelected,
+      fSnapshot,
+      onHoverStart,
+      onHoverStop,
+      onClick,
+    } = this.props;
     let tooltip = 'Modified since the last time jest-html was launched';
     if (hovering) {
       tooltip += '. Click to save baseline. Press ESC to dismiss this tooltip';
@@ -177,7 +184,8 @@ const DirtyIcon = hoverable(
       />
     );
   }
-);
+}
+const DirtyIcon = hoverable(_DirtyIcon);
 
 // ------------------------------------------
 const style = {

@@ -409,7 +409,9 @@ const forEachSnapshot = (
   Object.keys(suite).forEach(id => {
     if (id === FOLDER_PATH_ATTR || id === DIRTY_ATTR || id === DELETED_ATTR)
       return;
-    cb(suite[id]);
+    const snapshot = suite[id];
+    if (typeof snapshot !== 'object') return;
+    cb(snapshot);
   });
 };
 
