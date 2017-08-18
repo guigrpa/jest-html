@@ -1,18 +1,14 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
 exports[`AppContents can redirect to root if needed 1`] = `
 <div
   dataMockType="Redirect"
-  to="/"
->
+  to="/">
   <div
     style={
       Object {
         "color": "blue",
         "fontWeight": "bold",
       }
-    }
-  >
+    }>
     Redirect
   </div>
 </div>
@@ -35,8 +31,7 @@ exports[`AppContents renders a folder with subfolders and suites correctly 1`] =
       "flexDirection": "row",
       "minHeight": "100vh",
     }
-  }
->
+  }>
   <div
     className="giu-floats"
     style={
@@ -47,11 +42,9 @@ exports[`AppContents renders a folder with subfolders and suites correctly 1`] =
         "top": 0,
         "width": 0,
       }
-    }
-  />
+    } />
   <div
-    className="giu-hints"
-  />
+    className="giu-hints" />
   <div
     dataMockType="Sidebar"
     fRaw={false}
@@ -65,22 +58,19 @@ exports[`AppContents renders a folder with subfolders and suites correctly 1`] =
             Object {
               "cursor": "default",
             }
-          }
-        />
+          } />
          
         snapshots
       </span>
     }
-    toggleRaw={[Function]}
-  >
+    toggleRaw={[Function]}>
     <div
       style={
         Object {
           "color": "blue",
           "fontWeight": "bold",
         }
-      }
-    >
+      }>
       Sidebar
     </div>
     <div
@@ -90,16 +80,14 @@ exports[`AppContents renders a folder with subfolders and suites correctly 1`] =
       icon="folder-o"
       id="folder_-/path/to/folder/super/nested/folder"
       label="super/nested/folder"
-      link="/folder/-%2Fpath%2Fto%2Ffolder%2Fsuper%2Fnested%2Ffolder"
-    >
+      link="/folder/-%2Fpath%2Fto%2Ffolder%2Fsuper%2Fnested%2Ffolder">
       <div
         style={
           Object {
             "color": "blue",
             "fontWeight": "bold",
           }
-        }
-      >
+        }>
         SidebarItem
       </div>
     </div>
@@ -110,16 +98,14 @@ exports[`AppContents renders a folder with subfolders and suites correctly 1`] =
       icon="folder-o"
       id="folder_-/path/to/folder/subdir"
       label="subdir"
-      link="/folder/-%2Fpath%2Fto%2Ffolder%2Fsubdir"
-    >
+      link="/folder/-%2Fpath%2Fto%2Ffolder%2Fsubdir">
       <div
         style={
           Object {
             "color": "blue",
             "fontWeight": "bold",
           }
-        }
-      >
+        }>
         SidebarItem
       </div>
     </div>
@@ -130,16 +116,14 @@ exports[`AppContents renders a folder with subfolders and suites correctly 1`] =
       icon="file-o"
       id="suite_-/path/to/folder/suite1.snap"
       label="suite1.​snap"
-      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.snap"
-    >
+      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.snap">
       <div
         style={
           Object {
             "color": "blue",
             "fontWeight": "bold",
           }
-        }
-      >
+        }>
         SidebarItem
       </div>
     </div>
@@ -150,16 +134,14 @@ exports[`AppContents renders a folder with subfolders and suites correctly 1`] =
       icon="file-o"
       id="suite_-/path/to/folder/suite2.snap"
       label="suite2.​snap"
-      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite2.snap"
-    >
+      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite2.snap">
       <div
         style={
           Object {
             "color": "blue",
             "fontWeight": "bold",
           }
-        }
-      >
+        }>
         SidebarItem
       </div>
     </div>
@@ -170,16 +152,14 @@ exports[`AppContents renders a folder with subfolders and suites correctly 1`] =
       icon="file-o"
       id="suite_-/path/to/folder/suite3.snap"
       label="suite3.​snap"
-      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite3.snap"
-    >
+      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite3.snap">
       <div
         style={
           Object {
             "color": "blue",
             "fontWeight": "bold",
           }
-        }
-      >
+        }>
         SidebarItem
       </div>
     </div>
@@ -188,16 +168,14 @@ exports[`AppContents renders a folder with subfolders and suites correctly 1`] =
     dataMockType="Preview"
     fRaw={false}
     fShowBaseline={false}
-    snapshot={undefined}
-  >
+    snapshot={undefined}>
     <div
       style={
         Object {
           "color": "blue",
           "fontWeight": "bold",
         }
-      }
-    >
+      }>
       Preview
     </div>
   </div>
@@ -290,8 +268,7 @@ exports[`AppContents renders a folder with subfolders correctly 1`] = `
       "flexDirection": "row",
       "minHeight": "100vh",
     }
-  }
->
+  }>
   <div
     className="giu-floats"
     style={
@@ -302,11 +279,9 @@ exports[`AppContents renders a folder with subfolders correctly 1`] = `
         "top": 0,
         "width": 0,
       }
-    }
-  />
+    } />
   <div
-    className="giu-hints"
-  />
+    className="giu-hints" />
   <div
     dataMockType="Sidebar"
     fRaw={false}
@@ -320,22 +295,19 @@ exports[`AppContents renders a folder with subfolders correctly 1`] = `
             Object {
               "cursor": "default",
             }
-          }
-        />
+          } />
          
         snapshots
       </span>
     }
-    toggleRaw={[Function]}
-  >
+    toggleRaw={[Function]}>
     <div
       style={
         Object {
           "color": "blue",
           "fontWeight": "bold",
         }
-      }
-    >
+      }>
       Sidebar
     </div>
     <div
@@ -345,16 +317,14 @@ exports[`AppContents renders a folder with subfolders correctly 1`] = `
       icon="folder-o"
       id="folder_-/path/to/folder/super/nested/folder"
       label="super/nested/folder"
-      link="/folder/-%2Fpath%2Fto%2Ffolder%2Fsuper%2Fnested%2Ffolder"
-    >
+      link="/folder/-%2Fpath%2Fto%2Ffolder%2Fsuper%2Fnested%2Ffolder">
       <div
         style={
           Object {
             "color": "blue",
             "fontWeight": "bold",
           }
-        }
-      >
+        }>
         SidebarItem
       </div>
     </div>
@@ -365,16 +335,14 @@ exports[`AppContents renders a folder with subfolders correctly 1`] = `
       icon="folder-o"
       id="folder_-/path/to/folder/subdir"
       label="subdir"
-      link="/folder/-%2Fpath%2Fto%2Ffolder%2Fsubdir"
-    >
+      link="/folder/-%2Fpath%2Fto%2Ffolder%2Fsubdir">
       <div
         style={
           Object {
             "color": "blue",
             "fontWeight": "bold",
           }
-        }
-      >
+        }>
         SidebarItem
       </div>
     </div>
@@ -383,16 +351,14 @@ exports[`AppContents renders a folder with subfolders correctly 1`] = `
     dataMockType="Preview"
     fRaw={false}
     fShowBaseline={false}
-    snapshot={undefined}
-  >
+    snapshot={undefined}>
     <div
       style={
         Object {
           "color": "blue",
           "fontWeight": "bold",
         }
-      }
-    >
+      }>
       Preview
     </div>
   </div>
@@ -452,8 +418,7 @@ exports[`AppContents renders a folder with suites correctly 1`] = `
       "flexDirection": "row",
       "minHeight": "100vh",
     }
-  }
->
+  }>
   <div
     className="giu-floats"
     style={
@@ -464,11 +429,9 @@ exports[`AppContents renders a folder with suites correctly 1`] = `
         "top": 0,
         "width": 0,
       }
-    }
-  />
+    } />
   <div
-    className="giu-hints"
-  />
+    className="giu-hints" />
   <div
     dataMockType="Sidebar"
     fRaw={false}
@@ -482,22 +445,19 @@ exports[`AppContents renders a folder with suites correctly 1`] = `
             Object {
               "cursor": "default",
             }
-          }
-        />
+          } />
          
         snapshots
       </span>
     }
-    toggleRaw={[Function]}
-  >
+    toggleRaw={[Function]}>
     <div
       style={
         Object {
           "color": "blue",
           "fontWeight": "bold",
         }
-      }
-    >
+      }>
       Sidebar
     </div>
     <div
@@ -507,16 +467,14 @@ exports[`AppContents renders a folder with suites correctly 1`] = `
       icon="file-o"
       id="suite_-/path/to/folder/suite1.snap"
       label="suite1.​snap"
-      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.snap"
-    >
+      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.snap">
       <div
         style={
           Object {
             "color": "blue",
             "fontWeight": "bold",
           }
-        }
-      >
+        }>
         SidebarItem
       </div>
     </div>
@@ -527,16 +485,14 @@ exports[`AppContents renders a folder with suites correctly 1`] = `
       icon="file-o"
       id="suite_-/path/to/folder/suite2.snap"
       label="suite2.​snap"
-      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite2.snap"
-    >
+      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite2.snap">
       <div
         style={
           Object {
             "color": "blue",
             "fontWeight": "bold",
           }
-        }
-      >
+        }>
         SidebarItem
       </div>
     </div>
@@ -547,16 +503,14 @@ exports[`AppContents renders a folder with suites correctly 1`] = `
       icon="file-o"
       id="suite_-/path/to/folder/suite3.snap"
       label="suite3.​snap"
-      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite3.snap"
-    >
+      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite3.snap">
       <div
         style={
           Object {
             "color": "blue",
             "fontWeight": "bold",
           }
-        }
-      >
+        }>
         SidebarItem
       </div>
     </div>
@@ -565,16 +519,14 @@ exports[`AppContents renders a folder with suites correctly 1`] = `
     dataMockType="Preview"
     fRaw={false}
     fShowBaseline={false}
-    snapshot={undefined}
-  >
+    snapshot={undefined}>
     <div
       style={
         Object {
           "color": "blue",
           "fontWeight": "bold",
         }
-      }
-    >
+      }>
       Preview
     </div>
   </div>
@@ -639,16 +591,14 @@ exports[`AppContents renders a folder with suites correctly 1`] = `
 
 exports[`AppContents renders a spinner while loading 1`] = `
 <div
-  dataMockType="LargeMessage"
->
+  dataMockType="LargeMessage">
   <div
     style={
       Object {
         "color": "blue",
         "fontWeight": "bold",
       }
-    }
-  >
+    }>
     LargeMessage
   </div>
   <i
@@ -657,11 +607,9 @@ exports[`AppContents renders a spinner while loading 1`] = `
       Object {
         "color": undefined,
         "cursor": "pointer",
-        "fontSize": undefined,
         "letterSpacing": "normal",
       }
-    }
-  />
+    } />
    Loading…
 </div>
 ------------HTML PREVIEW---------------
@@ -686,8 +634,7 @@ exports[`AppContents renders a suite with a selected snapshot 1`] = `
       "flexDirection": "row",
       "minHeight": "100vh",
     }
-  }
->
+  }>
   <div
     className="giu-floats"
     style={
@@ -698,11 +645,9 @@ exports[`AppContents renders a suite with a selected snapshot 1`] = `
         "top": 0,
         "width": 0,
       }
-    }
-  />
+    } />
   <div
-    className="giu-hints"
-  />
+    className="giu-hints" />
   <div
     dataMockType="Sidebar"
     fRaw={false}
@@ -716,36 +661,31 @@ exports[`AppContents renders a suite with a selected snapshot 1`] = `
             Object {
               "cursor": "default",
             }
-          }
-        />
+          } />
          
         suite1
       </span>
     }
-    toggleRaw={[Function]}
-  >
+    toggleRaw={[Function]}>
     <div
       style={
         Object {
           "color": "blue",
           "fontWeight": "bold",
         }
-      }
-    >
+      }>
       Sidebar
     </div>
     <div
       dataMockType="SidebarGroup"
-      name="groupname"
-    >
+      name="groupname">
       <div
         style={
           Object {
             "color": "blue",
             "fontWeight": "bold",
           }
-        }
-      >
+        }>
         SidebarGroup
       </div>
       <div
@@ -759,16 +699,14 @@ exports[`AppContents renders a suite with a selected snapshot 1`] = `
         label="1"
         link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=groupname%201"
         saveAsBaseline={undefined}
-        showBaseline={[Function]}
-      >
+        showBaseline={[Function]}>
         <div
           style={
             Object {
               "color": "blue",
               "fontWeight": "bold",
             }
-          }
-        >
+          }>
           SidebarItem
         </div>
       </div>
@@ -783,16 +721,14 @@ exports[`AppContents renders a suite with a selected snapshot 1`] = `
         label="2"
         link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=groupname%202"
         saveAsBaseline={undefined}
-        showBaseline={[Function]}
-      >
+        showBaseline={[Function]}>
         <div
           style={
             Object {
               "color": "blue",
               "fontWeight": "bold",
             }
-          }
-        >
+          }>
           SidebarItem
         </div>
       </div>
@@ -808,16 +744,14 @@ exports[`AppContents renders a suite with a selected snapshot 1`] = `
       label="individual1"
       link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=individual1%201"
       saveAsBaseline={undefined}
-      showBaseline={[Function]}
-    >
+      showBaseline={[Function]}>
       <div
         style={
           Object {
             "color": "blue",
             "fontWeight": "bold",
           }
-        }
-      >
+        }>
         SidebarItem
       </div>
     </div>
@@ -832,16 +766,14 @@ exports[`AppContents renders a suite with a selected snapshot 1`] = `
       label="individual2"
       link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=individual2%201"
       saveAsBaseline={undefined}
-      showBaseline={[Function]}
-    >
+      showBaseline={[Function]}>
       <div
         style={
           Object {
             "color": "blue",
             "fontWeight": "bold",
           }
-        }
-      >
+        }>
         SidebarItem
       </div>
     </div>
@@ -858,16 +790,14 @@ exports[`AppContents renders a suite with a selected snapshot 1`] = `
         "id": "individual1 1",
         "snap": "contents3",
       }
-    }
-  >
+    }>
     <div
       style={
         Object {
           "color": "blue",
           "fontWeight": "bold",
         }
-      }
-    >
+      }>
       Preview
     </div>
   </div>
@@ -958,8 +888,7 @@ exports[`AppContents renders a suite with grouped snapshots correctly 1`] = `
       "flexDirection": "row",
       "minHeight": "100vh",
     }
-  }
->
+  }>
   <div
     className="giu-floats"
     style={
@@ -970,11 +899,9 @@ exports[`AppContents renders a suite with grouped snapshots correctly 1`] = `
         "top": 0,
         "width": 0,
       }
-    }
-  />
+    } />
   <div
-    className="giu-hints"
-  />
+    className="giu-hints" />
   <div
     dataMockType="Sidebar"
     fRaw={false}
@@ -988,36 +915,31 @@ exports[`AppContents renders a suite with grouped snapshots correctly 1`] = `
             Object {
               "cursor": "default",
             }
-          }
-        />
+          } />
          
         suite1
       </span>
     }
-    toggleRaw={[Function]}
-  >
+    toggleRaw={[Function]}>
     <div
       style={
         Object {
           "color": "blue",
           "fontWeight": "bold",
         }
-      }
-    >
+      }>
       Sidebar
     </div>
     <div
       dataMockType="SidebarGroup"
-      name="groupname"
-    >
+      name="groupname">
       <div
         style={
           Object {
             "color": "blue",
             "fontWeight": "bold",
           }
-        }
-      >
+        }>
         SidebarGroup
       </div>
       <div
@@ -1031,16 +953,14 @@ exports[`AppContents renders a suite with grouped snapshots correctly 1`] = `
         label="1"
         link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=groupname%201"
         saveAsBaseline={undefined}
-        showBaseline={[Function]}
-      >
+        showBaseline={[Function]}>
         <div
           style={
             Object {
               "color": "blue",
               "fontWeight": "bold",
             }
-          }
-        >
+          }>
           SidebarItem
         </div>
       </div>
@@ -1055,16 +975,14 @@ exports[`AppContents renders a suite with grouped snapshots correctly 1`] = `
         label="2"
         link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=groupname%202"
         saveAsBaseline={undefined}
-        showBaseline={[Function]}
-      >
+        showBaseline={[Function]}>
         <div
           style={
             Object {
               "color": "blue",
               "fontWeight": "bold",
             }
-          }
-        >
+          }>
           SidebarItem
         </div>
       </div>
@@ -1080,16 +998,14 @@ exports[`AppContents renders a suite with grouped snapshots correctly 1`] = `
       label="individual1"
       link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=individual1%201"
       saveAsBaseline={undefined}
-      showBaseline={[Function]}
-    >
+      showBaseline={[Function]}>
       <div
         style={
           Object {
             "color": "blue",
             "fontWeight": "bold",
           }
-        }
-      >
+        }>
         SidebarItem
       </div>
     </div>
@@ -1104,16 +1020,14 @@ exports[`AppContents renders a suite with grouped snapshots correctly 1`] = `
       label="individual2"
       link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=individual2%201"
       saveAsBaseline={undefined}
-      showBaseline={[Function]}
-    >
+      showBaseline={[Function]}>
       <div
         style={
           Object {
             "color": "blue",
             "fontWeight": "bold",
           }
-        }
-      >
+        }>
         SidebarItem
       </div>
     </div>
@@ -1122,16 +1036,14 @@ exports[`AppContents renders a suite with grouped snapshots correctly 1`] = `
     dataMockType="Preview"
     fRaw={false}
     fShowBaseline={false}
-    snapshot={undefined}
-  >
+    snapshot={undefined}>
     <div
       style={
         Object {
           "color": "blue",
           "fontWeight": "bold",
         }
-      }
-    >
+      }>
       Preview
     </div>
   </div>
@@ -1221,8 +1133,7 @@ exports[`AppContents renders a suite with individual snapshots correctly 1`] = `
       "flexDirection": "row",
       "minHeight": "100vh",
     }
-  }
->
+  }>
   <div
     className="giu-floats"
     style={
@@ -1233,11 +1144,9 @@ exports[`AppContents renders a suite with individual snapshots correctly 1`] = `
         "top": 0,
         "width": 0,
       }
-    }
-  />
+    } />
   <div
-    className="giu-hints"
-  />
+    className="giu-hints" />
   <div
     dataMockType="Sidebar"
     fRaw={false}
@@ -1251,22 +1160,19 @@ exports[`AppContents renders a suite with individual snapshots correctly 1`] = `
             Object {
               "cursor": "default",
             }
-          }
-        />
+          } />
          
         suite1
       </span>
     }
-    toggleRaw={[Function]}
-  >
+    toggleRaw={[Function]}>
     <div
       style={
         Object {
           "color": "blue",
           "fontWeight": "bold",
         }
-      }
-    >
+      }>
       Sidebar
     </div>
     <div
@@ -1280,16 +1186,14 @@ exports[`AppContents renders a suite with individual snapshots correctly 1`] = `
       label="individual1"
       link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=individual1%201"
       saveAsBaseline={undefined}
-      showBaseline={[Function]}
-    >
+      showBaseline={[Function]}>
       <div
         style={
           Object {
             "color": "blue",
             "fontWeight": "bold",
           }
-        }
-      >
+        }>
         SidebarItem
       </div>
     </div>
@@ -1304,16 +1208,14 @@ exports[`AppContents renders a suite with individual snapshots correctly 1`] = `
       label="individual2"
       link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=individual2%201"
       saveAsBaseline={undefined}
-      showBaseline={[Function]}
-    >
+      showBaseline={[Function]}>
       <div
         style={
           Object {
             "color": "blue",
             "fontWeight": "bold",
           }
-        }
-      >
+        }>
         SidebarItem
       </div>
     </div>
@@ -1322,16 +1224,14 @@ exports[`AppContents renders a suite with individual snapshots correctly 1`] = `
     dataMockType="Preview"
     fRaw={false}
     fShowBaseline={false}
-    snapshot={undefined}
-  >
+    snapshot={undefined}>
     <div
       style={
         Object {
           "color": "blue",
           "fontWeight": "bold",
         }
-      }
-    >
+      }>
       Preview
     </div>
   </div>
@@ -1385,16 +1285,14 @@ exports[`AppContents renders a suite with individual snapshots correctly 1`] = `
 
 exports[`AppContents renders error messages 1`] = `
 <div
-  dataMockType="LargeMessage"
->
+  dataMockType="LargeMessage">
   <div
     style={
       Object {
         "color": "blue",
         "fontWeight": "bold",
       }
-    }
-  >
+    }>
     LargeMessage
   </div>
   <i
@@ -1404,11 +1302,9 @@ exports[`AppContents renders error messages 1`] = `
       Object {
         "color": "#999999",
         "cursor": undefined,
-        "fontSize": undefined,
         "letterSpacing": "normal",
       }
-    }
-  />
+    } />
    
   <b>
     An error occurred:
@@ -1429,8 +1325,7 @@ exports[`AppContents renders error messages 1`] = `
         "padding": "1px 5px",
         "userSelect": "none",
       }
-    }
-  >
+    }>
     <i
       className="giu-icon fa fa-home"
       onClick={undefined}
@@ -1438,11 +1333,9 @@ exports[`AppContents renders error messages 1`] = `
         Object {
           "color": "#999999",
           "cursor": undefined,
-          "fontSize": undefined,
           "letterSpacing": "normal",
         }
-      }
-    />
+      } />
      Home
   </span>
 </div>
@@ -1485,8 +1378,7 @@ exports[`AppContents renders the root folder correctly 1`] = `
       "flexDirection": "row",
       "minHeight": "100vh",
     }
-  }
->
+  }>
   <div
     className="giu-floats"
     style={
@@ -1497,11 +1389,9 @@ exports[`AppContents renders the root folder correctly 1`] = `
         "top": 0,
         "width": 0,
       }
-    }
-  />
+    } />
   <div
-    className="giu-hints"
-  />
+    className="giu-hints" />
   <div
     dataMockType="Sidebar"
     fRaw={false}
@@ -1515,21 +1405,18 @@ exports[`AppContents renders the root folder correctly 1`] = `
             Object {
               "cursor": "default",
             }
-          }
-        />
+          } />
          Root
       </span>
     }
-    toggleRaw={[Function]}
-  >
+    toggleRaw={[Function]}>
     <div
       style={
         Object {
           "color": "blue",
           "fontWeight": "bold",
         }
-      }
-    >
+      }>
       Sidebar
     </div>
     <div
@@ -1539,16 +1426,14 @@ exports[`AppContents renders the root folder correctly 1`] = `
       icon="folder-o"
       id="folder_-/path/to/folder"
       label="path/to/folder"
-      link="/folder/-%2Fpath%2Fto%2Ffolder"
-    >
+      link="/folder/-%2Fpath%2Fto%2Ffolder">
       <div
         style={
           Object {
             "color": "blue",
             "fontWeight": "bold",
           }
-        }
-      >
+        }>
         SidebarItem
       </div>
     </div>
@@ -1559,16 +1444,14 @@ exports[`AppContents renders the root folder correctly 1`] = `
       icon="folder-o"
       id="folder_-/path/to/folder2"
       label="path/to/folder2"
-      link="/folder/-%2Fpath%2Fto%2Ffolder2"
-    >
+      link="/folder/-%2Fpath%2Fto%2Ffolder2">
       <div
         style={
           Object {
             "color": "blue",
             "fontWeight": "bold",
           }
-        }
-      >
+        }>
         SidebarItem
       </div>
     </div>
@@ -1577,16 +1460,14 @@ exports[`AppContents renders the root folder correctly 1`] = `
     dataMockType="Preview"
     fRaw={false}
     fShowBaseline={false}
-    snapshot={undefined}
-  >
+    snapshot={undefined}>
     <div
       style={
         Object {
           "color": "blue",
           "fontWeight": "bold",
         }
-      }
-    >
+      }>
       Preview
     </div>
   </div>

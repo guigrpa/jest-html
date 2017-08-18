@@ -1,5 +1,3 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
 exports[`extractor with no RT features should parse folders 1`] = `
 Object {
   "childrenFolderPaths": Array [
@@ -48,48 +46,48 @@ body { color: aliceblue; }
     "dirty": false,
     "html": "
   <div
-    style=\\"background-color:white;display:flex;flex-direction:column;min-height:100%;padding:0px 10px;\\">
+    style=\"background-color:white;display:flex;flex-direction:column;min-height:100%;padding:0px 10px;\">
     <div
-      class=\\"giu-floats\\"
-      style=\\"height:0;left:0;position:absolute;top:0;width:0;\\">
+      class=\"giu-floats\"
+      style=\"height:0;left:0;position:absolute;top:0;width:0;\">
     </div>
     <div
-      class=\\"giu-notifications\\"
-      style=\\"bottom:20px;max-width:350px;position:fixed;right:20px;z-index:9000;\\">
+      class=\"giu-notifications\"
+      style=\"bottom:20px;max-width:350px;position:fixed;right:20px;z-index:9000;\">
     </div>
     <div
-      class=\\"giu-hints\\">
+      class=\"giu-hints\">
       <div
-        class=\\"giu-hint-screen\\"
-        style=\\"height:100vh;left:0;position:fixed;top:0;width:100vw;z-index:50;\\">
+        class=\"giu-hint-screen\"
+        style=\"height:100vh;left:0;position:fixed;top:0;width:100vw;z-index:50;\">
         <div
-          class=\\"giu-backdrop\\"
-          style=\\"background-color:black;cursor:pointer;height:100vh;left:0;opacity:0.6;position:fixed;top:0;width:100vw;\\">
+          class=\"giu-backdrop\"
+          style=\"background-color:black;cursor:pointer;height:100vh;left:0;opacity:0.6;position:fixed;top:0;width:100vw;\">
 
         </div>
         <div
-          style=\\"color:white;font-family:\\"Gloria Hallelujah\\", sans-serif;font-size:20px;\\">
+          style=\"color:white;font-family:\"Gloria Hallelujah\", sans-serif;font-size:20px;\">
           <div
-            style=\\"border:1px solid white;border-radius:8px;bottom:20px;cursor:pointer;padding:5px 25px;position:fixed;right:20px;\\">
+            style=\"border:1px solid white;border-radius:8px;bottom:20px;cursor:pointer;padding:5px 25px;position:fixed;right:20px;\">
             Enjoy translating!
           </div>
         </div>
       </div>
     </div>
     <div
-      dataMockType=\\"Header\\">
+      dataMockType=\"Header\">
       Header
     </div>
     <div
-      dataMockType=\\"Translator\\"
-      lang=\\"en\\"
-      selectedKeyId=\\"SELECTED_KEY\\">
+      dataMockType=\"Translator\"
+      lang=\"en\"
+      selectedKeyId=\"SELECTED_KEY\">
       Translator
     </div>
     <div
-      dataMockType=\\"Details\\"
-      lang=\\"en\\"
-      selectedKeyId=\\"SELECTED_KEY\\">
+      dataMockType=\"Details\"
+      lang=\"en\"
+      selectedKeyId=\"SELECTED_KEY\">
       Details
     </div>
   </div>
@@ -99,84 +97,84 @@ body { color: aliceblue; }
 <div
   style={
     Object {
-      \\"backgroundColor\\": \\"white\\",
-      \\"display\\": \\"flex\\",
-      \\"flexDirection\\": \\"column\\",
-      \\"minHeight\\": \\"100%\\",
-      \\"padding\\": \\"0px 10px\\",
+      \"backgroundColor\": \"white\",
+      \"display\": \"flex\",
+      \"flexDirection\": \"column\",
+      \"minHeight\": \"100%\",
+      \"padding\": \"0px 10px\",
     }
   }>
   <div
-    className=\\"giu-floats\\"
+    className=\"giu-floats\"
     style={
       Object {
-        \\"height\\": 0,
-        \\"left\\": 0,
-        \\"position\\": \\"absolute\\",
-        \\"top\\": 0,
-        \\"width\\": 0,
+        \"height\": 0,
+        \"left\": 0,
+        \"position\": \"absolute\",
+        \"top\": 0,
+        \"width\": 0,
       }
     } />
   <div
-    className=\\"giu-notifications\\"
+    className=\"giu-notifications\"
     style={
       Object {
-        \\"bottom\\": 20,
-        \\"maxWidth\\": 350,
-        \\"position\\": \\"fixed\\",
-        \\"right\\": 20,
-        \\"zIndex\\": 9000,
+        \"bottom\": 20,
+        \"maxWidth\": 350,
+        \"position\": \"fixed\",
+        \"right\": 20,
+        \"zIndex\": 9000,
       }
     } />
   <div
-    className=\\"giu-hints\\">
+    className=\"giu-hints\">
     <div
-      className=\\"giu-hint-screen\\"
+      className=\"giu-hint-screen\"
       onClick={[Function]}
       style={
         Object {
-          \\"height\\": \\"100vh\\",
-          \\"left\\": 0,
-          \\"position\\": \\"fixed\\",
-          \\"top\\": 0,
-          \\"width\\": \\"100vw\\",
-          \\"zIndex\\": 50,
+          \"height\": \"100vh\",
+          \"left\": 0,
+          \"position\": \"fixed\",
+          \"top\": 0,
+          \"width\": \"100vw\",
+          \"zIndex\": 50,
         }
       }>
       <div
-        className=\\"giu-backdrop\\"
+        className=\"giu-backdrop\"
         onTouchMove={[Function]}
         onWheel={[Function]}
         style={
           Object {
-            \\"backgroundColor\\": \\"black\\",
-            \\"cursor\\": \\"pointer\\",
-            \\"height\\": \\"100vh\\",
-            \\"left\\": 0,
-            \\"opacity\\": 0.6,
-            \\"position\\": \\"fixed\\",
-            \\"top\\": 0,
-            \\"width\\": \\"100vw\\",
+            \"backgroundColor\": \"black\",
+            \"cursor\": \"pointer\",
+            \"height\": \"100vh\",
+            \"left\": 0,
+            \"opacity\": 0.6,
+            \"position\": \"fixed\",
+            \"top\": 0,
+            \"width\": \"100vw\",
           }
         } />
       <div
         style={
           Object {
-            \\"color\\": \\"white\\",
-            \\"fontFamily\\": \\"\\"Gloria Hallelujah\\", sans-serif\\",
-            \\"fontSize\\": 20,
+            \"color\": \"white\",
+            \"fontFamily\": \"\"Gloria Hallelujah\", sans-serif\",
+            \"fontSize\": 20,
           }
         }>
         <div
           style={
             Object {
-              \\"border\\": \\"1px solid white\\",
-              \\"borderRadius\\": 8,
-              \\"bottom\\": 20,
-              \\"cursor\\": \\"pointer\\",
-              \\"padding\\": \\"5px 25px\\",
-              \\"position\\": \\"fixed\\",
-              \\"right\\": 20,
+              \"border\": \"1px solid white\",
+              \"borderRadius\": 8,
+              \"bottom\": 20,
+              \"cursor\": \"pointer\",
+              \"padding\": \"5px 25px\",
+              \"position\": \"fixed\",
+              \"right\": 20,
             }
           }>
           Enjoy translating!
@@ -185,48 +183,48 @@ body { color: aliceblue; }
     </div>
   </div>
   <div
-    dataMockType=\\"Header\\"
+    dataMockType=\"Header\"
     onShowSettings={[Function]}>
     Header
   </div>
   <div
     changeSelectedKey={[Function]}
-    dataMockType=\\"Translator\\"
-    lang=\\"en\\"
-    selectedKeyId=\\"SELECTED_KEY\\"
+    dataMockType=\"Translator\"
+    lang=\"en\"
+    selectedKeyId=\"SELECTED_KEY\"
     viewer={
       Object {
-        \\"config\\": Object {
-          \\"langs\\": Array [
-            \\"es\\",
-            \\"ca\\",
-            \\"en\\",
+        \"config\": Object {
+          \"langs\": Array [
+            \"es\",
+            \"ca\",
+            \"en\",
           ],
         },
-        \\"id\\": \\"me\\",
-        \\"keys\\": Object {
-          \\"edges\\": Array [],
+        \"id\": \"me\",
+        \"keys\": Object {
+          \"edges\": Array [],
         },
       }
     }>
     Translator
   </div>
   <div
-    dataMockType=\\"Details\\"
-    lang=\\"en\\"
-    selectedKeyId=\\"SELECTED_KEY\\"
+    dataMockType=\"Details\"
+    lang=\"en\"
+    selectedKeyId=\"SELECTED_KEY\"
     viewer={
       Object {
-        \\"config\\": Object {
-          \\"langs\\": Array [
-            \\"es\\",
-            \\"ca\\",
-            \\"en\\",
+        \"config\": Object {
+          \"langs\": Array [
+            \"es\",
+            \"ca\",
+            \"en\",
           ],
         },
-        \\"id\\": \\"me\\",
-        \\"keys\\": Object {
-          \\"edges\\": Array [],
+        \"id\": \"me\",
+        \"keys\": Object {
+          \"edges\": Array [],
         },
       }
     }>
@@ -245,46 +243,46 @@ body { color: aliceblue; }
     "dirty": false,
     "html": "
   <div
-    style=\\"background-color:white;display:flex;flex-direction:column;min-height:100%;padding:0px 10px;\\">
+    style=\"background-color:white;display:flex;flex-direction:column;min-height:100%;padding:0px 10px;\">
     <div
-      class=\\"giu-floats\\"
-      style=\\"height:0;left:0;position:absolute;top:0;width:0;\\">
+      class=\"giu-floats\"
+      style=\"height:0;left:0;position:absolute;top:0;width:0;\">
     </div>
     <div
-      class=\\"giu-notifications\\"
-      style=\\"bottom:20px;max-width:350px;position:fixed;right:20px;z-index:9000;\\">
+      class=\"giu-notifications\"
+      style=\"bottom:20px;max-width:350px;position:fixed;right:20px;z-index:9000;\">
     </div>
     <div
-      class=\\"giu-hints\\">
+      class=\"giu-hints\">
       <div
-        class=\\"giu-hint-screen\\"
-        style=\\"height:100vh;left:0;position:fixed;top:0;width:100vw;z-index:50;\\">
+        class=\"giu-hint-screen\"
+        style=\"height:100vh;left:0;position:fixed;top:0;width:100vw;z-index:50;\">
         <div
-          class=\\"giu-backdrop\\"
-          style=\\"background-color:black;cursor:pointer;height:100vh;left:0;opacity:0.6;position:fixed;top:0;width:100vw;\\">
+          class=\"giu-backdrop\"
+          style=\"background-color:black;cursor:pointer;height:100vh;left:0;opacity:0.6;position:fixed;top:0;width:100vw;\">
 
         </div>
         <div
-          style=\\"color:white;font-family:\\"Gloria Hallelujah\\", sans-serif;font-size:20px;\\">
+          style=\"color:white;font-family:\"Gloria Hallelujah\", sans-serif;font-size:20px;\">
           <div
-            style=\\"border:1px solid white;border-radius:8px;bottom:20px;cursor:pointer;padding:5px 25px;position:fixed;right:20px;\\">
+            style=\"border:1px solid white;border-radius:8px;bottom:20px;cursor:pointer;padding:5px 25px;position:fixed;right:20px;\">
             Enjoy translating!
           </div>
         </div>
       </div>
     </div>
     <div
-      dataMockType=\\"Header\\">
+      dataMockType=\"Header\">
       Header
     </div>
     <div
-      dataMockType=\\"Translator\\"
-      lang=\\"en\\">
+      dataMockType=\"Translator\"
+      lang=\"en\">
       Translator
     </div>
     <div
-      dataMockType=\\"Details\\"
-      lang=\\"en\\">
+      dataMockType=\"Details\"
+      lang=\"en\">
       Details
     </div>
   </div>
@@ -294,84 +292,84 @@ body { color: aliceblue; }
 <div
   style={
     Object {
-      \\"backgroundColor\\": \\"white\\",
-      \\"display\\": \\"flex\\",
-      \\"flexDirection\\": \\"column\\",
-      \\"minHeight\\": \\"100%\\",
-      \\"padding\\": \\"0px 10px\\",
+      \"backgroundColor\": \"white\",
+      \"display\": \"flex\",
+      \"flexDirection\": \"column\",
+      \"minHeight\": \"100%\",
+      \"padding\": \"0px 10px\",
     }
   }>
   <div
-    className=\\"giu-floats\\"
+    className=\"giu-floats\"
     style={
       Object {
-        \\"height\\": 0,
-        \\"left\\": 0,
-        \\"position\\": \\"absolute\\",
-        \\"top\\": 0,
-        \\"width\\": 0,
+        \"height\": 0,
+        \"left\": 0,
+        \"position\": \"absolute\",
+        \"top\": 0,
+        \"width\": 0,
       }
     } />
   <div
-    className=\\"giu-notifications\\"
+    className=\"giu-notifications\"
     style={
       Object {
-        \\"bottom\\": 20,
-        \\"maxWidth\\": 350,
-        \\"position\\": \\"fixed\\",
-        \\"right\\": 20,
-        \\"zIndex\\": 9000,
+        \"bottom\": 20,
+        \"maxWidth\": 350,
+        \"position\": \"fixed\",
+        \"right\": 20,
+        \"zIndex\": 9000,
       }
     } />
   <div
-    className=\\"giu-hints\\">
+    className=\"giu-hints\">
     <div
-      className=\\"giu-hint-screen\\"
+      className=\"giu-hint-screen\"
       onClick={[Function]}
       style={
         Object {
-          \\"height\\": \\"100vh\\",
-          \\"left\\": 0,
-          \\"position\\": \\"fixed\\",
-          \\"top\\": 0,
-          \\"width\\": \\"100vw\\",
-          \\"zIndex\\": 50,
+          \"height\": \"100vh\",
+          \"left\": 0,
+          \"position\": \"fixed\",
+          \"top\": 0,
+          \"width\": \"100vw\",
+          \"zIndex\": 50,
         }
       }>
       <div
-        className=\\"giu-backdrop\\"
+        className=\"giu-backdrop\"
         onTouchMove={[Function]}
         onWheel={[Function]}
         style={
           Object {
-            \\"backgroundColor\\": \\"black\\",
-            \\"cursor\\": \\"pointer\\",
-            \\"height\\": \\"100vh\\",
-            \\"left\\": 0,
-            \\"opacity\\": 0.6,
-            \\"position\\": \\"fixed\\",
-            \\"top\\": 0,
-            \\"width\\": \\"100vw\\",
+            \"backgroundColor\": \"black\",
+            \"cursor\": \"pointer\",
+            \"height\": \"100vh\",
+            \"left\": 0,
+            \"opacity\": 0.6,
+            \"position\": \"fixed\",
+            \"top\": 0,
+            \"width\": \"100vw\",
           }
         } />
       <div
         style={
           Object {
-            \\"color\\": \\"white\\",
-            \\"fontFamily\\": \\"\\"Gloria Hallelujah\\", sans-serif\\",
-            \\"fontSize\\": 20,
+            \"color\": \"white\",
+            \"fontFamily\": \"\"Gloria Hallelujah\", sans-serif\",
+            \"fontSize\": 20,
           }
         }>
         <div
           style={
             Object {
-              \\"border\\": \\"1px solid white\\",
-              \\"borderRadius\\": 8,
-              \\"bottom\\": 20,
-              \\"cursor\\": \\"pointer\\",
-              \\"padding\\": \\"5px 25px\\",
-              \\"position\\": \\"fixed\\",
-              \\"right\\": 20,
+              \"border\": \"1px solid white\",
+              \"borderRadius\": 8,
+              \"bottom\": 20,
+              \"cursor\": \"pointer\",
+              \"padding\": \"5px 25px\",
+              \"position\": \"fixed\",
+              \"right\": 20,
             }
           }>
           Enjoy translating!
@@ -380,48 +378,48 @@ body { color: aliceblue; }
     </div>
   </div>
   <div
-    dataMockType=\\"Header\\"
+    dataMockType=\"Header\"
     onShowSettings={[Function]}>
     Header
   </div>
   <div
     changeSelectedKey={[Function]}
-    dataMockType=\\"Translator\\"
-    lang=\\"en\\"
+    dataMockType=\"Translator\"
+    lang=\"en\"
     selectedKeyId={null}
     viewer={
       Object {
-        \\"config\\": Object {
-          \\"langs\\": Array [
-            \\"es\\",
-            \\"ca\\",
-            \\"en\\",
+        \"config\": Object {
+          \"langs\": Array [
+            \"es\",
+            \"ca\",
+            \"en\",
           ],
         },
-        \\"id\\": \\"me\\",
-        \\"keys\\": Object {
-          \\"edges\\": Array [],
+        \"id\": \"me\",
+        \"keys\": Object {
+          \"edges\": Array [],
         },
       }
     }>
     Translator
   </div>
   <div
-    dataMockType=\\"Details\\"
-    lang=\\"en\\"
+    dataMockType=\"Details\"
+    lang=\"en\"
     selectedKeyId={null}
     viewer={
       Object {
-        \\"config\\": Object {
-          \\"langs\\": Array [
-            \\"es\\",
-            \\"ca\\",
-            \\"en\\",
+        \"config\": Object {
+          \"langs\": Array [
+            \"es\",
+            \"ca\",
+            \"en\",
           ],
         },
-        \\"id\\": \\"me\\",
-        \\"keys\\": Object {
-          \\"edges\\": Array [],
+        \"id\": \"me\",
+        \"keys\": Object {
+          \"edges\": Array [],
         },
       }
     }>
@@ -440,51 +438,51 @@ body { color: aliceblue; }
     "dirty": false,
     "html": "
   <div
-    style=\\"background-color:white;display:flex;flex-direction:column;min-height:100%;padding:0px 10px;\\">
+    style=\"background-color:white;display:flex;flex-direction:column;min-height:100%;padding:0px 10px;\">
     <div
-      class=\\"giu-floats\\"
-      style=\\"height:0;left:0;position:absolute;top:0;width:0;\\">
+      class=\"giu-floats\"
+      style=\"height:0;left:0;position:absolute;top:0;width:0;\">
     </div>
     <div
-      class=\\"giu-notifications\\"
-      style=\\"bottom:20px;max-width:350px;position:fixed;right:20px;z-index:9000;\\">
+      class=\"giu-notifications\"
+      style=\"bottom:20px;max-width:350px;position:fixed;right:20px;z-index:9000;\">
     </div>
     <div
-      class=\\"giu-hints\\">
+      class=\"giu-hints\">
       <div
-        class=\\"giu-hint-screen\\"
-        style=\\"height:100vh;left:0;position:fixed;top:0;width:100vw;z-index:50;\\">
+        class=\"giu-hint-screen\"
+        style=\"height:100vh;left:0;position:fixed;top:0;width:100vw;z-index:50;\">
         <div
-          class=\\"giu-backdrop\\"
-          style=\\"background-color:black;cursor:pointer;height:100vh;left:0;opacity:0.6;position:fixed;top:0;width:100vw;\\">
+          class=\"giu-backdrop\"
+          style=\"background-color:black;cursor:pointer;height:100vh;left:0;opacity:0.6;position:fixed;top:0;width:100vw;\">
 
         </div>
         <div
-          style=\\"color:white;font-family:\\"Gloria Hallelujah\\", sans-serif;font-size:20px;\\">
+          style=\"color:white;font-family:\"Gloria Hallelujah\", sans-serif;font-size:20px;\">
           <div
-            style=\\"border:1px solid white;border-radius:8px;bottom:20px;cursor:pointer;padding:5px 25px;position:fixed;right:20px;\\">
+            style=\"border:1px solid white;border-radius:8px;bottom:20px;cursor:pointer;padding:5px 25px;position:fixed;right:20px;\">
             Enjoy translating!
           </div>
         </div>
       </div>
     </div>
     <div
-      dataMockType=\\"Header\\">
+      dataMockType=\"Header\">
       Header
     </div>
     <div
-      dataMockType=\\"Translator\\"
-      lang=\\"en\\">
+      dataMockType=\"Translator\"
+      lang=\"en\">
       Translator
     </div>
     <div
-      dataMockType=\\"Details\\"
-      lang=\\"en\\">
+      dataMockType=\"Details\"
+      lang=\"en\">
       Details
     </div>
     <div
-      dataMockType=\\"Settings\\"
-      lang=\\"en\\">
+      dataMockType=\"Settings\"
+      lang=\"en\">
       Settings
     </div>
   </div>
@@ -494,84 +492,84 @@ body { color: aliceblue; }
 <div
   style={
     Object {
-      \\"backgroundColor\\": \\"white\\",
-      \\"display\\": \\"flex\\",
-      \\"flexDirection\\": \\"column\\",
-      \\"minHeight\\": \\"100%\\",
-      \\"padding\\": \\"0px 10px\\",
+      \"backgroundColor\": \"white\",
+      \"display\": \"flex\",
+      \"flexDirection\": \"column\",
+      \"minHeight\": \"100%\",
+      \"padding\": \"0px 10px\",
     }
   }>
   <div
-    className=\\"giu-floats\\"
+    className=\"giu-floats\"
     style={
       Object {
-        \\"height\\": 0,
-        \\"left\\": 0,
-        \\"position\\": \\"absolute\\",
-        \\"top\\": 0,
-        \\"width\\": 0,
+        \"height\": 0,
+        \"left\": 0,
+        \"position\": \"absolute\",
+        \"top\": 0,
+        \"width\": 0,
       }
     } />
   <div
-    className=\\"giu-notifications\\"
+    className=\"giu-notifications\"
     style={
       Object {
-        \\"bottom\\": 20,
-        \\"maxWidth\\": 350,
-        \\"position\\": \\"fixed\\",
-        \\"right\\": 20,
-        \\"zIndex\\": 9000,
+        \"bottom\": 20,
+        \"maxWidth\": 350,
+        \"position\": \"fixed\",
+        \"right\": 20,
+        \"zIndex\": 9000,
       }
     } />
   <div
-    className=\\"giu-hints\\">
+    className=\"giu-hints\">
     <div
-      className=\\"giu-hint-screen\\"
+      className=\"giu-hint-screen\"
       onClick={[Function]}
       style={
         Object {
-          \\"height\\": \\"100vh\\",
-          \\"left\\": 0,
-          \\"position\\": \\"fixed\\",
-          \\"top\\": 0,
-          \\"width\\": \\"100vw\\",
-          \\"zIndex\\": 50,
+          \"height\": \"100vh\",
+          \"left\": 0,
+          \"position\": \"fixed\",
+          \"top\": 0,
+          \"width\": \"100vw\",
+          \"zIndex\": 50,
         }
       }>
       <div
-        className=\\"giu-backdrop\\"
+        className=\"giu-backdrop\"
         onTouchMove={[Function]}
         onWheel={[Function]}
         style={
           Object {
-            \\"backgroundColor\\": \\"black\\",
-            \\"cursor\\": \\"pointer\\",
-            \\"height\\": \\"100vh\\",
-            \\"left\\": 0,
-            \\"opacity\\": 0.6,
-            \\"position\\": \\"fixed\\",
-            \\"top\\": 0,
-            \\"width\\": \\"100vw\\",
+            \"backgroundColor\": \"black\",
+            \"cursor\": \"pointer\",
+            \"height\": \"100vh\",
+            \"left\": 0,
+            \"opacity\": 0.6,
+            \"position\": \"fixed\",
+            \"top\": 0,
+            \"width\": \"100vw\",
           }
         } />
       <div
         style={
           Object {
-            \\"color\\": \\"white\\",
-            \\"fontFamily\\": \\"\\"Gloria Hallelujah\\", sans-serif\\",
-            \\"fontSize\\": 20,
+            \"color\": \"white\",
+            \"fontFamily\": \"\"Gloria Hallelujah\", sans-serif\",
+            \"fontSize\": 20,
           }
         }>
         <div
           style={
             Object {
-              \\"border\\": \\"1px solid white\\",
-              \\"borderRadius\\": 8,
-              \\"bottom\\": 20,
-              \\"cursor\\": \\"pointer\\",
-              \\"padding\\": \\"5px 25px\\",
-              \\"position\\": \\"fixed\\",
-              \\"right\\": 20,
+              \"border\": \"1px solid white\",
+              \"borderRadius\": 8,
+              \"bottom\": 20,
+              \"cursor\": \"pointer\",
+              \"padding\": \"5px 25px\",
+              \"position\": \"fixed\",
+              \"right\": 20,
             }
           }>
           Enjoy translating!
@@ -580,70 +578,70 @@ body { color: aliceblue; }
     </div>
   </div>
   <div
-    dataMockType=\\"Header\\"
+    dataMockType=\"Header\"
     onShowSettings={[Function]}>
     Header
   </div>
   <div
     changeSelectedKey={[Function]}
-    dataMockType=\\"Translator\\"
-    lang=\\"en\\"
+    dataMockType=\"Translator\"
+    lang=\"en\"
     selectedKeyId={null}
     viewer={
       Object {
-        \\"config\\": Object {
-          \\"langs\\": Array [
-            \\"es\\",
-            \\"ca\\",
-            \\"en\\",
+        \"config\": Object {
+          \"langs\": Array [
+            \"es\",
+            \"ca\",
+            \"en\",
           ],
         },
-        \\"id\\": \\"me\\",
-        \\"keys\\": Object {
-          \\"edges\\": Array [],
+        \"id\": \"me\",
+        \"keys\": Object {
+          \"edges\": Array [],
         },
       }
     }>
     Translator
   </div>
   <div
-    dataMockType=\\"Details\\"
-    lang=\\"en\\"
+    dataMockType=\"Details\"
+    lang=\"en\"
     selectedKeyId={null}
     viewer={
       Object {
-        \\"config\\": Object {
-          \\"langs\\": Array [
-            \\"es\\",
-            \\"ca\\",
-            \\"en\\",
+        \"config\": Object {
+          \"langs\": Array [
+            \"es\",
+            \"ca\",
+            \"en\",
           ],
         },
-        \\"id\\": \\"me\\",
-        \\"keys\\": Object {
-          \\"edges\\": Array [],
+        \"id\": \"me\",
+        \"keys\": Object {
+          \"edges\": Array [],
         },
       }
     }>
     Details
   </div>
   <div
-    dataMockType=\\"Settings\\"
-    lang=\\"en\\"
+    dataMockType=\"Settings\"
+    lang=\"en\"
     onChangeLang={[Function]}
     onClose={[Function]}
     viewer={
       Object {
-        \\"config\\": Object {
-          \\"langs\\": Array [
-            \\"es\\",
-            \\"ca\\",
-            \\"en\\",
+        \"config\": Object {
+          \"langs\": Array [
+            \"es\",
+            \"ca\",
+            \"en\",
           ],
         },
-        \\"id\\": \\"me\\",
-        \\"keys\\": Object {
-          \\"edges\\": Array [],
+        \"id\": \"me\",
+        \"keys\": Object {
+          \"edges\": Array [],
         },
       }
     }>
@@ -662,46 +660,46 @@ body { color: aliceblue; }
     "dirty": false,
     "html": "
   <div
-    style=\\"background-color:white;display:flex;flex-direction:column;min-height:100%;padding:0px 10px;\\">
+    style=\"background-color:white;display:flex;flex-direction:column;min-height:100%;padding:0px 10px;\">
     <div
-      class=\\"giu-floats\\"
-      style=\\"height:0;left:0;position:absolute;top:0;width:0;\\">
+      class=\"giu-floats\"
+      style=\"height:0;left:0;position:absolute;top:0;width:0;\">
     </div>
     <div
-      class=\\"giu-notifications\\"
-      style=\\"bottom:20px;max-width:350px;position:fixed;right:20px;z-index:9000;\\">
+      class=\"giu-notifications\"
+      style=\"bottom:20px;max-width:350px;position:fixed;right:20px;z-index:9000;\">
     </div>
     <div
-      class=\\"giu-hints\\">
+      class=\"giu-hints\">
       <div
-        class=\\"giu-hint-screen\\"
-        style=\\"height:100vh;left:0;position:fixed;top:0;width:100vw;z-index:50;\\">
+        class=\"giu-hint-screen\"
+        style=\"height:100vh;left:0;position:fixed;top:0;width:100vw;z-index:50;\">
         <div
-          class=\\"giu-backdrop\\"
-          style=\\"background-color:black;cursor:pointer;height:100vh;left:0;opacity:0.6;position:fixed;top:0;width:100vw;\\">
+          class=\"giu-backdrop\"
+          style=\"background-color:black;cursor:pointer;height:100vh;left:0;opacity:0.6;position:fixed;top:0;width:100vw;\">
 
         </div>
         <div
-          style=\\"color:white;font-family:\\"Gloria Hallelujah\\", sans-serif;font-size:20px;\\">
+          style=\"color:white;font-family:\"Gloria Hallelujah\", sans-serif;font-size:20px;\">
           <div
-            style=\\"border:1px solid white;border-radius:8px;bottom:20px;cursor:pointer;padding:5px 25px;position:fixed;right:20px;\\">
+            style=\"border:1px solid white;border-radius:8px;bottom:20px;cursor:pointer;padding:5px 25px;position:fixed;right:20px;\">
             Enjoy translating!
           </div>
         </div>
       </div>
     </div>
     <div
-      dataMockType=\\"Header\\">
+      dataMockType=\"Header\">
       Header
     </div>
     <div
-      dataMockType=\\"Translator\\"
-      lang=\\"en\\">
+      dataMockType=\"Translator\"
+      lang=\"en\">
       Translator
     </div>
     <div
-      dataMockType=\\"Details\\"
-      lang=\\"en\\">
+      dataMockType=\"Details\"
+      lang=\"en\">
       Details
     </div>
   </div>
@@ -711,84 +709,84 @@ body { color: aliceblue; }
 <div
   style={
     Object {
-      \\"backgroundColor\\": \\"white\\",
-      \\"display\\": \\"flex\\",
-      \\"flexDirection\\": \\"column\\",
-      \\"minHeight\\": \\"100%\\",
-      \\"padding\\": \\"0px 10px\\",
+      \"backgroundColor\": \"white\",
+      \"display\": \"flex\",
+      \"flexDirection\": \"column\",
+      \"minHeight\": \"100%\",
+      \"padding\": \"0px 10px\",
     }
   }>
   <div
-    className=\\"giu-floats\\"
+    className=\"giu-floats\"
     style={
       Object {
-        \\"height\\": 0,
-        \\"left\\": 0,
-        \\"position\\": \\"absolute\\",
-        \\"top\\": 0,
-        \\"width\\": 0,
+        \"height\": 0,
+        \"left\": 0,
+        \"position\": \"absolute\",
+        \"top\": 0,
+        \"width\": 0,
       }
     } />
   <div
-    className=\\"giu-notifications\\"
+    className=\"giu-notifications\"
     style={
       Object {
-        \\"bottom\\": 20,
-        \\"maxWidth\\": 350,
-        \\"position\\": \\"fixed\\",
-        \\"right\\": 20,
-        \\"zIndex\\": 9000,
+        \"bottom\": 20,
+        \"maxWidth\": 350,
+        \"position\": \"fixed\",
+        \"right\": 20,
+        \"zIndex\": 9000,
       }
     } />
   <div
-    className=\\"giu-hints\\">
+    className=\"giu-hints\">
     <div
-      className=\\"giu-hint-screen\\"
+      className=\"giu-hint-screen\"
       onClick={[Function]}
       style={
         Object {
-          \\"height\\": \\"100vh\\",
-          \\"left\\": 0,
-          \\"position\\": \\"fixed\\",
-          \\"top\\": 0,
-          \\"width\\": \\"100vw\\",
-          \\"zIndex\\": 50,
+          \"height\": \"100vh\",
+          \"left\": 0,
+          \"position\": \"fixed\",
+          \"top\": 0,
+          \"width\": \"100vw\",
+          \"zIndex\": 50,
         }
       }>
       <div
-        className=\\"giu-backdrop\\"
+        className=\"giu-backdrop\"
         onTouchMove={[Function]}
         onWheel={[Function]}
         style={
           Object {
-            \\"backgroundColor\\": \\"black\\",
-            \\"cursor\\": \\"pointer\\",
-            \\"height\\": \\"100vh\\",
-            \\"left\\": 0,
-            \\"opacity\\": 0.6,
-            \\"position\\": \\"fixed\\",
-            \\"top\\": 0,
-            \\"width\\": \\"100vw\\",
+            \"backgroundColor\": \"black\",
+            \"cursor\": \"pointer\",
+            \"height\": \"100vh\",
+            \"left\": 0,
+            \"opacity\": 0.6,
+            \"position\": \"fixed\",
+            \"top\": 0,
+            \"width\": \"100vw\",
           }
         } />
       <div
         style={
           Object {
-            \\"color\\": \\"white\\",
-            \\"fontFamily\\": \\"\\"Gloria Hallelujah\\", sans-serif\\",
-            \\"fontSize\\": 20,
+            \"color\": \"white\",
+            \"fontFamily\": \"\"Gloria Hallelujah\", sans-serif\",
+            \"fontSize\": 20,
           }
         }>
         <div
           style={
             Object {
-              \\"border\\": \\"1px solid white\\",
-              \\"borderRadius\\": 8,
-              \\"bottom\\": 20,
-              \\"cursor\\": \\"pointer\\",
-              \\"padding\\": \\"5px 25px\\",
-              \\"position\\": \\"fixed\\",
-              \\"right\\": 20,
+              \"border\": \"1px solid white\",
+              \"borderRadius\": 8,
+              \"bottom\": 20,
+              \"cursor\": \"pointer\",
+              \"padding\": \"5px 25px\",
+              \"position\": \"fixed\",
+              \"right\": 20,
             }
           }>
           Enjoy translating!
@@ -797,48 +795,48 @@ body { color: aliceblue; }
     </div>
   </div>
   <div
-    dataMockType=\\"Header\\"
+    dataMockType=\"Header\"
     onShowSettings={[Function]}>
     Header
   </div>
   <div
     changeSelectedKey={[Function]}
-    dataMockType=\\"Translator\\"
-    lang=\\"en\\"
+    dataMockType=\"Translator\"
+    lang=\"en\"
     selectedKeyId={null}
     viewer={
       Object {
-        \\"config\\": Object {
-          \\"langs\\": Array [
-            \\"es\\",
-            \\"ca\\",
-            \\"en\\",
+        \"config\": Object {
+          \"langs\": Array [
+            \"es\",
+            \"ca\",
+            \"en\",
           ],
         },
-        \\"id\\": \\"me\\",
-        \\"keys\\": Object {
-          \\"edges\\": Array [],
+        \"id\": \"me\",
+        \"keys\": Object {
+          \"edges\": Array [],
         },
       }
     }>
     Translator
   </div>
   <div
-    dataMockType=\\"Details\\"
-    lang=\\"en\\"
+    dataMockType=\"Details\"
+    lang=\"en\"
     selectedKeyId={null}
     viewer={
       Object {
-        \\"config\\": Object {
-          \\"langs\\": Array [
-            \\"es\\",
-            \\"ca\\",
-            \\"en\\",
+        \"config\": Object {
+          \"langs\": Array [
+            \"es\",
+            \"ca\",
+            \"en\",
           ],
         },
-        \\"id\\": \\"me\\",
-        \\"keys\\": Object {
-          \\"edges\\": Array [],
+        \"id\": \"me\",
+        \"keys\": Object {
+          \"edges\": Array [],
         },
       }
     }>

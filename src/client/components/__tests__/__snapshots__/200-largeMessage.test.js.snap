@@ -1,5 +1,3 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
 exports[`LargeMessage renders correctly 1`] = `
 <div
   className="giu-large-message"
@@ -12,8 +10,7 @@ exports[`LargeMessage renders correctly 1`] = `
       "padding": "0.8em",
       "textAlign": "center",
     }
-  }
->
+  }>
   An error has occurred:
   <br />
   Undefined is not a function!

@@ -1,0 +1,376 @@
+exports[`Header renders correctly 1`] = `
+<div
+  style={
+    Object {
+      "WebkitFlex": "0 0 2.5em",
+      "alignItems": "center",
+      "backgroundColor": "#dcd6ff",
+      "display": "flex",
+      "flex": "0 0 2.5em",
+      "flexDirection": "row",
+      "padding": "5px 8px",
+    }
+  }>
+  <div
+    style={
+      Object {
+        "WebkitFlex": "1",
+        "flex": "1",
+      }
+    } />
+  <div
+    style={
+      Object {
+        "fontSize": "1.3em",
+        "fontWeight": 900,
+        "letterSpacing": 3,
+      }
+    }>
+    MADY
+    <i
+      className="giu-icon fa fa-cog"
+      id="madyBtnSettings"
+      onClick={[Function]}
+      style={
+        Object {
+          "color": undefined,
+          "cursor": "pointer",
+          "letterSpacing": "normal",
+          "marginLeft": 10,
+        }
+      }
+      title="Settings" />
+  </div>
+  <div
+    style={
+      Object {
+        "WebkitFlex": "1",
+        "flex": "1",
+        "fontSize": "1.3em",
+        "fontWeight": 900,
+        "letterSpacing": 3,
+        "marginRight": 10,
+        "textAlign": "right",
+      }
+    }>
+    <i
+      className="giu-icon fa fa-question-circle"
+      onClick={[Function]}
+      style={
+        Object {
+          "color": undefined,
+          "cursor": "pointer",
+          "letterSpacing": "normal",
+        }
+      } />
+  </div>
+</div>
+------------HTML PREVIEW---------------
+  <div
+    style="-webkit-flex:0 0 2.5em;align-items:center;background-color:#dcd6ff;display:flex;flex:0 0 2.5em;flex-direction:row;padding:5px 8px;">
+    <div
+      style="-webkit-flex:1;flex:1;">
+
+    </div>
+    <div
+      style="font-size:1.3em;font-weight:900;letter-spacing:3px;">
+      MADY
+      <i
+        class="giu-icon fa fa-cog"
+        id="madyBtnSettings"
+        style="color:;cursor:pointer;letter-spacing:normal;margin-left:10px;"
+        title="Settings">
+
+      </i>
+    </div>
+    <div
+      style="-webkit-flex:1;flex:1;font-size:1.3em;font-weight:900;letter-spacing:3px;margin-right:10px;text-align:right;">
+      <i
+        class="giu-icon fa fa-question-circle"
+        style="color:;cursor:pointer;letter-spacing:normal;">
+
+      </i>
+    </div>
+  </div>
+`;
+
+exports[`Header shows hints when the info button is clicked 1`] = `
+<div>
+  <div
+    className="giu-hints" />
+  <div
+    style={
+      Object {
+        "WebkitFlex": "0 0 2.5em",
+        "alignItems": "center",
+        "backgroundColor": "#dcd6ff",
+        "display": "flex",
+        "flex": "0 0 2.5em",
+        "flexDirection": "row",
+        "padding": "5px 8px",
+      }
+    }>
+    <div
+      style={
+        Object {
+          "WebkitFlex": "1",
+          "flex": "1",
+        }
+      } />
+    <div
+      style={
+        Object {
+          "fontSize": "1.3em",
+          "fontWeight": 900,
+          "letterSpacing": 3,
+        }
+      }>
+      MADY
+      <i
+        className="giu-icon fa fa-cog"
+        id="madyBtnSettings"
+        onClick={[Function]}
+        style={
+          Object {
+            "color": undefined,
+            "cursor": "pointer",
+            "letterSpacing": "normal",
+            "marginLeft": 10,
+          }
+        }
+        title="Settings" />
+    </div>
+    <div
+      style={
+        Object {
+          "WebkitFlex": "1",
+          "flex": "1",
+          "fontSize": "1.3em",
+          "fontWeight": 900,
+          "letterSpacing": 3,
+          "marginRight": 10,
+          "textAlign": "right",
+        }
+      }>
+      <i
+        className="giu-icon fa fa-question-circle"
+        onClick={[Function]}
+        style={
+          Object {
+            "color": undefined,
+            "cursor": "pointer",
+            "letterSpacing": "normal",
+          }
+        } />
+    </div>
+  </div>
+</div>
+------------HTML PREVIEW---------------
+  <div>
+    <div
+      class="giu-hints">
+
+    </div>
+    <div
+      style="-webkit-flex:0 0 2.5em;align-items:center;background-color:#dcd6ff;display:flex;flex:0 0 2.5em;flex-direction:row;padding:5px 8px;">
+      <div
+        style="-webkit-flex:1;flex:1;">
+
+      </div>
+      <div
+        style="font-size:1.3em;font-weight:900;letter-spacing:3px;">
+        MADY
+        <i
+          class="giu-icon fa fa-cog"
+          id="madyBtnSettings"
+          style="color:;cursor:pointer;letter-spacing:normal;margin-left:10px;"
+          title="Settings">
+
+        </i>
+      </div>
+      <div
+        style="-webkit-flex:1;flex:1;font-size:1.3em;font-weight:900;letter-spacing:3px;margin-right:10px;text-align:right;">
+        <i
+          class="giu-icon fa fa-question-circle"
+          style="color:;cursor:pointer;letter-spacing:normal;">
+
+        </i>
+      </div>
+    </div>
+  </div>
+`;
+
+exports[`Header shows hints when the info button is clicked 2`] = `
+<div>
+  <div
+    className="giu-hints">
+    <div
+      className="giu-hint-screen"
+      onClick={[Function]}
+      style={
+        Object {
+          "height": "100vh",
+          "left": 0,
+          "position": "fixed",
+          "top": 0,
+          "width": "100vw",
+          "zIndex": 50,
+        }
+      }>
+      <div
+        className="giu-backdrop"
+        onTouchMove={[Function]}
+        onWheel={[Function]}
+        style={
+          Object {
+            "backgroundColor": "black",
+            "cursor": "pointer",
+            "height": "100vh",
+            "left": 0,
+            "opacity": 0.6,
+            "position": "fixed",
+            "top": 0,
+            "width": "100vw",
+          }
+        } />
+      <div
+        style={
+          Object {
+            "color": "white",
+            "fontFamily": "\"Gloria Hallelujah\", sans-serif",
+            "fontSize": 20,
+          }
+        }>
+        <div
+          style={
+            Object {
+              "border": "1px solid white",
+              "borderRadius": 8,
+              "bottom": 20,
+              "cursor": "pointer",
+              "padding": "5px 25px",
+              "position": "fixed",
+              "right": 20,
+            }
+          }>
+          Got it!
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    style={
+      Object {
+        "WebkitFlex": "0 0 2.5em",
+        "alignItems": "center",
+        "backgroundColor": "#dcd6ff",
+        "display": "flex",
+        "flex": "0 0 2.5em",
+        "flexDirection": "row",
+        "padding": "5px 8px",
+      }
+    }>
+    <div
+      style={
+        Object {
+          "WebkitFlex": "1",
+          "flex": "1",
+        }
+      } />
+    <div
+      style={
+        Object {
+          "fontSize": "1.3em",
+          "fontWeight": 900,
+          "letterSpacing": 3,
+        }
+      }>
+      MADY
+      <i
+        className="giu-icon fa fa-cog"
+        id="madyBtnSettings"
+        onClick={[Function]}
+        style={
+          Object {
+            "color": undefined,
+            "cursor": "pointer",
+            "letterSpacing": "normal",
+            "marginLeft": 10,
+          }
+        }
+        title="Settings" />
+    </div>
+    <div
+      style={
+        Object {
+          "WebkitFlex": "1",
+          "flex": "1",
+          "fontSize": "1.3em",
+          "fontWeight": 900,
+          "letterSpacing": 3,
+          "marginRight": 10,
+          "textAlign": "right",
+        }
+      }>
+      <i
+        className="giu-icon fa fa-question-circle"
+        onClick={[Function]}
+        style={
+          Object {
+            "color": undefined,
+            "cursor": "pointer",
+            "letterSpacing": "normal",
+          }
+        } />
+    </div>
+  </div>
+</div>
+------------HTML PREVIEW---------------
+  <div>
+    <div
+      class="giu-hints">
+      <div
+        class="giu-hint-screen"
+        style="height:100vh;left:0;position:fixed;top:0;width:100vw;z-index:50;">
+        <div
+          class="giu-backdrop"
+          style="background-color:black;cursor:pointer;height:100vh;left:0;opacity:0.6;position:fixed;top:0;width:100vw;">
+
+        </div>
+        <div
+          style="color:white;font-family:\"Gloria Hallelujah\", sans-serif;font-size:20px;">
+          <div
+            style="border:1px solid white;border-radius:8px;bottom:20px;cursor:pointer;padding:5px 25px;position:fixed;right:20px;">
+            Got it!
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style="-webkit-flex:0 0 2.5em;align-items:center;background-color:#dcd6ff;display:flex;flex:0 0 2.5em;flex-direction:row;padding:5px 8px;">
+      <div
+        style="-webkit-flex:1;flex:1;">
+
+      </div>
+      <div
+        style="font-size:1.3em;font-weight:900;letter-spacing:3px;">
+        MADY
+        <i
+          class="giu-icon fa fa-cog"
+          id="madyBtnSettings"
+          style="color:;cursor:pointer;letter-spacing:normal;margin-left:10px;"
+          title="Settings">
+
+        </i>
+      </div>
+      <div
+        style="-webkit-flex:1;flex:1;font-size:1.3em;font-weight:900;letter-spacing:3px;margin-right:10px;text-align:right;">
+        <i
+          class="giu-icon fa fa-question-circle"
+          style="color:;cursor:pointer;letter-spacing:normal;">
+
+        </i>
+      </div>
+    </div>
+  </div>
+`;

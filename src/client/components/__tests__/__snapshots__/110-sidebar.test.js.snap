@@ -1,5 +1,3 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
 exports[`Sidebar renders correctly 1`] = `
 <div
   id="jh-sidebar"
@@ -14,8 +12,7 @@ exports[`Sidebar renders correctly 1`] = `
       "overflow": "auto",
       "padding": "0.3em 0",
     }
-  }
->
+  }>
   <div
     style={
       Object {
@@ -25,16 +22,14 @@ exports[`Sidebar renders correctly 1`] = `
         "marginBottom": "1.1em",
         "marginTop": "0.4em",
       }
-    }
-  >
+    }>
     <div
       style={
         Object {
           "WebkitFlex": "0 0 30px",
           "flex": "0 0 30px",
         }
-      }
-    >
+      }>
       <a
         className=""
         href="link/to/parent/folder"
@@ -45,19 +40,16 @@ exports[`Sidebar renders correctly 1`] = `
             "margin": "0.3em",
             "padding": "0.3em",
           }
-        }
-      >
+        }>
         <i
           className="giu-icon fa fa-chevron-left fa-lg"
           style={
             Object {
               "color": undefined,
               "cursor": "pointer",
-              "fontSize": undefined,
               "letterSpacing": "normal",
             }
-          }
-        />
+          } />
       </a>
     </div>
     <div
@@ -69,8 +61,7 @@ exports[`Sidebar renders correctly 1`] = `
           "textAlign": "center",
         }
       }
-      title="Subtitle"
-    >
+      title="Subtitle">
       Title
     </div>
     <div
@@ -79,8 +70,7 @@ exports[`Sidebar renders correctly 1`] = `
           "WebkitFlex": "0 1 30px",
           "flex": "0 1 30px",
         }
-      }
-    >
+      }>
       <i
         className="giu-icon fa fa-file-code-o fa-lg"
         id="jh-toggle-raw"
@@ -89,12 +79,10 @@ exports[`Sidebar renders correctly 1`] = `
           Object {
             "color": "gray",
             "cursor": "pointer",
-            "fontSize": undefined,
             "letterSpacing": "normal",
           }
         }
-        title="Toggle raw/HTML snapshot"
-      />
+        title="Toggle raw/HTML snapshot" />
     </div>
   </div>
   one
@@ -154,8 +142,7 @@ exports[`Sidebar renders correctly without linkBack 1`] = `
       "overflow": "auto",
       "padding": "0.3em 0",
     }
-  }
->
+  }>
   <div
     style={
       Object {
@@ -165,16 +152,14 @@ exports[`Sidebar renders correctly without linkBack 1`] = `
         "marginBottom": "1.1em",
         "marginTop": "0.4em",
       }
-    }
-  >
+    }>
     <div
       style={
         Object {
           "WebkitFlex": "0 0 30px",
           "flex": "0 0 30px",
         }
-      }
-    >
+      }>
       <a
         className=""
         href="#"
@@ -185,8 +170,7 @@ exports[`Sidebar renders correctly without linkBack 1`] = `
             "margin": "0.3em",
             "padding": "0.3em",
           }
-        }
-      >
+        }>
         <i
           className="giu-icon fa fa-chevron-left fa-lg"
           onClick={undefined}
@@ -194,11 +178,9 @@ exports[`Sidebar renders correctly without linkBack 1`] = `
             Object {
               "color": "#999999",
               "cursor": undefined,
-              "fontSize": undefined,
               "letterSpacing": "normal",
             }
-          }
-        />
+          } />
       </a>
     </div>
     <div
@@ -210,8 +192,7 @@ exports[`Sidebar renders correctly without linkBack 1`] = `
           "textAlign": "center",
         }
       }
-      title="Subtitle"
-    >
+      title="Subtitle">
       Title
     </div>
     <div
@@ -220,8 +201,7 @@ exports[`Sidebar renders correctly without linkBack 1`] = `
           "WebkitFlex": "0 1 30px",
           "flex": "0 1 30px",
         }
-      }
-    >
+      }>
       <i
         className="giu-icon fa fa-file-code-o fa-lg"
         id="jh-toggle-raw"
@@ -230,12 +210,10 @@ exports[`Sidebar renders correctly without linkBack 1`] = `
           Object {
             "color": "gray",
             "cursor": "pointer",
-            "fontSize": undefined,
             "letterSpacing": "normal",
           }
         }
-        title="Toggle raw/HTML snapshot"
-      />
+        title="Toggle raw/HTML snapshot" />
     </div>
   </div>
   one

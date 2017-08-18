@@ -1,17 +1,13 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
 exports[`Root renders correctly 1`] = `
 <div
-  dataMockType="BrowserRouter"
->
+  dataMockType="BrowserRouter">
   <div
     style={
       Object {
         "color": "blue",
         "fontWeight": "bold",
       }
-    }
-  >
+    }>
     BrowserRouter
   </div>
   <div>
@@ -19,63 +15,55 @@ exports[`Root renders correctly 1`] = `
       component={[Function]}
       dataMockType="Match"
       exactly={true}
-      pattern="/"
-    >
+      pattern="/">
       <div
         style={
           Object {
             "color": "blue",
             "fontWeight": "bold",
           }
-        }
-      >
+        }>
         Match
       </div>
     </div>
     <div
       component={[Function]}
       dataMockType="Match"
-      pattern="/suite/*"
-    >
+      pattern="/suite/*">
       <div
         style={
           Object {
             "color": "blue",
             "fontWeight": "bold",
           }
-        }
-      >
+        }>
         Match
       </div>
     </div>
     <div
       component={[Function]}
       dataMockType="Match"
-      pattern="/folder/*"
-    >
+      pattern="/folder/*">
       <div
         style={
           Object {
             "color": "blue",
             "fontWeight": "bold",
           }
-        }
-      >
+        }>
         Match
       </div>
     </div>
     <div
       dataMockType="Miss"
-      render={[Function]}
-    >
+      render={[Function]}>
       <div
         style={
           Object {
             "color": "blue",
             "fontWeight": "bold",
           }
-        }
-      >
+        }>
         Miss
       </div>
     </div>
