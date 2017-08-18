@@ -1336,8 +1336,7 @@ exports[`AppContents renders error messages 1`] = `
           "letterSpacing": "normal",
         }
       } />
-     
-    Home
+     Home
   </span>
 </div>
 ------------HTML PREVIEW---------------
@@ -1366,8 +1365,7 @@ exports[`AppContents renders error messages 1`] = `
       style="color:#999999;letter-spacing:normal;"
     >
     </i>
-     
-    Home
+     Home
   </span>
 </div>
 `;
