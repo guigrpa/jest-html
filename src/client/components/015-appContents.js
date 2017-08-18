@@ -38,7 +38,7 @@ const snapshotName = id => {
 const _escape = str => encodeURIComponent(str);
 
 // ==========================================
-// Component declarations
+// Declarations
 // ==========================================
 type SidebarTypeT = 'FOLDER' | 'SUITE';
 type PropsT = {
@@ -407,6 +407,6 @@ const style = {
 };
 
 // ==========================================
-// Public API
+// Public
 // ==========================================
 export default AppContents;

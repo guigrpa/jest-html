@@ -12,7 +12,7 @@ const socketDisconnect = () => {
 };
 
 // ==========================================
-// Component declarations
+// Declarations
 // ==========================================
 type SidebarTypeT = 'FOLDER' | 'SUITE';
 type PropsT = {
@@ -162,7 +162,7 @@ class App extends React.Component {
 }
 
 // ==========================================
-// Public API
+// Public
 // ==========================================
 export default App;
 export { socketDisconnect };

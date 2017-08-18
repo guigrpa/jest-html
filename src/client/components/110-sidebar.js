@@ -5,7 +5,7 @@ import { Link } from 'react-router';
 import { Icon, flexContainer, flexItem } from 'giu';
 
 // ==========================================
-// Component declarations
+// Declarations
 // ==========================================
 type PropsT = {
   title: any,
@@ -81,6 +81,6 @@ const style = {
 };
 
 // ==========================================
-// Public API
+// Public
 // ==========================================
 export default Sidebar;

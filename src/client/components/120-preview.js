@@ -7,7 +7,7 @@ import type { SnapshotT } from '../../common/types';
 import LargeMessage from './200-largeMessage';
 
 // ==========================================
-// Component declarations
+// Declarations
 // ==========================================
 type PropsT = {
   snapshot: ?SnapshotT,
@@ -71,6 +71,6 @@ const style = {
 };
 
 // ==========================================
-// Public API
+// Public
 // ==========================================
 export default Preview;

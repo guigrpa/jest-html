@@ -20,7 +20,7 @@ import { isWaiting } from '../gral/helpers';
 let fHintAlreadyShown = false;
 
 // ==========================================
-// Component declarations
+// Declarations
 // ==========================================
 type Props = {
   id: string,
@@ -237,7 +237,7 @@ const style = {
 };
 
 // ==========================================
-// Public API
+// Public
 // ==========================================
 export default hoverable(SidebarItem);
 export { SidebarItem as _SidebarItem, SidebarGroup };
