@@ -10,20 +10,7 @@ import bodyParser from 'body-parser';
 import socketio from 'socket.io';
 import * as extractor from './extractor';
 
-let webpack;
-let webpackDevMiddleware;
-let webpackHotMiddleware;
-let webpackConfig;
-/* eslint-disable global-require */
-if (process.env.NODE_ENV !== 'production') {
-  webpack = require('webpack');
-  webpackDevMiddleware = require('webpack-dev-middleware');
-  webpackHotMiddleware = require('webpack-hot-middleware');
-  webpackConfig = require('./webpackConfig').default;
-}
-/* eslint-enable global-require */
-
-const ASSET_PATH = '../../public';
+const ASSET_PATH = '../public';
 const ABS_ASSET_PATH = path.resolve(__dirname, ASSET_PATH);
 
 let _socketioServer;
@@ -32,31 +19,8 @@ let _socketioServer;
 function init(options: {| port: number |}): Promise<number> {
   // Disable flow on Express
   const expressApp: any = express();
-
-  // Webpack middleware (for development)
-  if (process.env.NODE_ENV !== 'production') {
-    const compiler = webpack(webpackConfig);
-    expressApp.use(
-      webpackDevMiddleware(compiler, {
-        noInfo: true,
-        quiet: false,
-        publicPath: webpackConfig.output.publicPath,
-        stats: { colors: true },
-      })
-    );
-    expressApp.use(webpackHotMiddleware(compiler));
-  }
-
   expressApp.use(bodyParser.json());
-
-  // Index
-  expressApp.use('/', (req, res, next) => {
-    if (req.path === '/') {
-      res.sendFile(path.join(ABS_ASSET_PATH, 'index.html'));
-    } else {
-      next();
-    }
-  });
+  expressApp.use(express.static(ABS_ASSET_PATH));
 
   // API
   expressApp.post('/api/folder', (req, res) => {
@@ -84,9 +48,6 @@ function init(options: {| port: number |}): Promise<number> {
     extractor.saveAsBaseline(filePath, id);
     res.json({});
   });
-
-  // Static assets
-  expressApp.use(express.static(ABS_ASSET_PATH));
 
   // All other routes
   expressApp.use('*', (req, res) => {

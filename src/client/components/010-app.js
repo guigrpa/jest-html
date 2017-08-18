@@ -3,7 +3,6 @@
 /* eslint-env browser */
 import React from 'react';
 import socketio from 'socket.io-client';
-import { bindAll } from 'giu';
 import type { FolderT, SnapshotSuiteT } from '../../common/types';
 import AppContents from './015-appContents';
 
@@ -48,7 +47,6 @@ class App extends React.Component {
       error: null,
       fRedirectToRoot: false,
     };
-    bindAll(this, ['refetch']);
   }
 
   // unit testing
@@ -100,14 +98,14 @@ class App extends React.Component {
   }
 
   // ------------------------------------------
-  refetch() {
+  refetch = () => {
     if (!this.state.fetchedItem) return;
     if (this.state.fetchedItemType === 'FOLDER') {
       this.fetchFolder(this.state.fetchedItemPath);
     } else {
       this.fetchSuite(this.state.fetchedItemPath);
     }
-  }
+  };
 
   fetchFolder(folderPath: ?string) {
     if (folderPath == null) return;
