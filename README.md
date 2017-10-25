@@ -25,12 +25,12 @@ $ npm install --save-dev jest-html
 $ yarn add jest-html --dev
 ```
 
-Add the following configuration to your `package.json` (no need to replace `<rootDir>` with anything else):
+Add the following configuration to your `package.json`:
 
 ```json
 {
   "jest": {
-    "snapshotSerializers": ["<rootDir>/node_modules/jest-html"]
+    "snapshotSerializers": ["jest-html"]
   },
   "scripts": {
     "jest-html": "jest-html"
