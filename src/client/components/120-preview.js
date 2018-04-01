@@ -3,8 +3,10 @@
 import React from 'react';
 import Frame from 'react-frame-component';
 import { flexItem } from 'giu';
+import { MarkdownPreview } from 'react-marked-markdown';
 import type { SnapshotT } from '../../common/types';
 import LargeMessage from './200-largeMessage';
+
 
 // ==========================================
 // Declarations
@@ -14,6 +16,14 @@ type PropsT = {
   fRaw?: boolean,
   fShowBaseline?: boolean,
 };
+
+
+// ==========================================
+// Poor man JSON/markdown detection
+// ==========================================
+export const isJSON = str => str.match(/^"\{\\"[^"]+":/) || str.match(/^"\\?[\\[{\["]/);
+export const isMarkdown = str => str.match(/^\s*"\s*(#+|---+)/);
+
 
 // ==========================================
 // Component
@@ -29,6 +39,33 @@ const Preview = ({ snapshot, fRaw, fShowBaseline }: PropsT) => {
   const snapshotData =
     fShowBaseline && snapshot.baseline ? snapshot.baseline : snapshot;
   if (fRaw || !snapshotData.html) {
+    if (isJSON(snapshotData.snap)) {
+      // double rainbow
+      return (
+        <div style={style.outer}>
+          <pre style={style.outerNonHtml}>
+            {JSON.stringify(JSON.parse(JSON.parse(snapshotData.snap)), null, 2)}
+          </pre>
+        </div>
+      );
+    } else if (isMarkdown(snapshotData.snap)) {
+      return (
+        <div style={style.outer}>
+          <MarkdownPreview
+            value={snapshotData.snap}
+            markedOptions={{
+              gfm: true,
+              tables: true,
+              breaks: false,
+              pedantic: false,
+              sanitize: true,
+              smartLists: true,
+              smartypants: false
+            }}
+          />
+        </div>
+      );
+    }
     return (
       <div style={style.outer}>
         <pre style={style.outerNonHtml}>

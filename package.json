@@ -64,6 +64,7 @@
     "lodash.debounce": "4.0.8",
     "opn": "4.0.2",
     "pretty-format": "4.2.1",
+    "react-marked-markdown": "^1.4.6",
     "socket.io": "1.5.1",
     "storyboard": "3.1.1",
     "storyboard-preset-console": "3.1.1",
