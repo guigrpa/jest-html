@@ -105,7 +105,7 @@
     "node-uuid": "1.4.8",
     "nyc": "8.3.0",
     "oao": "0.10.0-beta.3",
-    "prettier": "1.5.3",
+    "prettier": "^1.11.1",
     "react": "15.6.1",
     "react-dom": "15.6.1",
     "react-frame-component": "^1.1.1",
