@@ -21,8 +21,8 @@ type PropsT = {
 // ==========================================
 // Poor man JSON/markdown detection
 // ==========================================
-export const isJSON = str => str.match(/^"\{\\"[^"]+":/) || str.match(/^"\\?[\\[{\["]/);
-export const isMarkdown = str => str.match(/^\s*"\s*(#+|---+)/);
+export const isJSON = (str: string) => str.match(/^"\{\\"[^"]+":/) || str.match(/^"\\?[\\[{\["]/);
+export const isMarkdown = (str: string) => str.match(/^\s*"\s*(#+|---+)/);
 
 
 // ==========================================
