@@ -64,11 +64,11 @@ module.exports = (env = {}) => {
         },
         {
           test: /\.png$/,
-          loader: 'file',
+          loader: 'file-loader',
         },
         {
           test: /\.json$/,
-          loader: 'json',
+          loader: 'json-loader',
         },
       ],
     },
