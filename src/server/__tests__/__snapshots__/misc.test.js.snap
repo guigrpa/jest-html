@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`miscellaneous should correctly show JSON 1`] = `
+Object {
+  "inIt": Object {
+    "bar": 4,
+    "foo": 3,
+  },
+  "just": "an",
+  "object": "with",
+  "some": "attributes",
+}
+`;
+
+exports[`miscellaneous should correctly show Markdown 1`] = `
+"
+# Title 1
+
+## Title 2
+
+A paragraph with *some* **formatted** text and [a link](http://github.com/guigrpa).
+
+* Some
+* Bullets
+* There you go!
+
+\`\`\`js
+// Some JavaScript
+const a = {
+  b: 3,
+};
+\`\`\`
+
+Is everything OK?
+"
+`;
