@@ -1,3 +1,5 @@
+* Previewer: improve rendering of JSON and Markdown contents (@revolunet, #7).
+
 ## 1.3.5 (2017-8-18)
 
 * Bugfix: when a suite contains multiple dirty snapshots, marking one of them as the new baseline no longer marks the whole suite as clean.
@@ -21,13 +23,13 @@
 ## 1.3.0 (Dec. 1, 2016)
 
 * Previewer:
-    - Support **snapshot visual diffing** (current snapshot contents vs. the baseline loaded when jest-html launches). Allow the user to save current snapshot as the new baseline.
-    - Add usage hints.
-    - Tweak layout.
+  * Support **snapshot visual diffing** (current snapshot contents vs. the baseline loaded when jest-html launches). Allow the user to save current snapshot as the new baseline.
+  * Add usage hints.
+  * Tweak layout.
 
 ## 1.2.2 (Nov. 18, 2016)
 
-- Bump deps.
+* Bump deps.
 
 ## 1.2.1 (Nov. 9, 2016)
 
