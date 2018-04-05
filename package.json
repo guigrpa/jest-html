@@ -45,6 +45,7 @@
     "testCovFull": "yarn testCovPrepare && yarn testDev && yarn testProd && yarn testCovReport",
     "testCovFullExceptMin": "yarn testCovPrepare && yarn testDev && yarn testProd && yarn testCovReport",
     "testCovFast": "yarn testCovPrepare && yarn testDev && yarn testCovReport",
+    "prettier": "prettier --single-quote --trailing-comma es5 --write \"src/**/*.js\"",
     "jest": "jest --watch --coverage",
     "jestDebug": "node --debug-brk --inspect node_modules/.bin/jest -i",
     "testCovPrepare": "rm -rf ./coverage .nyc_output .nyc_tmp && mkdir .nyc_tmp",

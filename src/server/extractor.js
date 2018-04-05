@@ -176,9 +176,11 @@ const loadSnapshot = (absPath: string): Object => {
 
 const sortSnapshots = (suite): Object => {
   const out = {};
-  Object.keys(suite).sort().forEach(id => {
-    out[id] = suite[id];
-  });
+  Object.keys(suite)
+    .sort()
+    .forEach(id => {
+      out[id] = suite[id];
+    });
   return out;
 };
 

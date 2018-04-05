@@ -192,14 +192,16 @@ function printStyle(style, print) {
   }
 
   let css = '';
-  Object.keys(style).sort().forEach(styleName => {
-    const styleValue = style[styleName];
-    if (styleValue === undefined) return;
-    css += hyphenateStyleName(styleName);
-    css += ':';
-    css += printStyleValue(styleName, styleValue);
-    css += ';';
-  });
+  Object.keys(style)
+    .sort()
+    .forEach(styleName => {
+      const styleValue = style[styleName];
+      if (styleValue === undefined) return;
+      css += hyphenateStyleName(styleName);
+      css += ':';
+      css += printStyleValue(styleName, styleValue);
+      css += ';';
+    });
 
   return print(css);
 }

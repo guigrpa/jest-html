@@ -118,14 +118,16 @@ class AppContents extends React.PureComponent {
     if (fFolder) {
       const folder: FolderT = (this.props.fetchedItem: any);
       title =
-        folder.parentFolderPath != null
-          ? <span>
-              <Icon icon="folder-open-o" style={style.titleBarIcon} />&nbsp;
-              {lastSegment(fetchedItemPath)}
-            </span>
-          : <span>
-              <Icon icon="home" style={style.titleBarIcon} />&nbsp;Root
-            </span>;
+        folder.parentFolderPath != null ? (
+          <span>
+            <Icon icon="folder-open-o" style={style.titleBarIcon} />&nbsp;
+            {lastSegment(fetchedItemPath)}
+          </span>
+        ) : (
+          <span>
+            <Icon icon="home" style={style.titleBarIcon} />&nbsp;Root
+          </span>
+        );
     } else {
       title = (
         <span>

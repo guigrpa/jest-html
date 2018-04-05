@@ -26,7 +26,7 @@ const Sidebar = ({
   children,
   fRaw,
   toggleRaw,
-}: PropsT) =>
+}: PropsT) => (
   <div style={style.outer} id="jh-sidebar">
     <div style={style.titleBar}>
       <div style={flexItem('0 0 30px')}>
@@ -49,7 +49,8 @@ const Sidebar = ({
       </div>
     </div>
     {children}
-  </div>;
+  </div>
+);
 
 // ------------------------------------------
 const style = {

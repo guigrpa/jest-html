@@ -34,4 +34,4 @@ describe('miscellaneous', () => {
   it('should correctly show Markdown', () => {
     expect(MARKDOWN).toMatchSnapshot();
   });
-})
+});

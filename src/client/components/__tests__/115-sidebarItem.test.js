@@ -73,9 +73,7 @@ describe('SidebarGroup', () => {
   it('renders correctly', () => {
     const tree = renderer
       .create(
-        <SidebarGroup name="Snapshot group name">
-          {['one', 'two']}
-        </SidebarGroup>
+        <SidebarGroup name="Snapshot group name">{['one', 'two']}</SidebarGroup>
       )
       .toJSON();
     expect(tree).toMatchSnapshot();

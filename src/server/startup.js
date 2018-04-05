@@ -74,6 +74,9 @@ const extractorInit = () => {
   return extractor.start();
 };
 
-Promise.resolve().then(httpInit).then(extractorInit).then(() => {
-  opn(`http://localhost:${finalPort}/`);
-});
+Promise.resolve()
+  .then(httpInit)
+  .then(extractorInit)
+  .then(() => {
+    opn(`http://localhost:${finalPort}/`);
+  });

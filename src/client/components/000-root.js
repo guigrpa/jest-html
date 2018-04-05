@@ -9,7 +9,7 @@ import LargeMessage from './200-largeMessage';
 // ==========================================
 // Component
 // ==========================================
-const Root = () =>
+const Root = () => (
   <BrowserRouter>
     <div>
       <Match exactly pattern="/" component={App} />
@@ -17,7 +17,8 @@ const Root = () =>
       <Match pattern="/folder/*" component={App} />
       <Miss render={() => <LargeMessage>Ooops! 404!</LargeMessage>} />
     </div>
-  </BrowserRouter>;
+  </BrowserRouter>
+);
 
 // ==========================================
 // Public

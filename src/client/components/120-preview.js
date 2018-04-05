@@ -7,7 +7,6 @@ import { MarkdownPreview } from 'react-marked-markdown';
 import type { SnapshotT } from '../../common/types';
 import LargeMessage from './200-largeMessage';
 
-
 // ==========================================
 // Declarations
 // ==========================================
@@ -17,13 +16,12 @@ type PropsT = {
   fShowBaseline?: boolean,
 };
 
-
 // ==========================================
 // Poor man JSON/markdown detection
 // ==========================================
-export const isJSON = (str: string) => str.match(/^"\{\\"[^"]+":/) || str.match(/^"\\?[\\[{\["]/);
+export const isJSON = (str: string) =>
+  str.match(/^"\{\\"[^"]+":/) || str.match(/^"\\?[\\[{\["]/);
 export const isMarkdown = (str: string) => str.match(/^\s*"\s*(#+|---+)/);
-
 
 // ==========================================
 // Component
@@ -60,7 +58,7 @@ const Preview = ({ snapshot, fRaw, fShowBaseline }: PropsT) => {
               pedantic: false,
               sanitize: true,
               smartLists: true,
-              smartypants: false
+              smartypants: false,
             }}
           />
         </div>
@@ -68,9 +66,7 @@ const Preview = ({ snapshot, fRaw, fShowBaseline }: PropsT) => {
     }
     return (
       <div style={style.outer}>
-        <pre style={style.outerNonHtml}>
-          {snapshotData.snap}
-        </pre>
+        <pre style={style.outerNonHtml}>{snapshotData.snap}</pre>
       </div>
     );
   }
@@ -79,9 +75,7 @@ const Preview = ({ snapshot, fRaw, fShowBaseline }: PropsT) => {
   /* eslint-disable react/no-danger */
   return (
     <Frame style={style.frame}>
-      <style>
-        {css}
-      </style>
+      <style>{css}</style>
       <div dangerouslySetInnerHTML={contents} />
     </Frame>
   );

@@ -1,12 +1,11 @@
 const React = require('react');
 
-module.exports = name => props =>
+module.exports = name => props => (
   <div dataMockType={name} {...props}>
-    <div style={{ fontWeight: 'bold', color: 'blue' }}>
-      {name}
-    </div>
+    <div style={{ fontWeight: 'bold', color: 'blue' }}>{name}</div>
     {props.children}
-  </div>;
+  </div>
+);
 
 // const renderProps = (props) => {
 //   if (!props) return null;

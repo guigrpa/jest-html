@@ -142,13 +142,12 @@ class SidebarItem extends React.Component {
   }
 }
 
-const SidebarGroup = ({ name, children }: { name: string, children?: any }) =>
+const SidebarGroup = ({ name, children }: { name: string, children?: any }) => (
   <div style={style.group}>
-    <div style={style.groupTitle}>
-      {name}
-    </div>
+    <div style={style.groupTitle}>{name}</div>
     {children}
-  </div>;
+  </div>
+);
 
 class _DirtyIcon extends React.Component {
   props: any;
