@@ -1,3 +1,5 @@
+## 1.4.0 (2018-4-5)
+
 * Previewer: improve rendering of JSON and Markdown contents (@revolunet, #7).
 
 ## 1.3.5 (2017-8-18)
