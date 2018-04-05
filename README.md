@@ -69,9 +69,7 @@ If a `snapshot.css` file is present at your project root directory, it will be u
 
 CSS can also be added to particular snapshot suites, by including a `.css` file in the same directory as the snapshot file. For example, `settings.js.css` will add CSS to the co-located `settings.js.snap` suite.
 
-
 ## [Changelog](https://github.com/guigrpa/jest-html/blob/master/CHANGELOG.md)
-
 
 ## License (MIT)
 
