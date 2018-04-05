@@ -1,3 +1,5 @@
+/* eslint-env jest */
+
 const OBJ = {
   just: 'an',
   object: 'with',

@@ -19,9 +19,11 @@ type PropsT = {
 // ==========================================
 // Poor man JSON/markdown detection
 // ==========================================
+/* eslint-disable no-useless-escape */
 export const isJSON = (str: string) =>
   str.match(/^"\{\\"[^"]+":/) || str.match(/^"\\?[\\[{\["]/);
 export const isMarkdown = (str: string) => str.match(/^\s*"\s*(#+|---+)/);
+/* eslint-enable no-useless-escape */
 
 // ==========================================
 // Component
