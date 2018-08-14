@@ -63,7 +63,7 @@
     "globby": "^8.0.1",
     "lodash.debounce": "4.0.8",
     "opn": "^5.3.0",
-    "pretty-format": "4.2.1",
+    "pretty-format": "^23.5.0",
     "react-marked-markdown": "^1.4.6",
     "socket.io": "1.5.1",
     "storyboard": "^3.1.4",
