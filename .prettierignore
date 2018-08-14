@@ -7,3 +7,4 @@ packages/*/out
 packages/*/package.json
 /package.json
 *.md
+snapshot.css
