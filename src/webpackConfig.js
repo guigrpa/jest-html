@@ -44,7 +44,7 @@ module.exports = (env = {}) => {
     plugins: [],
 
     module: {
-      loaders: [
+      rules: [
         {
           test: /\.(js|jsx)$/,
           loader: 'babel-loader',
@@ -65,10 +65,6 @@ module.exports = (env = {}) => {
         {
           test: /\.png$/,
           loader: 'file-loader',
-        },
-        {
-          test: /\.json$/,
-          loader: 'json-loader',
         },
       ],
     },
