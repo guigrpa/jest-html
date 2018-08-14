@@ -93,7 +93,8 @@ class AppContents extends React.PureComponent {
     if (!this.props.fetchedItem) {
       return (
         <LargeMessage>
-          <Spinner />&nbsp;Loading…
+          <Spinner />
+          &nbsp;Loading…
         </LargeMessage>
       );
     }
@@ -120,18 +121,21 @@ class AppContents extends React.PureComponent {
       title =
         folder.parentFolderPath != null ? (
           <span>
-            <Icon icon="folder-open-o" style={style.titleBarIcon} />&nbsp;
+            <Icon icon="folder-open-o" style={style.titleBarIcon} />
+            &nbsp;
             {lastSegment(fetchedItemPath)}
           </span>
         ) : (
           <span>
-            <Icon icon="home" style={style.titleBarIcon} />&nbsp;Root
+            <Icon icon="home" style={style.titleBarIcon} />
+            &nbsp;Root
           </span>
         );
     } else {
       title = (
         <span>
-          <Icon icon="file-o" style={style.titleBarIcon} />&nbsp;
+          <Icon icon="file-o" style={style.titleBarIcon} />
+          &nbsp;
           {lastSegment(fetchedItemPath).split('.')[0]}
         </span>
       );
@@ -307,7 +311,8 @@ class AppContents extends React.PureComponent {
 
   // ------------------------------------------
   toggleRaw = () => {
-    this.setState({ fRaw: !this.state.fRaw });
+    const { fRaw } = this.state;
+    this.setState({ fRaw: !fRaw });
   };
   showBaseline = () => {
     this.setState({ fShowBaseline: true });

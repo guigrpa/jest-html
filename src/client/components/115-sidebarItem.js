@@ -1,7 +1,7 @@
 // @flow
 
 /* eslint-env browser */
-/* eslint-disable react/no-multi-comp */
+/* eslint-disable react/no-multi-comp, react/prefer-stateless-function */
 
 import React from 'react';
 import { Link } from 'react-router';

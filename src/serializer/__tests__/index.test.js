@@ -1,7 +1,7 @@
 /* eslint-env jest */
 import prettyFormat from 'pretty-format';
 
-import * as serialize from '../';
+import * as serialize from '..';
 
 describe('Serializer', () => {
   it('should correctly discard non-React components', () => {

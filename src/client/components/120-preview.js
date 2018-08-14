@@ -48,7 +48,8 @@ const Preview = ({ snapshot, fRaw, fShowBaseline }: PropsT) => {
           </pre>
         </div>
       );
-    } else if (isMarkdown(snapshotData.snap)) {
+    }
+    if (isMarkdown(snapshotData.snap)) {
       return (
         <div style={style.outer}>
           <MarkdownPreview

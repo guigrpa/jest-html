@@ -30,6 +30,8 @@ rules:
   object-property-newline: off
   class-methods-use-this: off
   arrow-parens: off
+  lines-between-class-members: off
+  prefer-destructuring: off
   react/sort-comp: off
   react/jsx-first-prop-new-line: off
   react/jsx-indent: off
@@ -42,6 +44,8 @@ rules:
   react/require-extension: off
   react/require-default-props: off
   react/no-did-update-set-state: off
+  react/destructuring-assignment: off
+  react/jsx-one-expression-per-line: off
   import/no-extraneous-dependencies:
     - error
     - devDependencies: true
