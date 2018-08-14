@@ -47,9 +47,9 @@
     "jest": "jest --watch --coverage",
     "jestDebug": "node --debug-brk --inspect node_modules/.bin/jest -i",
     "testCovPrepare": "rm -rf ./coverage .nyc_output .nyc_tmp && mkdir .nyc_tmp",
-    "testDev": "cross-env NODE_ENV=development jest --coverage && mv .nyc_output/coverage-final.json .nyc_tmp/coverage-dev.json",
-    "testProd": "cross-env NODE_ENV=production jest --coverage && mv .nyc_output/coverage-final.json .nyc_tmp/coverage-prod.json",
-    "testMin": "cross-env TEST_MINIFIED_LIB=1 jest --coverage && mv .nyc_output/coverage-final.json .nyc_tmp/coverage-min.json",
+    "testDev": "NODE_ENV=development jest --coverage && mv .nyc_output/coverage-final.json .nyc_tmp/coverage-dev.json",
+    "testProd": "NODE_ENV=production jest --coverage && mv .nyc_output/coverage-final.json .nyc_tmp/coverage-prod.json",
+    "testMin": "TEST_MINIFIED_LIB=1 jest --coverage && mv .nyc_output/coverage-final.json .nyc_tmp/coverage-min.json",
     "testCovReport": "cp .nyc_tmp/* .nyc_output/ && nyc report --reporter=html --reporter=lcov --reporter=text"
   },
   "dependencies": {
@@ -84,7 +84,6 @@
     "babel-preset-stage-0": "6.24.1",
     "bundle-loader": "^0.5.6",
     "coveralls": "2.13.1",
-    "cross-env": "2.0.1",
     "css-loader": "^0.28.11",
     "eslint": "^5.3.0",
     "eslint-config-airbnb": "^17.1.0",
