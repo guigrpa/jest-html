@@ -10,7 +10,6 @@ module.exports = (env = {}) => {
 
   const cssLoader = {
     loader: 'css-loader',
-    options: { minimize: fProduction },
   };
 
   const sassLoader = {
