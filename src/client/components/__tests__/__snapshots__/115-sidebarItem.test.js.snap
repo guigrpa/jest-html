@@ -36,11 +36,9 @@ exports[`SidebarGroup renders correctly 1`] = `
 `;
 
 exports[`SidebarItem renders correctly 1`] = `
-<a
-  className=""
-  href="some/url"
+<div
+  dataMockType="Link"
   id="one"
-  onClick={[Function]}
   onMouseEnter={undefined}
   onMouseLeave={undefined}
   style={
@@ -55,7 +53,18 @@ exports[`SidebarItem renders correctly 1`] = `
       "wordBreak": "break-word",
     }
   }
+  to="some/url"
 >
+  <div
+    style={
+      Object {
+        "color": "blue",
+        "fontWeight": "bold",
+      }
+    }
+  >
+    Link
+  </div>
   <div
     style={
       Object {
@@ -87,14 +96,17 @@ exports[`SidebarItem renders correctly 1`] = `
     an/extremely/amazingly/ultra/hyper/really/very/long/label
      
   </div>
-</a>
+</div>
 ------------HTML PREVIEW---------------
-<a
-  class=""
-  href="some/url"
+<div
+  dataMockType="Link"
   id="one"
   style="align-items:center;color:currentColor;cursor:pointer;display:flex;flex-direction:row;padding:0.3em 1em;text-decoration:none;word-break:break-word;"
+  to="some/url"
 >
+  <div style="color:blue;font-weight:bold;">
+    Link
+  </div>
   <div style="-webkit-flex:0 0 20px;flex:0 0 20px;">
     <i
       class="giu-icon fa fa-folder-o"
@@ -106,15 +118,13 @@ exports[`SidebarItem renders correctly 1`] = `
     an/extremely/amazingly/ultra/hyper/really/very/long/label
      
   </div>
-</a>
+</div>
 `;
 
 exports[`SidebarItem renders correctly when hovered 1`] = `
-<a
-  className=""
-  href="some/url"
+<div
+  dataMockType="Link"
   id="two"
-  onClick={[Function]}
   onMouseEnter={undefined}
   onMouseLeave={undefined}
   style={
@@ -130,7 +140,18 @@ exports[`SidebarItem renders correctly when hovered 1`] = `
       "wordBreak": "break-word",
     }
   }
+  to="some/url"
 >
+  <div
+    style={
+      Object {
+        "color": "blue",
+        "fontWeight": "bold",
+      }
+    }
+  >
+    Link
+  </div>
   <div
     style={
       Object {
@@ -162,14 +183,17 @@ exports[`SidebarItem renders correctly when hovered 1`] = `
     two
      
   </div>
-</a>
+</div>
 ------------HTML PREVIEW---------------
-<a
-  class=""
-  href="some/url"
+<div
+  dataMockType="Link"
   id="two"
   style="align-items:center;background-color:#e6e6e6;color:currentColor;cursor:pointer;display:flex;flex-direction:row;padding:0.3em 1em;text-decoration:none;word-break:break-word;"
+  to="some/url"
 >
+  <div style="color:blue;font-weight:bold;">
+    Link
+  </div>
   <div style="-webkit-flex:0 0 20px;flex:0 0 20px;">
     <i
       class="giu-icon fa fa-folder-o"
@@ -181,15 +205,13 @@ exports[`SidebarItem renders correctly when hovered 1`] = `
     two
      
   </div>
-</a>
+</div>
 `;
 
 exports[`SidebarItem renders correctly when selected & hovered 1`] = `
-<a
-  className=""
-  href="some/url"
+<div
+  dataMockType="Link"
   id="four"
-  onClick={[Function]}
   onMouseEnter={undefined}
   onMouseLeave={undefined}
   style={
@@ -205,7 +227,18 @@ exports[`SidebarItem renders correctly when selected & hovered 1`] = `
       "wordBreak": "break-word",
     }
   }
+  to="some/url"
 >
+  <div
+    style={
+      Object {
+        "color": "blue",
+        "fontWeight": "bold",
+      }
+    }
+  >
+    Link
+  </div>
   <div
     style={
       Object {
@@ -237,14 +270,17 @@ exports[`SidebarItem renders correctly when selected & hovered 1`] = `
     four
      
   </div>
-</a>
+</div>
 ------------HTML PREVIEW---------------
-<a
-  class=""
-  href="some/url"
+<div
+  dataMockType="Link"
   id="four"
   style="align-items:center;background-color:#9d3614;color:white;cursor:pointer;display:flex;flex-direction:row;padding:0.3em 1em;text-decoration:none;word-break:break-word;"
+  to="some/url"
 >
+  <div style="color:blue;font-weight:bold;">
+    Link
+  </div>
   <div style="-webkit-flex:0 0 20px;flex:0 0 20px;">
     <i
       class="giu-icon fa fa-folder-o"
@@ -256,15 +292,13 @@ exports[`SidebarItem renders correctly when selected & hovered 1`] = `
     four
      
   </div>
-</a>
+</div>
 `;
 
 exports[`SidebarItem renders correctly when selected 1`] = `
-<a
-  className=""
-  href="some/url"
+<div
+  dataMockType="Link"
   id="three"
-  onClick={[Function]}
   onMouseEnter={undefined}
   onMouseLeave={undefined}
   style={
@@ -280,7 +314,18 @@ exports[`SidebarItem renders correctly when selected 1`] = `
       "wordBreak": "break-word",
     }
   }
+  to="some/url"
 >
+  <div
+    style={
+      Object {
+        "color": "blue",
+        "fontWeight": "bold",
+      }
+    }
+  >
+    Link
+  </div>
   <div
     style={
       Object {
@@ -312,14 +357,17 @@ exports[`SidebarItem renders correctly when selected 1`] = `
     three
      
   </div>
-</a>
+</div>
 ------------HTML PREVIEW---------------
-<a
-  class=""
-  href="some/url"
+<div
+  dataMockType="Link"
   id="three"
   style="align-items:center;background-color:#ca461a;color:white;cursor:pointer;display:flex;flex-direction:row;padding:0.3em 1em;text-decoration:none;word-break:break-word;"
+  to="some/url"
 >
+  <div style="color:blue;font-weight:bold;">
+    Link
+  </div>
   <div style="-webkit-flex:0 0 20px;flex:0 0 20px;">
     <i
       class="giu-icon fa fa-folder-o"
@@ -331,5 +379,5 @@ exports[`SidebarItem renders correctly when selected 1`] = `
     three
      
   </div>
-</a>
+</div>
 `;

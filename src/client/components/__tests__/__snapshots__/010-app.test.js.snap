@@ -8,8 +8,8 @@ exports[`App renders correctly 1`] = `
   fetchedItem={null}
   fetchedItemPath={null}
   fetchedItemType={null}
+  location={Object {}}
   onRedirectToRoot={[Function]}
-  query={undefined}
   saveAsBaseline={[Function]}
 >
   <div

@@ -4,7 +4,7 @@
 /* eslint-disable react/no-multi-comp, react/prefer-stateless-function */
 
 import React from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import {
   Icon,
   hoverable,
@@ -44,9 +44,7 @@ type Props = {
 // ==========================================
 // Component
 // ==========================================
-class SidebarItem extends React.Component {
-  props: Props;
-  static defaultProps = {};
+class SidebarItem extends React.Component<Props> {
   fDirtyIconShown: boolean;
 
   componentDidMount() {
@@ -149,10 +147,7 @@ const SidebarGroup = ({ name, children }: { name: string, children?: any }) => (
   </div>
 );
 
-class _DirtyIcon extends React.Component {
-  props: any;
-  static defaultProps: any;
-
+class _DirtyIcon extends React.Component<{}> {
   render() {
     const {
       hovering,
@@ -175,9 +170,9 @@ class _DirtyIcon extends React.Component {
       <Icon
         id={id}
         icon="asterisk"
-        onMouseEnter={fSelected && onHoverStart}
-        onMouseLeave={fSelected && onHoverStop}
-        onClick={fSnapshot && onClick}
+        onMouseEnter={fSelected ? onHoverStart : undefined}
+        onMouseLeave={fSelected ? onHoverStop : undefined}
+        onClick={fSnapshot ? onClick : undefined}
         style={style.dirtyIcon({ fSelected, fSnapshot, fHovering: hovering })}
         title={tooltip}
       />

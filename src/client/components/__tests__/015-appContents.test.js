@@ -137,7 +137,7 @@ describe('AppContents', () => {
           fetchedItemType="SUITE"
           fetchedItem={SUITE_WITH_GROUPS_AND_INDIVIDUAL_SNAPSHOTS}
           fetchedItemPath="-/path/to/folder/suite1.js.snap"
-          query={{ id: 'individual1 1' }}
+          location={{ state: { id: 'individual1 1' } }}
         />
       )
       .toJSON();

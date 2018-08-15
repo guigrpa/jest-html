@@ -10,7 +10,7 @@ import LargeMessage from './200-largeMessage';
 // ==========================================
 // Declarations
 // ==========================================
-type PropsT = {
+type Props = {
   snapshot: ?SnapshotT,
   fRaw?: boolean,
   fShowBaseline?: boolean,
@@ -28,7 +28,7 @@ export const isMarkdown = (str: string) => str.match(/^\s*"\s*(#+|---+)/);
 // ==========================================
 // Component
 // ==========================================
-const Preview = ({ snapshot, fRaw, fShowBaseline }: PropsT) => {
+const Preview = ({ snapshot, fRaw, fShowBaseline }: Props) => {
   if (!snapshot) {
     return (
       <div style={style.outer}>

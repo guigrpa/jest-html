@@ -15,39 +15,31 @@ const socketDisconnect = () => {
 // Declarations
 // ==========================================
 type SidebarTypeT = 'FOLDER' | 'SUITE';
-type PropsT = {
+type Props = {
   /* eslint-disable react/no-unused-prop-types */
-  pathname: string,
-  pattern: string,
-  params: any,
+  match: Object,
   /* eslint-enable react/no-unused-prop-types */
   location: Object,
+};
+type State = {
+  fetchedItemType: ?SidebarTypeT,
+  fetchedItem: ?(FolderT | SnapshotSuiteT),
+  fetchedItemPath: ?string,
+  error: ?string,
+  fRedirectToRoot: boolean,
 };
 
 // ==========================================
 // Component
 // ==========================================
-class App extends React.Component {
-  props: PropsT;
-  state: {
-    fetchedItemType: ?SidebarTypeT,
-    fetchedItem: ?(FolderT | SnapshotSuiteT),
-    fetchedItemPath: ?string,
-    error: ?string,
-    fRedirectToRoot: boolean,
+class App extends React.Component<Props, State> {
+  state = {
+    fetchedItemType: null,
+    fetchedItem: null,
+    fetchedItemPath: null,
+    error: null,
+    fRedirectToRoot: false,
   };
-  socket: Object;
-
-  constructor(props: PropsT) {
-    super(props);
-    this.state = {
-      fetchedItemType: null,
-      fetchedItem: null,
-      fetchedItemPath: null,
-      error: null,
-      fRedirectToRoot: false,
-    };
-  }
 
   // unit testing
   _setState(state: Object) {
@@ -63,18 +55,19 @@ class App extends React.Component {
     socket.off('REFRESH', this.refetch);
   }
 
-  componentWillUpdate(nextProps: PropsT) {
+  componentWillUpdate(nextProps: Props) {
     this.fetchSidebarData(this.props, nextProps);
   }
 
-  fetchSidebarData(prevProps?: PropsT, nextProps: PropsT) {
-    const { pathname, pattern, params } = nextProps;
-    if (prevProps != null && pathname === prevProps.pathname) return;
-    if (pathname === '/') {
+  fetchSidebarData(prevProps?: Props, nextProps: Props) {
+    const { match } = nextProps;
+    const { path, url, params } = match;
+    if (prevProps != null && url === prevProps.match.url) return;
+    if (path === '/') {
       this.fetchFolder('-');
-    } else if (pattern.indexOf('/folder') === 0) {
+    } else if (path === '/folder/*') {
       this.fetchFolder(params[0]);
-    } else if (pattern.indexOf('/suite') === 0) {
+    } else if (path === '/suite/*') {
       this.fetchSuite(params[0]);
     }
   }
@@ -91,7 +84,7 @@ class App extends React.Component {
           this.setState({ fRedirectToRoot: true });
         }}
         fRedirectToRoot={this.state.fRedirectToRoot}
-        query={this.props.location.query}
+        location={this.props.location}
         saveAsBaseline={this.saveAsBaseline}
       />
     );
@@ -107,46 +100,42 @@ class App extends React.Component {
     }
   };
 
-  fetchFolder(folderPath: ?string) {
+  async fetchFolder(folderPath: ?string) {
     if (folderPath == null) return;
-    fetch('/api/folder', {
-      method: 'POST',
-      headers: { 'content-type': 'application/json' },
-      body: JSON.stringify({ folderPath }),
-    })
-      .then(res => res.json())
-      .then((folder: FolderT) => {
-        this.setState({
-          fetchedItemType: 'FOLDER',
-          fetchedItem: folder,
-          fetchedItemPath: folderPath,
-        });
-      })
-      .catch(() => {
-        // $FlowFixMe
-        this.setState({ error: `Could not find ${folderPath}` });
+    try {
+      const res = await fetch('/api/folder', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ folderPath }),
       });
+      const folder: FolderT = await res.json();
+      this.setState({
+        fetchedItemType: 'FOLDER',
+        fetchedItem: folder,
+        fetchedItemPath: folderPath,
+      });
+    } catch (err) {
+      this.setState({ error: `Could not find ${folderPath}` });
+    }
   }
 
-  fetchSuite(filePath: ?string) {
+  async fetchSuite(filePath: ?string) {
     if (filePath == null) return;
-    fetch('/api/suite', {
-      method: 'POST',
-      headers: { 'content-type': 'application/json' },
-      body: JSON.stringify({ filePath }),
-    })
-      .then(res => res.json())
-      .then((suite: SnapshotSuiteT) => {
-        this.setState({
-          fetchedItemType: 'SUITE',
-          fetchedItem: suite,
-          fetchedItemPath: filePath,
-        });
-      })
-      .catch(() => {
-        // $FlowFixMe
-        this.setState({ error: `Could not find ${filePath}` });
+    try {
+      const res = await fetch('/api/suite', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ filePath }),
       });
+      const suite: SnapshotSuiteT = await res.json();
+      this.setState({
+        fetchedItemType: 'SUITE',
+        fetchedItem: suite,
+        fetchedItemPath: filePath,
+      });
+    } catch (err) {
+      this.setState({ error: `Could not find ${filePath}` });
+    }
   }
 
   saveAsBaseline = (snapshotId: string) => {

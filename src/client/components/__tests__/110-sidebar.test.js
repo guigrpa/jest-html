@@ -6,6 +6,9 @@ import Sidebar from '../110-sidebar';
 
 // https://github.com/facebook/react/issues/7386#issuecomment-238091398
 jest.mock('react-dom');
+jest.mock('react-router-dom', () => ({
+  Link: require('./mockComponent')('Link'),
+}));
 
 describe('Sidebar', () => {
   it('renders correctly', () => {

@@ -6,6 +6,9 @@ import { _SidebarItem as SidebarItem, SidebarGroup } from '../115-sidebarItem';
 
 // https://github.com/facebook/react/issues/7386#issuecomment-238091398
 jest.mock('react-dom');
+jest.mock('react-router-dom', () => ({
+  Link: require('./mockComponent')('Link'),
+}));
 
 describe('SidebarItem', () => {
   it('renders correctly', () => {

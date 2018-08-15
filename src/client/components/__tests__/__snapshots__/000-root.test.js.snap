@@ -14,12 +14,24 @@ exports[`Root renders correctly 1`] = `
   >
     BrowserRouter
   </div>
-  <div>
+  <div
+    dataMockType="Switch"
+  >
+    <div
+      style={
+        Object {
+          "color": "blue",
+          "fontWeight": "bold",
+        }
+      }
+    >
+      Switch
+    </div>
     <div
       component={[Function]}
-      dataMockType="Match"
-      exactly={true}
-      pattern="/"
+      dataMockType="Route"
+      exact={true}
+      path="/"
     >
       <div
         style={
@@ -29,13 +41,13 @@ exports[`Root renders correctly 1`] = `
           }
         }
       >
-        Match
+        Route
       </div>
     </div>
     <div
       component={[Function]}
-      dataMockType="Match"
-      pattern="/suite/*"
+      dataMockType="Route"
+      path="/suite/*"
     >
       <div
         style={
@@ -45,13 +57,13 @@ exports[`Root renders correctly 1`] = `
           }
         }
       >
-        Match
+        Route
       </div>
     </div>
     <div
       component={[Function]}
-      dataMockType="Match"
-      pattern="/folder/*"
+      dataMockType="Route"
+      path="/folder/*"
     >
       <div
         style={
@@ -61,11 +73,11 @@ exports[`Root renders correctly 1`] = `
           }
         }
       >
-        Match
+        Route
       </div>
     </div>
     <div
-      dataMockType="Miss"
+      dataMockType="Route"
       render={[Function]}
     >
       <div
@@ -76,7 +88,7 @@ exports[`Root renders correctly 1`] = `
           }
         }
       >
-        Miss
+        Route
       </div>
     </div>
   </div>
@@ -86,35 +98,38 @@ exports[`Root renders correctly 1`] = `
   <div style="color:blue;font-weight:bold;">
     BrowserRouter
   </div>
-  <div>
+  <div dataMockType="Switch">
+    <div style="color:blue;font-weight:bold;">
+      Switch
+    </div>
     <div
-      dataMockType="Match"
-      exactly
-      pattern="/"
+      dataMockType="Route"
+      exact
+      path="/"
     >
       <div style="color:blue;font-weight:bold;">
-        Match
+        Route
       </div>
     </div>
     <div
-      dataMockType="Match"
-      pattern="/suite/*"
+      dataMockType="Route"
+      path="/suite/*"
     >
       <div style="color:blue;font-weight:bold;">
-        Match
+        Route
       </div>
     </div>
     <div
-      dataMockType="Match"
-      pattern="/folder/*"
+      dataMockType="Route"
+      path="/folder/*"
     >
       <div style="color:blue;font-weight:bold;">
-        Match
+        Route
       </div>
     </div>
-    <div dataMockType="Miss">
+    <div dataMockType="Route">
       <div style="color:blue;font-weight:bold;">
-        Miss
+        Route
       </div>
     </div>
   </div>

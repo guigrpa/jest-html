@@ -90,7 +90,7 @@ exports[`AppContents renders a folder with subfolders and suites correctly 1`] =
       icon="folder-o"
       id="folder_-/path/to/folder/super/nested/folder"
       label="super/nested/folder"
-      link="/folder/-%2Fpath%2Fto%2Ffolder%2Fsuper%2Fnested%2Ffolder"
+      link="/folder/-/path/to/folder/super/nested/folder"
     >
       <div
         style={
@@ -110,7 +110,7 @@ exports[`AppContents renders a folder with subfolders and suites correctly 1`] =
       icon="folder-o"
       id="folder_-/path/to/folder/subdir"
       label="subdir"
-      link="/folder/-%2Fpath%2Fto%2Ffolder%2Fsubdir"
+      link="/folder/-/path/to/folder/subdir"
     >
       <div
         style={
@@ -130,7 +130,7 @@ exports[`AppContents renders a folder with subfolders and suites correctly 1`] =
       icon="file-o"
       id="suite_-/path/to/folder/suite1.snap"
       label="suite1.​snap"
-      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.snap"
+      link="/suite/-/path/to/folder/suite1.snap"
     >
       <div
         style={
@@ -150,7 +150,7 @@ exports[`AppContents renders a folder with subfolders and suites correctly 1`] =
       icon="file-o"
       id="suite_-/path/to/folder/suite2.snap"
       label="suite2.​snap"
-      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite2.snap"
+      link="/suite/-/path/to/folder/suite2.snap"
     >
       <div
         style={
@@ -170,7 +170,7 @@ exports[`AppContents renders a folder with subfolders and suites correctly 1`] =
       icon="file-o"
       id="suite_-/path/to/folder/suite3.snap"
       label="suite3.​snap"
-      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite3.snap"
+      link="/suite/-/path/to/folder/suite3.snap"
     >
       <div
         style={
@@ -223,7 +223,7 @@ exports[`AppContents renders a folder with subfolders and suites correctly 1`] =
       icon="folder-o"
       id="folder_-/path/to/folder/super/nested/folder"
       label="super/nested/folder"
-      link="/folder/-%2Fpath%2Fto%2Ffolder%2Fsuper%2Fnested%2Ffolder"
+      link="/folder/-/path/to/folder/super/nested/folder"
     >
       <div style="color:blue;font-weight:bold;">
         SidebarItem
@@ -234,7 +234,7 @@ exports[`AppContents renders a folder with subfolders and suites correctly 1`] =
       icon="folder-o"
       id="folder_-/path/to/folder/subdir"
       label="subdir"
-      link="/folder/-%2Fpath%2Fto%2Ffolder%2Fsubdir"
+      link="/folder/-/path/to/folder/subdir"
     >
       <div style="color:blue;font-weight:bold;">
         SidebarItem
@@ -245,7 +245,7 @@ exports[`AppContents renders a folder with subfolders and suites correctly 1`] =
       icon="file-o"
       id="suite_-/path/to/folder/suite1.snap"
       label="suite1.​snap"
-      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.snap"
+      link="/suite/-/path/to/folder/suite1.snap"
     >
       <div style="color:blue;font-weight:bold;">
         SidebarItem
@@ -256,7 +256,7 @@ exports[`AppContents renders a folder with subfolders and suites correctly 1`] =
       icon="file-o"
       id="suite_-/path/to/folder/suite2.snap"
       label="suite2.​snap"
-      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite2.snap"
+      link="/suite/-/path/to/folder/suite2.snap"
     >
       <div style="color:blue;font-weight:bold;">
         SidebarItem
@@ -267,7 +267,7 @@ exports[`AppContents renders a folder with subfolders and suites correctly 1`] =
       icon="file-o"
       id="suite_-/path/to/folder/suite3.snap"
       label="suite3.​snap"
-      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite3.snap"
+      link="/suite/-/path/to/folder/suite3.snap"
     >
       <div style="color:blue;font-weight:bold;">
         SidebarItem
@@ -345,7 +345,7 @@ exports[`AppContents renders a folder with subfolders correctly 1`] = `
       icon="folder-o"
       id="folder_-/path/to/folder/super/nested/folder"
       label="super/nested/folder"
-      link="/folder/-%2Fpath%2Fto%2Ffolder%2Fsuper%2Fnested%2Ffolder"
+      link="/folder/-/path/to/folder/super/nested/folder"
     >
       <div
         style={
@@ -365,7 +365,7 @@ exports[`AppContents renders a folder with subfolders correctly 1`] = `
       icon="folder-o"
       id="folder_-/path/to/folder/subdir"
       label="subdir"
-      link="/folder/-%2Fpath%2Fto%2Ffolder%2Fsubdir"
+      link="/folder/-/path/to/folder/subdir"
     >
       <div
         style={
@@ -418,7 +418,7 @@ exports[`AppContents renders a folder with subfolders correctly 1`] = `
       icon="folder-o"
       id="folder_-/path/to/folder/super/nested/folder"
       label="super/nested/folder"
-      link="/folder/-%2Fpath%2Fto%2Ffolder%2Fsuper%2Fnested%2Ffolder"
+      link="/folder/-/path/to/folder/super/nested/folder"
     >
       <div style="color:blue;font-weight:bold;">
         SidebarItem
@@ -429,7 +429,7 @@ exports[`AppContents renders a folder with subfolders correctly 1`] = `
       icon="folder-o"
       id="folder_-/path/to/folder/subdir"
       label="subdir"
-      link="/folder/-%2Fpath%2Fto%2Ffolder%2Fsubdir"
+      link="/folder/-/path/to/folder/subdir"
     >
       <div style="color:blue;font-weight:bold;">
         SidebarItem
@@ -507,7 +507,7 @@ exports[`AppContents renders a folder with suites correctly 1`] = `
       icon="file-o"
       id="suite_-/path/to/folder/suite1.snap"
       label="suite1.​snap"
-      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.snap"
+      link="/suite/-/path/to/folder/suite1.snap"
     >
       <div
         style={
@@ -527,7 +527,7 @@ exports[`AppContents renders a folder with suites correctly 1`] = `
       icon="file-o"
       id="suite_-/path/to/folder/suite2.snap"
       label="suite2.​snap"
-      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite2.snap"
+      link="/suite/-/path/to/folder/suite2.snap"
     >
       <div
         style={
@@ -547,7 +547,7 @@ exports[`AppContents renders a folder with suites correctly 1`] = `
       icon="file-o"
       id="suite_-/path/to/folder/suite3.snap"
       label="suite3.​snap"
-      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite3.snap"
+      link="/suite/-/path/to/folder/suite3.snap"
     >
       <div
         style={
@@ -600,7 +600,7 @@ exports[`AppContents renders a folder with suites correctly 1`] = `
       icon="file-o"
       id="suite_-/path/to/folder/suite1.snap"
       label="suite1.​snap"
-      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.snap"
+      link="/suite/-/path/to/folder/suite1.snap"
     >
       <div style="color:blue;font-weight:bold;">
         SidebarItem
@@ -611,7 +611,7 @@ exports[`AppContents renders a folder with suites correctly 1`] = `
       icon="file-o"
       id="suite_-/path/to/folder/suite2.snap"
       label="suite2.​snap"
-      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite2.snap"
+      link="/suite/-/path/to/folder/suite2.snap"
     >
       <div style="color:blue;font-weight:bold;">
         SidebarItem
@@ -622,7 +622,7 @@ exports[`AppContents renders a folder with suites correctly 1`] = `
       icon="file-o"
       id="suite_-/path/to/folder/suite3.snap"
       label="suite3.​snap"
-      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite3.snap"
+      link="/suite/-/path/to/folder/suite3.snap"
     >
       <div style="color:blue;font-weight:bold;">
         SidebarItem
@@ -757,7 +757,14 @@ exports[`AppContents renders a suite with a selected snapshot 1`] = `
         icon="camera"
         id="groupname 1"
         label="1"
-        link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=groupname%201"
+        link={
+          Object {
+            "pathname": "/suite/-/path/to/folder/suite1.js.snap",
+            "state": Object {
+              "id": "groupname 1",
+            },
+          }
+        }
         saveAsBaseline={undefined}
         showBaseline={[Function]}
       >
@@ -781,7 +788,14 @@ exports[`AppContents renders a suite with a selected snapshot 1`] = `
         icon="camera"
         id="groupname 2"
         label="2"
-        link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=groupname%202"
+        link={
+          Object {
+            "pathname": "/suite/-/path/to/folder/suite1.js.snap",
+            "state": Object {
+              "id": "groupname 2",
+            },
+          }
+        }
         saveAsBaseline={undefined}
         showBaseline={[Function]}
       >
@@ -806,7 +820,14 @@ exports[`AppContents renders a suite with a selected snapshot 1`] = `
       icon="camera"
       id="individual1 1"
       label="individual1"
-      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=individual1%201"
+      link={
+        Object {
+          "pathname": "/suite/-/path/to/folder/suite1.js.snap",
+          "state": Object {
+            "id": "individual1 1",
+          },
+        }
+      }
       saveAsBaseline={undefined}
       showBaseline={[Function]}
     >
@@ -830,7 +851,14 @@ exports[`AppContents renders a suite with a selected snapshot 1`] = `
       icon="camera"
       id="individual2 1"
       label="individual2"
-      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=individual2%201"
+      link={
+        Object {
+          "pathname": "/suite/-/path/to/folder/suite1.js.snap",
+          "state": Object {
+            "id": "individual2 1",
+          },
+        }
+      }
       saveAsBaseline={undefined}
       showBaseline={[Function]}
     >
@@ -900,7 +928,6 @@ exports[`AppContents renders a suite with a selected snapshot 1`] = `
         icon="camera"
         id="groupname 1"
         label="1"
-        link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=groupname%201"
       >
         <div style="color:blue;font-weight:bold;">
           SidebarItem
@@ -911,7 +938,6 @@ exports[`AppContents renders a suite with a selected snapshot 1`] = `
         icon="camera"
         id="groupname 2"
         label="2"
-        link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=groupname%202"
       >
         <div style="color:blue;font-weight:bold;">
           SidebarItem
@@ -924,7 +950,6 @@ exports[`AppContents renders a suite with a selected snapshot 1`] = `
       icon="camera"
       id="individual1 1"
       label="individual1"
-      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=individual1%201"
     >
       <div style="color:blue;font-weight:bold;">
         SidebarItem
@@ -935,7 +960,6 @@ exports[`AppContents renders a suite with a selected snapshot 1`] = `
       icon="camera"
       id="individual2 1"
       label="individual2"
-      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=individual2%201"
     >
       <div style="color:blue;font-weight:bold;">
         SidebarItem
@@ -1029,7 +1053,14 @@ exports[`AppContents renders a suite with grouped snapshots correctly 1`] = `
         icon="camera"
         id="groupname 1"
         label="1"
-        link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=groupname%201"
+        link={
+          Object {
+            "pathname": "/suite/-/path/to/folder/suite1.js.snap",
+            "state": Object {
+              "id": "groupname 1",
+            },
+          }
+        }
         saveAsBaseline={undefined}
         showBaseline={[Function]}
       >
@@ -1053,7 +1084,14 @@ exports[`AppContents renders a suite with grouped snapshots correctly 1`] = `
         icon="camera"
         id="groupname 2"
         label="2"
-        link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=groupname%202"
+        link={
+          Object {
+            "pathname": "/suite/-/path/to/folder/suite1.js.snap",
+            "state": Object {
+              "id": "groupname 2",
+            },
+          }
+        }
         saveAsBaseline={undefined}
         showBaseline={[Function]}
       >
@@ -1078,7 +1116,14 @@ exports[`AppContents renders a suite with grouped snapshots correctly 1`] = `
       icon="camera"
       id="individual1 1"
       label="individual1"
-      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=individual1%201"
+      link={
+        Object {
+          "pathname": "/suite/-/path/to/folder/suite1.js.snap",
+          "state": Object {
+            "id": "individual1 1",
+          },
+        }
+      }
       saveAsBaseline={undefined}
       showBaseline={[Function]}
     >
@@ -1102,7 +1147,14 @@ exports[`AppContents renders a suite with grouped snapshots correctly 1`] = `
       icon="camera"
       id="individual2 1"
       label="individual2"
-      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=individual2%201"
+      link={
+        Object {
+          "pathname": "/suite/-/path/to/folder/suite1.js.snap",
+          "state": Object {
+            "id": "individual2 1",
+          },
+        }
+      }
       saveAsBaseline={undefined}
       showBaseline={[Function]}
     >
@@ -1164,7 +1216,6 @@ exports[`AppContents renders a suite with grouped snapshots correctly 1`] = `
         icon="camera"
         id="groupname 1"
         label="1"
-        link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=groupname%201"
       >
         <div style="color:blue;font-weight:bold;">
           SidebarItem
@@ -1175,7 +1226,6 @@ exports[`AppContents renders a suite with grouped snapshots correctly 1`] = `
         icon="camera"
         id="groupname 2"
         label="2"
-        link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=groupname%202"
       >
         <div style="color:blue;font-weight:bold;">
           SidebarItem
@@ -1187,7 +1237,6 @@ exports[`AppContents renders a suite with grouped snapshots correctly 1`] = `
       icon="camera"
       id="individual1 1"
       label="individual1"
-      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=individual1%201"
     >
       <div style="color:blue;font-weight:bold;">
         SidebarItem
@@ -1198,7 +1247,6 @@ exports[`AppContents renders a suite with grouped snapshots correctly 1`] = `
       icon="camera"
       id="individual2 1"
       label="individual2"
-      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=individual2%201"
     >
       <div style="color:blue;font-weight:bold;">
         SidebarItem
@@ -1278,7 +1326,14 @@ exports[`AppContents renders a suite with individual snapshots correctly 1`] = `
       icon="camera"
       id="individual1 1"
       label="individual1"
-      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=individual1%201"
+      link={
+        Object {
+          "pathname": "/suite/-/path/to/folder/suite1.js.snap",
+          "state": Object {
+            "id": "individual1 1",
+          },
+        }
+      }
       saveAsBaseline={undefined}
       showBaseline={[Function]}
     >
@@ -1302,7 +1357,14 @@ exports[`AppContents renders a suite with individual snapshots correctly 1`] = `
       icon="camera"
       id="individual2 1"
       label="individual2"
-      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=individual2%201"
+      link={
+        Object {
+          "pathname": "/suite/-/path/to/folder/suite1.js.snap",
+          "state": Object {
+            "id": "individual2 1",
+          },
+        }
+      }
       saveAsBaseline={undefined}
       showBaseline={[Function]}
     >
@@ -1357,7 +1419,6 @@ exports[`AppContents renders a suite with individual snapshots correctly 1`] = `
       icon="camera"
       id="individual1 1"
       label="individual1"
-      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=individual1%201"
     >
       <div style="color:blue;font-weight:bold;">
         SidebarItem
@@ -1368,7 +1429,6 @@ exports[`AppContents renders a suite with individual snapshots correctly 1`] = `
       icon="camera"
       id="individual2 1"
       label="individual2"
-      link="/suite/-%2Fpath%2Fto%2Ffolder%2Fsuite1.js.snap?id=individual2%201"
     >
       <div style="color:blue;font-weight:bold;">
         SidebarItem
@@ -1539,7 +1599,7 @@ exports[`AppContents renders the root folder correctly 1`] = `
       icon="folder-o"
       id="folder_-/path/to/folder"
       label="path/to/folder"
-      link="/folder/-%2Fpath%2Fto%2Ffolder"
+      link="/folder/-/path/to/folder"
     >
       <div
         style={
@@ -1559,7 +1619,7 @@ exports[`AppContents renders the root folder correctly 1`] = `
       icon="folder-o"
       id="folder_-/path/to/folder2"
       label="path/to/folder2"
-      link="/folder/-%2Fpath%2Fto%2Ffolder2"
+      link="/folder/-/path/to/folder2"
     >
       <div
         style={
@@ -1611,7 +1671,7 @@ exports[`AppContents renders the root folder correctly 1`] = `
       icon="folder-o"
       id="folder_-/path/to/folder"
       label="path/to/folder"
-      link="/folder/-%2Fpath%2Fto%2Ffolder"
+      link="/folder/-/path/to/folder"
     >
       <div style="color:blue;font-weight:bold;">
         SidebarItem
@@ -1622,7 +1682,7 @@ exports[`AppContents renders the root folder correctly 1`] = `
       icon="folder-o"
       id="folder_-/path/to/folder2"
       label="path/to/folder2"
-      link="/folder/-%2Fpath%2Fto%2Ffolder2"
+      link="/folder/-/path/to/folder2"
     >
       <div style="color:blue;font-weight:bold;">
         SidebarItem

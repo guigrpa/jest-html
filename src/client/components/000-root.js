@@ -2,7 +2,8 @@
 
 /* eslint-env browser */
 import React from 'react';
-import { BrowserRouter, Match, Miss } from 'react-router';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Switch } from 'react-router'; // eslint-disable-line
 import App from './010-app';
 import LargeMessage from './200-largeMessage';
 
@@ -10,14 +11,14 @@ import LargeMessage from './200-largeMessage';
 // Component
 // ==========================================
 const Root = () => (
-  <BrowserRouter>
-    <div>
-      <Match exactly pattern="/" component={App} />
-      <Match pattern="/suite/*" component={App} />
-      <Match pattern="/folder/*" component={App} />
-      <Miss render={() => <LargeMessage>Ooops! 404!</LargeMessage>} />
-    </div>
-  </BrowserRouter>
+  <Router>
+    <Switch>
+      <Route exact path="/" component={App} />
+      <Route path="/suite/*" component={App} />
+      <Route path="/folder/*" component={App} />
+      <Route render={() => <LargeMessage>Ooops! 404!</LargeMessage>} />
+    </Switch>
+  </Router>
 );
 
 // ==========================================

@@ -16,9 +16,12 @@ describe('App', () => {
   });
 
   it('renders correctly', () => {
-    const tree = renderer
-      .create(<App pathname="/" pattern="/" params={{}} location={{}} />)
-      .toJSON();
+    const match = {
+      path: '/',
+      url: '/',
+      params: {},
+    };
+    const tree = renderer.create(<App match={match} location={{}} />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 

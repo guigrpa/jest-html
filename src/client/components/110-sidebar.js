@@ -1,13 +1,13 @@
 // @flow
 
 import React from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import { Icon, flexContainer, flexItem } from 'giu';
 
 // ==========================================
 // Declarations
 // ==========================================
-type PropsT = {
+type Props = {
   title: any,
   subtitle: ?string,
   linkBack: ?string,
@@ -26,7 +26,7 @@ const Sidebar = ({
   children,
   fRaw,
   toggleRaw,
-}: PropsT) => (
+}: Props) => (
   <div style={style.outer} id="jh-sidebar">
     <div style={style.titleBar}>
       <div style={flexItem('0 0 30px')}>

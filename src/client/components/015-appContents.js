@@ -2,7 +2,7 @@
 
 /* eslint-env browser */
 import React from 'react';
-import { Redirect } from 'react-router';
+import { Redirect } from 'react-router'; // eslint-disable-line
 import {
   Floats,
   Hints,
@@ -35,40 +35,33 @@ const snapshotName = id => {
   return segments.slice(0, segments.length - 1).join(' ');
 };
 
-const _escape = str => encodeURIComponent(str);
-
 // ==========================================
 // Declarations
 // ==========================================
 type SidebarTypeT = 'FOLDER' | 'SUITE';
-type PropsT = {
+type Props = {
   fetchedItemType: ?SidebarTypeT,
   fetchedItem: ?(FolderT | SnapshotSuiteT),
   fetchedItemPath: ?string,
   error: ?string,
   onRedirectToRoot: () => void,
-  fRedirectToRoot: boolean,
-  query: ?Object,
+  fRedirectToRoot?: boolean,
+  location: Object,
   saveAsBaseline: (snapshotId: string) => any,
+};
+type State = {
+  fRaw: boolean,
+  fShowBaseline: boolean,
 };
 
 // ==========================================
 // Component
 // ==========================================
-class AppContents extends React.PureComponent {
-  props: PropsT;
-  state: {
-    fRaw: boolean,
-    fShowBaseline: boolean,
+class AppContents extends React.PureComponent<Props, State> {
+  state = {
+    fRaw: false,
+    fShowBaseline: false,
   };
-
-  constructor(props: PropsT) {
-    super(props);
-    this.state = {
-      fRaw: false,
-      fShowBaseline: false,
-    };
-  }
 
   componentDidMount() {
     this.hintIfNeeded();
@@ -168,7 +161,7 @@ class AppContents extends React.PureComponent {
           id={id}
           label={label}
           dirty={folder.childrenFolderDirtyFlags[idx]}
-          link={`/folder/${_escape(folderPath)}`}
+          link={`/folder/${folderPath}`}
           icon="folder-o"
           fSelected={false}
         />
@@ -186,7 +179,7 @@ class AppContents extends React.PureComponent {
           id={id}
           label={label}
           dirty={folder.suiteDirtyFlags[idx]}
-          link={`/suite/${_escape(filePath)}`}
+          link={`/suite/${filePath}`}
           icon="file-o"
           fSelected={false}
         />
@@ -201,7 +194,7 @@ class AppContents extends React.PureComponent {
 
   renderSuite() {
     const suite: SnapshotSuiteT = (this.props.fetchedItem: any);
-    const { query } = this.props;
+    const { location } = this.props;
     const contents = [];
     const groups = {};
     Object.keys(suite).forEach(id => {
@@ -226,7 +219,7 @@ class AppContents extends React.PureComponent {
             snapshotName(id),
             dirty,
             deleted,
-            query
+            location
           )
         );
       } else {
@@ -237,7 +230,7 @@ class AppContents extends React.PureComponent {
             label,
             dirty,
             deleted,
-            query
+            location
           );
         });
         contents.push(
@@ -256,9 +249,10 @@ class AppContents extends React.PureComponent {
     label: string,
     dirty: boolean,
     deleted: boolean,
-    query: ?Object
+    location: ?Object
   ) {
     const fetchedItemPath: any = this.props.fetchedItemPath;
+
     return (
       <SidebarItem
         key={id}
@@ -266,9 +260,9 @@ class AppContents extends React.PureComponent {
         label={label}
         dirty={dirty}
         deleted={deleted}
-        link={`/suite/${_escape(fetchedItemPath)}?id=${_escape(id)}`}
+        link={{ pathname: `/suite/${fetchedItemPath}`, state: { id } }}
         icon="camera"
-        fSelected={!!query && query.id === id}
+        fSelected={!!location && location.state && location.state.id === id}
         showBaseline={this.showBaseline}
         hideBaseline={this.hideBaseline}
         saveAsBaseline={this.props.saveAsBaseline}
@@ -277,19 +271,20 @@ class AppContents extends React.PureComponent {
   }
 
   renderPreview() {
-    const { query } = this.props;
+    const { location } = this.props;
     const { fetchedItemType, fetchedItemPath } = this.props;
     let snapshot;
     let key = 'preview';
     if (
       fetchedItemType === 'SUITE' &&
-      query &&
-      query.id != null &&
+      location &&
+      location.state &&
+      location.state.id != null &&
       fetchedItemPath
     ) {
       const suite: SnapshotSuiteT = (this.props.fetchedItem: any);
-      snapshot = suite[query.id];
-      key = `${fetchedItemPath}_${query.id}`;
+      snapshot = suite[location.state.id];
+      key = `${fetchedItemPath}_${location.state.id}`;
     }
     return (
       <Preview
