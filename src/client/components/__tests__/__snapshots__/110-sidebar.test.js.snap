@@ -57,13 +57,16 @@ exports[`Sidebar renders correctly 1`] = `
           Link
         </div>
         <i
-          className="giu-icon fa fa-chevron-left fa-lg"
+          className="giu-icon fa fa-chevron-left"
           style={
             Object {
               "color": undefined,
-              "cursor": "pointer",
-              "fontSize": undefined,
+              "cursor": undefined,
+              "display": "inline-block",
+              "fontSize": "1.33333333em",
               "letterSpacing": "normal",
+              "textAlign": undefined,
+              "width": undefined,
             }
           }
         />
@@ -91,14 +94,17 @@ exports[`Sidebar renders correctly 1`] = `
       }
     >
       <i
-        className="giu-icon fa fa-file-code-o fa-lg"
+        className="giu-icon fa fa-file-code-o"
         id="jh-toggle-raw"
         style={
           Object {
             "color": "gray",
-            "cursor": "pointer",
-            "fontSize": undefined,
+            "cursor": undefined,
+            "display": "inline-block",
+            "fontSize": "1.33333333em",
             "letterSpacing": "normal",
+            "textAlign": undefined,
+            "width": undefined,
           }
         }
         title="Toggle raw/HTML snapshot"
@@ -124,8 +130,8 @@ exports[`Sidebar renders correctly 1`] = `
           Link
         </div>
         <i
-          class="giu-icon fa fa-chevron-left fa-lg"
-          style="cursor:pointer;letter-spacing:normal;"
+          class="giu-icon fa fa-chevron-left"
+          style="display:inline-block;font-size:1.33333333em;letter-spacing:normal;"
         >
         </i>
       </div>
@@ -138,9 +144,9 @@ exports[`Sidebar renders correctly 1`] = `
     </div>
     <div style="-webkit-flex:0 1 30px;flex:0 1 30px;">
       <i
-        class="giu-icon fa fa-file-code-o fa-lg"
+        class="giu-icon fa fa-file-code-o"
         id="jh-toggle-raw"
-        style="color:gray;cursor:pointer;letter-spacing:normal;"
+        style="color:gray;display:inline-block;font-size:1.33333333em;letter-spacing:normal;"
         title="Toggle raw/HTML snapshot"
       >
       </i>
@@ -208,13 +214,16 @@ exports[`Sidebar renders correctly without linkBack 1`] = `
           Link
         </div>
         <i
-          className="giu-icon fa fa-chevron-left fa-lg"
+          className="giu-icon fa fa-chevron-left"
           style={
             Object {
               "color": "#999999",
               "cursor": undefined,
-              "fontSize": undefined,
+              "display": "inline-block",
+              "fontSize": "1.33333333em",
               "letterSpacing": "normal",
+              "textAlign": undefined,
+              "width": undefined,
             }
           }
         />
@@ -242,14 +251,17 @@ exports[`Sidebar renders correctly without linkBack 1`] = `
       }
     >
       <i
-        className="giu-icon fa fa-file-code-o fa-lg"
+        className="giu-icon fa fa-file-code-o"
         id="jh-toggle-raw"
         style={
           Object {
             "color": "gray",
-            "cursor": "pointer",
-            "fontSize": undefined,
+            "cursor": undefined,
+            "display": "inline-block",
+            "fontSize": "1.33333333em",
             "letterSpacing": "normal",
+            "textAlign": undefined,
+            "width": undefined,
           }
         }
         title="Toggle raw/HTML snapshot"
@@ -275,8 +287,8 @@ exports[`Sidebar renders correctly without linkBack 1`] = `
           Link
         </div>
         <i
-          class="giu-icon fa fa-chevron-left fa-lg"
-          style="color:#999999;letter-spacing:normal;"
+          class="giu-icon fa fa-chevron-left"
+          style="color:#999999;display:inline-block;font-size:1.33333333em;letter-spacing:normal;"
         >
         </i>
       </div>
@@ -289,9 +301,9 @@ exports[`Sidebar renders correctly without linkBack 1`] = `
     </div>
     <div style="-webkit-flex:0 1 30px;flex:0 1 30px;">
       <i
-        class="giu-icon fa fa-file-code-o fa-lg"
+        class="giu-icon fa fa-file-code-o"
         id="jh-toggle-raw"
-        style="color:gray;cursor:pointer;letter-spacing:normal;"
+        style="color:gray;display:inline-block;font-size:1.33333333em;letter-spacing:normal;"
         title="Toggle raw/HTML snapshot"
       >
       </i>
