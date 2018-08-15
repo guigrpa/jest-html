@@ -7,7 +7,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import {
   Icon,
-  hoverable,
   flexContainer,
   flexItem,
   darken,
@@ -22,7 +21,7 @@ import { isWaiting } from '../gral/helpers';
 let fHintAlreadyShown = false;
 
 // ==========================================
-// Declarations
+// SidebarItem
 // ==========================================
 type Props = {
   id: string,
@@ -30,22 +29,23 @@ type Props = {
   dirty?: boolean,
   deleted?: boolean,
   icon: string,
-  link: string,
+  link: any,
   fSelected: boolean,
   showBaseline?: () => any,
   hideBaseline?: () => any,
   saveAsBaseline?: (snapshotId: string) => any,
-  // hoverable HOC
-  hovering: any,
-  onHoverStart: Function,
-  onHoverStop: Function,
+  // unit testing
+  _hovering?: string,
 };
+type State = { hovering: ?string };
 
-// ==========================================
-// Component
-// ==========================================
-class SidebarItem extends React.Component<Props> {
+class SidebarItem extends React.Component<Props, State> {
   fDirtyIconShown: boolean;
+
+  constructor(props: Props) {
+    super(props);
+    this.state = { hovering: props._hovering || null };
+  }
 
   componentDidMount() {
     this.hintIfNeeded();
@@ -57,14 +57,18 @@ class SidebarItem extends React.Component<Props> {
   // ------------------------------------------
   render() {
     const { id, deleted, fSelected } = this.props;
-    const fHovered = this.props.hovering === id;
+    const isHovered = this.state.hovering === id;
     return (
       <Link
         id={id}
         to={this.props.link}
-        style={style.outer({ fSelected, fHovered, fDeleted: deleted })}
-        onMouseEnter={this.props.onHoverStart}
-        onMouseLeave={this.props.onHoverStop}
+        style={style.outer({ fSelected, isHovered, isDeleted: deleted })}
+        onMouseEnter={() => {
+          this.setState({ hovering: id });
+        }}
+        onMouseLeave={() => {
+          this.setState({ hovering: null });
+        }}
       >
         <div style={flexItem('0 0 20px')}>
           <Icon icon={this.props.icon} />
@@ -147,17 +151,24 @@ const SidebarGroup = ({ name, children }: { name: string, children?: any }) => (
   </div>
 );
 
-class _DirtyIcon extends React.Component<{}> {
+// ==========================================
+// DirtyIcon
+// ==========================================
+type PropsDirtyIcon = {
+  id: string,
+  fSelected: boolean,
+  fSnapshot: boolean,
+  onClick: Function,
+};
+type StateDirtyIcon = { hovering: boolean };
+
+class DirtyIcon extends React.Component<PropsDirtyIcon, StateDirtyIcon> {
+  state = { hovering: false };
+
+  // ------------------------------------------
   render() {
-    const {
-      hovering,
-      id,
-      fSelected,
-      fSnapshot,
-      onHoverStart,
-      onHoverStop,
-      onClick,
-    } = this.props;
+    const { id, fSelected, fSnapshot, onClick } = this.props;
+    const { hovering } = this.state;
     const tooltip = ['Modified since the last time jest-html was launched'];
     if (hovering) {
       tooltip.push('Click to save baseline. Press ESC to dismiss this tooltip');
@@ -172,35 +183,43 @@ class _DirtyIcon extends React.Component<{}> {
       <Icon
         id={id}
         icon="asterisk"
-        onMouseEnter={fSelected ? onHoverStart : undefined}
-        onMouseLeave={fSelected ? onHoverStop : undefined}
+        onMouseEnter={fSelected ? this.onHoverStart : undefined}
+        onMouseLeave={fSelected ? this.onHoverStop : undefined}
         onClick={fSnapshot ? onClick : undefined}
-        style={style.dirtyIcon({ fSelected, fSnapshot, fHovering: hovering })}
+        style={style.dirtyIcon({ fSelected, fSnapshot, fHovering: !!hovering })}
         title={tooltip.join('. ')}
       />
     );
   }
+
+  // ------------------------------------------
+  onHoverStart = () => {
+    this.setState({ hovering: true });
+  };
+
+  onHoverStop = () => {
+    this.setState({ hovering: false });
+  };
 }
-const DirtyIcon = hoverable(_DirtyIcon);
 
 // ------------------------------------------
 const style = {
   outer: ({
     fSelected,
-    fHovered,
-    fDeleted,
+    isHovered,
+    isDeleted,
   }: {
     fSelected?: boolean,
-    fHovered?: boolean,
-    fDeleted?: boolean,
+    isHovered?: boolean,
+    isDeleted?: boolean,
   }) => {
     let backgroundColor;
-    if (fSelected && fHovered) backgroundColor = darken(UI.color.accentBg, 10);
-    else if (fHovered) backgroundColor = darken('white', 10);
+    if (fSelected && isHovered) backgroundColor = darken(UI.color.accentBg, 10);
+    else if (isHovered) backgroundColor = darken('white', 10);
     else if (fSelected) backgroundColor = UI.color.accentBg;
     let color = 'currentColor';
-    if (fSelected && fDeleted) color = lighten(UI.color.accentBg, 25);
-    else if (fDeleted) color = UI.color.textDim;
+    if (fSelected && isDeleted) color = lighten(UI.color.accentBg, 25);
+    else if (isDeleted) color = UI.color.textDim;
     else if (fSelected) color = UI.color.accentFg;
     return flexContainer('row', {
       padding: '0.3em 1em',
@@ -243,5 +262,5 @@ const style = {
 // ==========================================
 // Public
 // ==========================================
-export default hoverable(SidebarItem);
+export default SidebarItem;
 export { SidebarItem as _SidebarItem, SidebarGroup };

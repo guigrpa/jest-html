@@ -33,7 +33,7 @@ describe('SidebarItem', () => {
           label="two"
           icon="folder-o"
           link="some/url"
-          hovering="two"
+          _hovering="two"
         />
       )
       .toJSON();
@@ -63,7 +63,7 @@ describe('SidebarItem', () => {
           label="four"
           icon="folder-o"
           link="some/url"
-          hovering="four"
+          _hovering="four"
           fSelected
         />
       )

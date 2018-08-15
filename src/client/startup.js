@@ -9,5 +9,9 @@ import ReactDOM from 'react-dom';
 import { setLocalStorageNamespace } from 'giu';
 import Root from './components/000-root';
 
+import 'font-awesome/css/font-awesome.min.css';
+import 'typeface-gloria-hallelujah/index.css';
+
 setLocalStorageNamespace('jest-html');
-ReactDOM.render(<Root />, document.getElementById('app'));
+const container: any = document.getElementById('app');
+ReactDOM.render(<Root />, container);
