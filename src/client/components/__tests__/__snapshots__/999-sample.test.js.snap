@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sample renders correctly 1`] = `
+<div
+  style={Object {}}
+>
+  <b>
+    Hello
+  </b>
+   there
+</div>
+------------HTML PREVIEW---------------
+<div style="">
+  <b>
+    Hello
+  </b>
+   there
+</div>
+`;

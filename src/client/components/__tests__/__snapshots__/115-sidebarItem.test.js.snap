@@ -39,8 +39,6 @@ exports[`SidebarItem renders correctly 1`] = `
 <div
   dataMockType="Link"
   id="one"
-  onMouseEnter={undefined}
-  onMouseLeave={undefined}
   style={
     Object {
       "alignItems": "center",
@@ -125,8 +123,6 @@ exports[`SidebarItem renders correctly when hovered 1`] = `
 <div
   dataMockType="Link"
   id="two"
-  onMouseEnter={undefined}
-  onMouseLeave={undefined}
   style={
     Object {
       "alignItems": "center",
@@ -212,8 +208,6 @@ exports[`SidebarItem renders correctly when selected & hovered 1`] = `
 <div
   dataMockType="Link"
   id="four"
-  onMouseEnter={undefined}
-  onMouseLeave={undefined}
   style={
     Object {
       "alignItems": "center",
@@ -299,8 +293,6 @@ exports[`SidebarItem renders correctly when selected 1`] = `
 <div
   dataMockType="Link"
   id="three"
-  onMouseEnter={undefined}
-  onMouseLeave={undefined}
   style={
     Object {
       "alignItems": "center",

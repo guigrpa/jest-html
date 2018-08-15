@@ -188,7 +188,6 @@ exports[`AppContents renders a folder with subfolders and suites correctly 1`] =
     dataMockType="Preview"
     fRaw={false}
     fShowBaseline={false}
-    snapshot={undefined}
   >
     <div
       style={
@@ -383,7 +382,6 @@ exports[`AppContents renders a folder with subfolders correctly 1`] = `
     dataMockType="Preview"
     fRaw={false}
     fShowBaseline={false}
-    snapshot={undefined}
   >
     <div
       style={
@@ -565,7 +563,6 @@ exports[`AppContents renders a folder with suites correctly 1`] = `
     dataMockType="Preview"
     fRaw={false}
     fShowBaseline={false}
-    snapshot={undefined}
   >
     <div
       style={
@@ -765,7 +762,6 @@ exports[`AppContents renders a suite with a selected snapshot 1`] = `
             },
           }
         }
-        saveAsBaseline={undefined}
         showBaseline={[Function]}
       >
         <div
@@ -796,7 +792,6 @@ exports[`AppContents renders a suite with a selected snapshot 1`] = `
             },
           }
         }
-        saveAsBaseline={undefined}
         showBaseline={[Function]}
       >
         <div
@@ -828,7 +823,6 @@ exports[`AppContents renders a suite with a selected snapshot 1`] = `
           },
         }
       }
-      saveAsBaseline={undefined}
       showBaseline={[Function]}
     >
       <div
@@ -859,7 +853,6 @@ exports[`AppContents renders a suite with a selected snapshot 1`] = `
           },
         }
       }
-      saveAsBaseline={undefined}
       showBaseline={[Function]}
     >
       <div
@@ -1061,7 +1054,6 @@ exports[`AppContents renders a suite with grouped snapshots correctly 1`] = `
             },
           }
         }
-        saveAsBaseline={undefined}
         showBaseline={[Function]}
       >
         <div
@@ -1092,7 +1084,6 @@ exports[`AppContents renders a suite with grouped snapshots correctly 1`] = `
             },
           }
         }
-        saveAsBaseline={undefined}
         showBaseline={[Function]}
       >
         <div
@@ -1124,7 +1115,6 @@ exports[`AppContents renders a suite with grouped snapshots correctly 1`] = `
           },
         }
       }
-      saveAsBaseline={undefined}
       showBaseline={[Function]}
     >
       <div
@@ -1155,7 +1145,6 @@ exports[`AppContents renders a suite with grouped snapshots correctly 1`] = `
           },
         }
       }
-      saveAsBaseline={undefined}
       showBaseline={[Function]}
     >
       <div
@@ -1174,7 +1163,6 @@ exports[`AppContents renders a suite with grouped snapshots correctly 1`] = `
     dataMockType="Preview"
     fRaw={false}
     fShowBaseline={false}
-    snapshot={undefined}
   >
     <div
       style={
@@ -1319,8 +1307,6 @@ exports[`AppContents renders a suite with individual snapshots correctly 1`] = `
     </div>
     <div
       dataMockType="SidebarItem"
-      deleted={undefined}
-      dirty={undefined}
       fSelected={false}
       hideBaseline={[Function]}
       icon="camera"
@@ -1334,7 +1320,6 @@ exports[`AppContents renders a suite with individual snapshots correctly 1`] = `
           },
         }
       }
-      saveAsBaseline={undefined}
       showBaseline={[Function]}
     >
       <div
@@ -1350,8 +1335,6 @@ exports[`AppContents renders a suite with individual snapshots correctly 1`] = `
     </div>
     <div
       dataMockType="SidebarItem"
-      deleted={undefined}
-      dirty={undefined}
       fSelected={false}
       hideBaseline={[Function]}
       icon="camera"
@@ -1365,7 +1348,6 @@ exports[`AppContents renders a suite with individual snapshots correctly 1`] = `
           },
         }
       }
-      saveAsBaseline={undefined}
       showBaseline={[Function]}
     >
       <div
@@ -1384,7 +1366,6 @@ exports[`AppContents renders a suite with individual snapshots correctly 1`] = `
     dataMockType="Preview"
     fRaw={false}
     fShowBaseline={false}
-    snapshot={undefined}
   >
     <div
       style={
@@ -1459,7 +1440,6 @@ exports[`AppContents renders error messages 1`] = `
   </div>
   <i
     className="giu-icon fa fa-warning"
-    onClick={undefined}
     style={
       Object {
         "color": "#999999",
@@ -1478,7 +1458,6 @@ exports[`AppContents renders error messages 1`] = `
   <br />
   <span
     className="giu-button"
-    onClick={undefined}
     style={
       Object {
         "WebkitUserSelect": "none",
@@ -1493,7 +1472,6 @@ exports[`AppContents renders error messages 1`] = `
   >
     <i
       className="giu-icon fa fa-home"
-      onClick={undefined}
       style={
         Object {
           "color": "#999999",
@@ -1637,7 +1615,6 @@ exports[`AppContents renders the root folder correctly 1`] = `
     dataMockType="Preview"
     fRaw={false}
     fShowBaseline={false}
-    snapshot={undefined}
   >
     <div
       style={

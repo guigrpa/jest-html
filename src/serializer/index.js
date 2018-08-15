@@ -85,19 +85,28 @@ function test(object: any) {
   return object && !object.__visited && object.$$typeof === reactTestInstance;
 }
 
+// Keep track of whether we're processing the top-most element or a nested one
+let isRoot = true;
+
 function printMain(
   val: Object,
   print: Function,
   indent: Function,
   opts: Object
 ) {
+  const curIsRoot = isRoot;
+  isRoot = false;
   const val2 = merge(val, {
     __visited: true,
     $$typeof: reactTestInstance,
   }); // break infinite recursion
   const snapContents = print(val2, print, indent, opts);
   const htmlContents = printInstance(val, print, indent, opts);
-  return `${snapContents}\n${HTML_PREVIEW_SEPARATOR}\n${htmlContents}`;
+  const out = curIsRoot
+    ? `${snapContents}\n${HTML_PREVIEW_SEPARATOR}\n${htmlContents}`
+    : snapContents;
+  isRoot = curIsRoot;
+  return out;
 }
 
 function printInstance(instance, print, indent, opts) {

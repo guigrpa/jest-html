@@ -93,7 +93,6 @@ exports[`Sidebar renders correctly 1`] = `
       <i
         className="giu-icon fa fa-file-code-o fa-lg"
         id="jh-toggle-raw"
-        onClick={undefined}
         style={
           Object {
             "color": "gray",
@@ -210,7 +209,6 @@ exports[`Sidebar renders correctly without linkBack 1`] = `
         </div>
         <i
           className="giu-icon fa fa-chevron-left fa-lg"
-          onClick={undefined}
           style={
             Object {
               "color": "#999999",
@@ -246,7 +244,6 @@ exports[`Sidebar renders correctly without linkBack 1`] = `
       <i
         className="giu-icon fa fa-file-code-o fa-lg"
         id="jh-toggle-raw"
-        onClick={undefined}
         style={
           Object {
             "color": "gray",
