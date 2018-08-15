@@ -158,13 +158,15 @@ class _DirtyIcon extends React.Component<{}> {
       onHoverStop,
       onClick,
     } = this.props;
-    let tooltip = 'Modified since the last time jest-html was launched';
+    const tooltip = ['Modified since the last time jest-html was launched'];
     if (hovering) {
-      tooltip += '. Click to save baseline. Press ESC to dismiss this tooltip';
+      tooltip.push('Click to save baseline. Press ESC to dismiss this tooltip');
     } else {
-      tooltip += fSnapshot
-        ? '. Select this snapshot and hover to see baseline'
-        : '. Click for more details on what changed';
+      tooltip.push(
+        fSnapshot
+          ? 'Select this snapshot and hover to see baseline'
+          : 'Click for more details on what changed'
+      );
     }
     return (
       <Icon
@@ -174,7 +176,7 @@ class _DirtyIcon extends React.Component<{}> {
         onMouseLeave={fSelected ? onHoverStop : undefined}
         onClick={fSnapshot ? onClick : undefined}
         style={style.dirtyIcon({ fSelected, fSnapshot, fHovering: hovering })}
-        title={tooltip}
+        title={tooltip.join('. ')}
       />
     );
   }
