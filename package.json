@@ -71,7 +71,7 @@
     "whatwg-fetch": "^2.0.4"
   },
   "peerDependencies": {
-    "jest": ">= 23.0.0"
+    "jest": ">= 17.0.0"
   },
   "devDependencies": {
     "babel-cli": "6.26.0",
