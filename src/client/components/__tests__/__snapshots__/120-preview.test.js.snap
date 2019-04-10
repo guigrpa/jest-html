@@ -44,7 +44,7 @@ exports[`Preview renders correctly with HTML snapshot 1`] = `
   <style>
     body { color: green }
   </style>
-  <div></div>
+  <div><div>Snapshot contents</div></div>
 </div>
 `;
 
