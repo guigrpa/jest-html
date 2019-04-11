@@ -130,6 +130,12 @@ function printInstance(instance, print, indent, opts) {
     indent2 = str => str;
   }
 
+  const dangerousInnerHTML = instance.props && instance.props.dangerouslySetInnerHTML;
+  if (dangerousInnerHTML) {
+    result += `${dangerousInnerHTML.__html}</${instance.type}>`;
+    return result;
+  }
+
   const children = instance.children;
   if (children) {
     const printedChildren = printChildren(children, print, indent2, opts2);
