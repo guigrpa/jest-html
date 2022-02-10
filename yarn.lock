@@ -8081,13 +8081,9 @@ typeface-gloria-hallelujah@^0.0.54:
   version "0.0.54"
   resolved "https://registry.yarnpkg.com/typeface-gloria-hallelujah/-/typeface-gloria-hallelujah-0.0.54.tgz#4ab9da1149a0bf73baadfb3074428f91e98fb2a7"
 
-ua-parser-js@^0.7.18:
-  version "0.7.18"
-  resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.18.tgz#a7bfd92f56edfb117083b69e31d2aa8882d4b1ed"
-
-ua-parser-js@^0.7.9:
-  version "0.7.12"
-  resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.12.tgz#04c81a99bdd5dc52263ea29d24c6bf8d4818a4bb"
+ua-parser-js@^0.7.18, ua-parser-js@^0.7.9:
+  version "0.7.31"
+  resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.31.tgz#649a656b191dffab4f21d5e053e27ca17cbff5c6"
 
 uglify-es@^3.3.4:
   version "3.3.9"
